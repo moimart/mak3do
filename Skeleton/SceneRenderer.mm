@@ -13,6 +13,14 @@ static SceneRenderer* _renderer = nil;
 - (SCNScene*) setupScene {
     SCNScene* scene = [[SCNScene alloc] init];
     
+    SCNNode* cameraNode = [[SCNNode alloc] init];
+    SCNCamera* camera = [[SCNCamera alloc] init];
+    
+    cameraNode.camera = camera;
+    
+    [cameraNode setPosition:SCNVector3Make(0, 1.2, 4)];
+    [scene.rootNode addChildNode:cameraNode];
+    
     SCNBox* box = [[SCNBox alloc] init];
     [box setWidth:1];
     [box setHeight:1];
@@ -21,14 +29,14 @@ static SceneRenderer* _renderer = nil;
     box.materials.firstObject.diffuse.contents = [UIColor blueColor];
     SCNNode* node = [[SCNNode alloc] init];
     [node setGeometry:box];
-    [node setPosition:SCNVector3Make(0, 0, 300)];
+    [node setPosition:SCNVector3Make(0, 0, 0)];
     [scene.rootNode addChildNode:node];
     
     SCNSphere* sphere = [[SCNSphere alloc] init];
-    [sphere setRadius:1];
-    sphere.materials.firstObject.diffuse.contents = [UIColor yellowColor];
+    [sphere setRadius:2];
+    sphere.materials.firstObject.diffuse.contents = [UIColor redColor];
     SCNNode* sphereNode = [[SCNNode alloc] init];
-    [sphereNode setPosition:SCNVector3Make(2, 0, 0)];
+    [sphereNode setPosition:SCNVector3Make(0.0, 0.1, -10)];
     [scene.rootNode addChildNode:sphereNode];
     
     return scene;
@@ -48,15 +56,13 @@ static SceneRenderer* _renderer = nil;
 }
 
 - (id  _Nonnull) initWithFrame:(CGRect)frameRect {
-    _view = [[SCNView alloc] initWithFrame:frameRect];
-    
-    [_view setScene:[self setupScene]];
     
     _device = MTLCreateSystemDefaultDevice();
     _commandQueue = [_device newCommandQueue];
     _scnRenderer = [SCNRenderer rendererWithDevice:_device options:nil];
     
-    //_view.delegate = self;
+    _view = [[MetalView alloc] initWithFrame:frameRect device:_device];
+    _view.contentScaleFactor = [UIScreen mainScreen].scale;
     
     return self;
 }
@@ -67,11 +73,10 @@ static SceneRenderer* _renderer = nil;
 
 - (void) render {
     MTLRenderPassColorAttachmentDescriptor *colorAttachment = [MTLRenderPassColorAttachmentDescriptor new];
-    CAMetalLayer* metalLayer = (CAMetalLayer*)_view.layer;
     
-    colorAttachment.texture = metalLayer.nextDrawable.texture;
+    colorAttachment.texture = _view.metalLayer.nextDrawable.texture;
     colorAttachment.loadAction = MTLLoadActionClear;
-    colorAttachment.clearColor = MTLClearColorMake(0,0,0,1);
+    colorAttachment.clearColor = MTLClearColorMake(0,1,0,1);
     colorAttachment.storeAction = MTLStoreActionStore;
     
     MTLRenderPassDescriptor* renderPassDescriptor = [MTLRenderPassDescriptor
@@ -83,9 +88,8 @@ static SceneRenderer* _renderer = nil;
     
     auto scene = [self setupScene];
     [_scnRenderer setScene: scene];
-    [_scnRenderer setPointOfView:scene.rootNode];
+    //[_scnRenderer setPointOfView:scene.rootNode.childNodes[0]];
     [_scnRenderer renderWithViewport:_view.frame commandBuffer:commandBuffer passDescriptor:renderPassDescriptor];
-    
     
     [commandBuffer commit];
 }
