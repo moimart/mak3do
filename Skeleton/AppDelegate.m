@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "DirectorDisplayLink.h"
+#import "SceneRenderer.h"
+#import <MapKit/MapKit.h>
 
 @interface AppDelegate ()
 
@@ -24,14 +26,15 @@
     UIWindow* w = [[UIWindow alloc] initWithFrame: r];
     self.window = w;
 
-    //MetalView *metalView = [[MetalView alloc] initWithFrame:r];
+    SceneRenderer* renderer = [SceneRenderer renderer:r];
 
-    // Use RootViewController manage EAGLView
     self.viewController = [[ViewController alloc] initWithNibName:nil bundle:nil];
 
-    //self.viewController.view = metalView;
+    self.viewController.view = renderer.view;//[[MKMapView alloc] initWithFrame:r];
     
-    [self.window addSubview: self.viewController.view];
+    //[self.window addSubview: self.viewController.view];
+    [self.window setRootViewController:self.viewController];
+    [self.window makeKeyAndVisible];
     
     [[DirectorDisplayLink shared] startMainLoop];
     

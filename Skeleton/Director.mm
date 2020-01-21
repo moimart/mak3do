@@ -8,6 +8,7 @@
 
 #include "Director.h"
 #include <iostream>
+#import "SceneRenderer.h"
 
 namespace mak3do {
 
@@ -24,7 +25,7 @@ Director* Director::get()
 
 void Director::loop()
 {
-    std::cout << "hi!" << std::endl;
+    [[SceneRenderer shared] render];
 }
 
 }
