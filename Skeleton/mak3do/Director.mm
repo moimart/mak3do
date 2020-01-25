@@ -7,8 +7,13 @@
 //
 
 #include "Director.h"
-#include <iostream>
-#import "SceneRenderer.h"
+
+#ifdef M3D_PLAT_APPLE
+#include "apple/DirectorImpl.h"
+#elif M3D_PLAT_ANDROID
+#include "android/DirectorImpl.h"
+#endif
+
 
 namespace mak3do {
 
@@ -23,9 +28,18 @@ Director* Director::get()
     return instance;
 }
 
-void Director::loop()
+Director::Director()
+: m_pimpl(std::make_shared<DirectorImpl>(this))
 {
-    [[SceneRenderer shared] render];
 }
 
+void Director::loop()
+{
+    m_pimpl->loop();
+}
+
+void Director::setScene(ScenePtr scene)
+{
+    
+}
 }

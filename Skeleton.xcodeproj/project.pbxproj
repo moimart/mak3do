@@ -20,6 +20,12 @@
 		0DDF67FC23DC583000827D46 /* TestShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67F123DC583000827D46 /* TestShaders.metal */; };
 		0DDF67FD23DC583000827D46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67F423DC583000827D46 /* AppDelegate.m */; };
 		0DDF67FE23DC583000827D46 /* Director.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67F823DC583000827D46 /* Director.mm */; };
+		0DDF680423DC5B1200827D46 /* Scene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67FF23DC5B1200827D46 /* Scene.mm */; };
+		0DDF680523DC5B1200827D46 /* Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF680023DC5B1200827D46 /* Node.mm */; };
+		0DDF681123DC620B00827D46 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDF681023DC620B00827D46 /* MetalKit.framework */; };
+		0DDF682023DC63EB00827D46 /* DirectorImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF681C23DC63EB00827D46 /* DirectorImpl.mm */; };
+		0DDF682123DC63EB00827D46 /* NodeImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF681D23DC63EB00827D46 /* NodeImpl.mm */; };
+		0DDF682223DC63EB00827D46 /* SceneImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF681E23DC63EB00827D46 /* SceneImpl.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,18 @@
 		0DDF67F523DC583000827D46 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0DDF67F723DC583000827D46 /* Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
 		0DDF67F823DC583000827D46 /* Director.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Director.mm; sourceTree = "<group>"; };
+		0DDF67FF23DC5B1200827D46 /* Scene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Scene.mm; sourceTree = "<group>"; };
+		0DDF680023DC5B1200827D46 /* Node.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Node.mm; sourceTree = "<group>"; };
+		0DDF680123DC5B1200827D46 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		0DDF680223DC5B1200827D46 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		0DDF680323DC5B1200827D46 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		0DDF681023DC620B00827D46 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		0DDF681A23DC63EB00827D46 /* NodeImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeImpl.h; sourceTree = "<group>"; };
+		0DDF681B23DC63EB00827D46 /* DirectorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectorImpl.h; sourceTree = "<group>"; };
+		0DDF681C23DC63EB00827D46 /* DirectorImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DirectorImpl.mm; sourceTree = "<group>"; };
+		0DDF681D23DC63EB00827D46 /* NodeImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NodeImpl.mm; sourceTree = "<group>"; };
+		0DDF681E23DC63EB00827D46 /* SceneImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneImpl.mm; sourceTree = "<group>"; };
+		0DDF681F23DC63EB00827D46 /* SceneImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneImpl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD1B0D423D7AF9A00E65C07 /* MapKit.framework in Frameworks */,
+				0DDF681123DC620B00827D46 /* MetalKit.framework in Frameworks */,
 				0DD1B0D223D7A0A900E65C07 /* SceneKit.framework in Frameworks */,
 				0DD1B0D023D79FDF00E65C07 /* Metal.framework in Frameworks */,
 			);
@@ -149,6 +168,7 @@
 		0DD1B0CE23D79FDE00E65C07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DDF681023DC620B00827D46 /* MetalKit.framework */,
 				0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */,
 				0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */,
 				0DD1B0CF23D79FDE00E65C07 /* Metal.framework */,
@@ -160,15 +180,15 @@
 			isa = PBXGroup;
 			children = (
 				0DDF67EC23DC583000827D46 /* AppDelegate.h */,
+				0DDF67F423DC583000827D46 /* AppDelegate.m */,
+				0DDF67F323DC583000827D46 /* SceneRenderer.h */,
 				0DDF67ED23DC583000827D46 /* SceneRenderer.mm */,
+				0DDF67F223DC583000827D46 /* DirectorDisplayLink.h */,
 				0DDF67EE23DC583000827D46 /* DirectorDisplayLink.mm */,
+				0DDF67F523DC583000827D46 /* ViewController.h */,
 				0DDF67EF23DC583000827D46 /* ViewController.m */,
 				0DDF67F023DC583000827D46 /* ShaderTypes.h */,
 				0DDF67F123DC583000827D46 /* TestShaders.metal */,
-				0DDF67F223DC583000827D46 /* DirectorDisplayLink.h */,
-				0DDF67F323DC583000827D46 /* SceneRenderer.h */,
-				0DDF67F423DC583000827D46 /* AppDelegate.m */,
-				0DDF67F523DC583000827D46 /* ViewController.h */,
 			);
 			path = apple;
 			sourceTree = "<group>";
@@ -176,10 +196,29 @@
 		0DDF67F623DC583000827D46 /* mak3do */ = {
 			isa = PBXGroup;
 			children = (
+				0DDF680623DC5E4500827D46 /* apple */,
+				0DDF680123DC5B1200827D46 /* Node.h */,
+				0DDF680023DC5B1200827D46 /* Node.mm */,
+				0DDF680223DC5B1200827D46 /* Scene.h */,
+				0DDF67FF23DC5B1200827D46 /* Scene.mm */,
+				0DDF680323DC5B1200827D46 /* types.h */,
 				0DDF67F723DC583000827D46 /* Director.h */,
 				0DDF67F823DC583000827D46 /* Director.mm */,
 			);
 			path = mak3do;
+			sourceTree = "<group>";
+		};
+		0DDF680623DC5E4500827D46 /* apple */ = {
+			isa = PBXGroup;
+			children = (
+				0DDF681B23DC63EB00827D46 /* DirectorImpl.h */,
+				0DDF681C23DC63EB00827D46 /* DirectorImpl.mm */,
+				0DDF681A23DC63EB00827D46 /* NodeImpl.h */,
+				0DDF681D23DC63EB00827D46 /* NodeImpl.mm */,
+				0DDF681F23DC63EB00827D46 /* SceneImpl.h */,
+				0DDF681E23DC63EB00827D46 /* SceneImpl.mm */,
+			);
+			path = apple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,13 +349,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DDF680523DC5B1200827D46 /* Node.mm in Sources */,
 				0DDF67FA23DC583000827D46 /* DirectorDisplayLink.mm in Sources */,
 				0DDF67FE23DC583000827D46 /* Director.mm in Sources */,
+				0DDF682123DC63EB00827D46 /* NodeImpl.mm in Sources */,
+				0DDF682223DC63EB00827D46 /* SceneImpl.mm in Sources */,
 				0DA9450823D6429F00AEBEAA /* main.m in Sources */,
 				0DDF67FD23DC583000827D46 /* AppDelegate.m in Sources */,
 				0DDF67FC23DC583000827D46 /* TestShaders.metal in Sources */,
 				0DDF67FB23DC583000827D46 /* ViewController.m in Sources */,
+				0DDF680423DC5B1200827D46 /* Scene.mm in Sources */,
 				0DDF67F923DC583000827D46 /* SceneRenderer.mm in Sources */,
+				0DDF682023DC63EB00827D46 /* DirectorImpl.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,8 +510,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39E4GQM8LC;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				INFOPLIST_FILE = Skeleton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -483,8 +529,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39E4GQM8LC;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				INFOPLIST_FILE = Skeleton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
