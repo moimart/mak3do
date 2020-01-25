@@ -6,8 +6,7 @@
 //  Copyright © 2020 Moises Martinez. All rights reserved.
 //
 
-#ifndef Director_hpp
-#define Director_hpp
+#pragma once
 
 #include <stdio.h>
 
@@ -19,5 +18,3 @@ public:
 };
 }
 
-
-#endif /* Director_hpp */

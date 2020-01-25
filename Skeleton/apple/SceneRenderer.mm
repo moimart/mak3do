@@ -8,6 +8,8 @@ static SceneRenderer* _renderer = nil;
     id<MTLCommandQueue> _commandQueue;
     SCNRenderer* _scnRenderer;
     CAMetalLayer* _layer;
+    
+     id<MTLRenderPipelineState> _pipelineState;
 };
 
 - (SCNScene*) setupScene {
@@ -61,7 +63,7 @@ static SceneRenderer* _renderer = nil;
     _commandQueue = [_device newCommandQueue];
     _scnRenderer = [SCNRenderer rendererWithDevice:_device options:nil];
     
-    _view = [[MetalView alloc] initWithFrame:frameRect device:_device];
+    _view = [[MTKView alloc] initWithFrame:frameRect device:_device];
     _view.contentScaleFactor = [UIScreen mainScreen].scale;
     
     return self;
@@ -71,25 +73,38 @@ static SceneRenderer* _renderer = nil;
     [self render];
 }
 
+- (void) initRenderTest {
+    
+    NSError *error = NULL;
+    // Load all the shader files with a .metal file extension in the project.
+    id<MTLLibrary> defaultLibrary = [_device newDefaultLibrary];
+
+    id<MTLFunction> vertexFunction = [defaultLibrary newFunctionWithName:@"vertexTestShader"];
+    id<MTLFunction> fragmentFunction = [defaultLibrary newFunctionWithName:@"fragmentTestShader"];
+
+    // Configure a pipeline descriptor that is used to create a pipeline state.
+    MTLRenderPipelineDescriptor *pipelineStateDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
+    pipelineStateDescriptor.label = @"Simple Pipeline";
+    pipelineStateDescriptor.vertexFunction = vertexFunction;
+    pipelineStateDescriptor.fragmentFunction = fragmentFunction;
+    pipelineStateDescriptor.colorAttachments[0].pixelFormat = _view.colorPixelFormat;
+
+    _pipelineState = [_device newRenderPipelineStateWithDescriptor:pipelineStateDescriptor
+                                                             error:&error];
+}
+
 - (void) render {
-    MTLRenderPassColorAttachmentDescriptor *colorAttachment = [MTLRenderPassColorAttachmentDescriptor new];
-    
-    colorAttachment.texture = _view.metalLayer.nextDrawable.texture;
-    colorAttachment.loadAction = MTLLoadActionClear;
-    colorAttachment.clearColor = MTLClearColorMake(0,1,0,1);
-    colorAttachment.storeAction = MTLStoreActionStore;
-    
-    MTLRenderPassDescriptor* renderPassDescriptor = [MTLRenderPassDescriptor
-                                                     renderPassDescriptor];
-    
-    renderPassDescriptor.colorAttachments[0] = colorAttachment;
     
     auto commandBuffer = [_commandQueue commandBuffer];
+
+    MTLRenderPassDescriptor *renderPassDescriptor = _view.currentRenderPassDescriptor;
     
     auto scene = [self setupScene];
     [_scnRenderer setScene: scene];
-    //[_scnRenderer setPointOfView:scene.rootNode.childNodes[0]];
+    [_scnRenderer setPointOfView:scene.rootNode.childNodes[0]];
     [_scnRenderer renderWithViewport:_view.frame commandBuffer:commandBuffer passDescriptor:renderPassDescriptor];
+    
+    [commandBuffer presentDrawable:_view.currentDrawable];
     
     [commandBuffer commit];
 }

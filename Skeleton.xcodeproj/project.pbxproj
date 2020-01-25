@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DA944F723D6429D00AEBEAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA944F623D6429D00AEBEAA /* AppDelegate.m */; };
-		0DA944FD23D6429D00AEBEAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA944FC23D6429D00AEBEAA /* ViewController.m */; };
 		0DA9450223D6429F00AEBEAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DA9450123D6429F00AEBEAA /* Assets.xcassets */; };
 		0DA9450823D6429F00AEBEAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9450723D6429F00AEBEAA /* main.m */; };
 		0DA9451223D6429F00AEBEAA /* SkeletonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9451123D6429F00AEBEAA /* SkeletonTests.m */; };
 		0DA9451D23D6429F00AEBEAA /* SkeletonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9451C23D6429F00AEBEAA /* SkeletonUITests.m */; };
-		0DA9453523D6444400AEBEAA /* Director.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9453323D6444400AEBEAA /* Director.mm */; };
-		0DA9453A23D6487500AEBEAA /* DirectorDisplayLink.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9453623D6487500AEBEAA /* DirectorDisplayLink.mm */; };
-		0DA9453B23D6487500AEBEAA /* MetalView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9453723D6487500AEBEAA /* MetalView.mm */; };
-		0DD1B0C523D79F6600E65C07 /* SceneRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1B0C323D79F6500E65C07 /* SceneRenderer.mm */; };
 		0DD1B0D023D79FDF00E65C07 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD1B0CF23D79FDE00E65C07 /* Metal.framework */; };
 		0DD1B0D223D7A0A900E65C07 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */; };
 		0DD1B0D423D7AF9A00E65C07 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */; };
+		0DDF67F923DC583000827D46 /* SceneRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67ED23DC583000827D46 /* SceneRenderer.mm */; };
+		0DDF67FA23DC583000827D46 /* DirectorDisplayLink.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67EE23DC583000827D46 /* DirectorDisplayLink.mm */; };
+		0DDF67FB23DC583000827D46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67EF23DC583000827D46 /* ViewController.m */; };
+		0DDF67FC23DC583000827D46 /* TestShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67F123DC583000827D46 /* TestShaders.metal */; };
+		0DDF67FD23DC583000827D46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67F423DC583000827D46 /* AppDelegate.m */; };
+		0DDF67FE23DC583000827D46 /* Director.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67F823DC583000827D46 /* Director.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +41,6 @@
 
 /* Begin PBXFileReference section */
 		0DA944F223D6429D00AEBEAA /* Skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skeleton.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DA944F523D6429D00AEBEAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0DA944F623D6429D00AEBEAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0DA944FB23D6429D00AEBEAA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0DA944FC23D6429D00AEBEAA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0DA9450123D6429F00AEBEAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DA9450623D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DA9450723D6429F00AEBEAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,17 +50,21 @@
 		0DA9451823D6429F00AEBEAA /* SkeletonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkeletonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DA9451C23D6429F00AEBEAA /* SkeletonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkeletonUITests.m; sourceTree = "<group>"; };
 		0DA9451E23D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DA9453323D6444400AEBEAA /* Director.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Director.mm; sourceTree = "<group>"; };
-		0DA9453423D6444400AEBEAA /* Director.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
-		0DA9453623D6487500AEBEAA /* DirectorDisplayLink.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DirectorDisplayLink.mm; sourceTree = "<group>"; };
-		0DA9453723D6487500AEBEAA /* MetalView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MetalView.mm; sourceTree = "<group>"; };
-		0DA9453823D6487500AEBEAA /* MetalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetalView.h; sourceTree = "<group>"; };
-		0DA9453923D6487500AEBEAA /* DirectorDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectorDisplayLink.h; sourceTree = "<group>"; };
-		0DD1B0C323D79F6500E65C07 /* SceneRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneRenderer.mm; sourceTree = "<group>"; };
-		0DD1B0C423D79F6500E65C07 /* SceneRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneRenderer.h; sourceTree = "<group>"; };
 		0DD1B0CF23D79FDE00E65C07 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0DDF67EC23DC583000827D46 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0DDF67ED23DC583000827D46 /* SceneRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneRenderer.mm; sourceTree = "<group>"; };
+		0DDF67EE23DC583000827D46 /* DirectorDisplayLink.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DirectorDisplayLink.mm; sourceTree = "<group>"; };
+		0DDF67EF23DC583000827D46 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0DDF67F023DC583000827D46 /* ShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
+		0DDF67F123DC583000827D46 /* TestShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = TestShaders.metal; sourceTree = "<group>"; };
+		0DDF67F223DC583000827D46 /* DirectorDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectorDisplayLink.h; sourceTree = "<group>"; };
+		0DDF67F323DC583000827D46 /* SceneRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneRenderer.h; sourceTree = "<group>"; };
+		0DDF67F423DC583000827D46 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0DDF67F523DC583000827D46 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0DDF67F723DC583000827D46 /* Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
+		0DDF67F823DC583000827D46 /* Director.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Director.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,18 +119,8 @@
 		0DA944F423D6429D00AEBEAA /* Skeleton */ = {
 			isa = PBXGroup;
 			children = (
-				0DA944F523D6429D00AEBEAA /* AppDelegate.h */,
-				0DA9453323D6444400AEBEAA /* Director.mm */,
-				0DA9453423D6444400AEBEAA /* Director.h */,
-				0DA944F623D6429D00AEBEAA /* AppDelegate.m */,
-				0DA944FB23D6429D00AEBEAA /* ViewController.h */,
-				0DA944FC23D6429D00AEBEAA /* ViewController.m */,
-				0DA9453923D6487500AEBEAA /* DirectorDisplayLink.h */,
-				0DA9453623D6487500AEBEAA /* DirectorDisplayLink.mm */,
-				0DA9453823D6487500AEBEAA /* MetalView.h */,
-				0DA9453723D6487500AEBEAA /* MetalView.mm */,
-				0DD1B0C423D79F6500E65C07 /* SceneRenderer.h */,
-				0DD1B0C323D79F6500E65C07 /* SceneRenderer.mm */,
+				0DDF67EB23DC583000827D46 /* apple */,
+				0DDF67F623DC583000827D46 /* mak3do */,
 				0DA9450123D6429F00AEBEAA /* Assets.xcassets */,
 				0DA9450623D6429F00AEBEAA /* Info.plist */,
 				0DA9450723D6429F00AEBEAA /* main.m */,
@@ -164,6 +154,32 @@
 				0DD1B0CF23D79FDE00E65C07 /* Metal.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0DDF67EB23DC583000827D46 /* apple */ = {
+			isa = PBXGroup;
+			children = (
+				0DDF67EC23DC583000827D46 /* AppDelegate.h */,
+				0DDF67ED23DC583000827D46 /* SceneRenderer.mm */,
+				0DDF67EE23DC583000827D46 /* DirectorDisplayLink.mm */,
+				0DDF67EF23DC583000827D46 /* ViewController.m */,
+				0DDF67F023DC583000827D46 /* ShaderTypes.h */,
+				0DDF67F123DC583000827D46 /* TestShaders.metal */,
+				0DDF67F223DC583000827D46 /* DirectorDisplayLink.h */,
+				0DDF67F323DC583000827D46 /* SceneRenderer.h */,
+				0DDF67F423DC583000827D46 /* AppDelegate.m */,
+				0DDF67F523DC583000827D46 /* ViewController.h */,
+			);
+			path = apple;
+			sourceTree = "<group>";
+		};
+		0DDF67F623DC583000827D46 /* mak3do */ = {
+			isa = PBXGroup;
+			children = (
+				0DDF67F723DC583000827D46 /* Director.h */,
+				0DDF67F823DC583000827D46 /* Director.mm */,
+			);
+			path = mak3do;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,13 +310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DA944FD23D6429D00AEBEAA /* ViewController.m in Sources */,
-				0DA9453523D6444400AEBEAA /* Director.mm in Sources */,
-				0DA9453B23D6487500AEBEAA /* MetalView.mm in Sources */,
-				0DA944F723D6429D00AEBEAA /* AppDelegate.m in Sources */,
-				0DD1B0C523D79F6600E65C07 /* SceneRenderer.mm in Sources */,
-				0DA9453A23D6487500AEBEAA /* DirectorDisplayLink.mm in Sources */,
+				0DDF67FA23DC583000827D46 /* DirectorDisplayLink.mm in Sources */,
+				0DDF67FE23DC583000827D46 /* Director.mm in Sources */,
 				0DA9450823D6429F00AEBEAA /* main.m in Sources */,
+				0DDF67FD23DC583000827D46 /* AppDelegate.m in Sources */,
+				0DDF67FC23DC583000827D46 /* TestShaders.metal in Sources */,
+				0DDF67FB23DC583000827D46 /* ViewController.m in Sources */,
+				0DDF67F923DC583000827D46 /* SceneRenderer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
