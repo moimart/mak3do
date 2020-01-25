@@ -19,9 +19,9 @@
 		0DDF67FB23DC583000827D46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67EF23DC583000827D46 /* ViewController.m */; };
 		0DDF67FC23DC583000827D46 /* TestShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67F123DC583000827D46 /* TestShaders.metal */; };
 		0DDF67FD23DC583000827D46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67F423DC583000827D46 /* AppDelegate.m */; };
-		0DDF67FE23DC583000827D46 /* Director.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67F823DC583000827D46 /* Director.mm */; };
-		0DDF680423DC5B1200827D46 /* Scene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67FF23DC5B1200827D46 /* Scene.mm */; };
-		0DDF680523DC5B1200827D46 /* Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF680023DC5B1200827D46 /* Node.mm */; };
+		0DDF67FE23DC583000827D46 /* Director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67F823DC583000827D46 /* Director.cpp */; };
+		0DDF680423DC5B1200827D46 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67FF23DC5B1200827D46 /* Scene.cpp */; };
+		0DDF680523DC5B1200827D46 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF680023DC5B1200827D46 /* Node.cpp */; };
 		0DDF681123DC620B00827D46 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDF681023DC620B00827D46 /* MetalKit.framework */; };
 		0DDF682023DC63EB00827D46 /* DirectorImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF681C23DC63EB00827D46 /* DirectorImpl.mm */; };
 		0DDF682123DC63EB00827D46 /* NodeImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF681D23DC63EB00827D46 /* NodeImpl.mm */; };
@@ -70,9 +70,9 @@
 		0DDF67F423DC583000827D46 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0DDF67F523DC583000827D46 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0DDF67F723DC583000827D46 /* Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
-		0DDF67F823DC583000827D46 /* Director.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Director.mm; sourceTree = "<group>"; };
-		0DDF67FF23DC5B1200827D46 /* Scene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Scene.mm; sourceTree = "<group>"; };
-		0DDF680023DC5B1200827D46 /* Node.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Node.mm; sourceTree = "<group>"; };
+		0DDF67F823DC583000827D46 /* Director.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Director.cpp; sourceTree = "<group>"; };
+		0DDF67FF23DC5B1200827D46 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		0DDF680023DC5B1200827D46 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
 		0DDF680123DC5B1200827D46 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		0DDF680223DC5B1200827D46 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 		0DDF680323DC5B1200827D46 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
@@ -198,12 +198,12 @@
 			children = (
 				0DDF680623DC5E4500827D46 /* apple */,
 				0DDF680123DC5B1200827D46 /* Node.h */,
-				0DDF680023DC5B1200827D46 /* Node.mm */,
+				0DDF680023DC5B1200827D46 /* Node.cpp */,
 				0DDF680223DC5B1200827D46 /* Scene.h */,
-				0DDF67FF23DC5B1200827D46 /* Scene.mm */,
+				0DDF67FF23DC5B1200827D46 /* Scene.cpp */,
 				0DDF680323DC5B1200827D46 /* types.h */,
 				0DDF67F723DC583000827D46 /* Director.h */,
-				0DDF67F823DC583000827D46 /* Director.mm */,
+				0DDF67F823DC583000827D46 /* Director.cpp */,
 			);
 			path = mak3do;
 			sourceTree = "<group>";
@@ -349,16 +349,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DDF680523DC5B1200827D46 /* Node.mm in Sources */,
+				0DDF680523DC5B1200827D46 /* Node.cpp in Sources */,
 				0DDF67FA23DC583000827D46 /* DirectorDisplayLink.mm in Sources */,
-				0DDF67FE23DC583000827D46 /* Director.mm in Sources */,
+				0DDF67FE23DC583000827D46 /* Director.cpp in Sources */,
 				0DDF682123DC63EB00827D46 /* NodeImpl.mm in Sources */,
 				0DDF682223DC63EB00827D46 /* SceneImpl.mm in Sources */,
 				0DA9450823D6429F00AEBEAA /* main.m in Sources */,
 				0DDF67FD23DC583000827D46 /* AppDelegate.m in Sources */,
 				0DDF67FC23DC583000827D46 /* TestShaders.metal in Sources */,
 				0DDF67FB23DC583000827D46 /* ViewController.m in Sources */,
-				0DDF680423DC5B1200827D46 /* Scene.mm in Sources */,
+				0DDF680423DC5B1200827D46 /* Scene.cpp in Sources */,
 				0DDF67F923DC583000827D46 /* SceneRenderer.mm in Sources */,
 				0DDF682023DC63EB00827D46 /* DirectorImpl.mm in Sources */,
 			);

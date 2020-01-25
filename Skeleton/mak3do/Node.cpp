@@ -10,7 +10,7 @@ namespace mak3do {
 Node::Node()
 {
 #ifdef M3D_PLAT_APPLE
-    //m_pimpl = std::make_shared<NodePriv>(this);
+    m_pimpl = std::make_shared<NodeImpl>(this);
 #endif
 }
 
