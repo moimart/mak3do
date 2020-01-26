@@ -9,7 +9,11 @@ static SceneRenderer* _renderer = nil;
     SCNRenderer* _scnRenderer;
     CAMetalLayer* _layer;
     
-     id<MTLRenderPipelineState> _pipelineState;
+    SCNScene* _testScene;
+    
+    id<MTLRenderPipelineState> _pipelineState;
+    
+    vector_uint2 _viewportSize;
 };
 
 - (SCNScene*) setupScene {
@@ -57,6 +61,12 @@ static SceneRenderer* _renderer = nil;
     return _renderer;
 }
 
+- (void)mtkView:(nonnull MTKView *)view drawableSizeWillChange:(CGSize)size
+{
+    _viewportSize.x = size.width;
+    _viewportSize.y = size.height;
+}
+
 - (id  _Nonnull) initWithFrame:(CGRect)frameRect {
     
     _device = MTLCreateSystemDefaultDevice();
@@ -65,6 +75,11 @@ static SceneRenderer* _renderer = nil;
     
     _view = [[MTKView alloc] initWithFrame:frameRect device:_device];
     _view.contentScaleFactor = [UIScreen mainScreen].scale;
+    
+    _viewportSize.x = _view.drawableSize.width;
+    _viewportSize.y = _view.drawableSize.height;
+    
+    _testScene = [self setupScene];
     
     return self;
 }
@@ -99,10 +114,10 @@ static SceneRenderer* _renderer = nil;
 
     MTLRenderPassDescriptor *renderPassDescriptor = _view.currentRenderPassDescriptor;
     
-    auto scene = [self setupScene];
-    [_scnRenderer setScene: scene];
-    [_scnRenderer setPointOfView:scene.rootNode.childNodes[0]];
-    [_scnRenderer renderWithViewport:_view.frame commandBuffer:commandBuffer passDescriptor:renderPassDescriptor];
+    [_scnRenderer setScene: _testScene];
+    [_scnRenderer setPointOfView:_testScene.rootNode.childNodes[0]];
+    auto frame = CGRectMake(0, 0, _viewportSize.x, _viewportSize.y);
+    [_scnRenderer renderWithViewport:frame commandBuffer:commandBuffer passDescriptor:renderPassDescriptor];
     
     [commandBuffer presentDrawable:_view.currentDrawable];
     

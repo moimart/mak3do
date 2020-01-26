@@ -2,7 +2,7 @@
 #import <Metal/Metal.h>
 #import <MetalKit/MetalKit.h>
 
-@interface SceneRenderer : NSObject<SCNSceneRendererDelegate>
+@interface SceneRenderer : NSObject<MTKViewDelegate>
 
 @property (readonly) MTKView* _Nonnull view;
 
