@@ -16,12 +16,22 @@ Node::Node()
 
 void Node::addChild(NodePtr node)
 {
-    m_children.push_back(node);
+    m_pimpl->addChild(node);
 }
 
 std::vector<NodePtr> Node::getChildren() const
 {
-    return m_children;
+    return m_pimpl->getChildren();
+}
+
+void Node::setPosition(const Vec3& position)
+{
+    m_pimpl->setPosition(position);
+}
+
+Vec3 Node::getPosition() const
+{
+    return m_pimpl->getPosition();
 }
 
 }

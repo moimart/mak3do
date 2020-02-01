@@ -14,5 +14,10 @@ Scene::Scene()
 #endif
 }
 
+void Scene::addNode(NodePtr node)
+{
+    m_pimpl->addNode(node);
+}
+
 }
 

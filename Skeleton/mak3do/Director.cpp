@@ -40,6 +40,6 @@ void Director::loop()
 
 void Director::setScene(ScenePtr scene)
 {
-    
+    m_pimpl->setScene(scene);
 }
 }

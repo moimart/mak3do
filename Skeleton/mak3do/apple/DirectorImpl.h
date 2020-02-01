@@ -9,6 +9,7 @@ public:
     DirectorImpl(mak3do::Director* parent);
     
     void loop();
+    void setScene(ScenePtr scene);
 private:
     Director* m_parent;
 };

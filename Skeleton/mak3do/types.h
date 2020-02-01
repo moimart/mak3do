@@ -6,6 +6,7 @@
 #include <memory>
 #include <vector>
 #include <iostream>
+#include "math/all"
 
 namespace mak3do {
 class Director;

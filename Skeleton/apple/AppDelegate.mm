@@ -12,6 +12,8 @@
 #import "SceneRenderer.h"
 #import <MapKit/MapKit.h>
 
+#include "../mak3do/Game.h"
+
 @interface AppDelegate ()
 
 @end
@@ -36,6 +38,10 @@
     [self.window setRootViewController:self.viewController];
     [self.window makeKeyAndVisible];
     
+    auto game = std::make_shared<mak3do::Game>();
+    
+    game->startGame();
+
     [[DirectorDisplayLink shared] startMainLoop];
     
     return YES;

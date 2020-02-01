@@ -8,11 +8,15 @@ public:
     Node();
         
     void addChild(NodePtr node);
-    
     std::vector<NodePtr> getChildren() const;
+    
+    void setPosition(const Vec3& position);
+    Vec3 getPosition() const;
 private:
-    std::vector<NodePtr> m_children;
     
     NodeImplPtr m_pimpl;
+    
+    friend class NodeImpl;
+    friend class SceneImpl;
 };
 }
