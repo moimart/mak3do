@@ -11,10 +11,30 @@ public:
     void addChild(NodePtr node);
     std::vector<NodePtr> getChildren() const;
     
-    void setPosition(const Vec3& position);
-    Vec3 getPosition() const;
+    void position(const Vec3& position);
+    Vec3 position() const;
+    
+    void visible(bool visible);
+    bool visible() const;
+    
+    void scale(float scale);
+    float scale() const;
+    
+    void yaw(float yaw);
+    float yaw() const;
+    
+    void pitch(float pitch);
+    float pitch() const;
+    
+    void roll(float roll);
+    float roll() const;
+    
+    void rotation(const Quaternion& rotation);
+    Quaternion rotation() const;
+
 private:
     void* m_native;
+    Vec3 m_ypr { 0,0,0 };
     
     std::vector<NodePtr> m_children;
     

@@ -41,6 +41,10 @@
 		0DDF684D23E5891B00827D46 /* utils.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0DDF684A23E5891A00827D46 /* utils.inl */; };
 		0DDF684E23E5891B00827D46 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF684C23E5891B00827D46 /* utils.cpp */; };
 		0DDF685023E5894D00827D46 /* all in Resources */ = {isa = PBXBuildFile; fileRef = 0DDF684F23E5894D00827D46 /* all */; };
+		0DEF44D123E5BC7600B6D870 /* Action.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF44CB23E5BC7600B6D870 /* Action.cpp */; };
+		0DEF44D523E5BF5700B6D870 /* ActionInterval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF44D223E5BE3B00B6D870 /* ActionInterval.cpp */; };
+		0DEF44D823E5C7A400B6D870 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF44D623E5C7A400B6D870 /* Color.cpp */; };
+		0DEF44DE23E5D21D00B6D870 /* ActionRunner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DEF44DD23E5D21D00B6D870 /* ActionRunner.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +127,16 @@
 		0DDF684A23E5891A00827D46 /* utils.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = utils.inl; sourceTree = "<group>"; };
 		0DDF684C23E5891B00827D46 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
 		0DDF684F23E5894D00827D46 /* all */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = all; sourceTree = "<group>"; };
+		0DEF44C123E5BC7600B6D870 /* actions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = actions.h; sourceTree = "<group>"; };
+		0DEF44C523E5BC7600B6D870 /* all */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = all; sourceTree = "<group>"; };
+		0DEF44C623E5BC7600B6D870 /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
+		0DEF44CB23E5BC7600B6D870 /* Action.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Action.cpp; sourceTree = "<group>"; };
+		0DEF44D223E5BE3B00B6D870 /* ActionInterval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionInterval.cpp; sourceTree = "<group>"; };
+		0DEF44D323E5BE3B00B6D870 /* ActionInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionInterval.h; sourceTree = "<group>"; };
+		0DEF44D623E5C7A400B6D870 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
+		0DEF44D723E5C7A400B6D870 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		0DEF44DC23E5D21D00B6D870 /* ActionRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionRunner.h; sourceTree = "<group>"; };
+		0DEF44DD23E5D21D00B6D870 /* ActionRunner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionRunner.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +250,7 @@
 		0DDF67F623DC583000827D46 /* mak3do */ = {
 			isa = PBXGroup;
 			children = (
+				0DEF44BF23E5BC7600B6D870 /* actions */,
 				0DDF682323E5887D00827D46 /* math */,
 				0DDF680623DC5E4500827D46 /* apple */,
 				0DDF680123DC5B1200827D46 /* Node.h */,
@@ -245,6 +260,10 @@
 				0DDF680323DC5B1200827D46 /* types.h */,
 				0DDF67F723DC583000827D46 /* Director.h */,
 				0DDF67F823DC583000827D46 /* Director.cpp */,
+				0DEF44D623E5C7A400B6D870 /* Color.cpp */,
+				0DEF44D723E5C7A400B6D870 /* Color.h */,
+				0DEF44DD23E5D21D00B6D870 /* ActionRunner.cpp */,
+				0DEF44DC23E5D21D00B6D870 /* ActionRunner.h */,
 				0D1777FC23E596250044FF04 /* Game.cpp */,
 				0D1777FD23E596260044FF04 /* Game.h */,
 			);
@@ -278,11 +297,11 @@
 				0DDF682723E5887D00827D46 /* Mat4.inl */,
 				0DDF682823E5887D00827D46 /* Vec3.inl */,
 				0DDF682923E5887D00827D46 /* Vec2.inl */,
-				0DDF682A23E5887D00827D46 /* Quaternion.h */,
 				0DDF682C23E5887D00827D46 /* Plane.h */,
 				0DDF682D23E5887D00827D46 /* Vec4.inl */,
 				0DDF682E23E5887D00827D46 /* Vec4.h */,
 				0DDF682F23E5887D00827D46 /* Mat4.cpp */,
+				0DDF682A23E5887D00827D46 /* Quaternion.h */,
 				0DDF683023E5887D00827D46 /* Quaternion.cpp */,
 				0DDF683123E5887D00827D46 /* math.h */,
 				0DDF683223E5887D00827D46 /* Vec4.cpp */,
@@ -292,6 +311,19 @@
 				0DDF683A23E5887E00827D46 /* Vec3.cpp */,
 			);
 			path = math;
+			sourceTree = "<group>";
+		};
+		0DEF44BF23E5BC7600B6D870 /* actions */ = {
+			isa = PBXGroup;
+			children = (
+				0DEF44C123E5BC7600B6D870 /* actions.h */,
+				0DEF44C523E5BC7600B6D870 /* all */,
+				0DEF44C623E5BC7600B6D870 /* Action.h */,
+				0DEF44CB23E5BC7600B6D870 /* Action.cpp */,
+				0DEF44D223E5BE3B00B6D870 /* ActionInterval.cpp */,
+				0DEF44D323E5BE3B00B6D870 /* ActionInterval.h */,
+			);
+			path = actions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEF44D523E5BF5700B6D870 /* ActionInterval.cpp in Sources */,
 				0DDF684E23E5891B00827D46 /* utils.cpp in Sources */,
 				0DDF680523DC5B1200827D46 /* Node.cpp in Sources */,
 				0DDF67FA23DC583000827D46 /* DirectorDisplayLink.mm in Sources */,
@@ -436,6 +469,7 @@
 				0DDF684123E5887E00827D46 /* Mat4.cpp in Sources */,
 				0DDF682123DC63EB00827D46 /* NodeImpl.mm in Sources */,
 				0DDF682223DC63EB00827D46 /* SceneImpl.mm in Sources */,
+				0DEF44D123E5BC7600B6D870 /* Action.cpp in Sources */,
 				0DA9450823D6429F00AEBEAA /* main.m in Sources */,
 				0DDF67FD23DC583000827D46 /* AppDelegate.mm in Sources */,
 				0DDF684223E5887E00827D46 /* Quaternion.cpp in Sources */,
@@ -444,10 +478,12 @@
 				0DDF684323E5887E00827D46 /* Vec4.cpp in Sources */,
 				0DDF684623E5887E00827D46 /* Plane.cpp in Sources */,
 				0DDF67FB23DC583000827D46 /* ViewController.m in Sources */,
+				0DEF44DE23E5D21D00B6D870 /* ActionRunner.cpp in Sources */,
 				0DDF680423DC5B1200827D46 /* Scene.cpp in Sources */,
 				0DDF684523E5887E00827D46 /* Vec2.cpp in Sources */,
 				0DDF67F923DC583000827D46 /* SceneRenderer.mm in Sources */,
 				0DDF682023DC63EB00827D46 /* DirectorImpl.mm in Sources */,
+				0DEF44D823E5C7A400B6D870 /* Color.cpp in Sources */,
 				0D1777FE23E596260044FF04 /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

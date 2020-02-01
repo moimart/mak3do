@@ -26,19 +26,14 @@ THE SOFTWARE.
 
 #pragma once
 
-#include <mak3do/base/Node.h>
-#include <mak3do/base/legacy/CCObject.h>
-#include <mak3do/base/legacy/PlatformMacros.h>
+#include "../Node.h"
 
 namespace mak3do {
 class Action;
 typedef std::shared_ptr<Action> ActionPtr;
-/** 
-    @brief Base class for Action objects.
-     */
 
 //FIXME Delete shared_from_this inherit once it subclasses Object
-class Action : public cocos2d::CCObject, public std::enable_shared_from_this<Action> {
+class Action : public std::enable_shared_from_this<Action> {
 public:
     enum Tag {
         //! Default tag
@@ -55,7 +50,7 @@ public:
     virtual bool isDone(void);
 
     //! called before the action start. It will also set the target.
-    virtual void startWithTarget(Node* pTarget);
+    virtual void startWithTarget(NodePtr pTarget);
 
     /** 
         called after the action has finished. It will set the 'target' to nil.
@@ -76,17 +71,17 @@ public:
         */
     virtual void update(float time);
 
-    inline Node* getTarget(void) { return m_pTarget; }
+    inline NodePtr getTarget(void) { return m_pTarget; }
     /** The action will modify the target properties. */
-    inline void setTarget(Node* pTarget) { m_pTarget = pTarget; }
+    inline void setTarget(NodePtr pTarget) { m_pTarget = pTarget; }
 
-    inline Node* getOriginalTarget(void) { return m_pOriginalTarget; }
+    inline NodePtr getOriginalTarget(void) { return m_pOriginalTarget; }
     /** Set the original target, since target can be nil.
         Is the target that were used to run the action. Unless you are doing something complex, like ActionManager, you should NOT call this method.
         The target is 'assigned', it is not 'retained'.
         @since v0.8.2
         */
-    inline void setOriginalTarget(Node* pOriginalTarget) { m_pOriginalTarget = pOriginalTarget; }
+    inline void setOriginalTarget(NodePtr pOriginalTarget) { m_pOriginalTarget = pOriginalTarget; }
 
     inline int getTag(void) { return m_nTag; }
     inline void setTag(int nTag) { m_nTag = nTag; }
@@ -96,13 +91,13 @@ public:
     static ActionPtr make();
 
 protected:
-    Node* m_pOriginalTarget;
+    NodePtr m_pOriginalTarget;
     /** The "target".
         The target will be set with the 'startWithTarget' method.
         When the 'stop' method is called, target will be set to nil.
         The target is 'assigned', it is not 'retained'.
         */
-    Node* m_pTarget;
+    NodePtr m_pTarget;
     /** The action tag. An identifier of the action */
     int m_nTag;
 };
@@ -150,128 +145,5 @@ protected:
 class ActionInterval;
 typedef std::shared_ptr<ActionInterval> ActionIntervalPtr;
 class RepeatForever;
-
-class Speed;
-typedef std::shared_ptr<Speed> SpeedPtr;
-/** 
-     @brief Changes the speed of an action, making it take longer (speed>1)
-     or less (speed<1) time.
-     Useful to simulate 'slow motion' or 'fast forward' effect.
-     @warning This action can't be Sequenceable because it is not an CCIntervalAction
-     */
-class Speed : public Action {
-public:
-    /**
-         *  @js ctor
-         */
-    Speed()
-        : m_fSpeed(0.0)
-        , m_pInnerAction(NULL)
-    {
-    }
-
-    inline float getSpeed(void) { return m_fSpeed; }
-    /** alter the speed of the inner function in runtime */
-    inline void setSpeed(float fSpeed) { m_fSpeed = fSpeed; }
-
-    /** initializes the action */
-    bool initWithAction(ActionIntervalPtr pAction, float fSpeed);
-    /**
-         *  @js NA
-         *  @lua NA
-         */
-
-    virtual void startWithTarget(Node* pTarget);
-    virtual void stop();
-    virtual void step(float dt);
-    virtual bool isDone(void);
-    virtual ActionPtr reverse(void);
-
-    void setInnerAction(ActionIntervalPtr pAction);
-
-    inline ActionIntervalPtr getInnerAction()
-    {
-        return m_pInnerAction;
-    }
-
-public:
-    /** create the action */
-    static SpeedPtr make(ActionIntervalPtr pAction, float fSpeed);
-
-protected:
-    float m_fSpeed;
-    ActionIntervalPtr m_pInnerAction;
-};
-
-/** 
-    @brief CCFollow is an action that "follows" a node.
-
-    Eg:
-    layer->runAction(CCFollow::actionWithTarget(hero));
-
-    Instead of using CCCamera as a "follower", use this action instead.
-    @since v0.99.2
-    */
-class Follow : public Action {
-public:
-    /**
-         *  @js ctor
-         */
-    Follow()
-        : m_pobFollowedNode(NULL)
-        , m_bBoundarySet(false)
-        , m_bBoundaryFullyCovered(false)
-        , m_fLeftBoundary(0.0)
-        , m_fRightBoundary(0.0)
-        , m_fTopBoundary(0.0)
-        , m_fBottomBoundary(0.0)
-    {
-    }
-    /**
-         *  @js NA
-         *  @lua NA
-         */
-    virtual ~Follow(void);
-
-    inline bool isBoundarySet(void) { return m_bBoundarySet; }
-    /** alter behavior - turn on/off boundary */
-    inline void setBoudarySet(bool bValue) { m_bBoundarySet = bValue; }
-
-    /** initializes the action with a set boundary */
-    bool initWithTarget(Node* pFollowedNode, const Rect4& rect = Rect4::ZERO);
-    /**
-         *  @js NA
-         *  @lua NA
-         */
-    virtual void step(float dt);
-    virtual bool isDone(void);
-    virtual void stop(void);
-
-public:
-    /** creates the action with a set boundary,
-        It will work with no boundary if @param rect is equal to CCRectZero.
-        */
-    static Follow* create(Node* pFollowedNode, const Rect4& rect = Rect4::ZERO);
-
-protected:
-    // node to follow
-    Node* m_pobFollowedNode;
-
-    // whether camera should be limited to certain area
-    bool m_bBoundarySet;
-
-    // if screen size is bigger than the boundary - update not needed
-    bool m_bBoundaryFullyCovered;
-
-    // fast access to the screen dimensions
-    Vec2 m_obHalfScreenSize;
-    Vec2 m_obFullScreenSize;
-
-    // world boundaries
-    float m_fLeftBoundary;
-    float m_fRightBoundary;
-    float m_fTopBoundary;
-    float m_fBottomBoundary;
-};
 
 }

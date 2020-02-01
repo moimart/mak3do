@@ -3,6 +3,7 @@
 #include "Director.h"
 #include "Scene.h"
 #include "Node.h"
+#include "actions/ActionInterval.h"
 
 namespace mak3do {
 void Game::startGame()
@@ -12,5 +13,7 @@ void Game::startGame()
     auto node = std::make_shared<Node>();
     scene->addNode(node);
     director->setScene(scene);
+    
+    node->runAction(RepeatForever::make(RotateBy::make(2, 360)));
 }
 }

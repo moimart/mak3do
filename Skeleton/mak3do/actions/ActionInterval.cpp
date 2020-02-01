@@ -25,17 +25,8 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "ActionInterval.h"
-#include <mak3do/base/Log.h>
-#include <mak3do/base/Node.h>
+#include "../Node.h"
 #include <stdarg.h>
-
-#ifndef MIN
-#define MIN(x, y) (((x) > (y)) ? (y) : (x))
-#endif // MIN
-
-#ifndef MAX
-#define MAX(x, y) (((x) < (y)) ? (y) : (x))
-#endif
 
 /** @def CC_ENABLE_STACKABLE_ACTIONS
  If enabled, actions that alter the position property (eg: CCMoveBy, CCJumpBy, CCBezierBy, etc..) will be stacked.
@@ -76,13 +67,65 @@ ActionPtr ExtraAction::reverse(void)
 
 void ExtraAction::update(float time)
 {
-    CC_UNUSED_PARAM(time);
 }
 
 void ExtraAction::step(float dt)
 {
-    CC_UNUSED_PARAM(dt);
 }
+
+//
+// Speed
+//
+SpeedPtr Speed::make(ActionIntervalPtr pAction, float fSpeed)
+{
+    auto pRet = std::make_shared<Speed>();
+    pRet->initWithAction(pAction, fSpeed);
+
+    return pRet;
+}
+
+bool Speed::initWithAction(ActionIntervalPtr pAction, float fSpeed)
+{
+    //logger::assertion(pAction != NULL, "");
+    m_pInnerAction = pAction;
+    m_fSpeed = fSpeed;
+    return true;
+}
+
+void Speed::startWithTarget(NodePtr pTarget)
+{
+    Action::startWithTarget(pTarget);
+    m_pInnerAction->startWithTarget(pTarget);
+}
+
+void Speed::stop()
+{
+    m_pInnerAction->stop();
+    Action::stop();
+}
+
+void Speed::step(float dt)
+{
+    m_pInnerAction->step(dt * m_fSpeed);
+}
+
+bool Speed::isDone()
+{
+    return m_pInnerAction->isDone();
+}
+
+ActionPtr Speed::reverse()
+{
+    return Speed::make(std::static_pointer_cast<ActionInterval>(m_pInnerAction->reverse()), m_fSpeed);
+}
+
+void Speed::setInnerAction(ActionIntervalPtr pAction)
+{
+    if (m_pInnerAction != pAction) {
+        m_pInnerAction = pAction;
+    }
+}
+
 
 //
 // IntervalAction
@@ -133,20 +176,14 @@ void ActionInterval::step(float dt)
 
 void ActionInterval::setAmplitudeRate(float amp)
 {
-    CC_UNUSED_PARAM(amp);
-    // Abstract class needs implementation
-    logger::assertion(0, "");
 }
 
 float ActionInterval::getAmplitudeRate(void)
 {
-    // Abstract class needs implementation
-    logger::assertion(0, "");
-
     return 0;
 }
 
-void ActionInterval::startWithTarget(Node* pTarget)
+void ActionInterval::startWithTarget(NodePtr pTarget)
 {
     FiniteTimeAction::startWithTarget(pTarget);
     m_elapsed = 0.0f;
@@ -155,8 +192,7 @@ void ActionInterval::startWithTarget(Node* pTarget)
 
 ActionPtr ActionInterval::reverse(void)
 {
-    logger::assertion(false, "CCIntervalAction: reverse not implemented.");
-    return NULL;
+    return nullptr;
 }
 
 //
@@ -177,7 +213,7 @@ SequencePtr Sequence::make(const std::vector<ActionPtr>& actions)
 
     do {
         auto count = actions.size();
-        CC_BREAK_IF(count == 0);
+        assert(count > 0);
 
         auto prev = std::static_pointer_cast<FiniteTimeAction>(actions[0]);
 
@@ -199,22 +235,16 @@ SequencePtr Sequence::make(const std::vector<ActionPtr>& actions)
 
 bool Sequence::initWithTwoActions(FiniteTimeActionPtr pActionOne, FiniteTimeActionPtr pActionTwo)
 {
-    logger::assertion(pActionOne != NULL, "");
-    logger::assertion(pActionTwo != NULL, "");
-
     float d = pActionOne->getDuration() + pActionTwo->getDuration();
     ActionInterval::initWithDuration(d);
 
     m_pActions[0] = pActionOne;
-    pActionOne->retain();
-
     m_pActions[1] = pActionTwo;
-    pActionTwo->retain();
 
     return true;
 }
 
-void Sequence::startWithTarget(Node* pTarget)
+void Sequence::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
     m_split = m_pActions[0]->getDuration() / m_fDuration;
@@ -311,7 +341,6 @@ bool Repeat::initWithAction(FiniteTimeActionPtr pAction, unsigned int times)
     if (ActionInterval::initWithDuration(d)) {
         m_uTimes = times;
         m_pInnerAction = pAction;
-        pAction->retain();
 
         m_bActionInstant = false; //dynamic_cast<ActionInstant*>(pAction) ? true : false;
         //an instant action needs to be executed one time less in the update method since it uses startWithTarget to execute the action
@@ -326,7 +355,7 @@ bool Repeat::initWithAction(FiniteTimeActionPtr pAction, unsigned int times)
     return false;
 }
 
-void Repeat::startWithTarget(Node* pTarget)
+void Repeat::startWithTarget(NodePtr pTarget)
 {
     m_uTotal = 0;
     m_fNextDt = m_pInnerAction->getDuration() / m_fDuration;
@@ -395,12 +424,12 @@ RepeatForeverPtr RepeatForever::make(ActionIntervalPtr pAction)
 
 bool RepeatForever::initWithAction(ActionIntervalPtr pAction)
 {
-    logger::assertion(pAction != NULL, "");
+    assert(pAction != nullptr);
     m_pInnerAction = pAction;
     return true;
 }
 
-void RepeatForever::startWithTarget(Node* pTarget)
+void RepeatForever::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
     m_pInnerAction->startWithTarget(pTarget);
@@ -439,7 +468,7 @@ SpawnPtr Spawn::make(const std::vector<ActionPtr>& actions)
     do {
         auto count = actions.size();
 
-        CC_BREAK_IF(count == 0);
+        assert(count > 0);
 
         auto prev = std::static_pointer_cast<FiniteTimeAction>(actions[0]);
 
@@ -469,8 +498,8 @@ SpawnPtr Spawn::makeWithTwoActions(FiniteTimeActionPtr pAction1, FiniteTimeActio
 
 bool Spawn::initWithTwoActions(FiniteTimeActionPtr pAction1, FiniteTimeActionPtr pAction2)
 {
-    logger::assertion(pAction1 != NULL, "");
-    logger::assertion(pAction2 != NULL, "");
+    assert(pAction1 != nullptr);
+    assert(pAction2 != nullptr);
 
     bool bRet = false;
 
@@ -493,7 +522,7 @@ bool Spawn::initWithTwoActions(FiniteTimeActionPtr pAction1, FiniteTimeActionPtr
     return bRet;
 }
 
-void Spawn::startWithTarget(Node* pTarget)
+void Spawn::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
     m_pOne->startWithTarget(pTarget);
@@ -564,12 +593,12 @@ bool RotateTo::initWithDuration(float fDuration, float fDeltaAngleX, float fDelt
     return false;
 }
 
-void RotateTo::startWithTarget(Node* pTarget)
+void RotateTo::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
 
     // Calculate X
-    m_fStartAngleX = pTarget->getRotationX();
+    m_fStartAngleX = pTarget->yaw();
     if (m_fStartAngleX > 0) {
         m_fStartAngleX = fmodf(m_fStartAngleX, 360.0f);
     } else {
@@ -585,7 +614,7 @@ void RotateTo::startWithTarget(Node* pTarget)
     }
 
     //Calculate Y: It's duplicated from calculating X since the rotation wrap should be the same
-    m_fStartAngleY = m_pTarget->getRotationY();
+    m_fStartAngleY = m_pTarget->roll();
 
     if (m_fStartAngleY > 0) {
         m_fStartAngleY = fmodf(m_fStartAngleY, 360.0f);
@@ -606,8 +635,8 @@ void RotateTo::startWithTarget(Node* pTarget)
 void RotateTo::update(float time)
 {
     if (m_pTarget) {
-        m_pTarget->setRotationX(m_fStartAngleX + m_fDiffAngleX * time);
-        m_pTarget->setRotationY(m_fStartAngleY + m_fDiffAngleY * time);
+        m_pTarget->yaw(m_fStartAngleX + m_fDiffAngleX * time);
+        m_pTarget->roll(m_fStartAngleY + m_fDiffAngleY * time);
     }
 }
 
@@ -652,19 +681,19 @@ bool RotateBy::initWithDuration(float fDuration, float fDeltaAngleX, float fDelt
     return false;
 }
 
-void RotateBy::startWithTarget(Node* pTarget)
+void RotateBy::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
-    m_fStartAngleX = pTarget->getRotationX();
-    m_fStartAngleY = pTarget->getRotationY();
+    m_fStartAngleX = pTarget->yaw();
+    m_fStartAngleY = pTarget->roll();
 }
 
 void RotateBy::update(float time)
 {
     // XXX: shall I add % 360
     if (m_pTarget) {
-        m_pTarget->setRotationX(m_fStartAngleX + m_fAngleX * time);
-        m_pTarget->setRotationY(m_fStartAngleY + m_fAngleY * time);
+        m_pTarget->yaw(m_fStartAngleX + m_fAngleX * time);
+        m_pTarget->roll(m_fStartAngleY + m_fAngleY * time);
     }
 }
 
@@ -677,7 +706,7 @@ ActionPtr RotateBy::reverse(void)
 // MoveBy
 //
 
-MoveByPtr MoveBy::make(float duration, const Vec2& deltaPosition)
+MoveByPtr MoveBy::make(float duration, const Vec3& deltaPosition)
 {
     auto pRet = std::make_shared<MoveBy>();
     pRet->initWithDuration(duration, deltaPosition);
@@ -685,7 +714,7 @@ MoveByPtr MoveBy::make(float duration, const Vec2& deltaPosition)
     return pRet;
 }
 
-bool MoveBy::initWithDuration(float duration, const Vec2& deltaPosition)
+bool MoveBy::initWithDuration(float duration, const Vec3& deltaPosition)
 {
     if (ActionInterval::initWithDuration(duration)) {
         m_positionDelta = deltaPosition;
@@ -695,29 +724,29 @@ bool MoveBy::initWithDuration(float duration, const Vec2& deltaPosition)
     return false;
 }
 
-void MoveBy::startWithTarget(Node* pTarget)
+void MoveBy::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
-    m_previousPosition = m_startPosition = pTarget->getPosition();
+    m_previousPosition = m_startPosition = pTarget->position();
 }
 
 ActionPtr MoveBy::reverse(void)
 {
-    return MoveBy::make(m_fDuration, Vec2(-m_positionDelta.x, -m_positionDelta.y));
+    return MoveBy::make(m_fDuration, Vec3(-m_positionDelta.x, -m_positionDelta.y));
 }
 
 void MoveBy::update(float t)
 {
     if (m_pTarget) {
 #if _ENABLE_STACKABLE_ACTIONS
-        Vec2 currentPos = m_pTarget->getPosition();
-        Vec2 diff = currentPos - m_previousPosition;
+        Vec3 currentPos = m_pTarget->getPosition();
+        Vec3 diff = currentPos - m_previousPosition;
         m_startPosition = m_startPosition + diff;
-        Vec2 newPos = m_startPosition + (ccpMult(m_positionDelta, t));
+        Vec3 newPos = m_startPosition + (ccpMult(m_positionDelta, t));
         m_pTarget->setPosition(newPos);
         m_previousPosition = newPos;
 #else
-        m_pTarget->setPosition(m_startPosition + (m_positionDelta * t));
+        m_pTarget->position(m_startPosition + (m_positionDelta * t));
 #endif // _ENABLE_STACKABLE_ACTIONS
     }
 }
@@ -726,7 +755,7 @@ void MoveBy::update(float t)
 // MoveTo
 //
 
-MoveToPtr MoveTo::make(float duration, const Vec2& position)
+MoveToPtr MoveTo::make(float duration, const Vec3& position)
 {
     auto pRet = std::make_shared<MoveTo>();
     pRet->initWithDuration(duration, position);
@@ -734,7 +763,7 @@ MoveToPtr MoveTo::make(float duration, const Vec2& position)
     return pRet;
 }
 
-bool MoveTo::initWithDuration(float duration, const Vec2& position)
+bool MoveTo::initWithDuration(float duration, const Vec3& position)
 {
     if (ActionInterval::initWithDuration(duration)) {
         m_endPosition = position;
@@ -744,10 +773,10 @@ bool MoveTo::initWithDuration(float duration, const Vec2& position)
     return false;
 }
 
-void MoveTo::startWithTarget(Node* pTarget)
+void MoveTo::startWithTarget(NodePtr pTarget)
 {
     MoveBy::startWithTarget(pTarget);
-    m_positionDelta = m_endPosition - pTarget->getPosition();
+    m_positionDelta = m_endPosition - pTarget->position();
 }
 
 //
@@ -775,11 +804,11 @@ bool SkewTo::initWithDuration(float t, float sx, float sy)
     return bRet;
 }
 
-void SkewTo::startWithTarget(Node* pTarget)
+void SkewTo::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
 
-    m_fStartSkewX = pTarget->getSkewX();
+    //m_fStartSkewX = pTarget->getSkewX();
 
     if (m_fStartSkewX > 0) {
         m_fStartSkewX = fmodf(m_fStartSkewX, 180.f);
@@ -796,7 +825,7 @@ void SkewTo::startWithTarget(Node* pTarget)
         m_fDeltaX += 360;
     }
 
-    m_fStartSkewY = pTarget->getSkewY();
+    //m_fStartSkewY = pTarget->getSkewY();
 
     if (m_fStartSkewY > 0) {
         m_fStartSkewY = fmodf(m_fStartSkewY, 360.f);
@@ -816,8 +845,8 @@ void SkewTo::startWithTarget(Node* pTarget)
 
 void SkewTo::update(float t)
 {
-    m_pTarget->setSkewX(m_fStartSkewX + m_fDeltaX * t);
-    m_pTarget->setSkewY(m_fStartSkewY + m_fDeltaY * t);
+    //m_pTarget->setSkewX(m_fStartSkewX + m_fDeltaX * t);
+    //m_pTarget->setSkewY(m_fStartSkewY + m_fDeltaY * t);
 }
 
 SkewTo::SkewTo()
@@ -857,7 +886,7 @@ bool SkewBy::initWithDuration(float t, float deltaSkewX, float deltaSkewY)
     return bRet;
 }
 
-void SkewBy::startWithTarget(Node* pTarget)
+void SkewBy::startWithTarget(NodePtr pTarget)
 {
     SkewTo::startWithTarget(pTarget);
     m_fDeltaX = m_fSkewX;
@@ -875,7 +904,7 @@ ActionPtr SkewBy::reverse()
 // JumpBy
 //
 
-JumpByPtr JumpBy::make(float duration, const Vec2& position, float height, unsigned int jumps)
+JumpByPtr JumpBy::make(float duration, const Vec3& position, float height, unsigned int jumps)
 {
     auto pJumpBy = std::make_shared<JumpBy>();
     pJumpBy->initWithDuration(duration, position, height, jumps);
@@ -883,7 +912,7 @@ JumpByPtr JumpBy::make(float duration, const Vec2& position, float height, unsig
     return pJumpBy;
 }
 
-bool JumpBy::initWithDuration(float duration, const Vec2& position, float height, unsigned int jumps)
+bool JumpBy::initWithDuration(float duration, const Vec3& position, float height, unsigned int jumps)
 {
     if (ActionInterval::initWithDuration(duration)) {
         m_delta = position;
@@ -896,10 +925,10 @@ bool JumpBy::initWithDuration(float duration, const Vec2& position, float height
     return false;
 }
 
-void JumpBy::startWithTarget(Node* pTarget)
+void JumpBy::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
-    m_previousPos = m_startPosition = pTarget->getPosition();
+    m_previousPos = m_startPosition = pTarget->position();
 }
 
 void JumpBy::update(float t)
@@ -912,24 +941,24 @@ void JumpBy::update(float t)
 
         float x = m_delta.x * t;
 #if CC_ENABLE_STACKABLE_ACTIONS
-        Vec2 currentPos = m_pTarget->getPosition();
+        Vec3 currentPos = m_pTarget->position();
 
-        Vec2 diff = currentPos - m_previousPos;
+        Vec3 diff = currentPos - m_previousPos;
         m_startPosition = diff + m_startPosition;
 
-        Vec2 newPos = m_startPosition + Vec2(x, y);
-        m_pTarget->setPosition(newPos);
+        Vec3 newPos = m_startPosition + Vec3(x, y);
+        m_pTarget->position(newPos);
 
         m_previousPos = newPos;
 #else
-        m_pTarget->setPosition(m_startPosition + Vec2(x, y));
+        m_pTarget->setPosition(m_startPosition + Vec3(x, y));
 #endif // !CC_ENABLE_STACKABLE_ACTIONS
     }
 }
 
 ActionPtr JumpBy::reverse(void)
 {
-    return JumpBy::make(m_fDuration, Vec2(-m_delta.x, -m_delta.y),
+    return JumpBy::make(m_fDuration, Vec3(-m_delta.x, -m_delta.y),
         m_height, m_nJumps);
 }
 
@@ -937,7 +966,7 @@ ActionPtr JumpBy::reverse(void)
 // JumpTo
 //
 
-JumpToPtr JumpTo::make(float duration, const Vec2& position, float height, int jumps)
+JumpToPtr JumpTo::make(float duration, const Vec3& position, float height, int jumps)
 {
     auto pJumpTo = std::make_shared<JumpTo>();
     pJumpTo->initWithDuration(duration, position, height, jumps);
@@ -945,10 +974,10 @@ JumpToPtr JumpTo::make(float duration, const Vec2& position, float height, int j
     return pJumpTo;
 }
 
-void JumpTo::startWithTarget(Node* pTarget)
+void JumpTo::startWithTarget(NodePtr pTarget)
 {
     JumpBy::startWithTarget(pTarget);
-    m_delta = Vec2(m_delta.x - m_startPosition.x, m_delta.y - m_startPosition.y);
+    m_delta = Vec3(m_delta.x - m_startPosition.x, m_delta.y - m_startPosition.y);
 }
 
 // Bezier cubic formula:
@@ -982,39 +1011,39 @@ bool BezierBy::initWithDuration(float t, const BezierConfig& c)
     return false;
 }
 
-void BezierBy::startWithTarget(Node* pTarget)
+void BezierBy::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
-    m_previousPosition = m_startPosition = pTarget->getPosition();
+    m_previousPosition = m_startPosition = pTarget->position();
 }
 
 void BezierBy::update(float time)
 {
     if (m_pTarget) {
         float xa = 0;
-        float xb = m_sConfig.controlVec2_1.x;
-        float xc = m_sConfig.controlVec2_2.x;
+        float xb = m_sConfig.control_1.x;
+        float xc = m_sConfig.control_2.x;
         float xd = m_sConfig.endPosition.x;
 
         float ya = 0;
-        float yb = m_sConfig.controlVec2_1.y;
-        float yc = m_sConfig.controlVec2_2.y;
+        float yb = m_sConfig.control_1.y;
+        float yc = m_sConfig.control_2.y;
         float yd = m_sConfig.endPosition.y;
 
         float x = bezierat(xa, xb, xc, xd, time);
         float y = bezierat(ya, yb, yc, yd, time);
 
 #if _ENABLE_STACKABLE_ACTIONS
-        Vec2 currentPos = m_pTarget->getPosition();
-        Vec2 diff = currentPos - m_previousPosition;
+        Vec3 currentPos = m_pTarget->getPosition();
+        Vec3 diff = currentPos - m_previousPosition;
         m_startPosition = m_startPosition + diff;
 
-        Vec2 newPos = m_startPosition + Vec2(x, y);
+        Vec3 newPos = m_startPosition + Vec3(x, y);
         m_pTarget->setPosition(newPos);
 
         m_previousPosition = newPos;
 #else
-        m_pTarget->setPosition(m_startPosition + Vec2(x, y));
+        m_pTarget->position(m_startPosition + Vec3(x, y, 0));
 #endif // !CC_ENABLE_STACKABLE_ACTIONS
     }
 }
@@ -1024,8 +1053,8 @@ ActionPtr BezierBy::reverse(void)
     BezierConfig r;
 
     r.endPosition = -m_sConfig.endPosition;
-    r.controlVec2_1 = m_sConfig.controlVec2_2 + -m_sConfig.endPosition;
-    r.controlVec2_2 = m_sConfig.controlVec2_1 + -m_sConfig.endPosition;
+    r.control_1 = m_sConfig.control_2 + -m_sConfig.endPosition;
+    r.control_2 = m_sConfig.control_1 + -m_sConfig.endPosition;
 
     BezierByPtr pAction = BezierBy::make(m_fDuration, r);
     return pAction;
@@ -1054,11 +1083,11 @@ bool BezierTo::initWithDuration(float t, const BezierConfig& c)
     return bRet;
 }
 
-void BezierTo::startWithTarget(Node* pTarget)
+void BezierTo::startWithTarget(NodePtr pTarget)
 {
     BezierBy::startWithTarget(pTarget);
-    m_sConfig.controlVec2_1 = m_sToConfig.controlVec2_1 - m_startPosition;
-    m_sConfig.controlVec2_2 = m_sToConfig.controlVec2_2 - m_startPosition;
+    m_sConfig.control_1 = m_sToConfig.control_1 - m_startPosition;
+    m_sConfig.control_2 = m_sToConfig.control_2 - m_startPosition;
     m_sConfig.endPosition = m_sToConfig.endPosition - m_startPosition;
 }
 
@@ -1105,20 +1134,17 @@ bool ScaleTo::initWithDuration(float duration, float sx, float sy)
     return false;
 }
 
-void ScaleTo::startWithTarget(Node* pTarget)
+void ScaleTo::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
-    m_fStartScaleX = pTarget->getScaleX();
-    m_fStartScaleY = pTarget->getScaleY();
+    m_fStartScaleX = pTarget->scale();
     m_fDeltaX = m_fEndScaleX - m_fStartScaleX;
-    m_fDeltaY = m_fEndScaleY - m_fStartScaleY;
 }
 
 void ScaleTo::update(float time)
 {
     if (m_pTarget) {
-        m_pTarget->setScaleX(m_fStartScaleX + m_fDeltaX * time);
-        m_pTarget->setScaleY(m_fStartScaleY + m_fDeltaY * time);
+        m_pTarget->scale(m_fStartScaleX + m_fDeltaX * time);
     }
 }
 
@@ -1142,7 +1168,7 @@ ScaleByPtr ScaleBy::make(float duration, float sx, float sy)
     return pScaleBy;
 }
 
-void ScaleBy::startWithTarget(Node* pTarget)
+void ScaleBy::startWithTarget(NodePtr pTarget)
 {
     ScaleTo::startWithTarget(pTarget);
     m_fDeltaX = m_fStartScaleX * m_fEndScaleX - m_fStartScaleX;
@@ -1178,14 +1204,14 @@ bool Blink::initWithDuration(float duration, unsigned int uBlinks)
 
 void Blink::stop()
 {
-    m_pTarget->setVisible(m_bOriginalState);
+    m_pTarget->visible(m_bOriginalState);
     ActionInterval::stop();
 }
 
-void Blink::startWithTarget(Node* pTarget)
+void Blink::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
-    m_bOriginalState = pTarget->isVisible();
+    m_bOriginalState = pTarget->visible();
 }
 
 void Blink::update(float time)
@@ -1193,7 +1219,7 @@ void Blink::update(float time)
     if (m_pTarget && !isDone()) {
         float slice = 1.0f / m_nTimes;
         float m = fmodf(time, slice);
-        m_pTarget->setVisible(m > slice / 2 ? true : false);
+        m_pTarget->visible(m > slice / 2 ? true : false);
     }
 }
 
@@ -1227,10 +1253,10 @@ FadeInPtr FadeIn::make(float d, float limit)
 
 void FadeIn::update(float time)
 {
-    RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(m_pTarget);
-    if (protocol) {
-        protocol->setOpacity((unsigned char)(255.f * m_limit * time));
-    }
+    //RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(m_pTarget);
+    //if (protocol) {
+    //    protocol->setOpacity((unsigned char)(255.f * m_limit * time));
+    //}
     /*m_pTarget->setOpacity((unsigned char)(255 * time));*/
 }
 
@@ -1263,10 +1289,10 @@ FadeOutPtr FadeOut::make(float d, float limit)
 
 void FadeOut::update(float time)
 {
-    RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(m_pTarget);
-    if (protocol) {
-        protocol->setOpacity((unsigned char)(255.f * m_limit * (1 - time)));
-    }
+    //RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(m_pTarget);
+    //if (protocol) {
+    //    protocol->setOpacity((unsigned char)(255.f * m_limit * (1 - time)));
+    //}
     /*m_pTarget->setOpacity(unsigned char(255 * (1 - time)));*/
 }
 
@@ -1297,23 +1323,23 @@ bool FadeTo::initWithDuration(float duration, unsigned char opacity)
     return false;
 }
 
-void FadeTo::startWithTarget(Node* pTarget)
+void FadeTo::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
 
-    RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(pTarget);
-    if (protocol) {
-        m_fromOpacity = protocol->getOpacity();
-    }
+    //RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(pTarget);
+    //if (protocol) {
+    //    m_fromOpacity = protocol->getOpacity();
+    //}
     /*m_fromOpacity = pTarget->getOpacity();*/
 }
 
 void FadeTo::update(float time)
 {
-    RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(m_pTarget);
-    if (protocol) {
-        protocol->setOpacity((unsigned char)(m_fromOpacity + (m_toOpacity - m_fromOpacity) * time));
-    }
+    //RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(m_pTarget);
+    //if (protocol) {
+    //    protocol->setOpacity((unsigned char)(m_fromOpacity + (m_toOpacity - m_fromOpacity) * time));
+    //}
     /*m_pTarget->setOpacity((unsigned char)(m_fromOpacity + (m_toOpacity - m_fromOpacity) * time));*/
 }
 
@@ -1338,24 +1364,24 @@ bool TintTo::initWithDuration(float duration, unsigned char red, unsigned char g
     return false;
 }
 
-void TintTo::startWithTarget(Node* pTarget)
+void TintTo::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
-    RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(m_pTarget);
-    if (protocol) {
-        m_from = protocol->getColor();
-    }
+    //RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(m_pTarget);
+    //if (protocol) {
+    //    m_from = protocol->getColor();
+    //}
     /*m_from = pTarget->getColor();*/
 }
 
 void TintTo::update(float time)
 {
-    RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(m_pTarget);
-    if (protocol) {
-        protocol->setColor(color::RGB((m_from.r + (m_to.r - m_from.r) * time),
-            (m_from.g + (m_to.g - m_from.g) * time),
-            (m_from.b + (m_to.b - m_from.b) * time)));
-    }
+   // RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(m_pTarget);
+    //if (protocol) {
+    //    protocol->setColor(color::RGB((m_from.r + (m_to.r - m_from.r) * time),
+    //        (m_from.g + (m_to.g - m_from.g) * time),
+    //        (m_from.b + (m_to.b - m_from.b) * time)));
+    //}
 }
 
 //
@@ -1383,10 +1409,11 @@ bool TintBy::initWithDuration(float duration, short deltaRed, short deltaGreen, 
     return false;
 }
 
-void TintBy::startWithTarget(Node* pTarget)
+void TintBy::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
 
+    /*
     RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(pTarget);
     if (protocol) {
         auto color = protocol->getColor();
@@ -1394,16 +1421,19 @@ void TintBy::startWithTarget(Node* pTarget)
         m_fromG = color.g;
         m_fromB = color.b;
     }
+     */
 }
 
 void TintBy::update(float time)
 {
+    /*
     RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(m_pTarget);
     if (protocol) {
         protocol->setColor(color::RGB((m_fromR + m_deltaR * time),
             (m_fromG + m_deltaG * time),
             (m_fromB + m_deltaB * time)));
     }
+     */
 }
 
 ActionPtr TintBy::reverse(void)
@@ -1424,7 +1454,6 @@ DelayTimePtr DelayTime::make(float d)
 
 void DelayTime::update(float time)
 {
-    CC_UNUSED_PARAM(time);
     return;
 }
 
@@ -1448,8 +1477,8 @@ ReverseTimePtr ReverseTime::make(FiniteTimeActionPtr pAction)
 
 bool ReverseTime::initWithAction(FiniteTimeActionPtr pAction)
 {
-    logger::assertion(pAction != NULL, "");
-    logger::assertion(pAction != m_pOther, "");
+    assert(pAction != nullptr);
+    assert(pAction != m_pOther);
 
     if (ActionInterval::initWithDuration(pAction->getDuration())) {
         m_pOther = pAction;
@@ -1460,7 +1489,7 @@ bool ReverseTime::initWithAction(FiniteTimeActionPtr pAction)
     return false;
 }
 
-void ReverseTime::startWithTarget(Node* pTarget)
+void ReverseTime::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
     m_pOther->startWithTarget(pTarget);
@@ -1491,7 +1520,7 @@ TargetedAction::TargetedAction()
 {
 }
 
-TargetedActionPtr TargetedAction::make(Node* pTarget, FiniteTimeActionPtr pAction)
+TargetedActionPtr TargetedAction::make(NodePtr pTarget, FiniteTimeActionPtr pAction)
 {
     auto p = std::make_shared<TargetedAction>();
     p->initWithTarget(pTarget, pAction);
@@ -1499,10 +1528,9 @@ TargetedActionPtr TargetedAction::make(Node* pTarget, FiniteTimeActionPtr pActio
     return p;
 }
 
-bool TargetedAction::initWithTarget(Node* pTarget, FiniteTimeActionPtr pAction)
+bool TargetedAction::initWithTarget(NodePtr pTarget, FiniteTimeActionPtr pAction)
 {
     if (ActionInterval::initWithDuration(pAction->getDuration())) {
-        CC_SAFE_RETAIN(pTarget);
         m_pForcedTarget = pTarget;
         m_pAction = pAction;
         return true;
@@ -1510,7 +1538,7 @@ bool TargetedAction::initWithTarget(Node* pTarget, FiniteTimeActionPtr pAction)
     return false;
 }
 
-void TargetedAction::startWithTarget(Node* pTarget)
+void TargetedAction::startWithTarget(NodePtr pTarget)
 {
     ActionInterval::startWithTarget(pTarget);
     m_pAction->startWithTarget(m_pForcedTarget);
@@ -1524,4 +1552,14 @@ void TargetedAction::stop(void)
 void TargetedAction::update(float time)
 {
     m_pAction->update(time);
+}
+
+NodePtr TargetedAction::getForcedTarget() const
+{
+    return m_pForcedTarget;
+}
+
+void TargetedAction::setForcedTarget(NodePtr node)
+{
+    m_pForcedTarget = node;
 }

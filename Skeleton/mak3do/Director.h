@@ -20,11 +20,21 @@ public:
     
     void setScene(ScenePtr scene);
     
+    ActionRunnerPtr defaultActionRunner() const;
+    
 protected:
     Director();
     
+    void deltaTime();
+    
 private:
     DirectorImplPtr m_pimpl;
+    
+    ActionRunnerPtr m_action_runner;
+    
+    struct _timeval m_last_update;
+    float m_dt { 0 };
+    bool m_next_dt { false };
 };
 }
 
