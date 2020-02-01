@@ -4,6 +4,7 @@
 
 namespace mak3do {
 NodeImpl::NodeImpl(Node* parent)
+: m_abstract(parent)
 {
     SCNBox* box = [[SCNBox alloc] init];
     [box setWidth:1];
@@ -31,11 +32,26 @@ void NodeImpl::addChild(NodePtr node)
     
     [native_node addChildNode:child_native_node];
     m_children.push_back(node);
+    
+    node->m_pimpl->m_parent_node = m_abstract->shared_from_this();
 }
 
 std::vector<NodePtr> NodeImpl::getChildren() const
 {
     return m_children;
+}
+
+NodePtr NodeImpl::parent() const
+{
+    return m_parent_node;
+}
+
+void NodeImpl::removeFromParent()
+{
+    SCNNode* native_node = (__bridge SCNNode*)m_native;
+    [native_node removeFromParentNode];
+    
+    std::remove(m_abstract->m_pimpl->m_children.begin(), m_abstract->m_pimpl->m_children.begin(), m_abstract->shared_from_this());
 }
 
 void NodeImpl::position(const Vec3& position)

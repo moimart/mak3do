@@ -25,6 +25,8 @@ void SceneImpl::addNode(NodePtr node)
     SCNNode* native_node = (__bridge SCNNode*)node->m_pimpl->m_native;
     
     [scene.rootNode addChildNode:native_node];
+    
+    m_nodes.push_back(node);
 }
 
 }

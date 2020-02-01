@@ -21,9 +21,19 @@ void Node::addChild(NodePtr node)
     m_pimpl->addChild(node);
 }
 
+NodePtr Node::parent() const
+{
+    return m_pimpl->parent();
+}
+
 std::vector<NodePtr> Node::getChildren() const
 {
     return m_pimpl->getChildren();
+}
+
+void Node::removeFromParent()
+{
+    m_pimpl->removeFromParent();
 }
 
 void Node::position(const Vec3& position)

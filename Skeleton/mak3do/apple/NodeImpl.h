@@ -11,6 +11,10 @@ public:
     void addChild(NodePtr node);
     std::vector<NodePtr> getChildren() const;
     
+    NodePtr parent() const;
+    
+    void removeFromParent();
+    
     void position(const Vec3& position);
     Vec3 position() const;
     
@@ -33,10 +37,14 @@ public:
     Quaternion rotation() const;
 
 private:
+    Node* m_abstract;
+    
     void* m_native;
     Vec3 m_ypr { 0,0,0 };
     
     std::vector<NodePtr> m_children;
+    
+    NodePtr m_parent_node { nullptr };
     
     friend class SceneImpl;
 };

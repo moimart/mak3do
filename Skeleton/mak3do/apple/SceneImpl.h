@@ -11,6 +11,8 @@ public:
 private:
     void* m_native;
     
+    std::vector<NodePtr> m_nodes;
+    
     friend class DirectorImpl;
 };
 }

@@ -12,6 +12,9 @@ public:
     void addChild(NodePtr node);
     std::vector<NodePtr> getChildren() const;
     
+    void removeFromParent();
+    NodePtr parent() const;
+    
     void position(const Vec3& position);
     Vec3 position() const;
     
@@ -34,6 +37,7 @@ public:
     Quaternion rotation() const;
     
     void runAction(ActionPtr action);
+    
     
 private:
     
