@@ -20,6 +20,8 @@ void DirectorImpl::setScene(ScenePtr scene)
 {
     SCNScene* native_scene = (__bridge SCNScene*) scene->m_pimpl->m_native;
     [[SceneRenderer shared] setScene: native_scene];
+    
+    m_current_scene = scene;
 }
 
 }

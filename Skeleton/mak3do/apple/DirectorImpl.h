@@ -12,6 +12,8 @@ public:
     void setScene(ScenePtr scene);
 private:
     Director* m_parent;
+    
+    ScenePtr m_current_scene;
 };
 
 }
