@@ -19,6 +19,13 @@ SceneImpl::SceneImpl(Scene* parent)
     m_native = (void*)CFBridgingRetain(scene);
 }
 
+SceneImpl::~SceneImpl()
+{
+    SCNScene* scene = (SCNScene*)CFBridgingRelease(m_native);
+    
+    scene = nil;
+}
+
 void SceneImpl::addNode(NodePtr node)
 {
     SCNScene* scene = (__bridge SCNScene*)m_native;
