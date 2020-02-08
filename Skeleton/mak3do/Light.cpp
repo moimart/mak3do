@@ -13,4 +13,21 @@ Light::Light()
     
 }
 
+Light::Light(LightType type)
+: m_light_pimpl(std::make_shared<LightImpl>(this))
+{
+    
 }
+void Light::type(const Light::LightType& type)
+{
+    m_light_pimpl->type(type);
+}
+
+Light::LightType Light::type() const
+{
+    return m_light_pimpl->type();
+}
+
+}
+
+
