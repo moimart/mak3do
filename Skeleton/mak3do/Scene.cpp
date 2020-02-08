@@ -7,6 +7,11 @@
 
 namespace mak3do {
 
+ScenePtr Scene::load(const std::string& filename)
+{
+    return std::make_shared<Scene>();
+}
+
 Scene::Scene()
 {
 #ifdef M3D_PLAT_APPLE
@@ -16,12 +21,12 @@ Scene::Scene()
 
 void Scene::add_node(NodePtr node)
 {
-    m_pimpl->addNode(node);
+    m_pimpl->add_node(node);
 }
 
 void Scene::camera(const std::string& name)
 {
-    m_pimpl->mainCamera(name);
+    m_pimpl->main_camera(name);
 }
 
 }

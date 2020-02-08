@@ -8,8 +8,8 @@ public:
     SceneImpl(Scene* parent);
     ~SceneImpl();
     
-    void addNode(NodePtr node);
-    void mainCamera(const std::string& name);
+    void add_node(NodePtr node);
+    void main_camera(const std::string& name);
 private:
     void* m_native;
     

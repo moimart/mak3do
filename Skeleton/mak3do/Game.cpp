@@ -11,7 +11,7 @@ void Game::start()
     auto light = std::make_shared<Light>(Light::LightType::Omni);
     
     camera->name("main_camera");
-    camera->position(Vec3(0,1.2,4));
+    camera->position(Vec3(0,1.2f,4));
     
     light->position(Vec3(-.2f,2,2));
     
@@ -23,7 +23,7 @@ void Game::start()
     
     scene->camera("main_camera");
     
-    node->run_action(RepeatForever::make(SpinBy::make(2, 360)));
-    camera->run_action(MoveBy::make(120,Vec3(0,0,100)));
+    node->action(RepeatForever::make(SpinBy::make(2, 360)));
+    camera->action(MoveBy::make(120,Vec3(0,0,100)));
 }
 }

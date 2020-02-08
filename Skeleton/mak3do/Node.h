@@ -9,8 +9,8 @@ class Node : public std::enable_shared_from_this<Node> {
 public:
     Node();
         
-    void addChild(NodePtr node);
-    std::vector<NodePtr> getChildren() const;
+    void add_node(NodePtr node);
+    std::vector<NodePtr> nodes() const;
     
     void removeFromParent();
     NodePtr parent() const;
@@ -36,7 +36,7 @@ public:
     void rotation(const Quaternion& rotation);
     Quaternion rotation() const;
     
-    void run_action(ActionPtr action);
+    void action(ActionPtr action);
     
     void name(const std::string& name);
     std::string name() const;

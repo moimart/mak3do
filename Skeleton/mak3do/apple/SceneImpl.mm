@@ -27,7 +27,7 @@ SceneImpl::~SceneImpl()
     scene = nil;
 }
 
-void SceneImpl::addNode(NodePtr node)
+void SceneImpl::add_node(NodePtr node)
 {
     SCNScene* scene = (__bridge SCNScene*)m_native;
     SCNNode* native_node = (__bridge SCNNode*)node->m_pimpl->m_native;
@@ -37,7 +37,7 @@ void SceneImpl::addNode(NodePtr node)
     m_nodes.push_back(node);
 }
 
-void SceneImpl::mainCamera(const std::string& name)
+void SceneImpl::main_camera(const std::string& name)
 {
     SceneRenderer* renderer = [SceneRenderer shared];
     

@@ -16,7 +16,7 @@ Node::Node()
 #endif
 }
 
-void Node::addChild(NodePtr node)
+void Node::add_node(NodePtr node)
 {
     m_pimpl->addChild(node);
 }
@@ -26,7 +26,7 @@ NodePtr Node::parent() const
     return m_pimpl->parent();
 }
 
-std::vector<NodePtr> Node::getChildren() const
+std::vector<NodePtr> Node::nodes() const
 {
     return m_pimpl->getChildren();
 }
@@ -116,7 +116,7 @@ std::string Node::name() const
     return m_pimpl->name();
 }
 
-void Node::run_action(ActionPtr action)
+void Node::action(ActionPtr action)
 {
     Director::get()->defaultActionRunner()->addAction(action,this->shared_from_this());
 }
