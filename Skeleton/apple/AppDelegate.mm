@@ -40,7 +40,7 @@
     
     auto game = std::make_shared<mak3do::Game>();
     
-    game->startGame();
+    game->start();
 
     [[DirectorDisplayLink shared] startMainLoop];
     

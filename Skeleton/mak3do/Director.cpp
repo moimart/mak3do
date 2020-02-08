@@ -76,7 +76,7 @@ ActionRunnerPtr Director::defaultActionRunner() const
     return m_action_runner;
 }
 
-void Director::setScene(ScenePtr scene)
+void Director::scene(ScenePtr scene)
 {
     m_pimpl->setScene(scene);
 }

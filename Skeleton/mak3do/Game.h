@@ -4,6 +4,6 @@
 namespace mak3do {
 class Game {
 public:
-    virtual void startGame();
+    virtual void start();
 };
 }

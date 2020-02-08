@@ -116,7 +116,7 @@ std::string Node::name() const
     return m_pimpl->name();
 }
 
-void Node::runAction(ActionPtr action)
+void Node::run_action(ActionPtr action)
 {
     Director::get()->defaultActionRunner()->addAction(action,this->shared_from_this());
 }

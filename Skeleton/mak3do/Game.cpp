@@ -2,7 +2,7 @@
 #include "all"
 
 namespace mak3do {
-void Game::startGame()
+void Game::start()
 {
     auto director = Director::get();
     auto scene = std::make_shared<Scene>();
@@ -15,14 +15,14 @@ void Game::startGame()
     
     light->position(Vec3(-.2f,2,2));
     
-    scene->addNode(node);
-    scene->addNode(camera);
-    scene->addNode(light);
-    director->setScene(scene);
+    scene->add_node(node);
+    scene->add_node(camera);
+    scene->add_node(light);
+    director->scene(scene);
     
-    scene->mainCamera("main_camera");
+    scene->camera("main_camera");
     
-    node->runAction(RepeatForever::make(RotateBy::make(2, 360)));
-    camera->runAction(MoveBy::make(120,Vec3(0,0,100)));
+    node->run_action(RepeatForever::make(RotateBy::make(2, 360)));
+    camera->run_action(MoveBy::make(120,Vec3(0,0,100)));
 }
 }

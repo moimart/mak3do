@@ -18,7 +18,7 @@ public:
     static Director* get();
     void loop();
     
-    void setScene(ScenePtr scene);
+    void scene(ScenePtr scene);
     
     ActionRunnerPtr defaultActionRunner() const;
     

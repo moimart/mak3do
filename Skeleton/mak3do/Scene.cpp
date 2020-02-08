@@ -14,12 +14,12 @@ Scene::Scene()
 #endif
 }
 
-void Scene::addNode(NodePtr node)
+void Scene::add_node(NodePtr node)
 {
     m_pimpl->addNode(node);
 }
 
-void Scene::mainCamera(const std::string& name)
+void Scene::camera(const std::string& name)
 {
     m_pimpl->mainCamera(name);
 }

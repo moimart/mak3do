@@ -36,7 +36,7 @@ public:
     void rotation(const Quaternion& rotation);
     Quaternion rotation() const;
     
-    void runAction(ActionPtr action);
+    void run_action(ActionPtr action);
     
     void name(const std::string& name);
     std::string name() const;

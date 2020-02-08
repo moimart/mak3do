@@ -8,9 +8,9 @@ class Scene : public Node {
 public:
     Scene();
     
-    void addNode(NodePtr node);
+    void add_node(NodePtr node);
     
-    void mainCamera(const std::string& name);
+    void camera(const std::string& name);
 private:
     SceneImplPtr m_pimpl;
     
