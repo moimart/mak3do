@@ -36,7 +36,7 @@ using namespace mak3do;
 
 Action::Action()
     : m_pOriginalTarget(NULL)
-    , m_pTarget(NULL)
+    , m_target(NULL)
     , m_nTag(kActionTagInvalid)
 {
 }
@@ -57,12 +57,12 @@ std::string Action::description() const
 
 void Action::startWithTarget(NodePtr aTarget)
 {
-    m_pOriginalTarget = m_pTarget = aTarget;
+    m_pOriginalTarget = m_target = aTarget;
 }
 
 void Action::stop()
 {
-    m_pTarget = NULL;
+    m_target = NULL;
 }
 
 bool Action::isDone()

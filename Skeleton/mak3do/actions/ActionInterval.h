@@ -865,4 +865,29 @@ private:
     FiniteTimeActionPtr m_pAction;
 };
 
+class SpinBy;
+typedef std::shared_ptr<SpinBy> SpinByPtr;
+
+class SpinBy : public ActionInterval {
+public:
+    
+    static SpinByPtr make(float fDuration, float fDeltaAngle);
+    static SpinByPtr make(float fDuration, const Vec3& deltaAngle);
+    
+    bool initWithDuration(float fDuration, const Vec3& deltaAngle);
+
+    virtual void startWithTarget(NodePtr target);
+    virtual void update(float time);
+    virtual ActionPtr reverse(void);
+
+protected:
+    float m_fAngleX;
+    float m_fStartAngleX;
+    float m_fAngleY;
+    float m_fStartAngleY;
+    float m_fAngleZ;
+    float m_fStartAngleZ;
+};
+
+
 }

@@ -93,7 +93,7 @@ float NodeImpl::scale() const
     return 1;
 }
 
-inline void setYPR(SCNNode* node, const Vec3& ypr)
+inline void set_ypr(SCNNode* node, const Vec3& ypr)
 {
     Quaternion quat;
     quat.setYawPitchRoll(ypr);
@@ -104,7 +104,7 @@ inline void setYPR(SCNNode* node, const Vec3& ypr)
 void NodeImpl::yaw(float yaw)
 {
     m_ypr.x = yaw;
-    setYPR((__bridge SCNNode*)m_native, m_ypr);
+    set_ypr((__bridge SCNNode*)m_native, m_ypr);
 }
 
 float NodeImpl::yaw() const
@@ -117,7 +117,7 @@ float NodeImpl::yaw() const
 void NodeImpl::pitch(float pitch)
 {
     m_ypr.y = pitch;
-    setYPR((__bridge SCNNode*)m_native, m_ypr);
+    set_ypr((__bridge SCNNode*)m_native, m_ypr);
 }
 
 float NodeImpl::pitch() const
@@ -130,7 +130,7 @@ float NodeImpl::pitch() const
 void NodeImpl::roll(float roll)
 {
     m_ypr.z = roll;
-    setYPR((__bridge SCNNode*)m_native, m_ypr);
+    set_ypr((__bridge SCNNode*)m_native, m_ypr);
 }
 
 float NodeImpl::roll() const
@@ -143,7 +143,7 @@ float NodeImpl::roll() const
 void NodeImpl::rotation(const Quaternion& rot)
 {
     SCNNode* node = (__bridge SCNNode*)m_native;
-    [node setRotation:SCNVector4Make(rot.x, rot.y, rot.z, rot.w)];
+    [node setOrientation:SCNVector4Make(rot.x, rot.y, rot.z, rot.w)];
 }
 
 Quaternion NodeImpl::rotation() const

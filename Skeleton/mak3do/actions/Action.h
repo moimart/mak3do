@@ -71,9 +71,9 @@ public:
         */
     virtual void update(float time);
 
-    inline NodePtr getTarget(void) { return m_pTarget; }
+    inline NodePtr getTarget(void) { return m_target; }
     /** The action will modify the target properties. */
-    inline void setTarget(NodePtr pTarget) { m_pTarget = pTarget; }
+    inline void setTarget(NodePtr pTarget) { m_target = pTarget; }
 
     inline NodePtr getOriginalTarget(void) { return m_pOriginalTarget; }
     /** Set the original target, since target can be nil.
@@ -97,7 +97,7 @@ protected:
         When the 'stop' method is called, target will be set to nil.
         The target is 'assigned', it is not 'retained'.
         */
-    NodePtr m_pTarget;
+    NodePtr m_target;
     /** The action tag. An identifier of the action */
     int m_nTag;
 };

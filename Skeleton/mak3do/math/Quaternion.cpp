@@ -209,10 +209,10 @@ void Quaternion::set(float xx, float yy, float zz, float ww)
 
 void Quaternion::setYawPitchRoll(const Vec3& ypr)
 {
-    setYawPitchRoll(ypr.x, ypr.y, ypr.z);
+    yaw_pitch_roll(ypr.x, ypr.y, ypr.z);
 }
 
-void Quaternion::setYawPitchRoll(float yaw, float pitch, float roll)
+void Quaternion::yaw_pitch_roll(float yaw, float pitch, float roll)
 {
     float ex, ey, ez; // temp half euler angles
     float cr, cp, cy, sr, sp, sy, cpcy, spsy; // temp vars in roll,pitch yaw

@@ -263,7 +263,7 @@ public:
      *
      *
      */
-    void setYawPitchRoll(float yaw, float pitch, float roll);
+    void yaw_pitch_roll(float yaw, float pitch, float roll);
     void setYawPitchRoll(const Vec3& ypr);
 
     /**
