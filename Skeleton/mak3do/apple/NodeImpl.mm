@@ -12,7 +12,7 @@ NodeImpl::NodeImpl(Node* parent)
     [box setLength:1];
     [box setChamferRadius: 0];
     box.materials.firstObject.diffuse.contents = [UIColor redColor];
-    SCNNode* node = [[SCNNode alloc] init];
+    SCNNode* node = [SCNNode node];
     [node setGeometry:box];
     [node setPosition:SCNVector3Make(0, 0, 0)];
     

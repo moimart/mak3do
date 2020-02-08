@@ -28,6 +28,16 @@ Light::LightType Light::type() const
     return m_light_pimpl->type();
 }
 
+void Light::color(const color::RGB& color)
+{
+    m_light_pimpl->color(color);
+}
+
+color::RGB Light::color() const
+{
+    return m_light_pimpl->color();
+}
+
 }
 
 

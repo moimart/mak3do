@@ -71,6 +71,7 @@
 /* Begin PBXFileReference section */
 		0D1777FC23E596250044FF04 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		0D1777FD23E596260044FF04 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		0D299D6D23EF13D50011FA11 /* all */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = all; sourceTree = "<group>"; };
 		0D5CBD4223EEC3F200C6D42C /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		0D5CBD4323EEC3F300C6D42C /* Light.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
 		0D5CBD4423EEC3F300C6D42C /* Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Light.h; sourceTree = "<group>"; };
@@ -282,6 +283,7 @@
 				0D5CBD4523EEC3F300C6D42C /* Camera.h */,
 				0D5CBD4323EEC3F300C6D42C /* Light.cpp */,
 				0D5CBD4423EEC3F300C6D42C /* Light.h */,
+				0D299D6D23EF13D50011FA11 /* all */,
 			);
 			path = mak3do;
 			sourceTree = "<group>";

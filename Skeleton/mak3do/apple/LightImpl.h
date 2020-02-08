@@ -2,6 +2,7 @@
 
 #include "../types.h"
 #include "../Light.h"
+#include "../Color.h"
 
 namespace mak3do {
 class LightImpl {
@@ -12,6 +13,9 @@ public:
     
     void type(const Light::LightType& type);
     Light::LightType type() const;
+    
+    void color(const color::RGB& color);
+    color::RGB color() const;
 private:
     Light* m_abstract;
     void* m_native;

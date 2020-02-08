@@ -77,4 +77,20 @@ Light::LightType LightImpl::type() const
     return Light::LightType::Omni;
 }
 
+void LightImpl::color(const color::RGB& color)
+{
+    UIColor* __color = [UIColor colorWithRed:color.r green:color.g blue:color.b alpha:1.0];
+    SCNLight* light = (__bridge SCNLight*)m_native;
+    
+    [light setColor:__color];
+}
+
+color::RGB LightImpl::color() const
+{
+    SCNLight* light = (__bridge SCNLight*)m_native;
+    id __color = light.color;
+    
+    return color::RGB([__color red],[__color green], [__color blue]);
+}
+
 }
