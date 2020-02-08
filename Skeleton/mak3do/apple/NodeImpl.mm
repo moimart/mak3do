@@ -98,7 +98,7 @@ inline void set_ypr(SCNNode* node, const Vec3& ypr)
     Quaternion quat;
     quat.setYawPitchRoll(ypr);
     
-    [node setRotation:SCNVector4Make(quat.x, quat.y, quat.z, quat.z)];
+    [node setOrientation:SCNVector4Make(quat.x, quat.y, quat.z, quat.z)];
 }
 
 void NodeImpl::yaw(float yaw)
