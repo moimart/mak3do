@@ -16,6 +16,9 @@ public:
     
     void color(const color::RGB& color);
     color::RGB color() const;
+    
+    void shadows(bool onoff);
+    bool shadows() const;
 private:
     Light* m_abstract;
     void* m_native;

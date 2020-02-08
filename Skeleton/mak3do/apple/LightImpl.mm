@@ -26,6 +26,7 @@ LightImpl::LightImpl(const Light::LightType& type, Light* parent)
     
     SCNLight* light = [SCNLight light];
     m_native = (void*)CFBridgingRetain(light);
+    
     this->type(type);
     
     node.light = light;
@@ -91,6 +92,18 @@ color::RGB LightImpl::color() const
     id __color = light.color;
     
     return color::RGB([__color red],[__color green], [__color blue]);
+}
+
+void LightImpl::shadows(bool onoff)
+{
+    SCNLight* light = (__bridge SCNLight*)m_native;
+    [light setCastsShadow:onoff];
+}
+
+bool LightImpl::shadows() const
+{
+    SCNLight* light = (__bridge SCNLight*)m_native;
+    return light.castsShadow;
 }
 
 }

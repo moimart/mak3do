@@ -38,6 +38,16 @@ color::RGB Light::color() const
     return m_light_pimpl->color();
 }
 
+void Light::shadows(bool onoff)
+{
+    m_light_pimpl->shadows(onoff);
+}
+
+bool Light::shadows() const
+{
+    return m_light_pimpl->shadows();
+}
+
 }
 
 

@@ -25,6 +25,9 @@ public:
     
     void color(const color::RGB& color);
     color::RGB color() const;
+    
+    void shadows(bool onoff);
+    bool shadows() const;
 protected:
     LightImplPtr m_light_pimpl;
     
