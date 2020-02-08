@@ -9,6 +9,8 @@ public:
     Scene();
     
     void addNode(NodePtr node);
+    
+    void mainCamera(const std::string& name);
 private:
     SceneImplPtr m_pimpl;
     

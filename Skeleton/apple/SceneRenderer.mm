@@ -12,6 +12,9 @@ static SceneRenderer* _renderer = nil;
     id<MTLRenderPipelineState> _pipelineState;
     
     vector_uint2 _viewportSize;
+    
+    NSString* _cameraName;
+    SCNNode* _mainCamera;
 };
 
 - (SCNScene*) setupScene {
@@ -77,6 +80,8 @@ static SceneRenderer* _renderer = nil;
     _viewportSize.x = _view.drawableSize.width;
     _viewportSize.y = _view.drawableSize.height;
     
+    _mainCamera = nil;
+    
     //_scene = [self setupScene];
     
     return self;
@@ -112,16 +117,33 @@ static SceneRenderer* _renderer = nil;
 
     MTLRenderPassDescriptor *renderPassDescriptor = _view.currentRenderPassDescriptor;
     
+    if (_mainCamera == nil) {
+        _mainCamera = _scene.rootNode.childNodes[0];
+    }
+    
     if (_scene != nil) {
         [_scnRenderer setScene: _scene];
-        [_scnRenderer setPointOfView:_scene.rootNode.childNodes[0]];
+        [_scnRenderer setPointOfView:_mainCamera];
         auto frame = CGRectMake(0, 0, _viewportSize.x, _viewportSize.y);
         [_scnRenderer renderWithViewport:frame commandBuffer:commandBuffer passDescriptor:renderPassDescriptor];
     }
     
     [commandBuffer presentDrawable:_view.currentDrawable];
-    
     [commandBuffer commit];
+}
+
+- (void) setCameraName:(NSString *)cameraName {
+    
+    if (_scene != nil) {
+        for (SCNNode* node in _scene.rootNode.childNodes) {
+            if (node.name != nil && [node.name isEqualToString:cameraName]) {
+                _mainCamera = node;
+                return;
+            }
+        }
+        
+        _mainCamera = _scene.rootNode.childNodes[0];
+    }
 }
 
 @end

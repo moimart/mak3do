@@ -2,6 +2,7 @@
 #include "../Node.h"
 #include "NodeImpl.h"
 #import <SceneKit/SceneKit.h>
+#import "../../apple/SceneRenderer.h"
 
 namespace mak3do {
 SceneImpl::SceneImpl(Scene* parent)
@@ -34,6 +35,13 @@ void SceneImpl::addNode(NodePtr node)
     [scene.rootNode addChildNode:native_node];
     
     m_nodes.push_back(node);
+}
+
+void SceneImpl::mainCamera(const std::string& name)
+{
+    SceneRenderer* renderer = [SceneRenderer shared];
+    
+    [renderer setCameraName:[NSString stringWithUTF8String:name.c_str()]];
 }
 
 }

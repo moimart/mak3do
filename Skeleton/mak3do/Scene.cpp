@@ -19,5 +19,10 @@ void Scene::addNode(NodePtr node)
     m_pimpl->addNode(node);
 }
 
+void Scene::mainCamera(const std::string& name)
+{
+    m_pimpl->mainCamera(name);
+}
+
 }
 

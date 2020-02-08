@@ -154,4 +154,22 @@ Quaternion NodeImpl::rotation() const
     return Quaternion(quat.x,quat.y,quat.z,quat.w);
 }
 
+void NodeImpl::name(const std::string& name)
+{
+    SCNNode* node = (__bridge SCNNode*)m_native;
+    
+    [node setName:[NSString stringWithUTF8String:name.c_str()]];
+}
+
+std::string NodeImpl::name() const
+{
+    SCNNode* node = (__bridge SCNNode*)m_native;
+    
+    if (node.name == nil) {
+        return "";
+    }
+    
+    return std::string([node.name UTF8String]);
+}
+
 }

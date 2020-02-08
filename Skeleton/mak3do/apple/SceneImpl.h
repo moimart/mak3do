@@ -9,6 +9,7 @@ public:
     ~SceneImpl();
     
     void addNode(NodePtr node);
+    void mainCamera(const std::string& name);
 private:
     void* m_native;
     

@@ -106,6 +106,16 @@ Quaternion Node::rotation() const
     return m_pimpl->rotation();
 }
 
+void Node::name(const std::string& name)
+{
+    m_pimpl->name(name);
+}
+
+std::string Node::name() const
+{
+    return m_pimpl->name();
+}
+
 void Node::runAction(ActionPtr action)
 {
     Director::get()->defaultActionRunner()->addAction(action,this->shared_from_this());

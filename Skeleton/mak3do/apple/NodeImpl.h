@@ -35,6 +35,9 @@ public:
     
     void rotation(const Quaternion& rotation);
     Quaternion rotation() const;
+    
+    void name(const std::string& name);
+    std::string name() const;
 
 private:
     Node* m_abstract;
@@ -47,5 +50,7 @@ private:
     NodePtr m_parent_node { nullptr };
     
     friend class SceneImpl;
+    friend class LightImpl;
+    friend class CameraImpl;
 };
 }

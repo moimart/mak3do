@@ -33,19 +33,27 @@ struct _timeval {
 class Director;
 class Scene;
 class Node;
+class Light;
+class Camera;
 class Action;
 class ActionRunner;
 
 class DirectorImpl;
 class SceneImpl;
 class NodeImpl;
+class LightImpl;
+class CameraImpl;
 
 typedef std::shared_ptr<Scene> ScenePtr;
 typedef std::shared_ptr<Node> NodePtr;
+typedef std::shared_ptr<Camera> CameraPtr;
+typedef std::shared_ptr<Light> LightPtr;
 typedef std::shared_ptr<Action> ActionPtr;
 typedef std::shared_ptr<ActionRunner> ActionRunnerPtr;
 
 typedef std::shared_ptr<DirectorImpl> DirectorImplPtr;
 typedef std::shared_ptr<SceneImpl> SceneImplPtr;
 typedef std::shared_ptr<NodeImpl> NodeImplPtr;
+typedef std::shared_ptr<LightImpl> LightImplPtr;
+typedef std::shared_ptr<CameraImpl> CameraImplPtr;
 }

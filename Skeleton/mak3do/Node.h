@@ -38,8 +38,11 @@ public:
     
     void runAction(ActionPtr action);
     
+    void name(const std::string& name);
+    std::string name() const;
     
-private:
+    
+protected:
     
     NodeImplPtr m_pimpl;
     
