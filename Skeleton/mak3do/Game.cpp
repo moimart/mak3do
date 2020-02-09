@@ -46,7 +46,9 @@ void Game::start()
     camera->position(Vec3(0,1.2f,4));
     
     for (auto& node : scene->nodes()) {
-        if (node)
+        if (node) {
+            
+        }
     }
     
     scene->camera("camera2");
