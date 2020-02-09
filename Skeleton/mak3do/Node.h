@@ -8,9 +8,10 @@ namespace mak3do {
 class Node : public std::enable_shared_from_this<Node> {
 public:
     Node();
+    virtual ~Node() = default;
         
     void add_node(NodePtr node);
-    std::vector<NodePtr> nodes() const;
+    virtual std::vector<NodePtr> nodes() const;
     
     void removeFromParent();
     NodePtr parent() const;

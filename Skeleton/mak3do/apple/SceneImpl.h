@@ -11,6 +11,8 @@ public:
     void add_node(NodePtr node);
     void main_camera(const std::string& name);
     
+    std::vector<NodePtr> nodes() const;
+    
     static ScenePtr load(const std::string& filename);
     static void add_children(void* children, NodePtr parent);
 private:

@@ -18,7 +18,6 @@ CameraImpl::CameraImpl(Camera* parent)
 
 CameraImpl::~CameraImpl()
 {
-    std::string s = "";
 }
 
 }

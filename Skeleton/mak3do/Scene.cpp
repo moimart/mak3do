@@ -14,14 +14,17 @@ ScenePtr Scene::load(const std::string& filename)
 
 Scene::Scene()
 {
-#ifdef M3D_PLAT_APPLE
     m_pimpl = std::make_shared<SceneImpl>(this);
-#endif
 }
 
 void Scene::add_node(NodePtr node)
 {
     m_pimpl->add_node(node);
+}
+
+std::vector<NodePtr> Scene::nodes() const
+{
+    return m_pimpl->nodes();
 }
 
 void Scene::camera(const std::string& name)

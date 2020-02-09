@@ -47,7 +47,7 @@ void SceneImpl::add_children(void* children, NodePtr parent)
 
 ScenePtr SceneImpl::load(const std::string& filename)
 {
-    SCNScene* __scene = [SCNScene sceneNamed:@"test_scene.scn"];
+    SCNScene* __scene = [SCNScene sceneNamed:[NSString stringWithUTF8String:filename.c_str()]];
     
     if (__scene == nil) {
         return nullptr;
@@ -104,7 +104,7 @@ ScenePtr SceneImpl::load(const std::string& filename)
 
 SceneImpl::SceneImpl(Scene* parent)
 {
-    SCNScene* scene = [[SCNScene alloc] init];
+    SCNScene* scene = [SCNScene scene];
     
     SCNNode* cameraNode = [SCNNode node];
     SCNCamera* camera = [SCNCamera camera];
@@ -139,6 +139,11 @@ void SceneImpl::main_camera(const std::string& name)
     SceneRenderer* renderer = [SceneRenderer shared];
     
     [renderer setCameraName:[NSString stringWithUTF8String:name.c_str()]];
+}
+
+std::vector<NodePtr> SceneImpl::nodes() const
+{
+    return m_nodes;
 }
 
 }

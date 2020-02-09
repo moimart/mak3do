@@ -2,9 +2,9 @@
 #include "all"
 
 namespace mak3do {
-void Game::start()
+
+void test1()
 {
-    /*
     auto director = Director::get();
     auto scene = std::make_shared<Scene>();
     auto node = std::make_shared<Node>();
@@ -35,22 +35,53 @@ void Game::start()
     node->action(RepeatForever::make(SpinBy::make(2, 360)));
     node2->action(RepeatForever::make(SpinBy::make(16, Vec3(0, 0, 360))));
     camera->action(MoveBy::make(120,Vec3(0,0,100)));
-     */
+}
+
+void test2()
+{
     auto director = Director::get();
-    auto scene = Scene::load("chair.scn");
+    auto scene = Scene::load("test_scene.scn");
     auto camera = std::make_shared<Camera>();
-    
+
+    if (scene == nullptr) {
+        test1();
+        return;
+    }
+
     director->scene(scene);
-    
+
     camera->name("main_camera");
     camera->position(Vec3(0,1.2f,4));
-    
-    for (auto& node : scene->nodes()) {
-        if (node) {
-            
-        }
+
+    for (auto node : scene->nodes()) {
+       auto light = std::dynamic_pointer_cast<Light>(node);
+       if (light != nullptr) {
+           light->shadows(true);
+       }
+       
+       if (node->name() == "torus") {
+           node->action
+           (
+               RepeatForever::make
+               (
+                   Sequence::make
+                   ({
+                       MoveBy::make(3,Vec3(0,5,0)),
+                       MoveBy::make(3,Vec3(0,-5,0))
+                   })
+                )
+            );
+       } else if (node->name() == "camera2") {
+           node->action(MoveBy::make(120,Vec3(0,0,100)));
+       }
     }
-    
+
+    //scene->add_node(camera);
     scene->camera("camera2");
+}
+
+void Game::start()
+{
+    test2();
 }
 }

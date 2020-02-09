@@ -72,13 +72,14 @@ Vec3 NodeImpl::position() const
 void NodeImpl::visible(bool visible)
 {
     SCNNode* node = (__bridge SCNNode*)m_native;
+    [node setHidden:!visible];
 }
 
 bool NodeImpl::visible() const
 {
     SCNNode* node = (__bridge SCNNode*)m_native;
     
-    return true;
+    return !node.isHidden;
 }
 
 void NodeImpl::scale(float scale)
