@@ -11,9 +11,7 @@ namespace mak3do {
 
 Node::Node()
 {
-#ifdef M3D_PLAT_APPLE
     m_pimpl = std::make_shared<NodeImpl>(this);
-#endif
 }
 
 void Node::add_node(NodePtr node)
@@ -118,7 +116,12 @@ std::string Node::name() const
 
 void Node::action(ActionPtr action)
 {
-    Director::get()->defaultActionRunner()->addAction(action,this->shared_from_this());
+    Director::get()->defaultActionRunner()->add_action(action,this->shared_from_this());
+}
+
+void Node::stop_all_actions()
+{
+    Director::get()->defaultActionRunner()->remove_target(this->shared_from_this());
 }
 
 }

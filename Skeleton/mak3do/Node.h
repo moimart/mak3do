@@ -39,6 +39,8 @@ public:
     
     void action(ActionPtr action);
     
+    void stop_all_actions();
+    
     void name(const std::string& name);
     std::string name() const;
     

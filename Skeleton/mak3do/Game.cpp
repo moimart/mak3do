@@ -72,7 +72,9 @@ void test2()
                 )
             );
        } else if (node->name() == "camera2") {
-           node->action(MoveBy::make(120,Vec3(0,0,100)));
+           node->action(MoveBy::make(240,Vec3(0,0,100)));
+       } else if (node->name() == "box") {
+           node->action(RepeatForever::make(SpinBy::make(2,720)));
        }
     }
 

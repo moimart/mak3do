@@ -63,18 +63,18 @@ public:
     inline float getElapsed(void) { return m_elapsed; }
 
     /** initializes the action */
-    bool initWithDuration(float d);
+    bool init(float d);
 
     /** returns true if the action has finished */
-    virtual bool isDone(void);
+    virtual bool done(void) override;
     /**
          *  @js NA
          *  @lua NA
          */
-    virtual void step(float dt);
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void step(float dt) override;
+    virtual void start(NodePtr pTarget) override;
     /** returns a reversed action */
-    virtual ActionPtr reverse(void);
+    virtual ActionPtr reverse(void) override;
 
 public:
     /*Ptr makes the action */
@@ -82,8 +82,8 @@ public:
 
 public:
     //extension in GridAction
-    void setAmplitudeRate(float amp);
-    float getAmplitudeRate(void);
+    void amplitude_rate(float amp);
+    float amplitude_rate() const;
 
 protected:
     float m_elapsed;
@@ -104,26 +104,26 @@ public:
     {
     }
 
-    inline float getSpeed(void) { return m_fSpeed; }
+    inline float speed(void) const { return m_fSpeed; }
     /** alter the speed of the inner function in runtime */
-    inline void setSpeed(float fSpeed) { m_fSpeed = fSpeed; }
+    inline void speed(float fSpeed) { m_fSpeed = fSpeed; }
 
     /** initializes the action */
-    bool initWithAction(ActionIntervalPtr pAction, float fSpeed);
+    bool init(ActionIntervalPtr pAction, float fSpeed);
     /**
          *  @js NA
          *  @lua NA
          */
 
-    virtual void startWithTarget(NodePtr pTarget);
-    virtual void stop();
-    virtual void step(float dt);
-    virtual bool isDone(void);
+    virtual void start(NodePtr pTarget) override;
+    virtual void stop() override;
+    virtual void step(float dt) override;
+    virtual bool done(void) override;
     virtual ActionPtr reverse(void);
 
-    void setInnerAction(ActionIntervalPtr pAction);
+    void inner_action(ActionIntervalPtr pAction);
 
-    inline ActionIntervalPtr getInnerAction()
+    inline ActionIntervalPtr inner_action() const
     {
         return m_pInnerAction;
     }
@@ -147,12 +147,12 @@ public:
     /** initializes the action 
          * @lua NA
          */
-    bool initWithTwoActions(FiniteTimeActionPtr pActionOne, FiniteTimeActionPtr pActionTwo);
+    bool init(FiniteTimeActionPtr pActionOne, FiniteTimeActionPtr pActionTwo);
 
     /**
          * @lua NA
          */
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     /**
          * @lua NA
          */
@@ -175,7 +175,7 @@ public:
     /*Ptr makes the action
          * @js NA
          */
-    static SequencePtr makeWithTwoActions(FiniteTimeActionPtr pActionOne, FiniteTimeActionPtr pActionTwo);
+    static SequencePtr make(FiniteTimeActionPtr pActionOne, FiniteTimeActionPtr pActionTwo);
 
 protected:
     FiniteTimeActionPtr m_pActions[2];
@@ -192,25 +192,25 @@ typedef std::shared_ptr<Repeat> RepeatPtr;
 class Repeat : public ActionInterval {
 public:
     /** initializes a Repeat action. Times is an unsigned integer between 1 and pow(2,30) */
-    bool initWithAction(FiniteTimeActionPtr pAction, unsigned int times);
+    bool init(FiniteTimeActionPtr pAction, unsigned int times);
     /**
          *  @js NA
          *  @lua NA
          */
-    virtual void startWithTarget(NodePtr pTarget);
-    virtual void stop(void);
-    virtual void update(float dt);
-    virtual bool isDone(void);
-    virtual ActionPtr reverse(void);
+    virtual void start(NodePtr pTarget) override;
+    virtual void stop(void) override;
+    virtual void update(float dt) override;
+    virtual bool done(void) override;
+    virtual ActionPtr reverse(void) override;
 
-    inline void setInnerAction(FiniteTimeActionPtr pAction)
+    inline void inner_action(FiniteTimeActionPtr pAction)
     {
         if (m_pInnerAction != pAction) {
             m_pInnerAction = pAction;
         }
     }
 
-    inline FiniteTimeActionPtr getInnerAction()
+    inline FiniteTimeActionPtr inner_action() const
     {
         return m_pInnerAction;
     }
@@ -245,24 +245,24 @@ public:
     }
 
     /** initializes the action */
-    bool initWithAction(ActionIntervalPtr pAction);
+    bool init(ActionIntervalPtr pAction);
     /**
          *  @js NA
          *  @lua NA
          */
-    virtual void startWithTarget(NodePtr pTarget);
-    virtual void step(float dt);
-    virtual bool isDone(void);
-    virtual ActionPtr reverse(void);
+    virtual void start(NodePtr pTarget) override;
+    virtual void step(float dt) override;
+    virtual bool done(void) override;
+    virtual ActionPtr reverse(void) override;
 
-    inline void setInnerAction(ActionIntervalPtr pAction)
+    inline void inner_action(ActionIntervalPtr pAction)
     {
         if (m_pInnerAction != pAction) {
             m_pInnerAction = pAction;
         }
     }
 
-    inline ActionIntervalPtr getInnerAction()
+    inline ActionIntervalPtr inner_action() const
     {
         return m_pInnerAction;
     }
@@ -286,12 +286,12 @@ public:
     /** initializes the Spawn action with the 2 actions to spawn 
          * @lua NA
          */
-    bool initWithTwoActions(FiniteTimeActionPtr pAction1, FiniteTimeActionPtr pAction2);
+    bool init(FiniteTimeActionPtr pAction1, FiniteTimeActionPtr pAction2);
 
     /**
          * @lua NA
          */
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     /**
          * @lua NA
          */
@@ -308,7 +308,7 @@ public:
     /*Ptr makes the Spawn action 
          * @js NA
          */
-    static SpawnPtr makeWithTwoActions(FiniteTimeActionPtr pAction1, FiniteTimeActionPtr pAction2);
+    static SpawnPtr make(FiniteTimeActionPtr pAction1, FiniteTimeActionPtr pAction2);
 
 protected:
     FiniteTimeActionPtr m_pOne;
@@ -331,12 +331,12 @@ public:
 
     /*Ptr makes the action with separate rotation angles */
     static RotateToPtr make(float fDuration, float fDeltaAngleX, float fDeltaAngleY);
-    virtual bool initWithDuration(float fDuration, float fDeltaAngleX, float fDeltaAngleY);
+    virtual bool init(float fDuration, float fDeltaAngleX, float fDeltaAngleY);
     /**
          *  @js NA
          *  @lua NA
          */
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual void update(float time);
 
 protected:
@@ -362,12 +362,12 @@ public:
     bool initWithDuration(float fDuration, float fDeltaAngle);
 
     static RotateByPtr make(float fDuration, float fDeltaAngleX, float fDeltaAngleY);
-    bool initWithDuration(float fDuration, float fDeltaAngleX, float fDeltaAngleY);
+    bool init(float fDuration, float fDeltaAngleX, float fDeltaAngleY);
     /**
          *  @js NA
          *  @lua NA
          */
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual void update(float time);
     virtual ActionPtr reverse(void);
 
@@ -390,12 +390,12 @@ typedef std::shared_ptr<MoveBy> MoveByPtr;
 class MoveBy : public ActionInterval {
 public:
     /** initializes the action */
-    bool initWithDuration(float duration, const Vec3& deltaPosition);
+    bool init(float duration, const Vec3& deltaPosition);
     /**
          *  @js NA
          *  @lua NA
          */
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual ActionPtr reverse(void);
     virtual void update(float time);
 
@@ -420,13 +420,13 @@ typedef std::shared_ptr<MoveTo> MoveToPtr;
 class MoveTo : public MoveBy {
 public:
     /** initializes the action */
-    bool initWithDuration(float duration, const Vec3& position);
+    bool init(float duration, const Vec3& position);
     /**
          *  @js NA
          *  @lua NA
          */
 
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
 
 public:
     /*Ptr makes the action */
@@ -448,12 +448,12 @@ public:
          *  @js ctor
          */
     SkewTo();
-    virtual bool initWithDuration(float t, float sx, float sy);
+    virtual bool init(float t, float sx, float sy);
     /**
          *  @js NA
          *  @lua NA
          */
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual void update(float time);
 
 public:
@@ -478,8 +478,8 @@ typedef std::shared_ptr<SkewBy> SkewByPtr;
     */
 class SkewBy : public SkewTo {
 public:
-    virtual bool initWithDuration(float t, float sx, float sy);
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual bool init(float t, float sx, float sy);
+    virtual void start(NodePtr pTarget);
     virtual ActionPtr reverse(void);
 
 public:
@@ -494,12 +494,12 @@ typedef std::shared_ptr<JumpBy> JumpByPtr;
 class JumpBy : public ActionInterval {
 public:
     /** initializes the action */
-    bool initWithDuration(float duration, const Vec3& position, float height, unsigned int jumps);
+    bool init(float duration, const Vec3& position, float height, unsigned int jumps);
     /**
          *  @js NA
          *  @lua NA
          */
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual void update(float time);
     virtual ActionPtr reverse(void);
 
@@ -521,7 +521,7 @@ typedef std::shared_ptr<JumpTo> JumpToPtr;
     */
 class JumpTo : public JumpBy {
 public:
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
 
 public:
     /*Ptr makes the action */
@@ -546,12 +546,12 @@ public:
     /** initializes the action with a duration and a bezier configuration 
          *  @lua NA
          */
-    bool initWithDuration(float t, const BezierConfig& c);
+    bool init(float t, const BezierConfig& c);
 
     /**
          *  @lua NA
          */
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     /**
          *  @lua NA
          */
@@ -583,7 +583,7 @@ public:
     /**
          *  @lua NA
          */
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
 
 public:
     /*Ptr makes the action with a duration and a bezier configuration
@@ -596,7 +596,7 @@ public:
     /**
          *  @lua NA
          */
-    bool initWithDuration(float t, const BezierConfig& c);
+    bool init(float t, const BezierConfig& c);
 
 protected:
     BezierConfig m_sToConfig;
@@ -610,15 +610,15 @@ typedef std::shared_ptr<ScaleTo> ScaleToPtr;
 class ScaleTo : public ActionInterval {
 public:
     /** initializes the action with the same scale factor for X and Y */
-    bool initWithDuration(float duration, float s);
+    bool init(float duration, float s);
 
     /** initializes the action with and X factor and a Y factor */
-    bool initWithDuration(float duration, float sx, float sy);
+    bool init(float duration, float sx, float sy);
     /**
          *  @js NA
          *  @lua NA
          */
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual void update(float time);
 
 public:
@@ -645,7 +645,7 @@ typedef std::shared_ptr<ScaleBy> ScaleByPtr;
     */
 class ScaleBy : public ScaleTo {
 public:
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual ActionPtr reverse(void);
 
 public:
@@ -663,7 +663,7 @@ typedef std::shared_ptr<Blink> BlinkPtr;
 class Blink : public ActionInterval {
 public:
     /** initializes the action */
-    bool initWithDuration(float duration, unsigned int uBlinks);
+    bool init(float duration, unsigned int uBlinks);
     /**
          *  @js NA
          *  @lua NA
@@ -676,7 +676,7 @@ public:
     /*Ptr makes the action */
     static BlinkPtr make(float duration, unsigned int uBlinks);
 
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual void stop();
 
 protected:
@@ -728,9 +728,9 @@ typedef std::shared_ptr<FadeTo> FadeToPtr;
 class FadeTo : public ActionInterval {
 public:
     /** initializes the action with duration and opacity */
-    bool initWithDuration(float duration, unsigned char opacity);
+    bool init(float duration, unsigned char opacity);
 
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual void update(float time);
 
 public:
@@ -751,9 +751,9 @@ typedef std::shared_ptr<TintTo> TintToPtr;
 class TintTo : public ActionInterval {
 public:
     /** initializes the action with duration and color */
-    bool initWithDuration(float duration, unsigned char red, unsigned char green, unsigned char blue);
+    bool init(float duration, unsigned char red, unsigned char green, unsigned char blue);
 
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual void update(float time);
 
 public:
@@ -773,9 +773,9 @@ typedef std::shared_ptr<TintBy> TintByPtr;
 class TintBy : public ActionInterval {
 public:
     /** initializes the action with duration and color */
-    bool initWithDuration(float duration, short deltaRed, short deltaGreen, short deltaBlue);
+    bool init(float duration, short deltaRed, short deltaGreen, short deltaBlue);
 
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual void update(float time);
     virtual ActionPtr reverse(void);
 
@@ -819,9 +819,9 @@ typedef std::shared_ptr<ReverseTime> ReverseTimePtr;
 class ReverseTime : public ActionInterval {
 public:
     /** initializes the action */
-    bool initWithAction(FiniteTimeActionPtr pAction);
+    bool init(FiniteTimeActionPtr pAction);
 
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual void stop(void);
     virtual void update(float time);
     virtual ActionPtr reverse(void);
@@ -852,7 +852,7 @@ public:
     /** Init an action with the specified action and forced target */
     bool initWithTarget(NodePtr pTarget, FiniteTimeActionPtr pAction);
 
-    virtual void startWithTarget(NodePtr pTarget);
+    virtual void start(NodePtr pTarget);
     virtual void stop(void);
     virtual void update(float time);
 
@@ -874,9 +874,9 @@ public:
     static SpinByPtr make(float fDuration, float fDeltaAngle);
     static SpinByPtr make(float fDuration, const Vec3& deltaAngle);
     
-    bool initWithDuration(float fDuration, const Vec3& deltaAngle);
+    bool init(float fDuration, const Vec3& deltaAngle);
 
-    virtual void startWithTarget(NodePtr target);
+    virtual void start(NodePtr target);
     virtual void update(float time);
     virtual ActionPtr reverse(void);
 

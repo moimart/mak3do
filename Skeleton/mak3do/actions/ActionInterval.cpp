@@ -79,12 +79,12 @@ void ExtraAction::step(float dt)
 SpeedPtr Speed::make(ActionIntervalPtr pAction, float fSpeed)
 {
     auto pRet = std::make_shared<Speed>();
-    pRet->initWithAction(pAction, fSpeed);
+    pRet->init(pAction, fSpeed);
 
     return pRet;
 }
 
-bool Speed::initWithAction(ActionIntervalPtr pAction, float fSpeed)
+bool Speed::init(ActionIntervalPtr pAction, float fSpeed)
 {
     //logger::assertion(pAction != NULL, "");
     m_pInnerAction = pAction;
@@ -92,10 +92,10 @@ bool Speed::initWithAction(ActionIntervalPtr pAction, float fSpeed)
     return true;
 }
 
-void Speed::startWithTarget(NodePtr pTarget)
+void Speed::start(NodePtr pTarget)
 {
-    Action::startWithTarget(pTarget);
-    m_pInnerAction->startWithTarget(pTarget);
+    Action::start(pTarget);
+    m_pInnerAction->start(pTarget);
 }
 
 void Speed::stop()
@@ -109,9 +109,9 @@ void Speed::step(float dt)
     m_pInnerAction->step(dt * m_fSpeed);
 }
 
-bool Speed::isDone()
+bool Speed::done()
 {
-    return m_pInnerAction->isDone();
+    return m_pInnerAction->done();
 }
 
 ActionPtr Speed::reverse()
@@ -119,7 +119,7 @@ ActionPtr Speed::reverse()
     return Speed::make(std::static_pointer_cast<ActionInterval>(m_pInnerAction->reverse()), m_fSpeed);
 }
 
-void Speed::setInnerAction(ActionIntervalPtr pAction)
+void Speed::inner_action(ActionIntervalPtr pAction)
 {
     if (m_pInnerAction != pAction) {
         m_pInnerAction = pAction;
@@ -133,12 +133,12 @@ void Speed::setInnerAction(ActionIntervalPtr pAction)
 ActionIntervalPtr ActionInterval::make(float d)
 {
     auto pAction = std::make_shared<ActionInterval>();
-    pAction->initWithDuration(d);
+    pAction->init(d);
 
     return pAction;
 }
 
-bool ActionInterval::initWithDuration(float d)
+bool ActionInterval::init(float d)
 {
     m_fDuration = d;
 
@@ -155,7 +155,7 @@ bool ActionInterval::initWithDuration(float d)
     return true;
 }
 
-bool ActionInterval::isDone(void)
+bool ActionInterval::done(void)
 {
     return m_elapsed >= m_fDuration;
 }
@@ -174,18 +174,18 @@ void ActionInterval::step(float dt)
             )));
 }
 
-void ActionInterval::setAmplitudeRate(float amp)
+void ActionInterval::amplitude_rate(float amp)
 {
 }
 
-float ActionInterval::getAmplitudeRate(void)
+float ActionInterval::amplitude_rate(void) const
 {
     return 0;
 }
 
-void ActionInterval::startWithTarget(NodePtr pTarget)
+void ActionInterval::start(NodePtr pTarget)
 {
-    FiniteTimeAction::startWithTarget(pTarget);
+    FiniteTimeAction::start(pTarget);
     m_elapsed = 0.0f;
     m_bFirstTick = true;
 }
@@ -199,10 +199,10 @@ ActionPtr ActionInterval::reverse(void)
 // Sequence
 //
 
-SequencePtr Sequence::makeWithTwoActions(FiniteTimeActionPtr pActionOne, FiniteTimeActionPtr pActionTwo)
+SequencePtr Sequence::make(FiniteTimeActionPtr pActionOne, FiniteTimeActionPtr pActionTwo)
 {
     auto pSequence = std::make_shared<Sequence>();
-    pSequence->initWithTwoActions(pActionOne, pActionTwo);
+    pSequence->init(pActionOne, pActionTwo);
 
     return pSequence;
 }
@@ -219,11 +219,11 @@ SequencePtr Sequence::make(const std::vector<ActionPtr>& actions)
 
         if (count > 1) {
             for (unsigned int i = 1; i < count; ++i) {
-                prev = makeWithTwoActions(prev, std::static_pointer_cast<FiniteTimeAction>(actions[i]));
+                prev = make(prev, std::static_pointer_cast<FiniteTimeAction>(actions[i]));
             }
         } else {
             // If only one action is added to Sequence, make up a Sequence by adding a simplest finite time action.
-            prev = makeWithTwoActions(prev, ExtraAction::make());
+            prev = make(prev, ExtraAction::make());
         }
 
         pRet = std::static_pointer_cast<Sequence>(prev);
@@ -233,10 +233,10 @@ SequencePtr Sequence::make(const std::vector<ActionPtr>& actions)
     return pRet;
 }
 
-bool Sequence::initWithTwoActions(FiniteTimeActionPtr pActionOne, FiniteTimeActionPtr pActionTwo)
+bool Sequence::init(FiniteTimeActionPtr pActionOne, FiniteTimeActionPtr pActionTwo)
 {
-    float d = pActionOne->getDuration() + pActionTwo->getDuration();
-    ActionInterval::initWithDuration(d);
+    float d = pActionOne->duration() + pActionTwo->duration();
+    ActionInterval::init(d);
 
     m_pActions[0] = pActionOne;
     m_pActions[1] = pActionTwo;
@@ -244,10 +244,10 @@ bool Sequence::initWithTwoActions(FiniteTimeActionPtr pActionOne, FiniteTimeActi
     return true;
 }
 
-void Sequence::startWithTarget(NodePtr pTarget)
+void Sequence::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
-    m_split = m_pActions[0]->getDuration() / m_fDuration;
+    ActionInterval::start(pTarget);
+    m_split = m_pActions[0]->duration() / m_fDuration;
     m_last = -1;
 }
 
@@ -287,7 +287,7 @@ void Sequence::update(float t)
 
         if (m_last == -1) {
             // action[0] was skipped, execute it.
-            m_pActions[0]->startWithTarget(m_target);
+            m_pActions[0]->start(m_target);
             m_pActions[0]->update(1.0f);
             m_pActions[0]->stop();
         } else if (m_last == 0) {
@@ -304,13 +304,13 @@ void Sequence::update(float t)
         m_pActions[1]->stop();
     }
     // Last action found and it is done.
-    if (found == m_last && m_pActions[found]->isDone()) {
+    if (found == m_last && m_pActions[found]->done()) {
         return;
     }
 
     // Last action found and it is done
     if (found != m_last) {
-        m_pActions[found]->startWithTarget(m_target);
+        m_pActions[found]->start(m_target);
     }
 
     m_pActions[found]->update(new_t);
@@ -319,7 +319,7 @@ void Sequence::update(float t)
 
 ActionPtr Sequence::reverse(void)
 {
-    return Sequence::makeWithTwoActions(std::static_pointer_cast<FiniteTimeAction>(m_pActions[1]->reverse()), std::static_pointer_cast<FiniteTimeAction>(m_pActions[0]->reverse()));
+    return Sequence::make(std::static_pointer_cast<FiniteTimeAction>(m_pActions[1]->reverse()), std::static_pointer_cast<FiniteTimeAction>(m_pActions[0]->reverse()));
 }
 
 //
@@ -329,16 +329,16 @@ ActionPtr Sequence::reverse(void)
 RepeatPtr Repeat::make(FiniteTimeActionPtr pAction, unsigned int times)
 {
     auto pRepeat = std::make_shared<Repeat>();
-    pRepeat->initWithAction(pAction, times);
+    pRepeat->init(pAction, times);
 
     return pRepeat;
 }
 
-bool Repeat::initWithAction(FiniteTimeActionPtr pAction, unsigned int times)
+bool Repeat::init(FiniteTimeActionPtr pAction, unsigned int times)
 {
-    float d = pAction->getDuration() * times;
+    float d = pAction->duration() * times;
 
-    if (ActionInterval::initWithDuration(d)) {
+    if (ActionInterval::init(d)) {
         m_uTimes = times;
         m_pInnerAction = pAction;
 
@@ -355,12 +355,12 @@ bool Repeat::initWithAction(FiniteTimeActionPtr pAction, unsigned int times)
     return false;
 }
 
-void Repeat::startWithTarget(NodePtr pTarget)
+void Repeat::start(NodePtr pTarget)
 {
     m_uTotal = 0;
-    m_fNextDt = m_pInnerAction->getDuration() / m_fDuration;
-    ActionInterval::startWithTarget(pTarget);
-    m_pInnerAction->startWithTarget(pTarget);
+    m_fNextDt = m_pInnerAction->duration() / m_fDuration;
+    ActionInterval::start(pTarget);
+    m_pInnerAction->start(pTarget);
 }
 
 void Repeat::stop(void)
@@ -380,8 +380,8 @@ void Repeat::update(float dt)
             m_uTotal++;
 
             m_pInnerAction->stop();
-            m_pInnerAction->startWithTarget(m_target);
-            m_fNextDt += m_pInnerAction->getDuration() / m_fDuration;
+            m_pInnerAction->start(m_target);
+            m_fNextDt += m_pInnerAction->duration() / m_fDuration;
         }
 
         // fix for issue #1288, incorrect end value of repeat
@@ -396,7 +396,7 @@ void Repeat::update(float dt)
                 m_pInnerAction->stop();
             } else {
                 // issue #390 prevent jerk, use right update
-                m_pInnerAction->update(dt - (m_fNextDt - m_pInnerAction->getDuration() / m_fDuration));
+                m_pInnerAction->update(dt - (m_fNextDt - m_pInnerAction->duration() / m_fDuration));
             }
         }
     } else {
@@ -404,7 +404,7 @@ void Repeat::update(float dt)
     }
 }
 
-bool Repeat::isDone(void)
+bool Repeat::done(void)
 {
     return m_uTotal == m_uTimes;
 }
@@ -417,37 +417,37 @@ ActionPtr Repeat::reverse(void)
 RepeatForeverPtr RepeatForever::make(ActionIntervalPtr pAction)
 {
     auto pRet = std::make_shared<RepeatForever>();
-    pRet->initWithAction(pAction);
+    pRet->init(pAction);
 
     return pRet;
 }
 
-bool RepeatForever::initWithAction(ActionIntervalPtr pAction)
+bool RepeatForever::init(ActionIntervalPtr pAction)
 {
     assert(pAction != nullptr);
     m_pInnerAction = pAction;
     return true;
 }
 
-void RepeatForever::startWithTarget(NodePtr pTarget)
+void RepeatForever::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
-    m_pInnerAction->startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
+    m_pInnerAction->start(pTarget);
 }
 
 void RepeatForever::step(float dt)
 {
     m_pInnerAction->step(dt);
-    if (m_pInnerAction->isDone()) {
-        float diff = m_pInnerAction->getElapsed() - m_pInnerAction->getDuration();
-        m_pInnerAction->startWithTarget(m_target);
-        // to prevent jerk. issue #390, 1247
+    if (m_pInnerAction->done()) {
+        float diff = m_pInnerAction->getElapsed() - m_pInnerAction->duration();
+        m_pInnerAction->start(m_target);
+        // to prevent jerkiness
         m_pInnerAction->step(0.0f);
         m_pInnerAction->step(diff);
     }
 }
 
-bool RepeatForever::isDone()
+bool RepeatForever::done()
 {
     return false;
 }
@@ -474,11 +474,11 @@ SpawnPtr Spawn::make(const std::vector<ActionPtr>& actions)
 
         if (count > 1) {
             for (unsigned int i = 1; i < actions.size(); ++i) {
-                prev = makeWithTwoActions(prev, std::static_pointer_cast<FiniteTimeAction>(actions[i]));
+                prev = make(prev, std::static_pointer_cast<FiniteTimeAction>(actions[i]));
             }
         } else {
             // If only one action is added to Spawn, make up a Spawn by adding a simplest finite time action.
-            prev = makeWithTwoActions(prev, ExtraAction::make());
+            prev = make(prev, ExtraAction::make());
         }
 
         pRet = std::static_pointer_cast<Spawn>(prev);
@@ -488,32 +488,32 @@ SpawnPtr Spawn::make(const std::vector<ActionPtr>& actions)
     return pRet;
 }
 
-SpawnPtr Spawn::makeWithTwoActions(FiniteTimeActionPtr pAction1, FiniteTimeActionPtr pAction2)
+SpawnPtr Spawn::make(FiniteTimeActionPtr pAction1, FiniteTimeActionPtr pAction2)
 {
     auto pSpawn = std::make_shared<Spawn>();
-    pSpawn->initWithTwoActions(pAction1, pAction2);
+    pSpawn->init(pAction1, pAction2);
 
     return pSpawn;
 }
 
-bool Spawn::initWithTwoActions(FiniteTimeActionPtr pAction1, FiniteTimeActionPtr pAction2)
+bool Spawn::init(FiniteTimeActionPtr pAction1, FiniteTimeActionPtr pAction2)
 {
     assert(pAction1 != nullptr);
     assert(pAction2 != nullptr);
 
     bool bRet = false;
 
-    float d1 = pAction1->getDuration();
-    float d2 = pAction2->getDuration();
+    float d1 = pAction1->duration();
+    float d2 = pAction2->duration();
 
-    if (ActionInterval::initWithDuration(MAX(d1, d2))) {
+    if (ActionInterval::init(MAX(d1, d2))) {
         m_pOne = pAction1;
         m_pTwo = pAction2;
 
         if (d1 > d2) {
-            m_pTwo = Sequence::makeWithTwoActions(pAction2, DelayTime::make(d1 - d2));
+            m_pTwo = Sequence::make(pAction2, DelayTime::make(d1 - d2));
         } else if (d1 < d2) {
-            m_pOne = Sequence::makeWithTwoActions(pAction1, DelayTime::make(d2 - d1));
+            m_pOne = Sequence::make(pAction1, DelayTime::make(d2 - d1));
         }
 
         bRet = true;
@@ -522,11 +522,11 @@ bool Spawn::initWithTwoActions(FiniteTimeActionPtr pAction1, FiniteTimeActionPtr
     return bRet;
 }
 
-void Spawn::startWithTarget(NodePtr pTarget)
+void Spawn::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
-    m_pOne->startWithTarget(pTarget);
-    m_pTwo->startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
+    m_pOne->start(pTarget);
+    m_pTwo->start(pTarget);
 }
 
 void Spawn::stop(void)
@@ -548,7 +548,7 @@ void Spawn::update(float time)
 
 ActionPtr Spawn::reverse(void)
 {
-    return Spawn::makeWithTwoActions(std::static_pointer_cast<FiniteTimeAction>(m_pOne->reverse()), std::static_pointer_cast<FiniteTimeAction>(m_pTwo->reverse()));
+    return Spawn::make(std::static_pointer_cast<FiniteTimeAction>(m_pOne->reverse()), std::static_pointer_cast<FiniteTimeAction>(m_pTwo->reverse()));
 }
 
 //
@@ -565,7 +565,7 @@ RotateToPtr RotateTo::make(float fDuration, float fDeltaAngle)
 
 bool RotateTo::initWithDuration(float fDuration, float fDeltaAngle)
 {
-    if (ActionInterval::initWithDuration(fDuration)) {
+    if (ActionInterval::init(fDuration)) {
         m_fDstAngleX = m_fDstAngleY = fDeltaAngle;
         return true;
     }
@@ -576,14 +576,14 @@ bool RotateTo::initWithDuration(float fDuration, float fDeltaAngle)
 RotateToPtr RotateTo::make(float fDuration, float fDeltaAngleX, float fDeltaAngleY)
 {
     auto pRotateTo = std::make_shared<RotateTo>();
-    pRotateTo->initWithDuration(fDuration, fDeltaAngleX, fDeltaAngleY);
+    pRotateTo->init(fDuration, fDeltaAngleX, fDeltaAngleY);
 
     return pRotateTo;
 }
 
-bool RotateTo::initWithDuration(float fDuration, float fDeltaAngleX, float fDeltaAngleY)
+bool RotateTo::init(float fDuration, float fDeltaAngleX, float fDeltaAngleY)
 {
-    if (ActionInterval::initWithDuration(fDuration)) {
+    if (ActionInterval::init(fDuration)) {
         m_fDstAngleX = fDeltaAngleX;
         m_fDstAngleY = fDeltaAngleY;
 
@@ -593,9 +593,9 @@ bool RotateTo::initWithDuration(float fDuration, float fDeltaAngleX, float fDelt
     return false;
 }
 
-void RotateTo::startWithTarget(NodePtr pTarget)
+void RotateTo::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
 
     // Calculate X
     m_fStartAngleX = pTarget->yaw();
@@ -654,7 +654,7 @@ RotateByPtr RotateBy::make(float fDuration, float fDeltaAngle)
 
 bool RotateBy::initWithDuration(float fDuration, float fDeltaAngle)
 {
-    if (ActionInterval::initWithDuration(fDuration)) {
+    if (ActionInterval::init(fDuration)) {
         m_fAngleX = m_fAngleY = fDeltaAngle;
         return true;
     }
@@ -665,14 +665,14 @@ bool RotateBy::initWithDuration(float fDuration, float fDeltaAngle)
 RotateByPtr RotateBy::make(float fDuration, float fDeltaAngleX, float fDeltaAngleY)
 {
     auto pRotateBy = std::make_shared<RotateBy>();
-    pRotateBy->initWithDuration(fDuration, fDeltaAngleX, fDeltaAngleY);
+    pRotateBy->init(fDuration, fDeltaAngleX, fDeltaAngleY);
 
     return pRotateBy;
 }
 
-bool RotateBy::initWithDuration(float fDuration, float fDeltaAngleX, float fDeltaAngleY)
+bool RotateBy::init(float fDuration, float fDeltaAngleX, float fDeltaAngleY)
 {
-    if (ActionInterval::initWithDuration(fDuration)) {
+    if (ActionInterval::init(fDuration)) {
         m_fAngleX = fDeltaAngleX;
         m_fAngleY = fDeltaAngleY;
         return true;
@@ -681,9 +681,9 @@ bool RotateBy::initWithDuration(float fDuration, float fDeltaAngleX, float fDelt
     return false;
 }
 
-void RotateBy::startWithTarget(NodePtr pTarget)
+void RotateBy::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
     m_fStartAngleX = pTarget->yaw();
     m_fStartAngleY = pTarget->roll();
 }
@@ -709,14 +709,14 @@ ActionPtr RotateBy::reverse(void)
 MoveByPtr MoveBy::make(float duration, const Vec3& deltaPosition)
 {
     auto pRet = std::make_shared<MoveBy>();
-    pRet->initWithDuration(duration, deltaPosition);
+    pRet->init(duration, deltaPosition);
 
     return pRet;
 }
 
-bool MoveBy::initWithDuration(float duration, const Vec3& deltaPosition)
+bool MoveBy::init(float duration, const Vec3& deltaPosition)
 {
-    if (ActionInterval::initWithDuration(duration)) {
+    if (ActionInterval::init(duration)) {
         m_positionDelta = deltaPosition;
         return true;
     }
@@ -724,9 +724,9 @@ bool MoveBy::initWithDuration(float duration, const Vec3& deltaPosition)
     return false;
 }
 
-void MoveBy::startWithTarget(NodePtr pTarget)
+void MoveBy::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
     m_previousPosition = m_startPosition = pTarget->position();
 }
 
@@ -758,14 +758,14 @@ void MoveBy::update(float t)
 MoveToPtr MoveTo::make(float duration, const Vec3& position)
 {
     auto pRet = std::make_shared<MoveTo>();
-    pRet->initWithDuration(duration, position);
+    pRet->init(duration, position);
 
     return pRet;
 }
 
-bool MoveTo::initWithDuration(float duration, const Vec3& position)
+bool MoveTo::init(float duration, const Vec3& position)
 {
-    if (ActionInterval::initWithDuration(duration)) {
+    if (ActionInterval::init(duration)) {
         m_endPosition = position;
         return true;
     }
@@ -773,9 +773,9 @@ bool MoveTo::initWithDuration(float duration, const Vec3& position)
     return false;
 }
 
-void MoveTo::startWithTarget(NodePtr pTarget)
+void MoveTo::start(NodePtr pTarget)
 {
-    MoveBy::startWithTarget(pTarget);
+    MoveBy::start(pTarget);
     m_positionDelta = m_endPosition - pTarget->position();
 }
 
@@ -785,16 +785,16 @@ void MoveTo::startWithTarget(NodePtr pTarget)
 SkewToPtr SkewTo::make(float t, float sx, float sy)
 {
     auto pSkewTo = std::make_shared<SkewTo>();
-    pSkewTo->initWithDuration(t, sx, sy);
+    pSkewTo->init(t, sx, sy);
 
     return pSkewTo;
 }
 
-bool SkewTo::initWithDuration(float t, float sx, float sy)
+bool SkewTo::init(float t, float sx, float sy)
 {
     bool bRet = false;
 
-    if (ActionInterval::initWithDuration(t)) {
+    if (ActionInterval::init(t)) {
         m_fEndSkewX = sx;
         m_fEndSkewY = sy;
 
@@ -804,9 +804,9 @@ bool SkewTo::initWithDuration(float t, float sx, float sy)
     return bRet;
 }
 
-void SkewTo::startWithTarget(NodePtr pTarget)
+void SkewTo::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
 
     //m_fStartSkewX = pTarget->getSkewX();
 
@@ -867,16 +867,16 @@ SkewTo::SkewTo()
 SkewByPtr SkewBy::make(float t, float sx, float sy)
 {
     auto pSkewBy = std::make_shared<SkewBy>();
-    pSkewBy->initWithDuration(t, sx, sy);
+    pSkewBy->init(t, sx, sy);
 
     return pSkewBy;
 }
 
-bool SkewBy::initWithDuration(float t, float deltaSkewX, float deltaSkewY)
+bool SkewBy::init(float t, float deltaSkewX, float deltaSkewY)
 {
     bool bRet = false;
 
-    if (SkewTo::initWithDuration(t, deltaSkewX, deltaSkewY)) {
+    if (SkewTo::init(t, deltaSkewX, deltaSkewY)) {
         m_fSkewX = deltaSkewX;
         m_fSkewY = deltaSkewY;
 
@@ -886,9 +886,9 @@ bool SkewBy::initWithDuration(float t, float deltaSkewX, float deltaSkewY)
     return bRet;
 }
 
-void SkewBy::startWithTarget(NodePtr pTarget)
+void SkewBy::start(NodePtr pTarget)
 {
-    SkewTo::startWithTarget(pTarget);
+    SkewTo::start(pTarget);
     m_fDeltaX = m_fSkewX;
     m_fDeltaY = m_fSkewY;
     m_fEndSkewX = m_fStartSkewX + m_fDeltaX;
@@ -907,14 +907,14 @@ ActionPtr SkewBy::reverse()
 JumpByPtr JumpBy::make(float duration, const Vec3& position, float height, unsigned int jumps)
 {
     auto pJumpBy = std::make_shared<JumpBy>();
-    pJumpBy->initWithDuration(duration, position, height, jumps);
+    pJumpBy->init(duration, position, height, jumps);
 
     return pJumpBy;
 }
 
-bool JumpBy::initWithDuration(float duration, const Vec3& position, float height, unsigned int jumps)
+bool JumpBy::init(float duration, const Vec3& position, float height, unsigned int jumps)
 {
-    if (ActionInterval::initWithDuration(duration)) {
+    if (ActionInterval::init(duration)) {
         m_delta = position;
         m_height = height;
         m_nJumps = jumps;
@@ -925,9 +925,9 @@ bool JumpBy::initWithDuration(float duration, const Vec3& position, float height
     return false;
 }
 
-void JumpBy::startWithTarget(NodePtr pTarget)
+void JumpBy::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
     m_previousPos = m_startPosition = pTarget->position();
 }
 
@@ -969,14 +969,14 @@ ActionPtr JumpBy::reverse(void)
 JumpToPtr JumpTo::make(float duration, const Vec3& position, float height, int jumps)
 {
     auto pJumpTo = std::make_shared<JumpTo>();
-    pJumpTo->initWithDuration(duration, position, height, jumps);
+    pJumpTo->init(duration, position, height, jumps);
 
     return pJumpTo;
 }
 
-void JumpTo::startWithTarget(NodePtr pTarget)
+void JumpTo::start(NodePtr pTarget)
 {
-    JumpBy::startWithTarget(pTarget);
+    JumpBy::start(pTarget);
     m_delta = Vec3(m_delta.x - m_startPosition.x, m_delta.y - m_startPosition.y);
 }
 
@@ -996,14 +996,14 @@ static inline float bezierat(float a, float b, float c, float d, float t)
 BezierByPtr BezierBy::make(float t, const BezierConfig& c)
 {
     auto pBezierBy = std::make_shared<BezierBy>();
-    pBezierBy->initWithDuration(t, c);
+    pBezierBy->init(t, c);
 
     return pBezierBy;
 }
 
-bool BezierBy::initWithDuration(float t, const BezierConfig& c)
+bool BezierBy::init(float t, const BezierConfig& c)
 {
-    if (ActionInterval::initWithDuration(t)) {
+    if (ActionInterval::init(t)) {
         m_sConfig = c;
         return true;
     }
@@ -1011,9 +1011,9 @@ bool BezierBy::initWithDuration(float t, const BezierConfig& c)
     return false;
 }
 
-void BezierBy::startWithTarget(NodePtr pTarget)
+void BezierBy::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
     m_previousPosition = m_startPosition = pTarget->position();
 }
 
@@ -1067,25 +1067,25 @@ ActionPtr BezierBy::reverse(void)
 BezierToPtr BezierTo::make(float t, const BezierConfig& c)
 {
     auto pBezierTo = std::make_shared<BezierTo>();
-    pBezierTo->initWithDuration(t, c);
+    pBezierTo->init(t, c);
 
     return pBezierTo;
 }
 
-bool BezierTo::initWithDuration(float t, const BezierConfig& c)
+bool BezierTo::init(float t, const BezierConfig& c)
 {
     bool bRet = false;
 
-    if (ActionInterval::initWithDuration(t)) {
+    if (ActionInterval::init(t)) {
         m_sToConfig = c;
     }
 
     return bRet;
 }
 
-void BezierTo::startWithTarget(NodePtr pTarget)
+void BezierTo::start(NodePtr pTarget)
 {
-    BezierBy::startWithTarget(pTarget);
+    BezierBy::start(pTarget);
     m_sConfig.control_1 = m_sToConfig.control_1 - m_startPosition;
     m_sConfig.control_2 = m_sToConfig.control_2 - m_startPosition;
     m_sConfig.endPosition = m_sToConfig.endPosition - m_startPosition;
@@ -1097,14 +1097,14 @@ void BezierTo::startWithTarget(NodePtr pTarget)
 ScaleToPtr ScaleTo::make(float duration, float s)
 {
     auto pScaleTo = std::make_shared<ScaleTo>();
-    pScaleTo->initWithDuration(duration, s);
+    pScaleTo->init(duration, s);
 
     return pScaleTo;
 }
 
-bool ScaleTo::initWithDuration(float duration, float s)
+bool ScaleTo::init(float duration, float s)
 {
-    if (ActionInterval::initWithDuration(duration)) {
+    if (ActionInterval::init(duration)) {
         m_fEndScaleX = s;
         m_fEndScaleY = s;
 
@@ -1117,14 +1117,14 @@ bool ScaleTo::initWithDuration(float duration, float s)
 ScaleToPtr ScaleTo::make(float duration, float sx, float sy)
 {
     auto pScaleTo = std::make_shared<ScaleTo>();
-    pScaleTo->initWithDuration(duration, sx, sy);
+    pScaleTo->init(duration, sx, sy);
 
     return pScaleTo;
 }
 
-bool ScaleTo::initWithDuration(float duration, float sx, float sy)
+bool ScaleTo::init(float duration, float sx, float sy)
 {
-    if (ActionInterval::initWithDuration(duration)) {
+    if (ActionInterval::init(duration)) {
         m_fEndScaleX = sx;
         m_fEndScaleY = sy;
 
@@ -1134,9 +1134,9 @@ bool ScaleTo::initWithDuration(float duration, float sx, float sy)
     return false;
 }
 
-void ScaleTo::startWithTarget(NodePtr pTarget)
+void ScaleTo::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
     m_fStartScaleX = pTarget->scale();
     m_fDeltaX = m_fEndScaleX - m_fStartScaleX;
 }
@@ -1155,7 +1155,7 @@ void ScaleTo::update(float time)
 ScaleByPtr ScaleBy::make(float duration, float s)
 {
     auto pScaleBy = std::make_shared<ScaleBy>();
-    pScaleBy->initWithDuration(duration, s);
+    pScaleBy->init(duration, s);
 
     return pScaleBy;
 }
@@ -1163,14 +1163,14 @@ ScaleByPtr ScaleBy::make(float duration, float s)
 ScaleByPtr ScaleBy::make(float duration, float sx, float sy)
 {
     auto pScaleBy = std::make_shared<ScaleBy>();
-    pScaleBy->initWithDuration(duration, sx, sy);
+    pScaleBy->init(duration, sx, sy);
 
     return pScaleBy;
 }
 
-void ScaleBy::startWithTarget(NodePtr pTarget)
+void ScaleBy::start(NodePtr pTarget)
 {
-    ScaleTo::startWithTarget(pTarget);
+    ScaleTo::start(pTarget);
     m_fDeltaX = m_fStartScaleX * m_fEndScaleX - m_fStartScaleX;
     m_fDeltaY = m_fStartScaleY * m_fEndScaleY - m_fStartScaleY;
 }
@@ -1187,14 +1187,14 @@ ActionPtr ScaleBy::reverse(void)
 BlinkPtr Blink::make(float duration, unsigned int uBlinks)
 {
     auto pBlink = std::make_shared<Blink>();
-    pBlink->initWithDuration(duration, uBlinks);
+    pBlink->init(duration, uBlinks);
 
     return pBlink;
 }
 
-bool Blink::initWithDuration(float duration, unsigned int uBlinks)
+bool Blink::init(float duration, unsigned int uBlinks)
 {
-    if (ActionInterval::initWithDuration(duration)) {
+    if (ActionInterval::init(duration)) {
         m_nTimes = uBlinks;
         return true;
     }
@@ -1208,15 +1208,15 @@ void Blink::stop()
     ActionInterval::stop();
 }
 
-void Blink::startWithTarget(NodePtr pTarget)
+void Blink::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
     m_bOriginalState = pTarget->visible();
 }
 
 void Blink::update(float time)
 {
-    if (m_target && !isDone()) {
+    if (m_target && !done()) {
         float slice = 1.0f / m_nTimes;
         float m = fmodf(time, slice);
         m_target->visible(m > slice / 2 ? true : false);
@@ -1237,7 +1237,7 @@ FadeInPtr FadeIn::make(float d)
 {
     auto pAction = std::make_shared<FadeIn>();
     pAction->setLimit(1);
-    pAction->initWithDuration(d);
+    pAction->init(d);
 
     return pAction;
 }
@@ -1246,7 +1246,7 @@ FadeInPtr FadeIn::make(float d, float limit)
 {
     auto pAction = std::make_shared<FadeIn>();
     pAction->setLimit(limit);
-    pAction->initWithDuration(d);
+    pAction->init(d);
 
     return pAction;
 }
@@ -1273,7 +1273,7 @@ FadeOutPtr FadeOut::make(float d)
 {
     auto pAction = std::make_shared<FadeOut>();
     pAction->setLimit(1);
-    pAction->initWithDuration(d);
+    pAction->init(d);
 
     return pAction;
 }
@@ -1282,7 +1282,7 @@ FadeOutPtr FadeOut::make(float d, float limit)
 {
     auto pAction = std::make_shared<FadeOut>();
     pAction->setLimit(limit);
-    pAction->initWithDuration(d);
+    pAction->init(d);
 
     return pAction;
 }
@@ -1308,14 +1308,14 @@ ActionPtr FadeOut::reverse(void)
 FadeToPtr FadeTo::make(float duration, unsigned char opacity)
 {
     auto pFadeTo = std::make_shared<FadeTo>();
-    pFadeTo->initWithDuration(duration, opacity);
+    pFadeTo->init(duration, opacity);
 
     return pFadeTo;
 }
 
-bool FadeTo::initWithDuration(float duration, unsigned char opacity)
+bool FadeTo::init(float duration, unsigned char opacity)
 {
-    if (ActionInterval::initWithDuration(duration)) {
+    if (ActionInterval::init(duration)) {
         m_toOpacity = opacity;
         return true;
     }
@@ -1323,9 +1323,9 @@ bool FadeTo::initWithDuration(float duration, unsigned char opacity)
     return false;
 }
 
-void FadeTo::startWithTarget(NodePtr pTarget)
+void FadeTo::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
 
     //RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(pTarget);
     //if (protocol) {
@@ -1349,14 +1349,14 @@ void FadeTo::update(float time)
 TintToPtr TintTo::make(float duration, unsigned char red, unsigned char green, unsigned char blue)
 {
     auto pTintTo = std::make_shared<TintTo>();
-    pTintTo->initWithDuration(duration, red, green, blue);
+    pTintTo->init(duration, red, green, blue);
 
     return pTintTo;
 }
 
-bool TintTo::initWithDuration(float duration, unsigned char red, unsigned char green, unsigned char blue)
+bool TintTo::init(float duration, unsigned char red, unsigned char green, unsigned char blue)
 {
-    if (ActionInterval::initWithDuration(duration)) {
+    if (ActionInterval::init(duration)) {
         m_to = color::RGB(red, green, blue);
         return true;
     }
@@ -1364,9 +1364,9 @@ bool TintTo::initWithDuration(float duration, unsigned char red, unsigned char g
     return false;
 }
 
-void TintTo::startWithTarget(NodePtr pTarget)
+void TintTo::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
     //RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(m_target);
     //if (protocol) {
     //    m_from = protocol->getColor();
@@ -1391,14 +1391,14 @@ void TintTo::update(float time)
 TintByPtr TintBy::make(float duration, short deltaRed, short deltaGreen, short deltaBlue)
 {
     auto pTintBy = std::make_shared<TintBy>();
-    pTintBy->initWithDuration(duration, deltaRed, deltaGreen, deltaBlue);
+    pTintBy->init(duration, deltaRed, deltaGreen, deltaBlue);
 
     return pTintBy;
 }
 
-bool TintBy::initWithDuration(float duration, short deltaRed, short deltaGreen, short deltaBlue)
+bool TintBy::init(float duration, short deltaRed, short deltaGreen, short deltaBlue)
 {
-    if (ActionInterval::initWithDuration(duration)) {
+    if (ActionInterval::init(duration)) {
         m_deltaR = deltaRed;
         m_deltaG = deltaGreen;
         m_deltaB = deltaBlue;
@@ -1409,9 +1409,9 @@ bool TintBy::initWithDuration(float duration, short deltaRed, short deltaGreen, 
     return false;
 }
 
-void TintBy::startWithTarget(NodePtr pTarget)
+void TintBy::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
 
     /*
     RGBAInterface* protocol = dynamic_cast<RGBAInterface*>(pTarget);
@@ -1447,7 +1447,7 @@ ActionPtr TintBy::reverse(void)
 DelayTimePtr DelayTime::make(float d)
 {
     auto pAction = std::make_shared<DelayTime>();
-    pAction->initWithDuration(d);
+    pAction->init(d);
 
     return pAction;
 }
@@ -1470,17 +1470,17 @@ ReverseTimePtr ReverseTime::make(FiniteTimeActionPtr pAction)
 {
     // casting to prevent warnings
     auto pReverseTime = std::make_shared<ReverseTime>();
-    pReverseTime->initWithAction(pAction);
+    pReverseTime->init(pAction);
 
     return pReverseTime;
 }
 
-bool ReverseTime::initWithAction(FiniteTimeActionPtr pAction)
+bool ReverseTime::init(FiniteTimeActionPtr pAction)
 {
     assert(pAction != nullptr);
     assert(pAction != m_pOther);
 
-    if (ActionInterval::initWithDuration(pAction->getDuration())) {
+    if (ActionInterval::init(pAction->duration())) {
         m_pOther = pAction;
 
         return true;
@@ -1489,10 +1489,10 @@ bool ReverseTime::initWithAction(FiniteTimeActionPtr pAction)
     return false;
 }
 
-void ReverseTime::startWithTarget(NodePtr pTarget)
+void ReverseTime::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
-    m_pOther->startWithTarget(pTarget);
+    ActionInterval::start(pTarget);
+    m_pOther->start(pTarget);
 }
 
 void ReverseTime::stop(void)
@@ -1518,7 +1518,7 @@ ActionPtr ReverseTime::reverse(void)
 SpinByPtr SpinBy::make(float fDuration, float fDeltaAngle)
 {
     auto pRotateBy = std::make_shared<SpinBy>();
-    pRotateBy->initWithDuration(fDuration, Vec3(fDeltaAngle,0,0));
+    pRotateBy->init(fDuration, Vec3(fDeltaAngle,0,0));
 
     return pRotateBy;
 }
@@ -1526,14 +1526,14 @@ SpinByPtr SpinBy::make(float fDuration, float fDeltaAngle)
 SpinByPtr SpinBy::make(float fDuration, const Vec3& deltaAngle)
 {
     auto pRotateBy = std::make_shared<SpinBy>();
-    pRotateBy->initWithDuration(fDuration, deltaAngle);
+    pRotateBy->init(fDuration, deltaAngle);
 
     return pRotateBy;
 }
 
-bool SpinBy::initWithDuration(float fDuration, const Vec3& deltaAngle)
+bool SpinBy::init(float fDuration, const Vec3& deltaAngle)
 {
-    if (ActionInterval::initWithDuration(fDuration)) {
+    if (ActionInterval::init(fDuration)) {
         m_fAngleX = deltaAngle.x;
         m_fAngleY = deltaAngle.y;
         m_fAngleZ = deltaAngle.z;
@@ -1543,9 +1543,9 @@ bool SpinBy::initWithDuration(float fDuration, const Vec3& deltaAngle)
     return false;
 }
 
-void SpinBy::startWithTarget(NodePtr target)
+void SpinBy::start(NodePtr target)
 {
-    ActionInterval::startWithTarget(target);
+    ActionInterval::start(target);
     m_fStartAngleX = target->yaw();
     m_fStartAngleY = target->roll();
     m_fStartAngleZ = target->pitch();
@@ -1584,7 +1584,7 @@ TargetedActionPtr TargetedAction::make(NodePtr pTarget, FiniteTimeActionPtr pAct
 
 bool TargetedAction::initWithTarget(NodePtr pTarget, FiniteTimeActionPtr pAction)
 {
-    if (ActionInterval::initWithDuration(pAction->getDuration())) {
+    if (ActionInterval::init(pAction->duration())) {
         m_pForcedTarget = pTarget;
         m_pAction = pAction;
         return true;
@@ -1592,10 +1592,10 @@ bool TargetedAction::initWithTarget(NodePtr pTarget, FiniteTimeActionPtr pAction
     return false;
 }
 
-void TargetedAction::startWithTarget(NodePtr pTarget)
+void TargetedAction::start(NodePtr pTarget)
 {
-    ActionInterval::startWithTarget(pTarget);
-    m_pAction->startWithTarget(m_pForcedTarget);
+    ActionInterval::start(pTarget);
+    m_pAction->start(m_pForcedTarget);
 }
 
 void TargetedAction::stop(void)
