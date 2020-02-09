@@ -15,6 +15,7 @@ public:
 private:
     SceneImplPtr m_pimpl;
     
+    friend class SceneImpl;
     friend class DirectorImpl;
 };
 

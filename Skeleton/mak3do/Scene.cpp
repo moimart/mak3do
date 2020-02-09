@@ -9,7 +9,7 @@ namespace mak3do {
 
 ScenePtr Scene::load(const std::string& filename)
 {
-    return std::make_shared<Scene>();
+    return SceneImpl::load(filename);
 }
 
 Scene::Scene()

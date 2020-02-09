@@ -14,5 +14,6 @@ private:
     CameraImplPtr m_camera_pimpl;
     
     friend class CameraImpl;
+    friend class SceneImpl;
 };
 }

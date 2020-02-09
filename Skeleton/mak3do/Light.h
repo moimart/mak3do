@@ -32,5 +32,6 @@ protected:
     LightImplPtr m_light_pimpl;
     
     friend class LightImpl;
+    friend class SceneImpl;
 };
 }

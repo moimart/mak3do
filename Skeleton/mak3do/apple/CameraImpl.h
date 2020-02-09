@@ -10,5 +10,7 @@ public:
 private:
     Camera* m_abstract;
     void* m_native_camera;
+    
+    friend class SceneImpl;
 };
 }

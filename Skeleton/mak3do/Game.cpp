@@ -4,6 +4,7 @@
 namespace mak3do {
 void Game::start()
 {
+    /*
     auto director = Director::get();
     auto scene = std::make_shared<Scene>();
     auto node = std::make_shared<Node>();
@@ -32,7 +33,22 @@ void Game::start()
     scene->add_node(node2);
     
     node->action(RepeatForever::make(SpinBy::make(2, 360)));
-    node2->action(RepeatForever::make(SpinBy::make(8, Vec3(0, 0, 360))));
+    node2->action(RepeatForever::make(SpinBy::make(16, Vec3(0, 0, 360))));
     camera->action(MoveBy::make(120,Vec3(0,0,100)));
+     */
+    auto director = Director::get();
+    auto scene = Scene::load("chair.scn");
+    auto camera = std::make_shared<Camera>();
+    
+    director->scene(scene);
+    
+    camera->name("main_camera");
+    camera->position(Vec3(0,1.2f,4));
+    
+    for (auto& node : scene->nodes()) {
+        if (node)
+    }
+    
+    scene->camera("camera2");
 }
 }

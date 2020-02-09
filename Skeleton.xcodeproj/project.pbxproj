@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D1777FE23E596260044FF04 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D1777FC23E596250044FF04 /* Game.cpp */; };
+		0D34016623F0074B00183EAC /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D34016523F0074B00183EAC /* test_scene.scn */; };
 		0D5CBD4623EEC3F300C6D42C /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CBD4223EEC3F200C6D42C /* Camera.cpp */; };
 		0D5CBD4723EEC3F300C6D42C /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CBD4323EEC3F300C6D42C /* Light.cpp */; };
 		0D5CBD4C23EEC5A500C6D42C /* CameraImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CBD4823EEC5A500C6D42C /* CameraImpl.mm */; };
@@ -72,6 +73,7 @@
 		0D1777FC23E596250044FF04 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		0D1777FD23E596260044FF04 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		0D299D6D23EF13D50011FA11 /* all */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = all; sourceTree = "<group>"; };
+		0D34016523F0074B00183EAC /* test_scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = test_scene.scn; sourceTree = "<group>"; };
 		0D5CBD4223EEC3F200C6D42C /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		0D5CBD4323EEC3F300C6D42C /* Light.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
 		0D5CBD4423EEC3F300C6D42C /* Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Light.h; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				0DA9450123D6429F00AEBEAA /* Assets.xcassets */,
 				0DA9450623D6429F00AEBEAA /* Info.plist */,
 				0DA9450723D6429F00AEBEAA /* main.m */,
+				0D34016523F0074B00183EAC /* test_scene.scn */,
 			);
 			path = Skeleton;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				0DDF683B23E5887E00827D46 /* Quaternion.inl in Resources */,
 				0DDF683D23E5887E00827D46 /* Vec3.inl in Resources */,
 				0DDF685023E5894D00827D46 /* all in Resources */,
+				0D34016623F0074B00183EAC /* test_scene.scn in Resources */,
 				0DDF683C23E5887E00827D46 /* Mat4.inl in Resources */,
 				0DDF684D23E5891B00827D46 /* utils.inl in Resources */,
 				0DDF684023E5887E00827D46 /* Vec4.inl in Resources */,

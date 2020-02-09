@@ -22,5 +22,7 @@ public:
 private:
     Light* m_abstract;
     void* m_native;
+    
+    friend class SceneImpl;
 };
 }
