@@ -1,8 +1,5 @@
 #include <metal_stdlib>
-#include <simd/simd.h>
-
 using namespace metal;
-
 #import "ShaderTypes.h"
 
 typedef struct
@@ -12,26 +9,34 @@ typedef struct
 
 } RasterizerData;
 
-vertex RasterizerData
-vertexTestShader(uint vertexID [[vertex_id]],
-             constant AAPLVertex *vertices [[buffer(AAPLVertexInputIndexVertices)]],
-             constant vector_uint2 *viewportSizePointer [[buffer(AAPLVertexInputIndexViewportSize)]])
-{
-    RasterizerData out;
+struct NodeBuffer {
+  float4x4 modelTransform;
+  float4x4 modelViewProjectionTransform;
+  float4x4 modelViewTransform;
+  float4x4 normalTransform;
+  float2x3 boundingBox;
+};
 
-    float2 pixelSpacePosition = vertices[vertexID].position.xy;
-    vector_float2 viewportSize = vector_float2(*viewportSizePointer);
-    
-    out.position = vector_float4(0.0, 0.0, 0.0, 1.0);
-    out.position.xy = pixelSpacePosition / (viewportSize / 2.0);
+struct VertexInput {
+  float3 position  [[attribute(SCNVertexSemanticPosition)]];
+  float2 uv [[attribute(SCNVertexSemanticTexcoord0)]];
+};
 
-    out.color = vertices[vertexID].color;
+struct VertexOut {
+  float4 position [[position]];
+  float2 uv;
+};
 
-    return out;
+vertex VertexOut textureSamplerVertex(VertexInput in [[ stage_in ]],
+                                      constant NodeBuffer& scn_node [[buffer(1)]]) {
+  VertexOut out;
+  out.position = scn_node.modelViewProjectionTransform * float4(in.position, 1.0);
+  out.uv = in.uv;
+  return out;
 }
 
-fragment float4 fragmentShader(RasterizerData in [[stage_in]])
+fragment float4 fragmentShader(VertexOut in [[stage_in]])
 {
-    return in.color;
+    return float4(1.0,0.5,0.0,1.0);
 }
 

@@ -19,21 +19,14 @@ void ActionRunner::remove_target(NodePtr target)
 
 void ActionRunner::update(float dt)
 {
-    std::vector<std::vector<ActionPtr>::iterator> to_remove;
-    
-    for (auto iter = m_actions.begin(); iter != m_actions.end(); iter++) {
-        auto action = *iter;
-        if (action->done()) {
-            to_remove.push_back(iter);
-            continue;
+    std::remove_if(m_actions.begin(), m_actions.end(), [&](ActionPtr& action) {
+        auto done = action->done();
+        if (!done) {
+            action->step(dt);
         }
         
-        action->step(dt);
-    }
-    
-    for (auto& iter : to_remove) {
-        m_actions.erase(iter);
-    }
+        return done;
+    });
 }
 
 }

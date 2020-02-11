@@ -28,4 +28,6 @@ typedef struct
     vector_float4 color;
 } AAPLVertex;
 
+#include <SceneKit/scn_metal>
+
 #endif /* AAPLShaderTypes_h */

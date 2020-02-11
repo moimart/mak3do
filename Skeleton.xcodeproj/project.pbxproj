@@ -342,9 +342,9 @@
 			isa = PBXGroup;
 			children = (
 				0DEF44C123E5BC7600B6D870 /* actions.h */,
-				0DEF44C523E5BC7600B6D870 /* all */,
 				0DEF44C623E5BC7600B6D870 /* Action.h */,
 				0DEF44CB23E5BC7600B6D870 /* Action.cpp */,
+				0DEF44C523E5BC7600B6D870 /* all */,
 				0DEF44D223E5BE3B00B6D870 /* ActionInterval.cpp */,
 				0DEF44D323E5BE3B00B6D870 /* ActionInterval.h */,
 			);
