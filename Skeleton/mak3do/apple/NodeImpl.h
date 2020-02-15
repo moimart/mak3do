@@ -38,6 +38,9 @@ public:
     
     void name(const std::string& name);
     std::string name() const;
+    
+    void geometry(GeometryPtr geometry);
+    GeometryPtr geometry() const;
 
 private:
     Node* m_abstract;

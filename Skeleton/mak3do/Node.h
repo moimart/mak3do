@@ -44,6 +44,8 @@ public:
     void name(const std::string& name);
     std::string name() const;
     
+    void geometry(GeometryPtr geometry);
+    GeometryPtr geometry() const;
     
 protected:
     
@@ -51,5 +53,6 @@ protected:
     
     friend class NodeImpl;
     friend class SceneImpl;
+    friend class GeometryImpl;
 };
 }

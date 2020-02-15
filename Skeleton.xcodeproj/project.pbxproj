@@ -13,6 +13,13 @@
 		0D5CBD4723EEC3F300C6D42C /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CBD4323EEC3F300C6D42C /* Light.cpp */; };
 		0D5CBD4C23EEC5A500C6D42C /* CameraImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CBD4823EEC5A500C6D42C /* CameraImpl.mm */; };
 		0D5CBD4D23EEC5A500C6D42C /* LightImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CBD4B23EEC5A500C6D42C /* LightImpl.mm */; };
+		0D69FA0023F804D500C80AA3 /* GeometryImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D69F9FD23F804D400C80AA3 /* GeometryImpl.mm */; };
+		0D69FA0423F804F600C80AA3 /* ActionRunner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D69FA0223F804F600C80AA3 /* ActionRunner.cpp */; };
+		0D69FA0523F804F600C80AA3 /* Geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D69FA0323F804F600C80AA3 /* Geometry.cpp */; };
+		0D69FA0B23F80BD400C80AA3 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D69FA0923F80BD400C80AA3 /* Sphere.cpp */; };
+		0D69FA0C23F80BD400C80AA3 /* Box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D69FA0A23F80BD400C80AA3 /* Box.cpp */; };
+		0D69FA0F23F80E0F00C80AA3 /* SphereImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D69FA0E23F80E0F00C80AA3 /* SphereImpl.mm */; };
+		0D69FA1223F8131300C80AA3 /* BoxImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D69FA1023F8131300C80AA3 /* BoxImpl.mm */; };
 		0DA9450223D6429F00AEBEAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DA9450123D6429F00AEBEAA /* Assets.xcassets */; };
 		0DA9450823D6429F00AEBEAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9450723D6429F00AEBEAA /* main.m */; };
 		0DA9451223D6429F00AEBEAA /* SkeletonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9451123D6429F00AEBEAA /* SkeletonTests.m */; };
@@ -82,6 +89,21 @@
 		0D5CBD4923EEC5A500C6D42C /* CameraImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraImpl.h; sourceTree = "<group>"; };
 		0D5CBD4A23EEC5A500C6D42C /* LightImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightImpl.h; sourceTree = "<group>"; };
 		0D5CBD4B23EEC5A500C6D42C /* LightImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LightImpl.mm; sourceTree = "<group>"; };
+		0D69F9FD23F804D400C80AA3 /* GeometryImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GeometryImpl.mm; sourceTree = "<group>"; };
+		0D69F9FE23F804D400C80AA3 /* GeometryImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryImpl.h; sourceTree = "<group>"; };
+		0D69F9FF23F804D500C80AA3 /* CameraImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraImpl.h; sourceTree = "<group>"; };
+		0D69FA0123F804F500C80AA3 /* Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geometry.h; sourceTree = "<group>"; };
+		0D69FA0223F804F600C80AA3 /* ActionRunner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionRunner.cpp; sourceTree = "<group>"; };
+		0D69FA0323F804F600C80AA3 /* Geometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Geometry.cpp; sourceTree = "<group>"; };
+		0D69FA0723F80B4100C80AA3 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
+		0D69FA0823F80B4100C80AA3 /* Sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sphere.h; sourceTree = "<group>"; };
+		0D69FA0923F80BD400C80AA3 /* Sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sphere.cpp; sourceTree = "<group>"; };
+		0D69FA0A23F80BD400C80AA3 /* Box.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Box.cpp; sourceTree = "<group>"; };
+		0D69FA0D23F80E0F00C80AA3 /* SphereImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SphereImpl.h; sourceTree = "<group>"; };
+		0D69FA0E23F80E0F00C80AA3 /* SphereImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SphereImpl.mm; sourceTree = "<group>"; };
+		0D69FA1023F8131300C80AA3 /* BoxImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BoxImpl.mm; sourceTree = "<group>"; };
+		0D69FA1123F8131300C80AA3 /* BoxImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxImpl.h; sourceTree = "<group>"; };
+		0D69FA1423F8172B00C80AA3 /* tests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tests.hpp; sourceTree = "<group>"; };
 		0DA944F223D6429D00AEBEAA /* Skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skeleton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DA9450123D6429F00AEBEAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DA9450623D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -183,6 +205,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D69FA0623F80B4100C80AA3 /* geometries */ = {
+			isa = PBXGroup;
+			children = (
+				0D69FA0723F80B4100C80AA3 /* Box.h */,
+				0D69FA0A23F80BD400C80AA3 /* Box.cpp */,
+				0D69FA0823F80B4100C80AA3 /* Sphere.h */,
+				0D69FA0923F80BD400C80AA3 /* Sphere.cpp */,
+			);
+			path = geometries;
+			sourceTree = "<group>";
+		};
+		0D69FA1323F8172B00C80AA3 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				0D69FA1423F8172B00C80AA3 /* tests.hpp */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
 		0DA944E923D6429D00AEBEAA = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +307,8 @@
 		0DDF67F623DC583000827D46 /* mak3do */ = {
 			isa = PBXGroup;
 			children = (
+				0D69FA1323F8172B00C80AA3 /* tests */,
+				0D69FA0623F80B4100C80AA3 /* geometries */,
 				0DEF44BF23E5BC7600B6D870 /* actions */,
 				0DDF682323E5887D00827D46 /* math */,
 				0DDF680623DC5E4500827D46 /* apple */,
@@ -273,7 +316,6 @@
 				0DDF680023DC5B1200827D46 /* Node.cpp */,
 				0DDF680223DC5B1200827D46 /* Scene.h */,
 				0DDF67FF23DC5B1200827D46 /* Scene.cpp */,
-				0DDF680323DC5B1200827D46 /* types.h */,
 				0DDF67F723DC583000827D46 /* Director.h */,
 				0DDF67F823DC583000827D46 /* Director.cpp */,
 				0DEF44D623E5C7A400B6D870 /* Color.cpp */,
@@ -286,6 +328,10 @@
 				0D5CBD4523EEC3F300C6D42C /* Camera.h */,
 				0D5CBD4323EEC3F300C6D42C /* Light.cpp */,
 				0D5CBD4423EEC3F300C6D42C /* Light.h */,
+				0D69FA0223F804F600C80AA3 /* ActionRunner.cpp */,
+				0D69FA0323F804F600C80AA3 /* Geometry.cpp */,
+				0D69FA0123F804F500C80AA3 /* Geometry.h */,
+				0DDF680323DC5B1200827D46 /* types.h */,
 				0D299D6D23EF13D50011FA11 /* all */,
 			);
 			path = mak3do;
@@ -304,6 +350,13 @@
 				0D5CBD4823EEC5A500C6D42C /* CameraImpl.mm */,
 				0D5CBD4A23EEC5A500C6D42C /* LightImpl.h */,
 				0D5CBD4B23EEC5A500C6D42C /* LightImpl.mm */,
+				0D69F9FF23F804D500C80AA3 /* CameraImpl.h */,
+				0D69F9FE23F804D400C80AA3 /* GeometryImpl.h */,
+				0D69F9FD23F804D400C80AA3 /* GeometryImpl.mm */,
+				0D69FA0D23F80E0F00C80AA3 /* SphereImpl.h */,
+				0D69FA0E23F80E0F00C80AA3 /* SphereImpl.mm */,
+				0D69FA1123F8131300C80AA3 /* BoxImpl.h */,
+				0D69FA1023F8131300C80AA3 /* BoxImpl.mm */,
 			);
 			path = apple;
 			sourceTree = "<group>";
@@ -489,7 +542,9 @@
 			files = (
 				0DEF44D523E5BF5700B6D870 /* ActionInterval.cpp in Sources */,
 				0DDF684E23E5891B00827D46 /* utils.cpp in Sources */,
+				0D69FA0B23F80BD400C80AA3 /* Sphere.cpp in Sources */,
 				0D5CBD4623EEC3F300C6D42C /* Camera.cpp in Sources */,
+				0D69FA0F23F80E0F00C80AA3 /* SphereImpl.mm in Sources */,
 				0DDF680523DC5B1200827D46 /* Node.cpp in Sources */,
 				0DDF67FA23DC583000827D46 /* DirectorDisplayLink.mm in Sources */,
 				0DDF67FE23DC583000827D46 /* Director.cpp in Sources */,
@@ -498,11 +553,15 @@
 				0DDF682223DC63EB00827D46 /* SceneImpl.mm in Sources */,
 				0DEF44D123E5BC7600B6D870 /* Action.cpp in Sources */,
 				0DA9450823D6429F00AEBEAA /* main.m in Sources */,
+				0D69FA0C23F80BD400C80AA3 /* Box.cpp in Sources */,
 				0DDF67FD23DC583000827D46 /* AppDelegate.mm in Sources */,
 				0DDF684223E5887E00827D46 /* Quaternion.cpp in Sources */,
+				0D69FA0023F804D500C80AA3 /* GeometryImpl.mm in Sources */,
 				0DDF67FC23DC583000827D46 /* TestShaders.metal in Sources */,
+				0D69FA1223F8131300C80AA3 /* BoxImpl.mm in Sources */,
 				0D5CBD4723EEC3F300C6D42C /* Light.cpp in Sources */,
 				0DDF684723E5887E00827D46 /* Vec3.cpp in Sources */,
+				0D69FA0423F804F600C80AA3 /* ActionRunner.cpp in Sources */,
 				0D5CBD4C23EEC5A500C6D42C /* CameraImpl.mm in Sources */,
 				0DDF684323E5887E00827D46 /* Vec4.cpp in Sources */,
 				0DDF684623E5887E00827D46 /* Plane.cpp in Sources */,
@@ -511,6 +570,7 @@
 				0DDF680423DC5B1200827D46 /* Scene.cpp in Sources */,
 				0DDF684523E5887E00827D46 /* Vec2.cpp in Sources */,
 				0DDF67F923DC583000827D46 /* SceneRenderer.mm in Sources */,
+				0D69FA0523F804F600C80AA3 /* Geometry.cpp in Sources */,
 				0DDF682023DC63EB00827D46 /* DirectorImpl.mm in Sources */,
 				0DEF44D823E5C7A400B6D870 /* Color.cpp in Sources */,
 				0D5CBD4D23EEC5A500C6D42C /* LightImpl.mm in Sources */,

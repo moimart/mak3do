@@ -35,6 +35,11 @@ class Scene;
 class Node;
 class Light;
 class Camera;
+
+class Geometry;
+class Sphere;
+class Box;
+
 class Action;
 class ActionRunner;
 
@@ -43,11 +48,17 @@ class SceneImpl;
 class NodeImpl;
 class LightImpl;
 class CameraImpl;
+class GeometryImpl;
+class SphereImpl;
+class BoxImpl;
 
 typedef std::shared_ptr<Scene> ScenePtr;
 typedef std::shared_ptr<Node> NodePtr;
 typedef std::shared_ptr<Camera> CameraPtr;
 typedef std::shared_ptr<Light> LightPtr;
+typedef std::shared_ptr<Geometry> GeometryPtr;
+typedef std::shared_ptr<Sphere> SpherePtr;
+typedef std::shared_ptr<Box> BoxPtr;
 typedef std::shared_ptr<Action> ActionPtr;
 typedef std::shared_ptr<ActionRunner> ActionRunnerPtr;
 
@@ -56,4 +67,7 @@ typedef std::shared_ptr<SceneImpl> SceneImplPtr;
 typedef std::shared_ptr<NodeImpl> NodeImplPtr;
 typedef std::shared_ptr<LightImpl> LightImplPtr;
 typedef std::shared_ptr<CameraImpl> CameraImplPtr;
+typedef std::shared_ptr<GeometryImpl> GeometryImplPtr;
+typedef std::shared_ptr<SphereImpl> SphereImplPtr;
+typedef std::shared_ptr<BoxImpl> BoxImplPtr;
 }

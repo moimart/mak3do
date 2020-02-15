@@ -1,19 +1,14 @@
 #include "NodeImpl.h"
+#include "GeometryImpl.h"
 #include "../Node.h"
+#include "../Geometry.h"
 #import <SceneKit/SceneKit.h>
 
 namespace mak3do {
 NodeImpl::NodeImpl(Node* parent)
 : m_abstract(parent)
 {
-    SCNBox* box = [[SCNBox alloc] init];
-    [box setWidth:1];
-    [box setHeight:1];
-    [box setLength:1];
-    [box setChamferRadius: 0];
-    box.materials.firstObject.diffuse.contents = [UIColor redColor];
     SCNNode* node = [SCNNode node];
-    [node setGeometry:box];
     [node setPosition:SCNVector3Make(0, 0, 0)];
     
     m_native = (void*)CFBridgingRetain(node);
@@ -171,6 +166,19 @@ std::string NodeImpl::name() const
     }
     
     return std::string([node.name UTF8String]);
+}
+
+void NodeImpl::geometry(GeometryPtr geometry)
+{
+    SCNNode* __node = (__bridge SCNNode*)m_native;
+    SCNGeometry* __geometry = (__bridge SCNGeometry*)geometry->m_geometry_pimpl->m_native_geometry;
+    
+    [__node setGeometry: __geometry];
+}
+
+GeometryPtr NodeImpl::geometry() const
+{
+    return nullptr;
 }
 
 }

@@ -3,8 +3,6 @@
 #include "types.h"
 #include "Node.h"
 
-class Camera;
-
 namespace mak3do {
 class Camera : public Node {
 public:

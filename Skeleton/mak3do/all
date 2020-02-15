@@ -6,4 +6,9 @@
 #include "Node.h"
 #include "Camera.h"
 #include "Light.h"
+#include "Geometry.h"
+
 #include "actions/ActionInterval.h"
+
+#include "geometries/Sphere.h"
+#include "geometries/Box.h"

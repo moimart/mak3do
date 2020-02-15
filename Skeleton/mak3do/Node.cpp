@@ -124,4 +124,15 @@ void Node::stop_all_actions()
     Director::get()->defaultActionRunner()->remove_target(this->shared_from_this());
 }
 
+void Node::geometry(GeometryPtr geometry)
+{
+    m_pimpl->geometry(geometry);
+}
+
+GeometryPtr Node::geometry() const
+{
+    return m_pimpl->geometry();
+}
+
+
 }
