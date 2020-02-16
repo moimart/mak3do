@@ -1,5 +1,6 @@
 #include <mak3do/scenegraph/Director.h>
 #include <mak3do/scenegraph/ActionRunner.h>
+#include <mak3do/scenegraph/Scheduler.h>
 
 #ifdef M3D_PLAT_APPLE
 #include <mak3do/scenegraph/apple/DirectorImpl.h>
@@ -23,6 +24,7 @@ Director* Director::get()
 Director::Director()
 : m_pimpl(std::make_shared<DirectorImpl>(this))
 , m_action_runner(std::make_shared<ActionRunner>())
+, m_scheduler(std::make_shared<Scheduler>())
 {
 }
 
@@ -63,9 +65,14 @@ void Director::loop()
     m_pimpl->loop(m_dt);
 }
 
-ActionRunnerPtr Director::defaultActionRunner() const
+ActionRunnerPtr Director::action_runner() const
 {
     return m_action_runner;
+}
+
+SchedulerPtr Director::scheduler() const
+{
+    return m_scheduler;
 }
 
 void Director::scene(ScenePtr scene)

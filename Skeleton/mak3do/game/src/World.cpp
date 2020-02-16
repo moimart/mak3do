@@ -38,6 +38,8 @@ public:
     void resume();
 
 private:
+    std::vector<ScheduleUpdateCallbackPtr> m_scheduler_callbacks;
+    
     std::set<GameObjectPtr> m_objects;
     std::map<std::string, GameObjectPtr> m_objects_with_ids;
     
@@ -173,7 +175,7 @@ WorldImpl::WorldImpl(PhysicsWorld::Type type, ScenePtr scene, World* parent)
 
 WorldImpl::~WorldImpl()
 {
-    
+    m_scheduler_callbacks.clear();
 }
 
 void WorldImpl::add_object(GameObjectPtr object, const std::string& id)
@@ -294,19 +296,19 @@ CameraPtr WorldImpl::default_camera() const
 void WorldImpl::start()
 {
     if (!m_world_started) {
-        /* TODO: Scheduler!!!
+        
         auto sched = Director::get()->scheduler();
          
-        auto callback = std::make_shared<SchedulerCallback>();
-         
+        auto callback = std::make_shared<ScheduleUpdate>();
+        
         callback->lambda = [this](float dt) {
             update(dt);
         };
         callback->cb_id = "world_update";
 
         sched->schedule(callback);
-         
-        */
+        
+        m_scheduler_callbacks.push_back(callback);
 
         m_world_started = true;
         m_world_paused = false;

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D34016623F0074B00183EAC /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D34016523F0074B00183EAC /* test_scene.scn */; };
+		0D4C4A8A23F9DAD0000F7C36 /* Scheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C4A8923F9DAD0000F7C36 /* Scheduler.cpp */; };
 		0DA9450223D6429F00AEBEAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DA9450123D6429F00AEBEAA /* Assets.xcassets */; };
 		0DA9450823D6429F00AEBEAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9450723D6429F00AEBEAA /* main.m */; };
 		0DA9451223D6429F00AEBEAA /* SkeletonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9451123D6429F00AEBEAA /* SkeletonTests.m */; };
@@ -198,6 +199,8 @@
 
 /* Begin PBXFileReference section */
 		0D34016523F0074B00183EAC /* test_scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = test_scene.scn; sourceTree = "<group>"; };
+		0D4C4A8523F9DAC4000F7C36 /* Scheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scheduler.h; sourceTree = "<group>"; };
+		0D4C4A8923F9DAD0000F7C36 /* Scheduler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scheduler.cpp; sourceTree = "<group>"; };
 		0D69FA1423F8172B00C80AA3 /* tests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tests.hpp; sourceTree = "<group>"; };
 		0DA944F223D6429D00AEBEAA /* Skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skeleton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DA9450123D6429F00AEBEAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -782,6 +785,7 @@
 				0DF568A423F983DC00A99E1C /* geometries */,
 				0DF568B823F983FB00A99E1C /* actions */,
 				0DF5689523F983DC00A99E1C /* Director.h */,
+				0D4C4A8523F9DAC4000F7C36 /* Scheduler.h */,
 				0DF5689723F983DC00A99E1C /* Light.h */,
 				0DF5689923F983DC00A99E1C /* types.h */,
 				0DF5689A23F983DC00A99E1C /* Camera.h */,
@@ -823,6 +827,7 @@
 				0DF568E323F986AD00A99E1C /* ActionInterval.cpp */,
 				0DF568CC23F9846A00A99E1C /* Director.cpp */,
 				0DF568CD23F9846A00A99E1C /* Geometry.cpp */,
+				0D4C4A8923F9DAD0000F7C36 /* Scheduler.cpp */,
 				0DF568CE23F9846A00A99E1C /* Scene.cpp */,
 				0DF568CF23F9846A00A99E1C /* Box.cpp */,
 				0DF568D023F9846A00A99E1C /* Camera.cpp */,
@@ -1145,6 +1150,7 @@
 				0DF5686E23F97F1C00A99E1C /* b2_distance_joint.cpp in Sources */,
 				0DF5688E23F97F1C00A99E1C /* b2_collide_polygon.cpp in Sources */,
 				0DF569E823F9B91D00A99E1C /* SphereImpl.mm in Sources */,
+				0D4C4A8A23F9DAD0000F7C36 /* Scheduler.cpp in Sources */,
 				0DF568E623F986AE00A99E1C /* Action.cpp in Sources */,
 				0DF569EB23F9B91D00A99E1C /* CameraImpl.mm in Sources */,
 				0DDF684123E5887E00827D46 /* Mat4.cpp in Sources */,

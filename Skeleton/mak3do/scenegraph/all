@@ -2,6 +2,7 @@
 
 #include "types.h"
 #include "Director.h"
+#include "Scheduler.h"
 #include "Scene.h"
 #include "Node.h"
 #include "Camera.h"

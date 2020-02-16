@@ -12,7 +12,8 @@ public:
     
     void scene(ScenePtr scene);
     
-    ActionRunnerPtr defaultActionRunner() const;
+    ActionRunnerPtr action_runner() const;
+    SchedulerPtr scheduler() const;
     
 protected:
     Director();
@@ -21,8 +22,8 @@ protected:
     
 private:
     DirectorImplPtr m_pimpl;
-    
     ActionRunnerPtr m_action_runner;
+    SchedulerPtr m_scheduler;
     
     struct _timeval m_last_update;
     float m_dt { 0 };

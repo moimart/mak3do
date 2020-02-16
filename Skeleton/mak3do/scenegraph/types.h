@@ -30,7 +30,15 @@ struct _timeval {
     int tv_usec; // microSeconds
 };
 
+struct ScheduleUpdate {
+    std::function<void(float)> lambda;
+    std::string cb_id;
+};
+
+typedef std::shared_ptr<ScheduleUpdate> ScheduleUpdateCallbackPtr;
+
 class Director;
+class Scheduler;
 class Scene;
 class Node;
 class Light;
@@ -52,6 +60,7 @@ class GeometryImpl;
 class SphereImpl;
 class BoxImpl;
 
+typedef std::shared_ptr<Scheduler> SchedulerPtr;
 typedef std::shared_ptr<Scene> ScenePtr;
 typedef std::shared_ptr<Node> NodePtr;
 typedef std::shared_ptr<Camera> CameraPtr;

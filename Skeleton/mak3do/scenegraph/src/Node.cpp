@@ -116,12 +116,12 @@ std::string Node::name() const
 
 void Node::action(ActionPtr action)
 {
-    Director::get()->defaultActionRunner()->add_action(action,this->shared_from_this());
+    Director::get()->action_runner()->add_action(action,this->shared_from_this());
 }
 
 void Node::stop_all_actions()
 {
-    Director::get()->defaultActionRunner()->remove_target(this->shared_from_this());
+    Director::get()->action_runner()->remove_target(this->shared_from_this());
 }
 
 void Node::geometry(GeometryPtr geometry)
