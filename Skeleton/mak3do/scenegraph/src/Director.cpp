@@ -6,13 +6,13 @@
 //  Copyright © 2020 Moises Martinez. All rights reserved.
 //
 
-#include "Director.h"
-#include "ActionRunner.h"
+#include <mak3do/scenegraph/Director.h>
+#include <mak3do/scenegraph/ActionRunner.h>
 
 #ifdef M3D_PLAT_APPLE
-#include "apple/DirectorImpl.h"
+#include <mak3do/apple/DirectorImpl.h>
 #elif M3D_PLAT_ANDROID
-#include "android/DirectorImpl.h"
+#include <mak3do/android/DirectorImpl.h>
 #endif
 
 namespace mak3do {

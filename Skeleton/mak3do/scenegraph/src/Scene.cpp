@@ -1,8 +1,8 @@
-#include "Scene.h"
+#include <mak3do/scenegraph/Scene.h>
 #ifdef M3D_PLAT_APPLE
-#include "apple/SceneImpl.h"
+#include <mak3do/apple/SceneImpl.h>
 #elif M3D_PLAT_ANDROID
-#include "android/SceneImpl.h"
+#include <mak3do/android/SceneImpl.h>
 #endif
 
 namespace mak3do {

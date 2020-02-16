@@ -24,8 +24,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
-#include "ActionInterval.h"
-#include "../Node.h"
+#include <mak3do/scenegraph/actions/ActionInterval.h>
+#include <mak3do/scenegraph/Node.h>
 #include <stdarg.h>
 
 /** @def CC_ENABLE_STACKABLE_ACTIONS

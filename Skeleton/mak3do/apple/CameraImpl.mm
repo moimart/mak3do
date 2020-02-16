@@ -1,6 +1,6 @@
 #include "CameraImpl.h"
 #include "NodeImpl.h"
-#include "../Camera.h"
+#include <mak3do/scenegraph/Camera.h>
 #import <SceneKit/SceneKit.h>
 
 namespace mak3do {

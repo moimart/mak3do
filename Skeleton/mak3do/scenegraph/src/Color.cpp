@@ -1,4 +1,4 @@
-#include "Color.h"
+#include <mak3do/scenegraph/Color.h>
 
 #ifndef MIN
 #define MIN(x, y) (((x) > (y)) ? (y) : (x))

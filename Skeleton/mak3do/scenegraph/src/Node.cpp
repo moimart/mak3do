@@ -1,10 +1,10 @@
-#include "Node.h"
-#include "Director.h"
-#include "ActionRunner.h"
+#include <mak3do/scenegraph/Node.h>
+#include <mak3do/scenegraph/Director.h>
+#include <mak3do/scenegraph/ActionRunner.h>
 #ifdef M3D_PLAT_APPLE
-#include "apple/NodeImpl.h"
+#include <mak3do/apple/NodeImpl.h>
 #elif M3D_PLAT_ANDROID
-#include "android/NodeImpl.h"
+#include <mak3do/android/NodeImpl.h>
 #endif
 
 namespace mak3do {

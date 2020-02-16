@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../types.h"
-#include "../Color.h"
+#include <mak3do/scenegraph/types.h>
+#include <mak3do/scenegraph/Color.h>
 
 namespace mak3do {
 class GeometryImpl {

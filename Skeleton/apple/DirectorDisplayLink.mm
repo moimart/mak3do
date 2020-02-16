@@ -1,7 +1,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DirectorDisplayLink.h"
-#import "../mak3do/Director.h"
+#import <mak3do/scenegraph/Director.h>
 
 static id s_sharedDirectorDisplayLink;
 

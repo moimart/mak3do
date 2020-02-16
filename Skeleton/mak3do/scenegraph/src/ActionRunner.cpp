@@ -1,6 +1,6 @@
-#include "ActionRunner.h"
-#include "Node.h"
-#include "actions/Action.h"
+#include <mak3do/scenegraph/ActionRunner.h>
+#include <mak3do/scenegraph/Node.h>
+#include <mak3do/scenegraph/actions/Action.h>
 
 namespace mak3do {
 

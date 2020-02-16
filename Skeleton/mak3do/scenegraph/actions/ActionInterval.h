@@ -27,8 +27,8 @@ THE SOFTWARE.
 #pragma once
 
 #include "Action.h"
-#include "../Node.h"
-#include "../Color.h"
+#include <mak3do/scenegraph/Node.h>
+#include <mak3do/scenegraph/Color.h>
 
 namespace mak3do {
 /**

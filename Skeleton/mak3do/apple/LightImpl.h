@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../types.h"
-#include "../Light.h"
-#include "../Color.h"
+#include <mak3do/scenegraph/types.h>
+#include <mak3do/scenegraph/Light.h>
+#include <mak3do/scenegraph/Color.h>
 
 namespace mak3do {
 class LightImpl {

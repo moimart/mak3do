@@ -1,8 +1,8 @@
-#include "Geometry.h"
+#include <mak3do/scenegraph/Geometry.h>
 #ifdef M3D_PLAT_APPLE
-#include "apple/GeometryImpl.h"
+#include <mak3do/apple/GeometryImpl.h>
 #elif M3D_PLAT_ANDROID
-#include "android/GeometryImpl.h"
+#include <mak3do/android/GeometryImpl.h>
 #endif
 
 namespace mak3do {

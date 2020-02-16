@@ -1,7 +1,7 @@
-#include "Action.h"
+#include <mak3do/scenegraph/actions/Action.h>
 //#include "ActionInterval.h"
-#include "../Director.h"
-#include "../Node.h"
+#include <mak3do/scenegraph/Director.h>
+#include <mak3do/scenegraph/Node.h>
 
 using namespace mak3do;
 //

@@ -12,7 +12,7 @@
 #import "SceneRenderer.h"
 #import <MapKit/MapKit.h>
 
-#include "../mak3do/Game.h"
+#include <mak3do/Game.hpp>
 
 @interface AppDelegate ()
 

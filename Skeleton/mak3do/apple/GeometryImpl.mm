@@ -1,6 +1,6 @@
 #include "GeometryImpl.h"
-#include "../Geometry.h"
-#include "../Color.h"
+#include <mak3do/scenegraph/Geometry.h>
+#include <mak3do/scenegraph/Color.h>
 #import <SceneKit/SceneKit.h>
 
 

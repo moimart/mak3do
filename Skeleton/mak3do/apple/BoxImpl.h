@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../types.h"
+#include <mak3do/scenegraph/types.h>
 
 namespace mak3do {
 class BoxImpl {

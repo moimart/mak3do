@@ -1,6 +1,6 @@
 #include "BoxImpl.h"
 #include "GeometryImpl.h"
-#include "../geometries/Box.h"
+#include <mak3do/scenegraph/geometries/Box.h>
 #import <SceneKit/SceneKit.h>
 
 namespace mak3do {

@@ -9,7 +9,7 @@
 #include <vector>
 #include <iostream>
 #include <string>
-#include "math/all"
+#include <mak3do/math/all>
 
 #ifndef MIN
 #define MIN(x, y) (((x) > (y)) ? (y) : (x))

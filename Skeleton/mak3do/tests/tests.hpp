@@ -1,5 +1,5 @@
 #pragma once
-#include <mak3do/all>
+#include <mak3do/scenegraph/all>
 
 namespace mak3do {
 namespace tests {

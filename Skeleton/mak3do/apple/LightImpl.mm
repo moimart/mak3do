@@ -1,6 +1,6 @@
 #include "LightImpl.h"
 #include "NodeImpl.h"
-#include "../Light.h"
+#include <mak3do/scenegraph/Light.h>
 #import <SceneKit/SceneKit.h>
 
 

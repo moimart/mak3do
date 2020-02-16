@@ -1,8 +1,8 @@
-#include "Box.h"
+#include <mak3do/scenegraph/geometries/Box.h>
 #ifdef M3D_PLAT_APPLE
-#include "../apple/BoxImpl.h"
+#include <mak3do/apple/BoxImpl.h>
 #elif M3D_PLAT_ANDROID
-#include "../android/BoxImpl.h"
+#include <mak3do/android/BoxImpl.h>
 #endif
 
 namespace mak3do {

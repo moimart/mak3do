@@ -1,7 +1,7 @@
 #include "NodeImpl.h"
 #include "GeometryImpl.h"
-#include "../Node.h"
-#include "../Geometry.h"
+#include <mak3do/scenegraph/Node.h>
+#include <mak3do/scenegraph/Geometry.h>
 #import <SceneKit/SceneKit.h>
 
 namespace mak3do {

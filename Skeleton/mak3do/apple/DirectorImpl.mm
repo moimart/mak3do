@@ -1,7 +1,7 @@
 #include "DirectorImpl.h"
 #include "SceneImpl.h"
-#include "../Director.h"
-#include "../Scene.h"
+#include <mak3do/scenegraph/Director.h>
+#include <mak3do/scenegraph/Scene.h>
 #import "SceneRenderer.h"
 
 namespace mak3do {

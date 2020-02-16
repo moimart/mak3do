@@ -1,6 +1,6 @@
 #include "SphereImpl.h"
 #include "GeometryImpl.h"
-#include "../geometries/Sphere.h"
+#include <mak3do/scenegraph/geometries/Sphere.h>
 #import <SceneKit/SceneKit.h>
 
 namespace mak3do {

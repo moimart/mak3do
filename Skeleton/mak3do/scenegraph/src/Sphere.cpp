@@ -1,8 +1,8 @@
-#include "Sphere.h"
+#include <mak3do/scenegraph/geometries/Sphere.h>
 #ifdef M3D_PLAT_APPLE
-#include "../apple/SphereImpl.h"
+#include <mak3do/apple/SphereImpl.h>
 #elif M3D_PLAT_ANDROID
-#include "../android/SphereImpl.h"
+#include <mak3do/android/SphereImpl.h>
 #endif
 
 namespace mak3do {
