@@ -1,4 +1,5 @@
 #include <mak3do/game/World.h>
+#include <mak3do/game/GameObject.h>
 //#include "GameScript.h"
 #include <mak3do/game/PhysicsWorld.h>
 
@@ -39,6 +40,9 @@ public:
 private:
     std::set<GameObjectPtr> m_objects;
     std::map<std::string, GameObjectPtr> m_objects_with_ids;
+    
+    std::vector<std::set<GameObjectPtr>::iterator> m_to_delete;
+    std::vector<std::map<std::string, GameObjectPtr>::iterator> m_to_delete_with_id;
 
     //std::map<std::string, GameScriptPtr> m_scripts;
 
@@ -64,53 +68,53 @@ World::World(PhysicsWorld::Type type, ScenePtr scene)
 }
 
 World::World(PhysicsWorldPtr world, ScenePtr scene)
-: m_pImpl(std::make_shared<WorldImpl>(world, scene, this))
+: m_pimpl(std::make_shared<WorldImpl>(world, scene, this))
 {
 }
 
-void World::addObject(GameObjectPtr object, const std::string& id)
+void World::add_object(GameObjectPtr object, const std::string& id)
 {
-    m_pimpl->addObject(object, id);
+    m_pimpl->add_object(object, id);
 }
 
-void World::removeObject(GameObjectPtr object)
+void World::remove_object(GameObjectPtr object)
 {
-    m_pimpl->removeObject(object);
+    m_pimpl->remove_object(object);
 }
 
-std::vector<GameObjectPtr> World::getObjectsByObjectId(const std::string& id) const
+std::vector<GameObjectPtr> World::objects(const std::string& id) const
 {
     return m_pimpl->getObjectsByObjectId(id);
 }
 
-GameObjectPtr World::getObjectById(const std::string& id) const
+GameObjectPtr World::objects_with_id(const std::string& id) const
 {
     return m_pimpl->getObjectById(id);
 }
 
-CameraRef World::getDefaultCamera() const
+CameraPtr World::camera() const
 {
     return m_pimpl->default_camera();
 }
 
 void World::update(float dt)
 {
-    m_pImpl->update(dt);
+    m_pimpl->update(dt);
 }
 
 void World::start()
 {
-    m_pImpl->start();
+    m_pimpl->start();
 }
 
 void World::pause()
 {
-    m_pImpl->pause();
+    m_pimpl->pause();
 }
 
 void World::resume()
 {
-    m_pImpl->resume();
+    m_pimpl->resume();
 }
 
 /*
@@ -127,7 +131,7 @@ PhysicsWorldPtr World::physics_world() const
 
 void World::updated(UpdateCallbackPtr callback)
 {
-    m_pImpl->updated(callback);
+    m_pimpl->updated(callback);
 }
 
 void World::stop_updated(const std::string& id)
@@ -176,15 +180,15 @@ void WorldImpl::add_object(GameObjectPtr object, const std::string& id)
 {
     auto elements = object->elements();
 
-    for (auto& element : elements)
-        m_world->addPhysicsElement(element);
-
-    for (auto node : object->nodes()) {
-        scene->add_node(node);
+    for (auto& element : elements) {
+        m_world->add_element(element);
     }
 
-    object->parent_world(static_pointer_cast<World>(m_parent->shared_from_this()));
-    object->parent(static_pointer_cast<Object>(m_parent->shared_from_this()));
+    for (auto node : object->nodes()) {
+        m_scene->add_node(node);
+    }
+
+    object->parent_world(std::static_pointer_cast<World>(m_parent->shared_from_this()));
 
     if (id != "") {
         m_objects_with_ids[id] = object;
@@ -204,7 +208,7 @@ static inline std::map<std::string, GameObjectPtr>::iterator _find_in_map(GameOb
     return _map.end();
 }
 
-void WorldImpl::removeObject(GameObjectPtr object)
+void WorldImpl::remove_object(GameObjectPtr object)
 {
     auto iter = m_objects.find(object);
 
@@ -215,20 +219,22 @@ void WorldImpl::removeObject(GameObjectPtr object)
         if (iter_map != m_objects_with_ids.end()) {
             o = iter_map->second;
 
-            if (m_doing_update)
+            if (m_doing_update) {
                 m_to_delete_with_id.push_back(iter_map);
-            else
+            } else {
                 m_objects_with_ids.erase(iter_map);
+            }
         } else {
             return;
         }
     } else {
         o = *iter;
 
-        if (m_doing_update)
+        if (m_doing_update) {
             m_to_delete.push_back(iter);
-        else
+        } else {
             m_objects.erase(iter);
+        }
     }
 
     for (auto node : o->nodes()) {
@@ -241,7 +247,6 @@ void WorldImpl::removeObject(GameObjectPtr object)
     }
 
     object->parent_world(nullptr);
-    object->parent(nullptr);
 }
 
 void WorldImpl::update(float dt)
@@ -286,47 +291,59 @@ CameraPtr WorldImpl::default_camera() const
     return m_scene->camera();
 }
 
-void WorldImpl::startWorld()
+void WorldImpl::start()
 {
     if (!m_world_started) {
-        auto sched = Director::getInstance()->getScheduler();
-
-        m_sched_id = sched->scheduleCallback(nullptr, 0, true, 0, false, [this](float dt) {
+        /* TODO: Scheduler!!!
+        auto sched = Director::get()->scheduler();
+         
+        auto callback = std::make_shared<SchedulerCallback>();
+         
+        callback->lambda = [this](float dt) {
             update(dt);
-        });
+        };
+        callback->cb_id = "world_update";
+
+        sched->schedule(callback);
+         
+        */
 
         m_world_started = true;
         m_world_paused = false;
     }
 }
 
-void WorldImpl::pauseWorld()
+void WorldImpl::pause()
 {
     m_world_paused = true;
 }
 
-void WorldImpl::resumeWorld()
+void WorldImpl::resume()
 {
     m_world_paused = false;
 }
 
-void WorldImpl::addScript(const std::string& id, GameScriptPtr script)
+/*
+ void WorldImpl::addScript(const std::string& id, GameScriptPtr script)
 {
     m_scripts[id] = script;
 }
+ */
 
 std::vector<GameObjectPtr> WorldImpl::getObjectsByObjectId(const std::string& id) const
 {
     std::vector<GameObjectPtr> objects_to_return;
 
     for (auto& object : m_objects) {
-        if (object->getId() == id)
+        if (object->name() == id) {
             objects_to_return.push_back(object);
+        }
     }
 
     for (auto& kvp : m_objects_with_ids) {
-        if (kvp.second->getId() == id)
+        if (kvp.second->name() == id) {
             objects_to_return.push_back(kvp.second);
+        }
     }
 
     return objects_to_return;
@@ -336,35 +353,38 @@ GameObjectPtr WorldImpl::getObjectById(const std::string& id) const
 {
     auto iter = m_objects_with_ids.find(id);
 
-    if (iter != m_objects_with_ids.end())
+    if (iter != m_objects_with_ids.end()) {
         return iter->second;
+    }
 
-    return GameObjectPtr();
+    return nullptr;
 }
 
-PhysicsWorldPtr WorldImpl::getPhysicsWorld() const
+PhysicsWorldPtr WorldImpl::physics_world() const
 {
     return m_world;
 }
 
-int WorldImpl::onUpdate(const std::string& id, UpdateCallback callback)
+void WorldImpl::updated(UpdateCallbackPtr callback)
 {
-    return m_update_callbacks.addCallback(id, callback);
+    m_callbacks.push_back(callback);
 }
 
-void WorldImpl::removeUpdateCallback(const std::string& id)
+void WorldImpl::stop_updated(const std::string& id)
 {
-    m_update_callbacks.removeCallback(id);
+    std::remove_if(m_callbacks.begin(),m_callbacks.end(),[&id](UpdateCallbackPtr callback) {
+        return callback->cb_id == id;
+    });
 }
 
-void WorldImpl::removeUpdateCallback(int handler)
+void WorldImpl::stop_updated(UpdateCallbackPtr callback)
 {
-    m_update_callbacks.removeCallback(handler);
+    std::remove(m_callbacks.begin(),m_callbacks.end(),callback);
 }
 
-void WorldImpl::removeAllUpdateCallbacks()
+void WorldImpl::cleanup_updated()
 {
-    m_update_callbacks.removeAllCallbacks();
+    m_callbacks.clear();
 }
 
 }

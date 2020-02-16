@@ -1,96 +1,49 @@
-#include "GameObject.h"
-#include "../common/CallbackManager.h"
-#include "../common/CocosHelper.h"
-#include "GameScript.h"
-#include "PhysicsElement.h"
-#include "World.h"
-
-#define CREATE_CALLBACK_IMPL(callback, type)                           \
-    int GameObject::on##callback(const std::string& id, type callback) \
-    {                                                                  \
-        return m_pImpl->on##callback(id, callback);                    \
-    }                                                                  \
-    void GameObject::remove##callback(const std::string& id)           \
-    {                                                                  \
-        m_pImpl->remove##callback(id);                                 \
-    }                                                                  \
-    void GameObject::remove##callback(int handler)                     \
-    {                                                                  \
-        m_pImpl->remove##callback(handler);                            \
-    }                                                                  \
-    void GameObject::removeAll##callback##Callbacks()                  \
-    {                                                                  \
-        m_pImpl->removeAll##callback##Callbacks();                     \
-    }
-
-#define CREATE_CALLBACK_PIMPL(callback, type, object)                      \
-    int GameObjectImpl::on##callback(const std::string& id, type callback) \
-    {                                                                      \
-        return object.addCallback(id, callback);                           \
-    }                                                                      \
-    void GameObjectImpl::remove##callback(const std::string& id)           \
-    {                                                                      \
-        object.removeCallback(id);                                         \
-    }                                                                      \
-    void GameObjectImpl::remove##callback(int handler)                     \
-    {                                                                      \
-        m_update_callbacks.removeCallback(handler);                        \
-    }                                                                      \
-    void GameObjectImpl::removeAll##callback##Callbacks()                  \
-    {                                                                      \
-        m_update_callbacks.removeAllCallbacks();                           \
-    }
-
-using namespace mak3do;
+#include <mak3do/game/GameObject.h>
+//#include "GameScript.h"
+#include <mak3do/game/PhysicsElement.h>
+#include <mak3do/game/World.h>
 
 namespace mak3do {
+
 class GameObjectImpl {
 public:
     GameObjectImpl(const std::string& id, GameObject* parent);
 
-    std::string getId() const { return m_id; }
+    std::string name() const { return m_name; }
 
-    void addScript(const std::string& id, GameScriptPtr script);
-    void addModel(const std::string& id, ModelPtr model);
-    void addPhysicsElement(const std::string& id, PhysicsElementPtr element);
-    void addSound(const std::string& id, SoundPtr sound);
+    //void addScript(const std::string& id, GameScriptPtr script);
+    void add_node(const std::string& id, NodePtr node);
+    void add_physics_element(const std::string& name, PhysicsElementPtr element);
+    //void addSound(const std::string& id, SoundPtr sound);
 
-    CREATE_CALLBACK(Update, UpdateCallback);
-    CREATE_CALLBACK(Enter, GameObject::EnterCallback);
-    CREATE_CALLBACK(Exit, GameObject::ExitCallback);
+    void remove_from_world();
 
-    void removeFromWorld();
+    void position(const Vec3& position);
+    Vec3 position() const;
 
-    void setPosition(const Vec3& position);
-    Vec3 getPosition() const;
+    NodePtr node(const std::string& id);
+    PhysicsElementPtr physics_element(const std::string& id);
+    //SoundPtr getSound(const std::string& id);
 
-    ModelPtr getModel(const std::string& id);
-    PhysicsElementPtr getPhysicsElement(const std::string& id);
-    SoundPtr getSound(const std::string& id);
+    std::vector<NodePtr> nodes();
+    std::vector<PhysicsElementPtr> elements();
 
-    std::vector<ModelPtr> getAllModels();
-    std::vector<PhysicsElementPtr> getAllElements();
-
-    void setParentWorld(WorldPtr world);
-    WorldPtr getParentWorld() const;
+    void parent_world(WorldPtr world);
+    WorldPtr parent_world() const;
 
     void update(float dt);
 
-    void enableRotation(bool enable);
-    void disablePhysicsCoupling(bool disable = true);
+    void rotation(bool enable);
+    void disable_physics_coupling(bool disable = true);
 
 private:
-    CallbackManager<UpdateCallback> m_update_callbacks;
-    CallbackManager<GameObject::EnterCallback> m_enter_callbacks;
-    CallbackManager<GameObject::ExitCallback> m_exit_callbacks;
-
-    std::map<std::string, ModelPtr> m_models;
+    std::map<std::string, NodePtr> m_nodes;
     std::map<std::string, PhysicsElementPtr> m_elements;
-    std::map<std::string, SoundPtr> m_sounds;
+    //std::map<std::string, SoundPtr> m_sounds;
 
-    std::map<std::string, GameScriptPtr> m_scripts;
+    //std::map<std::string, GameScriptPtr> m_scripts;
 
-    std::string m_id;
+    std::string m_name;
 
     Vec3 m_position;
     WorldPtr m_parent_world;
@@ -100,288 +53,246 @@ private:
 
     GameObject* m_parent;
 };
-}
 
-GameObject::GameObject(const std::string& id)
-    : m_pImpl(std::make_shared<GameObjectImpl>(id, this))
+
+GameObject::GameObject(const std::string& name)
+: m_pimpl(std::make_shared<GameObjectImpl>(name, this))
 {
 }
 
-GameObject::~GameObject()
+void GameObject::add_node(const std::string& id, NodePtr node)
 {
+    m_pimpl->add_node(id, node);
 }
 
-void GameObject::addModel(const std::string& id, ModelPtr model)
+void GameObject::add_physics_element(const std::string& id, PhysicsElementPtr element)
 {
-    m_pImpl->addModel(id, model);
+    m_pimpl->add_physics_element(id, element);
 }
 
-void GameObject::addPhysicsElement(const std::string& id, PhysicsElementPtr element)
+void GameObject::remove_from_world()
 {
-    m_pImpl->addPhysicsElement(id, element);
+    m_pimpl->remove_from_world();
 }
 
-CREATE_CALLBACK_IMPL(Update, UpdateCallback);
-CREATE_CALLBACK_IMPL(Enter, EnterCallback);
-CREATE_CALLBACK_IMPL(Exit, ExitCallback);
-
-void GameObject::removeFromWorld()
+NodePtr GameObject::node(const std::string& id) const
 {
-    m_pImpl->removeFromWorld();
+    return m_pimpl->node(id);
 }
 
-ModelPtr GameObject::getModel(const std::string& id) const
+PhysicsElementPtr GameObject::physics_element(const std::string& id) const
 {
-    return m_pImpl->getModel(id);
-}
-
-PhysicsElementPtr GameObject::getPhysicsElement(const std::string& id) const
-{
-    return m_pImpl->getPhysicsElement(id);
-}
-
-SoundPtr GameObject::getSound(const std::string& id) const
-{
-    return m_pImpl->getSound(id);
+    return m_pimpl->physics_element(id);
 }
 
 void GameObject::update(float dt)
 {
-    m_pImpl->update(dt);
+    m_pimpl->update(dt);
 }
 
-void GameObject::enableRotation(bool enable)
+void GameObject::rotation(bool enable)
 {
-    m_pImpl->enableRotation(enable);
+    m_pimpl->rotation(enable);
 }
 
-void GameObject::disablePhysicsCoupling(bool disable)
+void GameObject::disable_physics_coupling(bool disable)
 {
-    m_pImpl->disablePhysicsCoupling(disable);
+    m_pimpl->disable_physics_coupling(disable);
 }
 
-std::vector<ModelPtr> GameObject::getAllModels()
+std::vector<NodePtr> GameObject::nodes()
 {
-    return m_pImpl->getAllModels();
+    return m_pimpl->nodes();
 }
 
-std::vector<PhysicsElementPtr> GameObject::getAllElements()
+std::vector<PhysicsElementPtr> GameObject::elements()
 {
-    return m_pImpl->getAllElements();
+    return m_pimpl->elements();
 }
 
-void GameObject::setPosition(const Vec3& position)
+void GameObject::position(const Vec3& position)
 {
-    m_pImpl->setPosition(position);
+    m_pimpl->position(position);
 }
 
-Vec3 GameObject::getPosition() const
+Vec3 GameObject::position() const
 {
-    return m_pImpl->getPosition();
+    return m_pimpl->position();
 }
 
-void GameObject::setParentWorld(WorldPtr world)
+void GameObject::parent_world(WorldPtr world)
 {
-    m_pImpl->setParentWorld(world);
+    m_pimpl->parent_world(world);
 }
 
-WorldPtr GameObject::getWorld() const
+WorldPtr GameObject::world() const
 {
-    return m_pImpl->getParentWorld();
-}
-
-void GameObject::addScript(const std::string& id, GameScriptPtr script)
-{
-    m_pImpl->addScript(id, script);
-}
-
-void GameObject::addSound(const std::string& id, SoundPtr sound)
-{
-    m_pImpl->addSound(id, sound);
+    return m_pimpl->parent_world();
 }
 
 ///////
 
-GameObjectImpl::GameObjectImpl(const std::string& id, GameObject* parent)
-    : m_id(id)
-    , m_parent_world(WorldPtr())
-    , m_parent(parent)
+GameObjectImpl::GameObjectImpl(const std::string& name, GameObject* parent)
+: m_name(name)
+, m_parent_world(WorldPtr())
+, m_parent(parent)
 {
 }
 
-void GameObjectImpl::addModel(const std::string& id, ModelPtr model)
+void GameObjectImpl::add_node(const std::string& id, NodePtr node)
 {
-    m_models[id] = model;
+    m_nodes[id] = node;
 }
 
-void GameObjectImpl::addPhysicsElement(const std::string& id, PhysicsElementPtr element)
+void GameObjectImpl::add_physics_element(const std::string& id, PhysicsElementPtr element)
 {
     m_elements[id] = element;
 }
 
-CREATE_CALLBACK_PIMPL(Update, UpdateCallback, m_update_callbacks);
-CREATE_CALLBACK_PIMPL(Enter, GameObject::EnterCallback, m_enter_callbacks);
-CREATE_CALLBACK_PIMPL(Exit, GameObject::ExitCallback, m_exit_callbacks);
-
-void GameObjectImpl::removeFromWorld()
+void GameObjectImpl::remove_from_world()
 {
-    m_parent_world->removeObject(static_pointer_cast<GameObject>(m_parent->shared_from_this()));
+    m_parent_world->remove_object(std::static_pointer_cast<GameObject>(m_parent->shared_from_this()));
 }
 
-ModelPtr GameObjectImpl::getModel(const std::string& id)
+NodePtr GameObjectImpl::node(const std::string& id)
 {
-    auto found = m_models.find(id);
+    auto found = m_nodes.find(id);
 
-    if (found == m_models.end())
-        return ModelPtr();
+    if (found == m_nodes.end()) {
+        return nullptr;
+    }
 
-    return m_models[id];
+    return m_nodes[id];
 }
 
-PhysicsElementPtr GameObjectImpl::getPhysicsElement(const std::string& id)
+PhysicsElementPtr GameObjectImpl::physics_element(const std::string& id)
 {
     auto found = m_elements.find(id);
 
-    if (found == m_elements.end())
-        return PhysicsElementPtr();
+    if (found == m_elements.end()) {
+        return nullptr;
+    }
 
     return m_elements[id];
 }
 
-SoundPtr GameObjectImpl::getSound(const std::string& id)
-{
-    auto found = m_sounds.find(id);
-
-    if (found == m_sounds.end())
-        return SoundPtr();
-
-    return m_sounds[id];
-}
-
 void GameObjectImpl::update(float dt)
 {
-    for (auto& callback : m_update_callbacks.getCallbacks())
-        callback(dt);
-
-    for (auto& script : m_scripts)
-        script.second->update(dt);
 
     if (m_elements.size() == 0 || m_disable_phys) {
-        for (auto& kvp : m_models) {
-            kvp.second->setPosition(m_position);
+        for (auto& kvp : m_nodes) {
+            kvp.second->position(m_position);
         }
     } else if (m_elements.size() == 1) {
         auto element = m_elements.begin()->second;
-        auto position = element->getPosition();
+        auto position = element->position();
 
-        for (auto& kvp : m_models) {
-            kvp.second->setPosition(Vec3(position.x * World::meterToPixelRatio,
+        for (auto& kvp : m_nodes) {
+            kvp.second->position(Vec3(position.x * World::meterToPixelRatio,
                 position.y * World::meterToPixelRatio,
                 position.z * World::meterToPixelRatio));
 
-            if (m_rotation_enabled)
-                kvp.second->setRotation(element->getRotation());
+            if (m_rotation_enabled) {
+                kvp.second->rotation(element->rotation());
+            }
         }
     } else {
         auto first_element = m_elements.begin()->second;
-        auto first_position = first_element->getPosition();
+        auto first_position = first_element->position();
 
-        for (auto& kvp : m_models) {
+        for (auto& kvp : m_nodes) {
             if (m_elements.find(kvp.first) == m_elements.end()) {
-                kvp.second->setPosition(Vec3(first_position.x * World::meterToPixelRatio,
+                kvp.second->position(Vec3(first_position.x * World::meterToPixelRatio,
                     first_position.y * World::meterToPixelRatio,
                     first_position.z * World::meterToPixelRatio));
 
-                if (m_rotation_enabled)
-                    kvp.second->setRotation(first_element->getRotation());
+                if (m_rotation_enabled) {
+                    kvp.second->rotation(first_element->rotation());
+                }
             } else {
-                auto position = m_elements[kvp.first]->getPosition();
+                auto position = m_elements[kvp.first]->position();
 
-                kvp.second->setPosition(Vec3(position.x * World::meterToPixelRatio,
+                kvp.second->position(Vec3(position.x * World::meterToPixelRatio,
                     position.y * World::meterToPixelRatio,
                     position.z * World::meterToPixelRatio));
 
-                kvp.second->setRotation(m_elements[kvp.first]->getRotation());
+                kvp.second->rotation(m_elements[kvp.first]->rotation());
             }
         }
     }
 }
 
-std::vector<ModelPtr> GameObjectImpl::getAllModels()
+std::vector<NodePtr> GameObjectImpl::nodes()
 {
-    std::vector<ModelPtr> ret;
+    std::vector<NodePtr> ret;
 
-    for (auto& kvp : m_models)
+    for (auto& kvp : m_nodes) {
         ret.push_back(kvp.second);
+    }
 
     return ret;
 }
 
-std::vector<PhysicsElementPtr> GameObjectImpl::getAllElements()
+std::vector<PhysicsElementPtr> GameObjectImpl::elements()
 {
     std::vector<PhysicsElementPtr> ret;
 
-    for (auto& kvp : m_elements)
+    for (auto& kvp : m_elements) {
         ret.push_back(kvp.second);
+    }
 
     return ret;
 }
 
-void GameObjectImpl::setPosition(const Vec3& position)
+void GameObjectImpl::position(const Vec3& position)
 {
     m_position = position;
 
-    for (auto& element : m_elements)
-        element.second->setPosition(position);
+    for (auto& element : m_elements) {
+        element.second->position(position);
+    }
 }
 
-Vec3 GameObjectImpl::getPosition() const
+Vec3 GameObjectImpl::position() const
 {
-    if (m_elements.size() > 0)
-        return m_elements.begin()->second->getPosition();
+    if (m_elements.size() > 0) {
+        return m_elements.begin()->second->position();
+    }
 
     return m_position;
 }
 
-void GameObjectImpl::setParentWorld(WorldPtr world)
+void GameObjectImpl::parent_world(WorldPtr world)
 {
     if (world != WorldPtr()) {
-        for (auto& callback : m_enter_callbacks.getCallbacks())
-            callback();
+        //for (auto& callback : m_enter_callbacks.getCallbacks())
+        //    callback();
     } else {
-        for (auto& callback : m_exit_callbacks.getCallbacks())
-            callback();
+        //for (auto& callback : m_exit_callbacks.getCallbacks())
+        //    callback();
     }
 
     m_parent_world = world;
 }
 
-void GameObjectImpl::addScript(const std::string& id, GameScriptPtr script)
-{
-    m_scripts[id] = script;
-}
-
-void GameObjectImpl::addSound(const std::string& id, SoundPtr sound)
-{
-    m_sounds[id] = sound;
-}
-
-WorldPtr GameObjectImpl::getParentWorld() const
+WorldPtr GameObjectImpl::parent_world() const
 {
     return m_parent_world;
 }
 
-void GameObjectImpl::enableRotation(bool enable)
+void GameObjectImpl::rotation(bool enable)
 {
     m_rotation_enabled = enable;
 }
 
-void GameObjectImpl::disablePhysicsCoupling(bool disable)
+void GameObjectImpl::disable_physics_coupling(bool disable)
 {
     m_disable_phys = disable;
 }
 
-std::string GameObject::getId() const
+std::string GameObject::name() const
 {
-    return m_pImpl->getId();
+    return m_pimpl->name();
+}
+
 }

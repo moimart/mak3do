@@ -112,6 +112,8 @@
 		0DF569EA23F9B91D00A99E1C /* GeometryImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DF569E223F9B91D00A99E1C /* GeometryImpl.mm */; };
 		0DF569EB23F9B91D00A99E1C /* CameraImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DF569E323F9B91D00A99E1C /* CameraImpl.mm */; };
 		0DF569EC23F9B91D00A99E1C /* NodeImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DF569E423F9B91D00A99E1C /* NodeImpl.mm */; };
+		0DF569EE23F9C99A00A99E1C /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DF568FB23F99C3900A99E1C /* GameObject.cpp */; };
+		0DF569EF23F9C99E00A99E1C /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5690623F99C3900A99E1C /* World.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1148,10 +1150,12 @@
 				0DDF684123E5887E00827D46 /* Mat4.cpp in Sources */,
 				0DF5687D23F97F1C00A99E1C /* b2_fixture.cpp in Sources */,
 				0DF5687623F97F1C00A99E1C /* b2_motor_joint.cpp in Sources */,
+				0DF569EE23F9C99A00A99E1C /* GameObject.cpp in Sources */,
 				0DF5687C23F97F1C00A99E1C /* b2_prismatic_joint.cpp in Sources */,
 				0DF5690A23F9ABE000A99E1C /* PhysicsElement3DImpl.cpp in Sources */,
 				0DF5688123F97F1C00A99E1C /* b2_timer.cpp in Sources */,
 				0DF5686C23F97F1C00A99E1C /* b2_pulley_joint.cpp in Sources */,
+				0DF569EF23F9C99E00A99E1C /* World.cpp in Sources */,
 				0DF5688923F97F1C00A99E1C /* b2_collide_edge.cpp in Sources */,
 				0DF5688223F97F1C00A99E1C /* b2_block_allocator.cpp in Sources */,
 				0DF569E923F9B91D00A99E1C /* DirectorImpl.mm in Sources */,

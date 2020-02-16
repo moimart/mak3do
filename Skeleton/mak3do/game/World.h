@@ -5,14 +5,14 @@
 #include <mak3do/scenegraph/all>
 
 namespace mak3do {
-class WorldImpl;
-class World : public Object {
+
+class World : public std::enable_shared_from_this<World> {
 public:
     static float meterToPixelRatio;
 
     World(ScenePtr scene);
-    World(PhysicsWorld::Type type, SceneRef scene);
-    World(PhysicsWorldPtr world, SceneRef scene);
+    World(PhysicsWorld::Type type, ScenePtr scene);
+    World(PhysicsWorldPtr world, ScenePtr scene);
 
     //void addScript(const std::string& id, GameScriptPtr script);
 
@@ -26,8 +26,8 @@ public:
     virtual CameraPtr camera() const;
     virtual void camera(CameraPtr camera) {}
 
-    std::vector<GameObjectPtr> getObjectsByObjectId(const std::string& id) const;
-    GameObjectPtr getObjectById(const std::string& id) const;
+    std::vector<GameObjectPtr> objects(const std::string& name) const;
+    GameObjectPtr objects_with_id(const std::string& id) const;
 
     PhysicsWorldPtr physics_world() const;
 
@@ -39,6 +39,6 @@ public:
     void update(float dt);
 
 protected:
-    std::shared_ptr<WorldImpl> m_pImpl;
+    std::shared_ptr<WorldImpl> m_pimpl;
 };
 }

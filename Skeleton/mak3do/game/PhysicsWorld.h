@@ -40,10 +40,10 @@ public:
 
     virtual void gravity(const Vec3& gravity);
 
-    virtual void collided(CollisionCallbackPtr callback) = 0;
-    virtual void stop_collided(const std::string& id) = 0;
-    virtual void stop_collided(CollisionCallbackPtr callback) = 0;
-    virtual void cleanup_collided() = 0;
+    virtual void collided(CollisionCallbackPtr callback);
+    virtual void stop_collided(const std::string& id);
+    virtual void stop_collided(CollisionCallbackPtr callback);
+    virtual void cleanup_collided();
 
 protected:
     std::shared_ptr<PhysicsWorldImpl> m_pimpl;

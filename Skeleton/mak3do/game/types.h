@@ -1,5 +1,7 @@
 #pragma once
 
+#include <set>
+#include <map>
 #include <mak3do/scenegraph/all>
 
 namespace mak3do {
@@ -41,7 +43,7 @@ struct ColCallback {
 };
 
 struct UpdCallback {
-    std::function<void(PhysicsElementPtr, PhysicsElementPtr)> lambda;
+    std::function<void(float)> lambda;
     std::string cb_id;
 };
 

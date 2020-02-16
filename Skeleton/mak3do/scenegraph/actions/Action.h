@@ -36,8 +36,6 @@ protected:
     int m_nTag;
 };
 
-
-
 class FiniteTimeAction : public Action {
 public:
     virtual ~FiniteTimeAction() {}

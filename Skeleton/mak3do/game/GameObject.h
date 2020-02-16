@@ -2,63 +2,41 @@
 
 #include "types.h"
 
-#define CREATE_CALLBACK(callback, type)                     \
-    int on##callback(const std::string& id, type callback); \
-    void remove##callback(const std::string& id);           \
-    void remove##callback(int handler);                     \
-    void removeAll##callback##Callbacks();
-
 namespace mak3do {
 
-class GameObect;
-
-class GameObject : public std::enable_shared_from_this<GameObect> {
+class GameObject : public std::enable_shared_from_this<GameObject> {
 public:
-    typedef Callback<void(void)> EnterCallback;
-    typedef Callback<void(void)> ExitCallback;
+    GameObject(const std::string& name);
+    virtual ~GameObject() = default;
 
-    GameObject(const std::string& id);
-    virtual ~GameObject();
+    std::string name() const;
 
-    std::string getId() const;
+    void add_node(const std::string& nid, NodePtr node);
+    NodePtr node(const std::string& nid) const;
+    
+    void add_physics_element(const std::string& eid, PhysicsElementPtr element);
+    PhysicsElementPtr physics_element(const std::string& id) const;
+    
+    void remove_from_world();
 
-    void addScript(const std::string& id, GameScriptPtr script);
-    void addModel(const std::string& id, ModelPtr model);
-    void addPhysicsElement(const std::string& id, PhysicsElementPtr element);
-    void addSound(const std::string& id, SoundPtr sound);
+    void position(const Vec3& position);
+    Vec3 position() const;
 
-    int onUpdate(const std::string& id, UpdateCallback callback);
-    void removeUpdate(const std::string& id);
-    void removeUpdate(int handler);
-    void removeAllUpdateCallbacks();
+    void rotation(bool enabled = true);
+    void disable_physics_coupling(bool disable = true);
 
-    CREATE_CALLBACK(Enter, EnterCallback);
-    CREATE_CALLBACK(Exit, ExitCallback);
+    WorldPtr world() const;
 
-    void removeFromWorld();
-
-    void setPosition(const Vec3& position);
-    Vec3 getPosition() const;
-
-    void enableRotation(bool enabled = true);
-    void disablePhysicsCoupling(bool disable = true);
-
-    WorldPtr getWorld() const;
-
-    //to be called by World
+    std::vector<NodePtr> nodes();
+protected:
     void update(float dt);
-
-    ModelPtr getModel(const std::string& id) const;
-    PhysicsElementPtr getPhysicsElement(const std::string& id) const;
-    SoundPtr getSound(const std::string& id) const;
-
-    std::vector<ModelPtr> getAllModels();
-
+    
+    friend class World;
 private:
-    std::shared_ptr<GameObjectImpl> m_pImpl;
+    std::shared_ptr<GameObjectImpl> m_pimpl;
 
-    std::vector<PhysicsElementPtr> getAllElements();
-    void setParentWorld(WorldPtr world);
+    std::vector<PhysicsElementPtr> elements();
+    void parent_world(WorldPtr world);
 
     friend class WorldImpl;
 };
