@@ -1,5 +1,5 @@
 #pragma once
-#include "../all"
+#include <mak3do/all>
 
 namespace mak3do {
 namespace tests {
