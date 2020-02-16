@@ -1,0 +1,6 @@
+[submodule "Skeleton/externals/bullet3"]
+	path = Skeleton/externals/bullet3
+	url = git@github.com:bulletphysics/bullet3.git
+[submodule "Skeleton/externals/box2d"]
+	path = Skeleton/externals/box2d
+	url = https://github.com/erincatto/box2d
