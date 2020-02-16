@@ -61,6 +61,7 @@ void Director::loop()
 {
     deltaTime();
     
+    m_scheduler->update(m_dt);
     m_action_runner->update(m_dt);
     m_pimpl->loop(m_dt);
 }

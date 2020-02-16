@@ -1,3 +1,7 @@
 #pragma once
+#include "PhysicsWorld.h"
+#include "PhysicsElement.h"
+#include "PhysicsElement2D.h"
+#include "PhysicsElement3D.h"
 #include "GameObject.h"
 #include "World.h"

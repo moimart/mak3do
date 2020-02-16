@@ -1,5 +1,6 @@
 #pragma once
 #include <mak3do/scenegraph/all>
+#include <mak3do/game/all>
 
 namespace mak3do {
 namespace tests {
@@ -132,6 +133,53 @@ void shader_modifier()
     geometry->modify_shader_geometry(modifier);
     
     node->action(RepeatForever::make(SpinBy::make(8, 360)));
+}
+
+class TestObject : public GameObject
+{
+public:
+    TestObject() : GameObject("test-object") {
+        auto node = std::make_shared<Node>();
+        auto box = std::make_shared<Box>();
+        box->color(color::RGBA::ORANGE_01);
+        
+        node->geometry(box);
+        
+        add_node("main", node);
+        
+        auto element = ElementFactory::make_basic_element(ElementFactory::ElementDef3D(0.075f));
+        add_physics_element("main-element", element);
+    }
+    
+};
+
+void test_basic_game_api()
+{
+    auto scene = std::make_shared<Scene>();
+    auto director = Director::get();
+    auto camera = std::make_shared<Camera>();
+    auto light = std::make_shared<Light>(Light::LightType::Omni);
+    
+    camera->name("main_camera");
+    camera->position(Vec3(0,1.2f,4));
+   
+    light->position(Vec3(0,4,4));
+    light->color(color::RGB::WHITE_01);
+    light->shadows(true);
+    
+    director->scene(scene);
+    
+    scene->camera("main_camera");
+    
+    auto physics_world = std::make_shared<PhysicsWorld>(PhysicsWorld::Type::_3D);
+    auto world = std::make_shared<World>(physics_world,scene);
+    
+    world->physics_world()->gravity(Vec3(0,-1.f,0));
+    
+    auto object = std::make_shared<TestObject>();
+    world->add_object(object);
+    
+    world->start();
 }
 
 }

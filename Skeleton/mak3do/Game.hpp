@@ -7,7 +7,8 @@ class Game {
 public:
     void start()
     {
-        tests::shader_modifier();
+        //tests::shader_modifier();
+        tests::test_basic_game_api();
     };
 };
 }
