@@ -3,13 +3,55 @@
 #include "../Camera.h"
 #include "../Light.h"
 #include "../Scene.h"
+#include "../Geometry.h"
+#include "../geometries/Box.h"
+#include "../geometries/Sphere.h"
 #include "NodeImpl.h"
 #include "CameraImpl.h"
 #include "LightImpl.h"
+#include "GeometryImpl.h"
+#include "BoxImpl.h"
+#include "SphereImpl.h"
 #import <SceneKit/SceneKit.h>
 #import "../../apple/SceneRenderer.h"
 
 namespace mak3do {
+
+void SceneImpl::create_geometry(void* node, NodePtr real_node)
+{
+    SCNNode* __node = (__bridge SCNNode*)node;
+    
+    if (__node.geometry != nil) {
+        GeometryPtr geometry;
+        if ([__node.geometry isKindOfClass:[SCNBox class]]) {
+            geometry = std::make_shared<Box>();
+        } else if ([__node.geometry isKindOfClass:[SCNSphere class]]) {
+            geometry = std::make_shared<Sphere>();
+        /*
+        } else if ([__node.geometry isKindOfClass:[SCNPlane class]]) {
+            geometry = std::make_shared<Plane>();
+        } else if ([__node.geometry isKindOfClass:[SCNPyramid class]]) {
+            geometry = std::make_shared<Pyramid>();
+        } else if ([__node.geometry isKindOfClass:[SCNCone class]]) {
+         geometry = std::make_shared<Cone>();
+        } else if ([__node.geometry isKindOfClass:[SCNCylinder class]]) {
+            geometry = std::make_shared<Cylinder>();
+        } else if ([__node.geometry isKindOfClass:[SCNCapsule class]]) {
+            geometry = std::make_shared<Capsule>();
+        } else if ([__node.geometry isKindOfClass:[SCNTube class]]) {
+            geometry = std::make_shared<Tibe>();
+        } else if ([__node.geometry isKindOfClass:[SCNTorus class]]) {
+            geometry = std::make_shared<Torus>();
+        */
+        } else {
+            geometry = std::make_shared<Geometry>();
+            
+        }
+        
+        geometry->m_geometry_pimpl->m_native_geometry = (void*)CFBridgingRetain(__node.geometry);
+        real_node->m_pimpl->geometry(geometry);
+    }
+}
 
 void SceneImpl::add_children(void* children, NodePtr parent)
 {

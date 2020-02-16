@@ -17,5 +17,6 @@ private:
     void* m_native_geometry;
     
     friend class NodeImpl;
+    friend class SceneImpl;
 };
 }

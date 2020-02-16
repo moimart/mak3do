@@ -13,7 +13,7 @@ public:
     Geometry();
     ~Geometry();
     
-    GeometryImplPtr get_pimpl() const { return m_geometry_pimpl; };
+    GeometryImplPtr pimpl() const { return m_geometry_pimpl; };
     
     void color(const color::RGBA& color);
 protected:
@@ -21,6 +21,7 @@ protected:
     
     friend class GeometryImpl;
     friend class NodeImpl;
+    friend class SceneImpl;
 };
 }
 

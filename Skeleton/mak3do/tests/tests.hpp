@@ -41,7 +41,7 @@ void test1()
     auto geometry2 = std::make_shared<Sphere>();
     node2->geometry(geometry2);
     
-    geometry2->color(color::RGBA(color::RGBA::GREEN_01));
+    geometry2->color(color::RGBA(color::RGBA::ORANGE_01));
     
     node->action(RepeatForever::make(SpinBy::make(2, 360)));
     node2->action(RepeatForever::make(SpinBy::make(16, Vec3(0, 0, 360))));
@@ -92,7 +92,7 @@ void test2()
     scene->add_node(camera);
     scene->camera("main_camera");
     
-    camera->action(SpinBy::make(5,Vec3(0,360,0)));
+    //camera->action(SpinBy::make(5,Vec3(0,360,0)));
 }
 
 }

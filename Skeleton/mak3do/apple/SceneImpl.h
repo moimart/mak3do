@@ -15,6 +15,7 @@ public:
     
     static ScenePtr load(const std::string& filename);
     static void add_children(void* children, NodePtr parent);
+    static void create_geometry(void* node, NodePtr real_node);
 private:
     void* m_native;
 

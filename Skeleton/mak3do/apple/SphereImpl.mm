@@ -11,7 +11,7 @@ SphereImpl::SphereImpl(Sphere* parent)
     SCNGeometry* sphere = [SCNSphere sphereWithRadius:1];
     sphere.materials.firstObject.diffuse.contents = [UIColor whiteColor];
     
-    parent->get_pimpl()->replace_geometry((__bridge void*)sphere);
+    parent->pimpl()->replace_geometry((__bridge void*)sphere);
 }
 
 }
