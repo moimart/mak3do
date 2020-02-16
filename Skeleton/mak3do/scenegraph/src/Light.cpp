@@ -1,8 +1,8 @@
 #include <mak3do/scenegraph/Light.h>
 #ifdef M3D_PLAT_APPLE
-#include <mak3do/apple/LightImpl.h>
+#include <mak3do/scenegraph/apple/LightImpl.h>
 #elif M3D_PLAT_ANDROID
-#include <mak3do/android/LightImpl.h>
+#include <mak3do/scenegraph/android/LightImpl.h>
 #endif
 
 namespace mak3do {

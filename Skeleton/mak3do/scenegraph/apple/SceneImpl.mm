@@ -13,7 +13,7 @@
 #include "BoxImpl.h"
 #include "SphereImpl.h"
 #import <SceneKit/SceneKit.h>
-#import "../../apple/SceneRenderer.h"
+#import "apple/SceneRenderer.h"
 
 namespace mak3do {
 
@@ -181,6 +181,11 @@ void SceneImpl::main_camera(const std::string& name)
     SceneRenderer* renderer = [SceneRenderer shared];
     
     [renderer setCameraName:[NSString stringWithUTF8String:name.c_str()]];
+}
+
+CameraPtr SceneImpl::camera() const
+{
+    return CameraPtr();
 }
 
 std::vector<NodePtr> SceneImpl::nodes() const

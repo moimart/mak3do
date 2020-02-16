@@ -1,18 +1,10 @@
-//
-//  Director.cpp
-//  Skeleton
-//
-//  Created by Moises Martinez on 20.01.20.
-//  Copyright © 2020 Moises Martinez. All rights reserved.
-//
-
 #include <mak3do/scenegraph/Director.h>
 #include <mak3do/scenegraph/ActionRunner.h>
 
 #ifdef M3D_PLAT_APPLE
-#include <mak3do/apple/DirectorImpl.h>
+#include <mak3do/scenegraph/apple/DirectorImpl.h>
 #elif M3D_PLAT_ANDROID
-#include <mak3do/android/DirectorImpl.h>
+#include <mak3do/scenegraph/android/DirectorImpl.h>
 #endif
 
 namespace mak3do {

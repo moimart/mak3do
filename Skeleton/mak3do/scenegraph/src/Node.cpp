@@ -2,9 +2,9 @@
 #include <mak3do/scenegraph/Director.h>
 #include <mak3do/scenegraph/ActionRunner.h>
 #ifdef M3D_PLAT_APPLE
-#include <mak3do/apple/NodeImpl.h>
+#include <mak3do/scenegraph/apple/NodeImpl.h>
 #elif M3D_PLAT_ANDROID
-#include <mak3do/android/NodeImpl.h>
+#include <mak3do/scenegraph/android/NodeImpl.h>
 #endif
 
 namespace mak3do {

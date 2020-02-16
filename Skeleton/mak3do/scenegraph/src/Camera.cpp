@@ -1,8 +1,8 @@
 #include <mak3do/scenegraph/Camera.h>
 #ifdef M3D_PLAT_APPLE
-#include <mak3do/apple/CameraImpl.h>
+#include <mak3do/scenegraph/apple/CameraImpl.h>
 #elif M3D_PLAT_ANDROID
-#include <mak3do/android/CameraImpl.h>
+#include <mak3do/scenegraph/android/CameraImpl.h>
 #endif
 
 namespace mak3do {

@@ -1,8 +1,8 @@
 #include <mak3do/scenegraph/Scene.h>
 #ifdef M3D_PLAT_APPLE
-#include <mak3do/apple/SceneImpl.h>
+#include <mak3do/scenegraph/apple/SceneImpl.h>
 #elif M3D_PLAT_ANDROID
-#include <mak3do/android/SceneImpl.h>
+#include <mak3do/scenegraph/android/SceneImpl.h>
 #endif
 
 namespace mak3do {
@@ -30,6 +30,11 @@ std::vector<NodePtr> Scene::nodes() const
 void Scene::camera(const std::string& name)
 {
     m_pimpl->main_camera(name);
+}
+
+CameraPtr Scene::camera() const
+{
+    return m_pimpl->camera();
 }
 
 }

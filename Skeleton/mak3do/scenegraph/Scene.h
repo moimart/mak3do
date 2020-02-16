@@ -10,6 +10,7 @@ public:
     
     void add_node(NodePtr node);
     void camera(const std::string& name);
+    CameraPtr camera() const;
     
     std::vector<NodePtr> nodes() const;
     

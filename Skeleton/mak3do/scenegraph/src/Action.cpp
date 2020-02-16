@@ -8,17 +8,6 @@ using namespace mak3do;
 // Action Base Class
 //
 
-Action::Action()
-    : m_pOriginalTarget(NULL)
-    , m_target(NULL)
-    , m_nTag(kActionTagInvalid)
-{
-}
-
-Action::~Action()
-{
-}
-
 ActionPtr Action::make()
 {
     return std::make_shared<Action>();
@@ -31,7 +20,7 @@ std::string Action::description() const
 
 void Action::start(NodePtr aTarget)
 {
-    m_pOriginalTarget = m_target = aTarget;
+    m_original_target = m_target = aTarget;
 }
 
 void Action::stop()
