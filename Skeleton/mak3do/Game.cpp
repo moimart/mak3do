@@ -5,6 +5,6 @@ namespace mak3do {
 
 void Game::start()
 {
-    tests::test1();
+    tests::shader_modifier();
 }
 }

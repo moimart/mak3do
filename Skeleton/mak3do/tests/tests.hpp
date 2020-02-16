@@ -4,7 +4,7 @@
 namespace mak3do {
 namespace tests {
 
-void test1()
+void constructed_scene()
 {
     auto director = Director::get();
     auto scene = std::make_shared<Scene>();
@@ -48,14 +48,14 @@ void test1()
     camera->action(MoveBy::make(120,Vec3(0,0,100)));
 }
 
-void test2()
+void imported_scene()
 {
     auto director = Director::get();
     auto scene = Scene::load("test_scene.scn");
     auto camera = std::make_shared<Camera>();
 
     if (scene == nullptr) {
-        test1();
+        constructed_scene();
         return;
     }
 
@@ -93,6 +93,45 @@ void test2()
     scene->camera("main_camera");
     
     //camera->action(SpinBy::make(5,Vec3(0,360,0)));
+}
+
+void shader_modifier()
+{
+    auto director = Director::get();
+    auto scene = std::make_shared<Scene>();
+    auto node = std::make_shared<Node>();
+    auto camera = std::make_shared<Camera>();
+    auto light = std::make_shared<Light>(Light::LightType::Omni);
+    auto geometry = std::make_shared<Sphere>();
+    
+    geometry->color(color::RGBA(color::RGBA(.92f,.12f,0.65f)));
+    
+    node->geometry(geometry);
+    
+    camera->name("main_camera");
+    camera->position(Vec3(0,1.2f,4));
+    
+    light->position(Vec3(0,4,4));
+    light->color(color::RGB::WHITE_01);
+    light->shadows(true);
+    
+    scene->add_node(node);
+    scene->add_node(camera);
+    scene->add_node(light);
+    
+    director->scene(scene);
+    
+    scene->camera("main_camera");
+    
+    std::string modifier =
+    "_geometry.position +="
+    "    float4(_geometry.normal *"
+    "    (0.5*_geometry.position.y*_geometry.position.x) *"
+    "    sin(1.0 * scn_frame.time),1.0);";
+    
+    geometry->modify_shader_geometry(modifier);
+    
+    node->action(RepeatForever::make(SpinBy::make(8, 360)));
 }
 
 }

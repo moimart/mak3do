@@ -11,6 +11,8 @@ public:
     
     void color(const color::RGBA& color);
     
+    void modify_shader_geometry(const std::string& modifier_code);
+    
     void replace_geometry(void* geometry);
 private:
     Geometry* m_abstract;

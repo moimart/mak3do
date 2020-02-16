@@ -8,6 +8,7 @@ static SceneRenderer* _renderer = nil;
     id<MTLCommandQueue> _commandQueue;
     SCNRenderer* _scnRenderer;
     CAMetalLayer* _layer;
+    double _at;
     
     id<MTLRenderPipelineState> _pipelineState;
     
@@ -82,13 +83,15 @@ static SceneRenderer* _renderer = nil;
     
     _mainCamera = nil;
     
+    _at = 0;
+    
     //_scene = [self setupScene];
     
     return self;
 }
 
 - (void) renderer:(id<SCNSceneRenderer>)renderer willRenderScene:(SCNScene *)scene atTime:(NSTimeInterval)time {
-    [self render];
+    [self render:time];
 }
 
 - (void) initRenderTest {
@@ -111,7 +114,7 @@ static SceneRenderer* _renderer = nil;
                                                              error:&error];
 }
 
-- (void) render {
+- (void) render: (float)dt {
     
     auto commandBuffer = [_commandQueue commandBuffer];
 
@@ -121,11 +124,13 @@ static SceneRenderer* _renderer = nil;
         _mainCamera = _scene.rootNode.childNodes[0];
     }
     
+    _at += dt;
+    
     if (_scene != nil) {
         [_scnRenderer setScene: _scene];
         [_scnRenderer setPointOfView:_mainCamera];
         auto frame = CGRectMake(0, 0, _viewportSize.x, _viewportSize.y);
-        [_scnRenderer renderWithViewport:frame commandBuffer:commandBuffer passDescriptor:renderPassDescriptor];
+        [_scnRenderer renderAtTime:_at viewport:frame commandBuffer:commandBuffer passDescriptor:renderPassDescriptor];
     }
     
     [commandBuffer presentDrawable:_view.currentDrawable];

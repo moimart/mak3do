@@ -10,7 +10,7 @@
 + (instancetype _Nonnull) shared;
 + (instancetype _Nonnull) renderer:(CGRect)frameRect;
 - (id _Nonnull) initWithFrame:(CGRect)frameRect;
-- (void) render;
+- (void) render: (float)dt;
 - (void) setCameraName:(NSString*_Nonnull)cameraName;
 @end
 

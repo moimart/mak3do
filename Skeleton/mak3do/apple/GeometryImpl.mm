@@ -36,6 +36,14 @@ void GeometryImpl::color(const color::RGBA& color)
     __geometry.materials.firstObject.diffuse.contents = __color;
 }
 
+void GeometryImpl::modify_shader_geometry(const std::string& modifier_code)
+{
+    SCNGeometry* __geometry = (__bridge SCNGeometry*)m_native_geometry;
+    
+    __geometry.shaderModifiers =
+        @{SCNShaderModifierEntryPointGeometry :
+            [NSString stringWithUTF8String:modifier_code.c_str()]};
+}
 
 GeometryImpl::~GeometryImpl()
 {

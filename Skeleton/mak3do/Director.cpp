@@ -68,7 +68,7 @@ void Director::loop()
     deltaTime();
     
     m_action_runner->update(m_dt);
-    m_pimpl->loop();
+    m_pimpl->loop(m_dt);
 }
 
 ActionRunnerPtr Director::defaultActionRunner() const

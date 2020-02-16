@@ -11,9 +11,9 @@ DirectorImpl::DirectorImpl(mak3do::Director* parent)
 {
 }
 
-void DirectorImpl::loop()
+void DirectorImpl::loop(float dt)
 {
-    [[SceneRenderer shared] render];
+    [[SceneRenderer shared] render: dt];
 }
 
 void DirectorImpl::setScene(ScenePtr scene)

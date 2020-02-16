@@ -18,6 +18,11 @@ void Geometry::color(const color::RGBA& color)
     m_geometry_pimpl->color(color);
 }
 
+void Geometry::modify_shader_geometry(const std::string& modifier_code)
+{
+    m_geometry_pimpl->modify_shader_geometry(modifier_code);
+}
+
 Geometry::~Geometry()
 {
     std::string s = "";

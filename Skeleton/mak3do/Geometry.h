@@ -16,6 +16,8 @@ public:
     GeometryImplPtr pimpl() const { return m_geometry_pimpl; };
     
     void color(const color::RGBA& color);
+    
+    void modify_shader_geometry(const std::string& modifier_code);
 protected:
     GeometryImplPtr m_geometry_pimpl;
     
