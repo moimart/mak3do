@@ -190,8 +190,7 @@ void test_basic_game_api()
         world->add_object(object);
     };
     task->repeat = true;
-    
-    //sched->schedule(.5f,task);
+    sched->schedule(5.f,task);
 }
 
 }

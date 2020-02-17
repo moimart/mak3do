@@ -55,11 +55,11 @@ void Scheduler::update(float dt)
         }
     }
     
-    std::remove_if(m_timers.begin(),m_timers.end(),[&dt](TimerPtr timer) {
+    m_timers.erase(std::remove_if(m_timers.begin(),m_timers.end(),[dt](TimerPtr& timer) -> bool {
         timer->update(dt);
         
         return timer->done();
-    });
+    }),m_timers.end());
 }
 
 }

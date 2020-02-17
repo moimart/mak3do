@@ -8,8 +8,8 @@ public:
     void start()
     {
         //tests::shader_modifier();
-        //tests::test_basic_game_api();
-        tests::imported_scene();
+        tests::test_basic_game_api();
+        //tests::imported_scene();
     };
 };
 }
