@@ -19,13 +19,14 @@ public:
     inline bool done()
     {
         bool ret = m_at >= m_duration;
-        
+
         if (ret) {
             m_callback->lambda(m_at);
-        }
-        
-        if (m_callback->repeat) {
-            m_at = (m_at >= m_duration) ? 0.f : m_at;
+            
+            if (m_callback->repeat) {
+                m_at = 0;
+                ret = false;
+            }
         }
         
         return ret;

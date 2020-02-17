@@ -189,7 +189,7 @@ void test_basic_game_api()
         object->position(Vec3(0,1,0));
         world->add_object(object);
     };
-    task->repeat = true;
+    //task->repeat = true;
     sched->schedule(5.f,task);
 }
 
