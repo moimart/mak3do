@@ -33,12 +33,15 @@ struct _timeval {
 struct ScheduleUpdate {
     std::function<void(float)> lambda;
     std::string cb_id;
+    bool paused { false };
+    bool repeat { false };
 };
 
 typedef std::shared_ptr<ScheduleUpdate> ScheduleUpdateCallbackPtr;
 
 class Director;
 class Scheduler;
+class Timer;
 class Scene;
 class Node;
 class Light;
@@ -61,6 +64,7 @@ class SphereImpl;
 class BoxImpl;
 
 typedef std::shared_ptr<Scheduler> SchedulerPtr;
+typedef std::shared_ptr<Timer> TimerPtr;
 typedef std::shared_ptr<Scene> ScenePtr;
 typedef std::shared_ptr<Node> NodePtr;
 typedef std::shared_ptr<Camera> CameraPtr;

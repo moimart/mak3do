@@ -91,7 +91,7 @@ void imported_scene()
     }
 
     scene->add_node(camera);
-    scene->camera("main_camera");
+    scene->camera("camera2");
     
     //camera->action(SpinBy::make(5,Vec3(0,360,0)));
 }
@@ -175,12 +175,23 @@ void test_basic_game_api()
     auto physics_world = std::make_shared<PhysicsWorld>(PhysicsWorld::Type::_3D);
     auto world = std::make_shared<World>(physics_world,scene);
     
-    world->physics_world()->gravity(Vec3(0,1.f,0));
+    world->physics_world()->gravity(Vec3(0,-1.f,0));
     
     auto object = std::make_shared<TestObject>();
     world->add_object(object);
     
     world->start();
+    
+    auto sched = Director::get()->scheduler();
+    auto task = std::make_shared<ScheduleUpdate>();
+    task->lambda = [=](float dt) {
+        auto object = std::make_shared<TestObject>();
+        object->position(Vec3(0,1,0));
+        world->add_object(object);
+    };
+    task->repeat = true;
+    
+    //sched->schedule(.5f,task);
 }
 
 }

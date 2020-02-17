@@ -8,6 +8,7 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>
 {
 public:
     void schedule(ScheduleUpdateCallbackPtr callback);
+    void schedule(float time, ScheduleUpdateCallbackPtr callback);
     
 protected:
     void update(float dt);
@@ -15,6 +16,7 @@ protected:
     friend class Director;
 private:
     std::vector<ScheduleUpdateCallbackPtr> m_callbacks;
+    std::vector<TimerPtr> m_timers;
 };
 
 }
