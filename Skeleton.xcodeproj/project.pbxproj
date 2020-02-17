@@ -16,8 +16,6 @@
 		0D4C4A8A23F9DAD0000F7C36 /* Scheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C4A8923F9DAD0000F7C36 /* Scheduler.cpp */; };
 		0DA9450223D6429F00AEBEAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DA9450123D6429F00AEBEAA /* Assets.xcassets */; };
 		0DA9450823D6429F00AEBEAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9450723D6429F00AEBEAA /* main.m */; };
-		0DA9451223D6429F00AEBEAA /* SkeletonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9451123D6429F00AEBEAA /* SkeletonTests.m */; };
-		0DA9451D23D6429F00AEBEAA /* SkeletonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9451C23D6429F00AEBEAA /* SkeletonUITests.m */; };
 		0DD1B0D023D79FDF00E65C07 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD1B0CF23D79FDE00E65C07 /* Metal.framework */; };
 		0DD1B0D223D7A0A900E65C07 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */; };
 		0DD1B0D423D7AF9A00E65C07 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */; };
@@ -118,20 +116,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0DA9450E23D6429F00AEBEAA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0DA944EA23D6429D00AEBEAA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0DA944F123D6429D00AEBEAA;
-			remoteInfo = Skeleton;
-		};
-		0DA9451923D6429F00AEBEAA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0DA944EA23D6429D00AEBEAA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0DA944F123D6429D00AEBEAA;
-			remoteInfo = Skeleton;
-		};
 		0DF567E623F97D3500A99E1C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DF567E223F97D3500A99E1C /* BulletCollision.xcodeproj */;
@@ -216,12 +200,6 @@
 		0DA9450123D6429F00AEBEAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DA9450623D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DA9450723D6429F00AEBEAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0DA9450D23D6429F00AEBEAA /* SkeletonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkeletonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DA9451123D6429F00AEBEAA /* SkeletonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkeletonTests.m; sourceTree = "<group>"; };
-		0DA9451323D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DA9451823D6429F00AEBEAA /* SkeletonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkeletonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DA9451C23D6429F00AEBEAA /* SkeletonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkeletonUITests.m; sourceTree = "<group>"; };
-		0DA9451E23D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DD1B0CF23D79FDE00E65C07 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -432,20 +410,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0DA9450A23D6429F00AEBEAA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0DA9451523D6429F00AEBEAA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -486,8 +450,6 @@
 			isa = PBXGroup;
 			children = (
 				0DA944F423D6429D00AEBEAA /* Skeleton */,
-				0DA9451023D6429F00AEBEAA /* SkeletonTests */,
-				0DA9451B23D6429F00AEBEAA /* SkeletonUITests */,
 				0DA944F323D6429D00AEBEAA /* Products */,
 				0DD1B0CE23D79FDE00E65C07 /* Frameworks */,
 			);
@@ -497,8 +459,6 @@
 			isa = PBXGroup;
 			children = (
 				0DA944F223D6429D00AEBEAA /* Skeleton.app */,
-				0DA9450D23D6429F00AEBEAA /* SkeletonTests.xctest */,
-				0DA9451823D6429F00AEBEAA /* SkeletonUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -517,24 +477,6 @@
 				0D34016523F0074B00183EAC /* test_scene.scn */,
 			);
 			path = Skeleton;
-			sourceTree = "<group>";
-		};
-		0DA9451023D6429F00AEBEAA /* SkeletonTests */ = {
-			isa = PBXGroup;
-			children = (
-				0DA9451123D6429F00AEBEAA /* SkeletonTests.m */,
-				0DA9451323D6429F00AEBEAA /* Info.plist */,
-			);
-			path = SkeletonTests;
-			sourceTree = "<group>";
-		};
-		0DA9451B23D6429F00AEBEAA /* SkeletonUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0DA9451C23D6429F00AEBEAA /* SkeletonUITests.m */,
-				0DA9451E23D6429F00AEBEAA /* Info.plist */,
-			);
-			path = SkeletonUITests;
 			sourceTree = "<group>";
 		};
 		0DD1B0CE23D79FDE00E65C07 /* Frameworks */ = {
@@ -964,42 +906,6 @@
 			productReference = 0DA944F223D6429D00AEBEAA /* Skeleton.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0DA9450C23D6429F00AEBEAA /* SkeletonTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0DA9452423D6429F00AEBEAA /* Build configuration list for PBXNativeTarget "SkeletonTests" */;
-			buildPhases = (
-				0DA9450923D6429F00AEBEAA /* Sources */,
-				0DA9450A23D6429F00AEBEAA /* Frameworks */,
-				0DA9450B23D6429F00AEBEAA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0DA9450F23D6429F00AEBEAA /* PBXTargetDependency */,
-			);
-			name = SkeletonTests;
-			productName = SkeletonTests;
-			productReference = 0DA9450D23D6429F00AEBEAA /* SkeletonTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		0DA9451723D6429F00AEBEAA /* SkeletonUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0DA9452723D6429F00AEBEAA /* Build configuration list for PBXNativeTarget "SkeletonUITests" */;
-			buildPhases = (
-				0DA9451423D6429F00AEBEAA /* Sources */,
-				0DA9451523D6429F00AEBEAA /* Frameworks */,
-				0DA9451623D6429F00AEBEAA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0DA9451A23D6429F00AEBEAA /* PBXTargetDependency */,
-			);
-			name = SkeletonUITests;
-			productName = SkeletonUITests;
-			productReference = 0DA9451823D6429F00AEBEAA /* SkeletonUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1011,14 +917,6 @@
 				TargetAttributes = {
 					0DA944F123D6429D00AEBEAA = {
 						CreatedOnToolsVersion = 11.3.1;
-					};
-					0DA9450C23D6429F00AEBEAA = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 0DA944F123D6429D00AEBEAA;
-					};
-					0DA9451723D6429F00AEBEAA = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 0DA944F123D6429D00AEBEAA;
 					};
 				};
 			};
@@ -1050,8 +948,6 @@
 			projectRoot = "";
 			targets = (
 				0DA944F123D6429D00AEBEAA /* Skeleton */,
-				0DA9450C23D6429F00AEBEAA /* SkeletonTests */,
-				0DA9451723D6429F00AEBEAA /* SkeletonUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1115,20 +1011,6 @@
 				0DDF683C23E5887E00827D46 /* Mat4.inl in Resources */,
 				0DDF684D23E5891B00827D46 /* utils.inl in Resources */,
 				0DDF684023E5887E00827D46 /* Vec4.inl in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0DA9450B23D6429F00AEBEAA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0DA9451623D6429F00AEBEAA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1232,35 +1114,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0DA9450923D6429F00AEBEAA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0DA9451223D6429F00AEBEAA /* SkeletonTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0DA9451423D6429F00AEBEAA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0DA9451D23D6429F00AEBEAA /* SkeletonUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0DA9450F23D6429F00AEBEAA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0DA944F123D6429D00AEBEAA /* Skeleton */;
-			targetProxy = 0DA9450E23D6429F00AEBEAA /* PBXContainerItemProxy */;
-		};
-		0DA9451A23D6429F00AEBEAA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0DA944F123D6429D00AEBEAA /* Skeleton */;
-			targetProxy = 0DA9451923D6429F00AEBEAA /* PBXContainerItemProxy */;
-		};
 		0DF569CF23F9B1FD00A99E1C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "BulletDynamics-ios";
@@ -1439,78 +1295,6 @@
 			};
 			name = Release;
 		};
-		0DA9452523D6429F00AEBEAA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SkeletonTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kikkei.SkeletonTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Skeleton.app/Skeleton";
-			};
-			name = Debug;
-		};
-		0DA9452623D6429F00AEBEAA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SkeletonTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kikkei.SkeletonTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Skeleton.app/Skeleton";
-			};
-			name = Release;
-		};
-		0DA9452823D6429F00AEBEAA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SkeletonUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kikkei.SkeletonUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Skeleton;
-			};
-			name = Debug;
-		};
-		0DA9452923D6429F00AEBEAA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SkeletonUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kikkei.SkeletonUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Skeleton;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1528,24 +1312,6 @@
 			buildConfigurations = (
 				0DA9452223D6429F00AEBEAA /* Debug */,
 				0DA9452323D6429F00AEBEAA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0DA9452423D6429F00AEBEAA /* Build configuration list for PBXNativeTarget "SkeletonTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0DA9452523D6429F00AEBEAA /* Debug */,
-				0DA9452623D6429F00AEBEAA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0DA9452723D6429F00AEBEAA /* Build configuration list for PBXNativeTarget "SkeletonUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0DA9452823D6429F00AEBEAA /* Debug */,
-				0DA9452923D6429F00AEBEAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
