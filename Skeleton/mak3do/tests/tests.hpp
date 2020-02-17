@@ -140,7 +140,7 @@ class TestObject : public GameObject
 public:
     TestObject() : GameObject("test-object") {
         auto node = std::make_shared<Node>();
-        auto box = std::make_shared<Box>();
+        auto box = std::make_shared<Sphere>();
         box->color(color::RGBA::ORANGE_01);
         
         node->geometry(box);
@@ -170,11 +170,12 @@ void test_basic_game_api()
     director->scene(scene);
     
     scene->camera("main_camera");
+    scene->add_node(light);
     
     auto physics_world = std::make_shared<PhysicsWorld>(PhysicsWorld::Type::_3D);
     auto world = std::make_shared<World>(physics_world,scene);
     
-    world->physics_world()->gravity(Vec3(0,-1.f,0));
+    world->physics_world()->gravity(Vec3(0,1.f,0));
     
     auto object = std::make_shared<TestObject>();
     world->add_object(object);

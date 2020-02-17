@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1FAA4823FA762B0036B70E /* SceneRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FAA3F23FA762B0036B70E /* SceneRenderer.mm */; };
+		0D1FAA4923FA762B0036B70E /* DirectorDisplayLink.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FAA4023FA762B0036B70E /* DirectorDisplayLink.mm */; };
+		0D1FAA4A23FA762B0036B70E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FAA4123FA762B0036B70E /* ViewController.m */; };
+		0D1FAA4B23FA762B0036B70E /* TestShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FAA4323FA762B0036B70E /* TestShaders.metal */; };
+		0D1FAA4C23FA762B0036B70E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FAA4623FA762B0036B70E /* AppDelegate.mm */; };
 		0D34016623F0074B00183EAC /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D34016523F0074B00183EAC /* test_scene.scn */; };
 		0D4C4A8A23F9DAD0000F7C36 /* Scheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C4A8923F9DAD0000F7C36 /* Scheduler.cpp */; };
 		0DA9450223D6429F00AEBEAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DA9450123D6429F00AEBEAA /* Assets.xcassets */; };
@@ -16,11 +21,6 @@
 		0DD1B0D023D79FDF00E65C07 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD1B0CF23D79FDE00E65C07 /* Metal.framework */; };
 		0DD1B0D223D7A0A900E65C07 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */; };
 		0DD1B0D423D7AF9A00E65C07 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */; };
-		0DDF67F923DC583000827D46 /* SceneRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67ED23DC583000827D46 /* SceneRenderer.mm */; };
-		0DDF67FA23DC583000827D46 /* DirectorDisplayLink.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67EE23DC583000827D46 /* DirectorDisplayLink.mm */; };
-		0DDF67FB23DC583000827D46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67EF23DC583000827D46 /* ViewController.m */; };
-		0DDF67FC23DC583000827D46 /* TestShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67F123DC583000827D46 /* TestShaders.metal */; };
-		0DDF67FD23DC583000827D46 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF67F423DC583000827D46 /* AppDelegate.mm */; };
 		0DDF681123DC620B00827D46 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDF681023DC620B00827D46 /* MetalKit.framework */; };
 		0DDF683B23E5887E00827D46 /* Quaternion.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0DDF682623E5887D00827D46 /* Quaternion.inl */; };
 		0DDF683C23E5887E00827D46 /* Mat4.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0DDF682723E5887D00827D46 /* Mat4.inl */; };
@@ -178,26 +178,36 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DF567E823F97D6D00A99E1C /* BulletDynamics.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0DF5699123F9B1BC00A99E1C;
+			remoteGlobalIDString = 0D1FA98223FA73D00036B70E;
 			remoteInfo = "BulletDynamics-ios";
 		};
 		0DF569D023F9B1FD00A99E1C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DF567EE23F97D6D00A99E1C /* LinearMath.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0DF5691323F9B14800A99E1C;
+			remoteGlobalIDString = 0D1FA9B323FA73E30036B70E;
 			remoteInfo = "LinearMath-ios";
 		};
 		0DF569D223F9B1FD00A99E1C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DF567E223F97D3500A99E1C /* BulletCollision.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0DF5692823F9B18900A99E1C;
+			remoteGlobalIDString = 0D1FA9C823FA73FA0036B70E;
 			remoteInfo = "BulletCollision-ios";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1FAA3E23FA762B0036B70E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0D1FAA3F23FA762B0036B70E /* SceneRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneRenderer.mm; sourceTree = "<group>"; };
+		0D1FAA4023FA762B0036B70E /* DirectorDisplayLink.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DirectorDisplayLink.mm; sourceTree = "<group>"; };
+		0D1FAA4123FA762B0036B70E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0D1FAA4223FA762B0036B70E /* ShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
+		0D1FAA4323FA762B0036B70E /* TestShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = TestShaders.metal; sourceTree = "<group>"; };
+		0D1FAA4423FA762B0036B70E /* DirectorDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectorDisplayLink.h; sourceTree = "<group>"; };
+		0D1FAA4523FA762B0036B70E /* SceneRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneRenderer.h; sourceTree = "<group>"; };
+		0D1FAA4623FA762B0036B70E /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		0D1FAA4723FA762B0036B70E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0D34016523F0074B00183EAC /* test_scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = test_scene.scn; sourceTree = "<group>"; };
 		0D4C4A8523F9DAC4000F7C36 /* Scheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scheduler.h; sourceTree = "<group>"; };
 		0D4C4A8923F9DAD0000F7C36 /* Scheduler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scheduler.cpp; sourceTree = "<group>"; };
@@ -215,16 +225,6 @@
 		0DD1B0CF23D79FDE00E65C07 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		0DDF67EC23DC583000827D46 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0DDF67ED23DC583000827D46 /* SceneRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneRenderer.mm; sourceTree = "<group>"; };
-		0DDF67EE23DC583000827D46 /* DirectorDisplayLink.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DirectorDisplayLink.mm; sourceTree = "<group>"; };
-		0DDF67EF23DC583000827D46 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0DDF67F023DC583000827D46 /* ShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
-		0DDF67F123DC583000827D46 /* TestShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = TestShaders.metal; sourceTree = "<group>"; };
-		0DDF67F223DC583000827D46 /* DirectorDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectorDisplayLink.h; sourceTree = "<group>"; };
-		0DDF67F323DC583000827D46 /* SceneRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneRenderer.h; sourceTree = "<group>"; };
-		0DDF67F423DC583000827D46 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		0DDF67F523DC583000827D46 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0DDF681023DC620B00827D46 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		0DDF682423E5887D00827D46 /* Vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec2.h; sourceTree = "<group>"; };
 		0DDF682523E5887D00827D46 /* Mat4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mat4.h; sourceTree = "<group>"; };
@@ -449,6 +449,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1FAA3C23FA762B0036B70E /* rendering */ = {
+			isa = PBXGroup;
+			children = (
+				0D1FAA3D23FA762B0036B70E /* apple */,
+			);
+			path = rendering;
+			sourceTree = "<group>";
+		};
+		0D1FAA3D23FA762B0036B70E /* apple */ = {
+			isa = PBXGroup;
+			children = (
+				0D1FAA3E23FA762B0036B70E /* AppDelegate.h */,
+				0D1FAA3F23FA762B0036B70E /* SceneRenderer.mm */,
+				0D1FAA4023FA762B0036B70E /* DirectorDisplayLink.mm */,
+				0D1FAA4123FA762B0036B70E /* ViewController.m */,
+				0D1FAA4223FA762B0036B70E /* ShaderTypes.h */,
+				0D1FAA4323FA762B0036B70E /* TestShaders.metal */,
+				0D1FAA4423FA762B0036B70E /* DirectorDisplayLink.h */,
+				0D1FAA4523FA762B0036B70E /* SceneRenderer.h */,
+				0D1FAA4623FA762B0036B70E /* AppDelegate.mm */,
+				0D1FAA4723FA762B0036B70E /* ViewController.h */,
+			);
+			path = apple;
+			sourceTree = "<group>";
+		};
 		0D69FA1323F8172B00C80AA3 /* tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,7 +510,6 @@
 				0DF567E823F97D6D00A99E1C /* BulletDynamics.xcodeproj */,
 				0DF567EE23F97D6D00A99E1C /* LinearMath.xcodeproj */,
 				0DF567E223F97D3500A99E1C /* BulletCollision.xcodeproj */,
-				0DDF67EB23DC583000827D46 /* apple */,
 				0DDF67F623DC583000827D46 /* mak3do */,
 				0DA9450123D6429F00AEBEAA /* Assets.xcassets */,
 				0DA9450623D6429F00AEBEAA /* Info.plist */,
@@ -524,27 +548,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0DDF67EB23DC583000827D46 /* apple */ = {
-			isa = PBXGroup;
-			children = (
-				0DDF67EC23DC583000827D46 /* AppDelegate.h */,
-				0DDF67F423DC583000827D46 /* AppDelegate.mm */,
-				0DDF67F323DC583000827D46 /* SceneRenderer.h */,
-				0DDF67ED23DC583000827D46 /* SceneRenderer.mm */,
-				0DDF67F223DC583000827D46 /* DirectorDisplayLink.h */,
-				0DDF67EE23DC583000827D46 /* DirectorDisplayLink.mm */,
-				0DDF67F523DC583000827D46 /* ViewController.h */,
-				0DDF67EF23DC583000827D46 /* ViewController.m */,
-				0DDF67F023DC583000827D46 /* ShaderTypes.h */,
-				0DDF67F123DC583000827D46 /* TestShaders.metal */,
-			);
-			path = apple;
-			sourceTree = "<group>";
-		};
 		0DDF67F623DC583000827D46 /* mak3do */ = {
 			isa = PBXGroup;
 			children = (
 				0DF568E723F9891300A99E1C /* Game.hpp */,
+				0D1FAA3C23FA762B0036B70E /* rendering */,
 				0DF568E823F99C3900A99E1C /* game */,
 				0DF5689223F983DC00A99E1C /* scenegraph */,
 				0D69FA1323F8172B00C80AA3 /* tests */,
@@ -1146,7 +1154,6 @@
 				0DF5687223F97F1C00A99E1C /* b2_edge_circle_contact.cpp in Sources */,
 				0DF568DA23F9846A00A99E1C /* Box.cpp in Sources */,
 				0DF5688623F97F1C00A99E1C /* b2_collide_circle.cpp in Sources */,
-				0DDF67FA23DC583000827D46 /* DirectorDisplayLink.mm in Sources */,
 				0DF5686E23F97F1C00A99E1C /* b2_distance_joint.cpp in Sources */,
 				0DF5688E23F97F1C00A99E1C /* b2_collide_polygon.cpp in Sources */,
 				0DF569E823F9B91D00A99E1C /* SphereImpl.mm in Sources */,
@@ -1171,7 +1178,6 @@
 				0DF5686B23F97F1C00A99E1C /* b2_world_callbacks.cpp in Sources */,
 				0DF5688023F97F1C00A99E1C /* b2_draw.cpp in Sources */,
 				0DF5688F23F97F1C00A99E1C /* b2_edge_shape.cpp in Sources */,
-				0DDF67FD23DC583000827D46 /* AppDelegate.mm in Sources */,
 				0DF569EA23F9B91D00A99E1C /* GeometryImpl.mm in Sources */,
 				0DF568DD23F9846A00A99E1C /* Light.cpp in Sources */,
 				0DF568DB23F9846A00A99E1C /* Camera.cpp in Sources */,
@@ -1180,23 +1186,24 @@
 				0DF5688523F97F1C00A99E1C /* b2_math.cpp in Sources */,
 				0DF569E623F9B91D00A99E1C /* BoxImpl.mm in Sources */,
 				0DF5687023F97F1C00A99E1C /* b2_polygon_contact.cpp in Sources */,
-				0DDF67FC23DC583000827D46 /* TestShaders.metal in Sources */,
 				0DF5688D23F97F1C00A99E1C /* b2_polygon_shape.cpp in Sources */,
 				0DF5686523F97F1C00A99E1C /* b2_weld_joint.cpp in Sources */,
 				0DF5686623F97F1C00A99E1C /* b2_chain_polygon_contact.cpp in Sources */,
 				0DF568D923F9846A00A99E1C /* Scene.cpp in Sources */,
 				0DDF684723E5887E00827D46 /* Vec3.cpp in Sources */,
 				0DF5686423F97F1C00A99E1C /* b2_chain_circle_contact.cpp in Sources */,
+				0D1FAA4823FA762B0036B70E /* SceneRenderer.mm in Sources */,
 				0DF5687423F97F1C00A99E1C /* b2_friction_joint.cpp in Sources */,
 				0DF568DE23F9846A00A99E1C /* Color.cpp in Sources */,
 				0DF5689123F97F1C00A99E1C /* b2_distance.cpp in Sources */,
 				0DF5687F23F97F1C00A99E1C /* b2_rope.cpp in Sources */,
+				0D1FAA4C23FA762B0036B70E /* AppDelegate.mm in Sources */,
 				0DF5687323F97F1C00A99E1C /* b2_gear_joint.cpp in Sources */,
 				0DF5686F23F97F1C00A99E1C /* b2_contact_manager.cpp in Sources */,
 				0DDF684323E5887E00827D46 /* Vec4.cpp in Sources */,
 				0DDF684623E5887E00827D46 /* Plane.cpp in Sources */,
 				0DF5690F23F9ABE000A99E1C /* PhysicsElement.cpp in Sources */,
-				0DDF67FB23DC583000827D46 /* ViewController.m in Sources */,
+				0D1FAA4B23FA762B0036B70E /* TestShaders.metal in Sources */,
 				0DF568D723F9846A00A99E1C /* Director.cpp in Sources */,
 				0DF569E723F9B91D00A99E1C /* SceneImpl.mm in Sources */,
 				0DF5690D23F9ABE000A99E1C /* PhysicsElement2D.cpp in Sources */,
@@ -1206,16 +1213,17 @@
 				0DF5687823F97F1C00A99E1C /* b2_world.cpp in Sources */,
 				0DF5690B23F9ABE000A99E1C /* PhysicsWorld3DImpl.cpp in Sources */,
 				0DF568D823F9846A00A99E1C /* Geometry.cpp in Sources */,
+				0D1FAA4923FA762B0036B70E /* DirectorDisplayLink.mm in Sources */,
 				0DF5687B23F97F1C00A99E1C /* b2_circle_contact.cpp in Sources */,
 				0DF568DF23F9846A00A99E1C /* ActionRunner.cpp in Sources */,
 				0DF5686823F97F1C00A99E1C /* b2_contact.cpp in Sources */,
 				0DF5690E23F9ABE000A99E1C /* PhysicsWorld.cpp in Sources */,
 				0DDF684523E5887E00827D46 /* Vec2.cpp in Sources */,
 				0DF5690923F9ABE000A99E1C /* PhysicsWorld2DImpl.cpp in Sources */,
-				0DDF67F923DC583000827D46 /* SceneRenderer.mm in Sources */,
 				0DF5686D23F97F1C00A99E1C /* b2_polygon_circle_contact.cpp in Sources */,
 				0DF569EC23F9B91D00A99E1C /* NodeImpl.mm in Sources */,
 				0DF5689023F97F1C00A99E1C /* b2_time_of_impact.cpp in Sources */,
+				0D1FAA4A23FA762B0036B70E /* ViewController.m in Sources */,
 				0DF568E023F9846A00A99E1C /* Sphere.cpp in Sources */,
 				0DF5688B23F97F1C00A99E1C /* b2_broad_phase.cpp in Sources */,
 				0DF5690C23F9ABE000A99E1C /* PhysicsElement3D.cpp in Sources */,

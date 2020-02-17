@@ -13,7 +13,7 @@
 #include "BoxImpl.h"
 #include "SphereImpl.h"
 #import <SceneKit/SceneKit.h>
-#import "apple/SceneRenderer.h"
+#import <mak3do/rendering/apple/SceneRenderer.h>
 
 namespace mak3do {
 
