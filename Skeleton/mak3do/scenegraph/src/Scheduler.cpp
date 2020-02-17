@@ -16,6 +16,11 @@ public:
         m_at += dt;
     }
     
+    inline ScheduleUpdateCallbackPtr callback() const
+    {
+        return m_callback;
+    }
+    
     inline bool done()
     {
         bool ret = m_at >= m_duration;
@@ -48,6 +53,25 @@ void Scheduler::schedule(float time, ScheduleUpdateCallbackPtr callback)
     m_timers.push_back(timer);
 }
 
+bool Scheduler::unschedule(ScheduleUpdateCallbackPtr callback)
+{
+    auto iterator = std::find(m_callbacks.begin(), m_callbacks.end(), callback);
+    
+    if (iterator != m_callbacks.end()) {
+        m_unscheduled_callbacks.push_back(callback);
+        return true;
+    } else {
+        for (auto& timer : m_timers) {
+            if (timer->callback() == callback) {
+                m_unscheduled_timers.push_back(timer);
+                return true;
+            }
+        }
+    }
+    
+    return false;
+}
+
 void Scheduler::update(float dt)
 {
     for (auto& callback : m_callbacks) {
@@ -56,11 +80,30 @@ void Scheduler::update(float dt)
         }
     }
     
-    m_timers.erase(std::remove_if(m_timers.begin(),m_timers.end(),[dt](TimerPtr& timer) -> bool {
+    m_timers.erase(std::remove_if(m_timers.begin(),m_timers.end(),[&dt](TimerPtr& timer) -> bool {
         timer->update(dt);
         
         return timer->done();
     }),m_timers.end());
+}
+
+void Scheduler::cleanup()
+{
+    for (auto& callback : m_unscheduled_callbacks) {
+        auto iterator = std::find(m_callbacks.begin(), m_callbacks.end(), callback);
+        
+        if (iterator != m_callbacks.end()) {
+            m_callbacks.erase(iterator);
+        }
+    }
+    
+    for (auto& timer : m_unscheduled_timers) {
+        auto iterator = std::find(m_timers.begin(), m_timers.end(), timer);
+        
+        if (iterator != m_timers.end()) {
+            m_timers.erase(iterator);
+        }
+    }
 }
 
 }

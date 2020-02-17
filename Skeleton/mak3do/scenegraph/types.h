@@ -23,11 +23,11 @@ namespace mak3do {
 
 struct _timeval {
 #ifdef __native_client__
-    time_t tv_sec; // seconds
+    time_t tv_sec { 0 }; // seconds
 #else
-    long tv_sec; // seconds
+    long tv_sec { 0 }; // seconds
 #endif
-    int tv_usec; // microSeconds
+    int tv_usec { 0 }; // microSeconds
 };
 
 struct ScheduleUpdate {

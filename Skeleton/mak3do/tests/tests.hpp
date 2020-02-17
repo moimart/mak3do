@@ -153,7 +153,7 @@ public:
     
 };
 
-void test_basic_game_api()
+WorldPtr test_basic_game_api()
 {
     auto scene = std::make_shared<Scene>();
     auto director = Director::get();
@@ -182,15 +182,29 @@ void test_basic_game_api()
     
     world->start();
     
+    return world;
+}
+
+void test_scheduler()
+{
+    auto world = test_basic_game_api();
+    
     auto sched = Director::get()->scheduler();
     auto task = std::make_shared<ScheduleUpdate>();
     task->lambda = [=](float dt) {
-        auto object = std::make_shared<TestObject>();
-        object->position(Vec3(0,1,0));
-        world->add_object(object);
+       auto object = std::make_shared<TestObject>();
+       object->position(Vec3(0,1,0));
+       world->add_object(object);
     };
-    //task->repeat = true;
+    task->repeat = true;
+    
     sched->schedule(5.f,task);
+
+    auto task2 = std::make_shared<ScheduleUpdate>();
+    task2->lambda = [=](float dt) {
+       sched->unschedule(task);
+    };
+    sched->schedule(8.f,task2);
 }
 
 }
