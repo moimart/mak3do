@@ -44,7 +44,9 @@ private:
 
 void Scheduler::schedule(ScheduleUpdateCallbackPtr callback)
 {
+    m_mutex.lock();
     m_callbacks.push_back(callback);
+    m_mutex.unlock();
 }
 
 void Scheduler::schedule(float time, ScheduleUpdateCallbackPtr callback)
