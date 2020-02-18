@@ -42,6 +42,11 @@ private:
     ScheduleUpdateCallbackPtr m_callback;
 };
 
+ScheduleUpdateCallbackPtr Scheduler::task()
+{
+    return std::make_shared<ScheduleUpdate>();
+}
+
 void Scheduler::schedule(ScheduleUpdateCallbackPtr callback)
 {
     m_mutex.lock();

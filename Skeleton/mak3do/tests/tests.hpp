@@ -192,7 +192,7 @@ void test_scheduler()
     auto world = test_basic_game_api();
     
     auto sched = Director::get()->scheduler();
-    auto task = std::make_shared<ScheduleUpdate>();
+    auto task = Scheduler::task();
     task->lambda = [=](float dt) {
        auto object = std::make_shared<TestObject>();
        object->position(Vec3(0,1,0));
@@ -202,11 +202,19 @@ void test_scheduler()
     
     sched->schedule(5.f,task);
 
-    auto task2 = std::make_shared<ScheduleUpdate>();
+    auto task2 = Scheduler::task();
     task2->lambda = [=](float dt) {
        sched->unschedule(task);
     };
     sched->schedule(8.f,task2);
+    
+    auto task3 = Scheduler::task();
+    task3->repeat = true;
+    task3->lambda = [=](float dt) {
+        std::cout << "HELLO! " << dt << std::endl;
+    };
+    
+    sched->schedule(2,task3);
 }
 
 }

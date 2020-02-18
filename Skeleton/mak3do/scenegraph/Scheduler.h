@@ -7,6 +7,8 @@ namespace mak3do {
 class Scheduler : public std::enable_shared_from_this<Scheduler>
 {
 public:
+    static ScheduleUpdateCallbackPtr task();
+    
     void schedule(ScheduleUpdateCallbackPtr callback);
     void schedule(float time, ScheduleUpdateCallbackPtr callback);
     bool unschedule(ScheduleUpdateCallbackPtr callback);

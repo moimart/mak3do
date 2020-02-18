@@ -32,7 +32,7 @@ struct _timeval {
 };
 
 struct ScheduleUpdate {
-    std::function<void(float)> lambda;
+    std::function<void(float)> lambda { [&](float){} };
     std::string cb_id;
     bool paused { false };
     bool repeat { false };
