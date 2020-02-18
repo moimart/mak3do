@@ -49,8 +49,10 @@ void Scheduler::schedule(ScheduleUpdateCallbackPtr callback)
 
 void Scheduler::schedule(float time, ScheduleUpdateCallbackPtr callback)
 {
+    m_mutex.lock();
     auto timer = std::make_shared<Timer>(time,callback);
     m_timers.push_back(timer);
+    m_mutex.unlock();
 }
 
 bool Scheduler::unschedule(ScheduleUpdateCallbackPtr callback)
@@ -74,17 +76,21 @@ bool Scheduler::unschedule(ScheduleUpdateCallbackPtr callback)
 
 void Scheduler::update(float dt)
 {
+    m_mutex.lock();
     for (auto& callback : m_callbacks) {
         if (!callback->paused) {
             callback->lambda(dt);
         }
     }
+    m_mutex.unlock();
     
+    m_mutex.lock();
     m_timers.erase(std::remove_if(m_timers.begin(),m_timers.end(),[&dt](TimerPtr& timer) -> bool {
         timer->update(dt);
         
         return timer->done();
     }),m_timers.end());
+    m_mutex.unlock();
 }
 
 void Scheduler::cleanup()

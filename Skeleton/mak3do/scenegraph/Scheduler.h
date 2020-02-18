@@ -20,7 +20,8 @@ private:
     std::vector<ScheduleUpdateCallbackPtr> m_callbacks;
     std::vector<ScheduleUpdateCallbackPtr> m_unscheduled_callbacks;
     std::vector<TimerPtr> m_timers;
-    std::vector<TimerPtr> m_unscheduled_timers;
+    std::vector<TimerPtr> m_unscheduled_timers;;
+    std::mutex m_mutex;
 };
 
 }

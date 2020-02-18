@@ -6,6 +6,7 @@
 #include <sys/time.h>
 
 #include <memory>
+#include <mutex>
 #include <vector>
 #include <iostream>
 #include <string>
