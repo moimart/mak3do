@@ -10,6 +10,8 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <set>
+#include <map>
 #include <mak3do/math/all>
 
 #ifndef MIN

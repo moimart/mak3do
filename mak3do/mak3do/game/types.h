@@ -1,7 +1,4 @@
 #pragma once
-
-#include <set>
-#include <map>
 #include <mak3do/scenegraph/all>
 
 namespace mak3do {
