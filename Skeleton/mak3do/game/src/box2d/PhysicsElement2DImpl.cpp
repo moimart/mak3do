@@ -84,7 +84,10 @@ void PhysicsElement2DImpl::collided(CollisionCallbackPtr callback)
 
 void PhysicsElement2DImpl::stop_collided(CollisionCallbackPtr callback)
 {
-    std::remove(m_callbacks.begin(),m_callbacks.end(),callback);
+    m_callbacks.erase(std::remove(m_callbacks.begin(),
+                                  m_callbacks.end(),
+                                  callback)
+    ,m_callbacks.end());
 }
 
 void PhysicsElement2DImpl::cleanup_collided()

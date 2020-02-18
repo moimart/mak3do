@@ -23,22 +23,25 @@ namespace mak3do {
 
 struct _timeval {
 #ifdef __native_client__
-    time_t tv_sec; // seconds
+    time_t tv_sec { 0 }; // seconds
 #else
-    long tv_sec; // seconds
+    long tv_sec { 0 }; // seconds
 #endif
-    int tv_usec; // microSeconds
+    int tv_usec { 0 }; // microSeconds
 };
 
 struct ScheduleUpdate {
     std::function<void(float)> lambda;
     std::string cb_id;
+    bool paused { false };
+    bool repeat { false };
 };
 
 typedef std::shared_ptr<ScheduleUpdate> ScheduleUpdateCallbackPtr;
 
 class Director;
 class Scheduler;
+class Timer;
 class Scene;
 class Node;
 class Light;
@@ -61,6 +64,7 @@ class SphereImpl;
 class BoxImpl;
 
 typedef std::shared_ptr<Scheduler> SchedulerPtr;
+typedef std::shared_ptr<Timer> TimerPtr;
 typedef std::shared_ptr<Scene> ScenePtr;
 typedef std::shared_ptr<Node> NodePtr;
 typedef std::shared_ptr<Camera> CameraPtr;

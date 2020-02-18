@@ -91,7 +91,7 @@ void imported_scene()
     }
 
     scene->add_node(camera);
-    scene->camera("main_camera");
+    scene->camera("camera2");
     
     //camera->action(SpinBy::make(5,Vec3(0,360,0)));
 }
@@ -153,7 +153,7 @@ public:
     
 };
 
-void test_basic_game_api()
+WorldPtr test_basic_game_api()
 {
     auto scene = std::make_shared<Scene>();
     auto director = Director::get();
@@ -171,6 +171,7 @@ void test_basic_game_api()
     
     scene->add_node(light);
     scene->camera("main_camera");
+    scene->add_node(light);
     
     auto physics_world = std::make_shared<PhysicsWorld>(PhysicsWorld::Type::_3D);
     auto world = std::make_shared<World>(physics_world,scene);
@@ -182,6 +183,30 @@ void test_basic_game_api()
     object->position(Vec3::ZERO);
     
     world->start();
+    
+    return world;
+}
+
+void test_scheduler()
+{
+    auto world = test_basic_game_api();
+    
+    auto sched = Director::get()->scheduler();
+    auto task = std::make_shared<ScheduleUpdate>();
+    task->lambda = [=](float dt) {
+       auto object = std::make_shared<TestObject>();
+       object->position(Vec3(0,1,0));
+       world->add_object(object);
+    };
+    task->repeat = true;
+    
+    sched->schedule(5.f,task);
+
+    auto task2 = std::make_shared<ScheduleUpdate>();
+    task2->lambda = [=](float dt) {
+       sched->unschedule(task);
+    };
+    sched->schedule(8.f,task2);
 }
 
 }

@@ -58,29 +58,29 @@ void PhysicsWorld2DImpl::EndContact(b2Contact* contact)
 
 void PhysicsWorld2DImpl::collided(CollisionCallbackPtr callback)
 {
-    m_collision_callbacks.push_back(callback);
+    m_callbacks.push_back(callback);
 }
 
 void PhysicsWorld2DImpl::stop_collided(const std::string& id)
 {
-    std::remove_if(m_collision_callbacks.begin(),
-                   m_collision_callbacks.end(),
-                   [&](CollisionCallbackPtr& callback) {
-       
+    m_callbacks.erase(std::remove_if(m_callbacks.begin(),
+                                     m_callbacks.end(),
+                                     [&](CollisionCallbackPtr& callback) {
         return callback->cb_id == id;
-    });
+    }),m_callbacks.end());
 }
 
 void PhysicsWorld2DImpl::stop_collided(CollisionCallbackPtr callback)
 {
-    std::remove(m_collision_callbacks.begin(),
-                m_collision_callbacks.end(),
-                callback);
+    m_callbacks.erase(std::remove(m_callbacks.begin(),
+                                  m_callbacks.end(),
+                                  callback)
+    ,m_callbacks.end());
 }
 
 void PhysicsWorld2DImpl::cleanup_collided()
 {
-    m_collision_callbacks.clear();
+    m_callbacks.clear();
 }
 
 }

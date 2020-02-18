@@ -27,6 +27,6 @@ private:
     PhysicsWorld* m_parent;
     std::shared_ptr<b2World> m_world;
 
-    std::vector<CollisionCallbackPtr> m_collision_callbacks;
+    std::vector<CollisionCallbackPtr> m_callbacks;
 };
 }

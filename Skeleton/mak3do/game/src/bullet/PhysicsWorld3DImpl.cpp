@@ -99,19 +99,19 @@ void PhysicsWorld3DImpl::collided(CollisionCallbackPtr callback)
 
 void PhysicsWorld3DImpl::stop_collided(const std::string& id)
 {
-    std::remove_if(m_callbacks.begin(),
-                   m_callbacks.end(),
-                   [&](CollisionCallbackPtr& callback) {
-       
+    m_callbacks.erase(std::remove_if(m_callbacks.begin(),
+                                     m_callbacks.end(),
+                                     [&](CollisionCallbackPtr& callback) {
         return callback->cb_id == id;
-    });
+    }),m_callbacks.end());
 }
 
 void PhysicsWorld3DImpl::stop_collided(CollisionCallbackPtr callback)
 {
-    std::remove(m_callbacks.begin(),
-                m_callbacks.end(),
-                callback);
+    m_callbacks.erase(std::remove(m_callbacks.begin(),
+                                  m_callbacks.end(),
+                                  callback)
+    ,m_callbacks.end());
 }
 
 void PhysicsWorld3DImpl::cleanup_collided()

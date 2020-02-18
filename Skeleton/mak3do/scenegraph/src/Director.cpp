@@ -21,13 +21,6 @@ Director* Director::get()
     return instance;
 }
 
-Director::Director()
-: m_pimpl(std::make_shared<DirectorImpl>(this))
-, m_action_runner(std::make_shared<ActionRunner>())
-, m_scheduler(std::make_shared<Scheduler>())
-{
-}
-
 static int gettimeofday(struct _timeval* tp, void* tzp)
 {
     if (tp) {
@@ -36,11 +29,26 @@ static int gettimeofday(struct _timeval* tp, void* tzp)
     return 0;
 }
 
+Director::Director()
+: m_pimpl(std::make_shared<DirectorImpl>(this))
+, m_action_runner(std::make_shared<ActionRunner>())
+, m_scheduler(std::make_shared<Scheduler>())
+{
+    struct _timeval now;
+
+    if (mak3do::gettimeofday(&now, nullptr) != 0) {
+        m_dt = 0;
+        return;
+    }
+    
+    m_last_update = now;
+}
+
 void Director::deltaTime()
 {
     struct _timeval now;
 
-    if (mak3do::gettimeofday(&now, NULL) != 0) {
+    if (mak3do::gettimeofday(&now, nullptr) != 0) {
         m_dt = 0;
         return;
     }
@@ -64,6 +72,7 @@ void Director::loop()
     m_scheduler->update(m_dt);
     m_action_runner->update(m_dt);
     m_pimpl->loop(m_dt);
+    m_scheduler->cleanup();
 }
 
 ActionRunnerPtr Director::action_runner() const
