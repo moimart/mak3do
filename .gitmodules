@@ -1,0 +1,6 @@
+[submodule "mak3do/externals/box2d"]
+	path = mak3do/externals/box2d
+	url = https://github.com/erincatto/box2d
+[submodule "mak3do/externals/bullet3"]
+	path = mak3do/externals/bullet3
+	url = git@github.com:bulletphysics/bullet3.git
