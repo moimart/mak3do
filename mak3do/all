@@ -1,0 +1,7 @@
+#pragma once
+#ifdef __cpluscplus
+#include "mak3do/game/all"
+#include "mak3do/scenegraph/all"
+#endif
+#include "mak3do/rendering/apple/AppDelegate.h"
+

@@ -172,7 +172,7 @@
 		0DE848E723FC24BC00A876B2 /* ActionInterval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487823FC24BB00A876B2 /* ActionInterval.cpp */; };
 		0DE848E823FC24BC00A876B2 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487923FC24BB00A876B2 /* Sphere.cpp */; };
 		0DE848E923FC24BC00A876B2 /* Action.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487A23FC24BB00A876B2 /* Action.cpp */; };
-		0DE848EC23FC27C400A876B2 /* all.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE848EB23FC27C400A876B2 /* all.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DE848EC23FC27C400A876B2 /* all in Headers */ = {isa = PBXBuildFile; fileRef = 0DE848EB23FC27C400A876B2 /* all */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -467,7 +467,7 @@
 		0DE8487823FC24BB00A876B2 /* ActionInterval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionInterval.cpp; sourceTree = "<group>"; };
 		0DE8487923FC24BB00A876B2 /* Sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sphere.cpp; sourceTree = "<group>"; };
 		0DE8487A23FC24BB00A876B2 /* Action.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Action.cpp; sourceTree = "<group>"; };
-		0DE848EB23FC27C400A876B2 /* all.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = all.h; path = mak3do/all.h; sourceTree = "<group>"; };
+		0DE848EB23FC27C400A876B2 /* all */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = all; path = mak3do/all; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -704,7 +704,7 @@
 				0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */,
 				0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */,
 				0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */,
-				0DE848EB23FC27C400A876B2 /* all.h */,
+				0DE848EB23FC27C400A876B2 /* all */,
 				0DE847FC23FC24BB00A876B2 /* mak3do */,
 				0D8D194023FC0C9000DBDECD /* externals */,
 				0DA9450623D6429F00AEBEAA /* Info.plist */,
@@ -981,7 +981,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DE848EC23FC27C400A876B2 /* all.h in Headers */,
+				0DE848EC23FC27C400A876B2 /* all in Headers */,
 				0D8D19E723FC0CDC00DBDECD /* box2d.h in Headers */,
 				0D8D19FD23FC0CDC00DBDECD /* b2_collision.h in Headers */,
 				0D8D19E623FC0CDC00DBDECD /* b2_stack_allocator.h in Headers */,

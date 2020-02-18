@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <mak3do/all.h>
+#import <mak3do/all>
 
 int main(int argc, char * argv[]) {
     NSString * appDelegateClassName;
