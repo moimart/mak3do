@@ -24,7 +24,6 @@ void SceneImpl::create_geometry(void* node, NodePtr real_node)
     SCNNode* __node = (__bridge SCNNode*)node;
     
     if (__node.geometry != nil) {
-        std::cout << real_node->name() << " " << real_node->parent()->name() << std::endl;
         GeometryPtr geometry;
         if ([__node.geometry isKindOfClass:[SCNBox class]]) {
             geometry = std::make_shared<Box>();
