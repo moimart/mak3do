@@ -1,2 +1,2 @@
-![Alt text](./mak3do_logo.svg)
-<img src="./mak3do_logo.svg">
+![Alt text]
+<img width="256" src="./mak3do_logo.svg">
