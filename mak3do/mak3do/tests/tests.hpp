@@ -213,13 +213,15 @@ void test_gltf_loader()
     camera->position(Vec3(0,.2f,2));
 
     for (auto node : scene->nodes()) {
- 
+        std::cout << "node name: " << node->name() << std::endl;
+        
+        if (node->name() == "BCHH2364_v6_LOD2") {
+            node->action(RepeatForever::make(SpinBy::make(2,720)));
+        }
     }
 
     scene->add_node(camera);
     scene->camera("camera2");
-    
-    //camera->action(SpinBy::make(5,Vec3(0,360,0)));
 }
 
 void test_scheduler()
