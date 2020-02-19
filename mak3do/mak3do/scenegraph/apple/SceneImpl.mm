@@ -15,6 +15,8 @@
 #import <SceneKit/SceneKit.h>
 #import <mak3do/rendering/apple/SceneRenderer.h>
 
+#import <GLTFSceneKit/GLTFSceneKit-Swift.h>
+
 namespace mak3do {
 
 void SceneImpl::create_geometry(void* node, NodePtr real_node)
@@ -92,7 +94,17 @@ ScenePtr SceneImpl::load(const std::string& filename)
     SCNScene* __scene = [SCNScene sceneNamed:[NSString stringWithUTF8String:filename.c_str()]];
     
     if (__scene == nil) {
-        return nullptr;
+        NSURL* url = [NSURL URLWithString:[NSString stringWithUTF8String:filename.c_str()]];
+        
+        GLTFSceneSource* source = [[GLTFSceneSource alloc] initWithURL:url options:nil];
+        
+        NSError* error;
+        __scene = [source sceneWithOptions:nil error:&error];
+        
+        if (error != nil) {
+          NSLog(@"%@", error);
+          return nullptr;
+        }
     }
     
     auto scene = std::make_shared<Scene>();

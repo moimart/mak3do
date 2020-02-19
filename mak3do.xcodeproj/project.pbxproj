@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D181C4F23FD1B92001BA6F4 /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */; };
+		0D181C5023FD1B92001BA6F4 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D1FAAD023FC09BB0036B70E /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACE23FC09BB0036B70E /* Metal.framework */; };
 		0D1FAAD123FC09BB0036B70E /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACF23FC09BB0036B70E /* MetalKit.framework */; };
 		0D1FAAD323FC09C50036B70E /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAAD223FC09C50036B70E /* SceneKit.framework */; };
@@ -229,26 +231,44 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D1FA9C823FA73FA0036B70E;
+			remoteGlobalIDString = 0D881B2F23FC51DC001A8250;
 			remoteInfo = "BulletCollision-ios";
 		};
 		0D8D1A2E23FC0D3800DBDECD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D1FA98223FA73D00036B70E;
+			remoteGlobalIDString = 0D881B9823FC51E8001A8250;
 			remoteInfo = "BulletDynamics-ios";
 		};
 		0D8D1A3023FC0D3800DBDECD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D1FA9B323FA73E30036B70E;
+			remoteGlobalIDString = 0D881BC923FC51F1001A8250;
 			remoteInfo = "LinearMath-ios";
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0D181C5123FD1B92001BA6F4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0D181C5023FD1B92001BA6F4 /* GLTFSceneKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0D181C4323FD1A33001BA6F4 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLTFSceneKit.framework; path = Carthage/Build/iOS/GLTFSceneKit.framework; sourceTree = "<group>"; };
+		0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GLTFSceneKit.framework; sourceTree = "<group>"; };
+		0D181C4C23FD1B32001BA6F4 /* GLTFSceneKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = GLTFSceneKit.framework.dSYM; sourceTree = "<group>"; };
+		0D181C4D23FD1B32001BA6F4 /* AC50B667-7E05-3E01-8C8D-9358D417E77D.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "AC50B667-7E05-3E01-8C8D-9358D417E77D.bcsymbolmap"; sourceTree = "<group>"; };
 		0D1FAA5223FC08050036B70E /* mak3do.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mak3do.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1FAACE23FC09BB0036B70E /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
 		0D1FAACF23FC09BB0036B70E /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -475,6 +495,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D181C4F23FD1B92001BA6F4 /* GLTFSceneKit.framework in Frameworks */,
 				0D8D1A3223FC0D4100DBDECD /* libBulletCollision-ios.a in Frameworks */,
 				0D8D1A3323FC0D4100DBDECD /* libBulletDynamics-ios.a in Frameworks */,
 				0D8D1A3423FC0D4100DBDECD /* libLinearMath-ios.a in Frameworks */,
@@ -495,6 +516,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D181C4A23FD1B32001BA6F4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */,
+				0D181C4C23FD1B32001BA6F4 /* GLTFSceneKit.framework.dSYM */,
+				0D181C4D23FD1B32001BA6F4 /* AC50B667-7E05-3E01-8C8D-9358D417E77D.bcsymbolmap */,
+			);
+			name = iOS;
+			path = Carthage/Build/iOS;
+			sourceTree = "<group>";
+		};
 		0D881B1223FC46E7001A8250 /* mak3do-sandbox */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,6 +759,8 @@
 		0DD1B0CE23D79FDE00E65C07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D181C4A23FD1B32001BA6F4 /* iOS */,
+				0D181C4323FD1A33001BA6F4 /* GLTFSceneKit.framework */,
 				0D1FAAD223FC09C50036B70E /* SceneKit.framework */,
 				0DDF681023DC620B00827D46 /* MetalKit.framework */,
 				0D1FAACE23FC09BB0036B70E /* Metal.framework */,
@@ -1063,6 +1097,7 @@
 				0D1FAA4E23FC08050036B70E /* Sources */,
 				0D1FAA4F23FC08050036B70E /* Frameworks */,
 				0D1FAA5023FC08050036B70E /* Resources */,
+				0D181C5123FD1B92001BA6F4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1370,6 +1405,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/mak3do/externals/box2d/include",
 					"$(SRCROOT)/mak3do/externals/box2d/src",
@@ -1403,6 +1442,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/mak3do/externals/box2d/include",
 					"$(SRCROOT)/mak3do/externals/box2d/src",
