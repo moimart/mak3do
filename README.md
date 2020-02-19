@@ -2,8 +2,8 @@
 
  # mak3do 2.0 - Scene graph-based engine
 
- mak3do is a C++17 game engine that abstracts underlying an scene graph implementation like 
- SceneKit from Apple or SceneFrom from Android
+ mak3do is a C++17 game engine that abstracts an underlying scene graph implementation like 
+ SceneKit from Apple or SceneForm from Android
 
  ## Features supported today
  * glTF loaded scenes
