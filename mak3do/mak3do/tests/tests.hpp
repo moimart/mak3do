@@ -197,7 +197,8 @@ void test_gltf_loader()
     
     node->geometry(std::make_shared<Box>());
     node->geometry()->color(color::RGBA::RED_01);
-    node->position(Vec3(0,0,-5));
+    node->position(Vec3(0,-1,-5));
+    node->yaw(45);
     
     light->position(Vec3(0,4,4));
     light->color(color::RGB::WHITE_01);
@@ -222,12 +223,15 @@ void test_gltf_loader()
         std::cout << "node name: " << node->name() << std::endl;
         
         if (node->name() == "BCHH2364_v6_LOD2") {
+            node->position(Vec3(0,0,-5));
             node->action(RepeatForever::make(SpinBy::make(2,720)));
         }
     }
 
     scene->add_node(camera);
     scene->camera("camera2");
+    
+    camera->action(MoveBy::make(60,Vec3(0,0,-10)));
 }
 
 void test_scheduler()
