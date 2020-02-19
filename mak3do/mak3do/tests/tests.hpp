@@ -187,6 +187,41 @@ WorldPtr test_basic_game_api()
     return world;
 }
 
+void test_gltf_loader()
+{
+    auto director = Director::get();
+    auto scene = Scene::load("glass.glb");
+    auto camera = std::make_shared<Camera>();
+    auto light = std::make_shared<Light>(Light::LightType::Omni);
+    
+    light->position(Vec3(0,4,4));
+    light->color(color::RGB::WHITE_01);
+    light->shadows(true);
+
+
+    if (scene == nullptr) {
+        constructed_scene();
+        return;
+    }
+
+    director->scene(scene);
+    
+    scene->add_node(light);
+    scene->add_node(camera);
+
+    camera->name("camera2");
+    camera->position(Vec3(0,.2f,2));
+
+    for (auto node : scene->nodes()) {
+ 
+    }
+
+    scene->add_node(camera);
+    scene->camera("camera2");
+    
+    //camera->action(SpinBy::make(5,Vec3(0,360,0)));
+}
+
 void test_scheduler()
 {
     auto world = test_basic_game_api();

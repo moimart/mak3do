@@ -91,11 +91,11 @@ void SceneImpl::add_children(void* children, NodePtr parent)
 
 ScenePtr SceneImpl::load(const std::string& filename)
 {
-    SCNScene* __scene = [SCNScene sceneNamed:[NSString stringWithUTF8String:filename.c_str()]];
+    NSString* __filename = [NSString stringWithUTF8String:filename.c_str()];
+    SCNScene* __scene = [SCNScene sceneNamed:__filename];
     
     if (__scene == nil) {
-        NSURL* url = [NSURL URLWithString:[NSString stringWithUTF8String:filename.c_str()]];
-        
+        NSURL* url = [[NSBundle mainBundle] URLForResource:__filename withExtension:@""];
         GLTFSceneSource* source = [[GLTFSceneSource alloc] initWithURL:url options:nil];
         
         NSError* error;

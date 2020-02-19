@@ -20,5 +20,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47BB89AB-78C9-4BA5-97A4-82809F78641B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mak3do/mak3do/tests/tests.hpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "test_gltf_loader()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9101DC4A-0D7D-4026-8AC1-20BC8C8CCA61"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mak3do/mak3do/tests/tests.hpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "test_gltf_loader()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "9101DC4A-0D7D-4026-8AC1-20BC8C8CCA61 - 1c8dd7407af5dee7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mak3do::tests::test_gltf_loader()"
+                  moduleName = "mak3do"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/moimart/kikkei-labs/apple/mak3do/mak3do/mak3do/tests/tests.hpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "817">
+               </Location>
+               <Location
+                  uuid = "9101DC4A-0D7D-4026-8AC1-20BC8C8CCA61 - 1c8dd7407af5dee7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mak3do::tests::test_gltf_loader()"
+                  moduleName = "mak3do"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/moimart/kikkei-labs/apple/mak3do/mak3do/mak3do/tests/tests.hpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "1096">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D181C4F23FD1B92001BA6F4 /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */; };
 		0D181C5023FD1B92001BA6F4 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D181C5523FD1EE0001BA6F4 /* glass.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D181C5423FD1EE0001BA6F4 /* glass.glb */; };
 		0D1FAAD023FC09BB0036B70E /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACE23FC09BB0036B70E /* Metal.framework */; };
 		0D1FAAD123FC09BB0036B70E /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACF23FC09BB0036B70E /* MetalKit.framework */; };
 		0D1FAAD323FC09C50036B70E /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAAD223FC09C50036B70E /* SceneKit.framework */; };
@@ -269,6 +270,7 @@
 		0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GLTFSceneKit.framework; sourceTree = "<group>"; };
 		0D181C4C23FD1B32001BA6F4 /* GLTFSceneKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = GLTFSceneKit.framework.dSYM; sourceTree = "<group>"; };
 		0D181C4D23FD1B32001BA6F4 /* AC50B667-7E05-3E01-8C8D-9358D417E77D.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "AC50B667-7E05-3E01-8C8D-9358D417E77D.bcsymbolmap"; sourceTree = "<group>"; };
+		0D181C5423FD1EE0001BA6F4 /* glass.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = glass.glb; sourceTree = "<group>"; };
 		0D1FAA5223FC08050036B70E /* mak3do.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mak3do.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1FAACE23FC09BB0036B70E /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
 		0D1FAACF23FC09BB0036B70E /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -741,6 +743,7 @@
 				0D8D194023FC0C9000DBDECD /* externals */,
 				0DA9450623D6429F00AEBEAA /* Info.plist */,
 				0D34016523F0074B00183EAC /* test_scene.scn */,
+				0D181C5423FD1EE0001BA6F4 /* glass.glb */,
 				0D881B1223FC46E7001A8250 /* mak3do-sandbox */,
 				0DA944F323D6429D00AEBEAA /* Products */,
 				0DD1B0CE23D79FDE00E65C07 /* Frameworks */,
@@ -1236,6 +1239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D181C5523FD1EE0001BA6F4 /* glass.glb in Resources */,
 				0D881B2023FC46EA001A8250 /* Assets.xcassets in Resources */,
 				0D881B2B23FC4789001A8250 /* test_scene.scn in Resources */,
 			);
