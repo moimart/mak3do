@@ -18,10 +18,14 @@ CameraImpl::CameraImpl(Camera* parent)
     SCNNode* __node = (__bridge SCNNode*)parent->m_pimpl->m_native;
     
     __node.geometry = nil;
+    
+    m_native_camera = (void*)CFBridgingRetain(camera);
 }
 
 CameraImpl::~CameraImpl()
 {
+    SCNCamera* camera = (SCNCamera*)CFBridgingRelease(m_native_camera);
+    camera = nil;
 }
 
 }

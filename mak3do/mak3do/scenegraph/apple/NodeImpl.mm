@@ -92,9 +92,9 @@ float NodeImpl::scale() const
 inline void set_ypr(SCNNode* node, const Vec3& ypr)
 {
     Quaternion quat;
-    quat.setYawPitchRoll(ypr);
+    quat.yaw_pitch_roll(ypr.x, ypr.y, ypr.z);
     
-    [node setOrientation:SCNVector4Make(quat.x, quat.y, quat.z, quat.z)];
+    [node setOrientation:SCNVector4Make(quat.x, quat.y, quat.z, quat.w)];
 }
 
 void NodeImpl::yaw(float yaw)
@@ -181,6 +181,13 @@ void NodeImpl::geometry(GeometryPtr geometry)
 GeometryPtr NodeImpl::geometry() const
 {
     return m_geometry;
+}
+
+void NodeImpl::look_at(const Vec3& vec)
+{
+    SCNNode* __node = (__bridge SCNNode*)m_native;
+    
+    [__node lookAt:SCNVector3Make(vec.x, vec.y, vec.z)];
 }
 
 }

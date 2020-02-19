@@ -10,6 +10,10 @@
 		0D181C4F23FD1B92001BA6F4 /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */; };
 		0D181C5023FD1B92001BA6F4 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D181C5523FD1EE0001BA6F4 /* glass.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D181C5423FD1EE0001BA6F4 /* glass.glb */; };
+		0D181C5723FD3BA9001BA6F4 /* Surface.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D181C5623FD3BA9001BA6F4 /* Surface.h */; };
+		0D181C5A23FD3C21001BA6F4 /* SurfaceImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D181C5823FD3C21001BA6F4 /* SurfaceImpl.mm */; };
+		0D181C5B23FD3C21001BA6F4 /* SurfaceImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D181C5923FD3C21001BA6F4 /* SurfaceImpl.h */; };
+		0D181C5D23FD3C31001BA6F4 /* Surface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D181C5C23FD3C31001BA6F4 /* Surface.cpp */; };
 		0D1FAAD023FC09BB0036B70E /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACE23FC09BB0036B70E /* Metal.framework */; };
 		0D1FAAD123FC09BB0036B70E /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACF23FC09BB0036B70E /* MetalKit.framework */; };
 		0D1FAAD323FC09C50036B70E /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAAD223FC09C50036B70E /* SceneKit.framework */; };
@@ -271,6 +275,10 @@
 		0D181C4C23FD1B32001BA6F4 /* GLTFSceneKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = GLTFSceneKit.framework.dSYM; sourceTree = "<group>"; };
 		0D181C4D23FD1B32001BA6F4 /* AC50B667-7E05-3E01-8C8D-9358D417E77D.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "AC50B667-7E05-3E01-8C8D-9358D417E77D.bcsymbolmap"; sourceTree = "<group>"; };
 		0D181C5423FD1EE0001BA6F4 /* glass.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = glass.glb; sourceTree = "<group>"; };
+		0D181C5623FD3BA9001BA6F4 /* Surface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Surface.h; sourceTree = "<group>"; };
+		0D181C5823FD3C21001BA6F4 /* SurfaceImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SurfaceImpl.mm; sourceTree = "<group>"; };
+		0D181C5923FD3C21001BA6F4 /* SurfaceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurfaceImpl.h; sourceTree = "<group>"; };
+		0D181C5C23FD3C31001BA6F4 /* Surface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Surface.cpp; sourceTree = "<group>"; };
 		0D1FAA5223FC08050036B70E /* mak3do.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mak3do.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1FAACE23FC09BB0036B70E /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
 		0D1FAACF23FC09BB0036B70E /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -925,10 +933,10 @@
 		0DE8484123FC24BB00A876B2 /* scenegraph */ = {
 			isa = PBXGroup;
 			children = (
+				0DE8484223FC24BB00A876B2 /* apple */,
 				0DE8485F23FC24BB00A876B2 /* actions */,
 				0DE8485C23FC24BB00A876B2 /* geometries */,
 				0DE8486A23FC24BB00A876B2 /* src */,
-				0DE8484223FC24BB00A876B2 /* apple */,
 				0DE8485323FC24BB00A876B2 /* Director.h */,
 				0DE8485423FC24BB00A876B2 /* Light.h */,
 				0DE8485523FC24BB00A876B2 /* types.h */,
@@ -947,6 +955,8 @@
 		0DE8484223FC24BB00A876B2 /* apple */ = {
 			isa = PBXGroup;
 			children = (
+				0D181C5923FD3C21001BA6F4 /* SurfaceImpl.h */,
+				0D181C5823FD3C21001BA6F4 /* SurfaceImpl.mm */,
 				0DE8484323FC24BB00A876B2 /* LightImpl.h */,
 				0DE8484423FC24BB00A876B2 /* BoxImpl.h */,
 				0DE8484523FC24BB00A876B2 /* NodeImpl.h */,
@@ -955,6 +965,7 @@
 				0DE8484723FC24BB00A876B2 /* DirectorImpl.h */,
 				0DE8484823FC24BB00A876B2 /* BoxImpl.mm */,
 				0DE8484923FC24BB00A876B2 /* CameraImpl.h */,
+				0DE8485123FC24BB00A876B2 /* CameraImpl.mm */,
 				0DE8484A23FC24BB00A876B2 /* SceneImpl.mm */,
 				0DE8484B23FC24BB00A876B2 /* SphereImpl.mm */,
 				0DE8484C23FC24BB00A876B2 /* DirectorImpl.mm */,
@@ -962,7 +973,6 @@
 				0DE8484E23FC24BB00A876B2 /* GeometryImpl.h */,
 				0DE8484F23FC24BB00A876B2 /* SphereImpl.h */,
 				0DE8485023FC24BB00A876B2 /* GeometryImpl.mm */,
-				0DE8485123FC24BB00A876B2 /* CameraImpl.mm */,
 			);
 			path = apple;
 			sourceTree = "<group>";
@@ -971,6 +981,7 @@
 			isa = PBXGroup;
 			children = (
 				0DE8485D23FC24BB00A876B2 /* Box.h */,
+				0D181C5623FD3BA9001BA6F4 /* Surface.h */,
 				0DE8485E23FC24BB00A876B2 /* Sphere.h */,
 			);
 			path = geometries;
@@ -994,6 +1005,7 @@
 		0DE8486A23FC24BB00A876B2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				0D181C5C23FD3C31001BA6F4 /* Surface.cpp */,
 				0DE8486B23FC24BB00A876B2 /* Director.cpp */,
 				0DE8486D23FC24BB00A876B2 /* Geometry.cpp */,
 				0DE8486E23FC24BB00A876B2 /* Scene.cpp */,
@@ -1037,6 +1049,7 @@
 				0DE848A723FC24BC00A876B2 /* Vec3.h in Headers */,
 				0DE848B523FC24BC00A876B2 /* LightImpl.h in Headers */,
 				0D8D199023FC0CC500DBDECD /* b2_edge_polygon_contact.h in Headers */,
+				0D181C5B23FD3C21001BA6F4 /* SurfaceImpl.h in Headers */,
 				0DE8487C23FC24BC00A876B2 /* tests.hpp in Headers */,
 				0D8D19EE23FC0CDC00DBDECD /* b2_distance.h in Headers */,
 				0D8D19ED23FC0CDC00DBDECD /* b2_body.h in Headers */,
@@ -1075,6 +1088,7 @@
 				0D8D19E123FC0CDC00DBDECD /* b2_block_allocator.h in Headers */,
 				0DE8487B23FC24BC00A876B2 /* Game.hpp in Headers */,
 				0DE8488823FC24BC00A876B2 /* PhysicsWorld2DImpl.h in Headers */,
+				0D181C5723FD3BA9001BA6F4 /* Surface.h in Headers */,
 				0D8D19F323FC0CDC00DBDECD /* b2_time_of_impact.h in Headers */,
 				0D8D19FB23FC0CDC00DBDECD /* b2_growable_stack.h in Headers */,
 				0DE848AF23FC24BC00A876B2 /* ShaderTypes.h in Headers */,
@@ -1292,6 +1306,7 @@
 				0DE848A923FC24BC00A876B2 /* Plane.cpp in Sources */,
 				0DE8488E23FC24BC00A876B2 /* PhysicsWorld3DImpl.cpp in Sources */,
 				0D8D19B123FC0CC500DBDECD /* b2_dynamic_tree.cpp in Sources */,
+				0D181C5A23FD3C21001BA6F4 /* SurfaceImpl.mm in Sources */,
 				0DE8488B23FC24BC00A876B2 /* PhysicsElement3D.cpp in Sources */,
 				0DE848C423FC24BC00A876B2 /* NodeImpl.mm in Sources */,
 				0D8D199623FC0CC500DBDECD /* b2_gear_joint.cpp in Sources */,
@@ -1325,6 +1340,7 @@
 				0D8D199D23FC0CC500DBDECD /* b2_island.cpp in Sources */,
 				0D8D199C23FC0CC500DBDECD /* b2_world.cpp in Sources */,
 				0D8D199323FC0CC500DBDECD /* b2_polygon_contact.cpp in Sources */,
+				0D181C5D23FD3C31001BA6F4 /* Surface.cpp in Sources */,
 				0DE848A423FC24BC00A876B2 /* Quaternion.cpp in Sources */,
 				0D8D19A023FC0CC500DBDECD /* b2_prismatic_joint.cpp in Sources */,
 				0DE848A623FC24BC00A876B2 /* Vec4.cpp in Sources */,

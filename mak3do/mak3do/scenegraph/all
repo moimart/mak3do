@@ -13,3 +13,4 @@
 
 #include "geometries/Sphere.h"
 #include "geometries/Box.h"
+#include "geometries/Surface.h"

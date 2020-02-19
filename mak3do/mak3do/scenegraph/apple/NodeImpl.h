@@ -41,7 +41,8 @@ public:
     
     void geometry(GeometryPtr geometry);
     GeometryPtr geometry() const;
-
+    
+    void look_at(const Vec3& vec);
 private:
     Node* m_abstract;
     

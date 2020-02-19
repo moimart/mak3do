@@ -53,6 +53,7 @@ class Camera;
 class Geometry;
 class Sphere;
 class Box;
+class Surface;
 
 class Action;
 class ActionRunner;
@@ -65,6 +66,7 @@ class CameraImpl;
 class GeometryImpl;
 class SphereImpl;
 class BoxImpl;
+class SurfaceImpl;
 
 typedef std::shared_ptr<Scheduler> SchedulerPtr;
 typedef std::shared_ptr<Timer> TimerPtr;
@@ -75,6 +77,7 @@ typedef std::shared_ptr<Light> LightPtr;
 typedef std::shared_ptr<Geometry> GeometryPtr;
 typedef std::shared_ptr<Sphere> SpherePtr;
 typedef std::shared_ptr<Box> BoxPtr;
+typedef std::shared_ptr<Surface> SurfacePtr;
 typedef std::shared_ptr<Action> ActionPtr;
 typedef std::shared_ptr<ActionRunner> ActionRunnerPtr;
 
@@ -86,4 +89,5 @@ typedef std::shared_ptr<CameraImpl> CameraImplPtr;
 typedef std::shared_ptr<GeometryImpl> GeometryImplPtr;
 typedef std::shared_ptr<SphereImpl> SphereImplPtr;
 typedef std::shared_ptr<BoxImpl> BoxImplPtr;
+typedef std::shared_ptr<SurfaceImpl> SurfaceImplPtr;
 }

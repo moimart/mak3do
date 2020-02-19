@@ -24,6 +24,7 @@ void SceneImpl::create_geometry(void* node, NodePtr real_node)
     SCNNode* __node = (__bridge SCNNode*)node;
     
     if (__node.geometry != nil) {
+        std::cout << real_node->name() << " " << real_node->parent()->name() << std::endl;
         GeometryPtr geometry;
         if ([__node.geometry isKindOfClass:[SCNBox class]]) {
             geometry = std::make_shared<Box>();
@@ -47,11 +48,10 @@ void SceneImpl::create_geometry(void* node, NodePtr real_node)
         */
         } else {
             geometry = std::make_shared<Geometry>();
-            
         }
         
         geometry->m_geometry_pimpl->m_native_geometry = (void*)CFBridgingRetain(__node.geometry);
-        real_node->m_pimpl->geometry(geometry);
+        real_node->m_pimpl->m_geometry = geometry;
     }
 }
 
@@ -82,6 +82,7 @@ void SceneImpl::add_children(void* children, NodePtr parent)
             node->m_pimpl->m_native = (void*)CFBridgingRetain(__node);
             
             parent->add_node(node);
+            create_geometry((__bridge void*)__node, node);
             
             //recursion
             add_children((__bridge void*)__node.childNodes, node);
@@ -146,6 +147,7 @@ ScenePtr SceneImpl::load(const std::string& filename)
             node->m_pimpl->m_native = (void*)CFBridgingRetain(__node);
             
             scene->add_node(node);
+            create_geometry((__bridge void*)__node, node);
             
             //recursion
             add_children((__bridge void*)__node.childNodes, node);

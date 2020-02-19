@@ -134,5 +134,9 @@ GeometryPtr Node::geometry() const
     return m_pimpl->geometry();
 }
 
+void Node::look_at(const Vec3& lookat)
+{
+    m_pimpl->look_at(lookat);
+}
 
 }

@@ -192,18 +192,25 @@ void test_gltf_loader()
     auto director = Director::get();
     auto scene = Scene::load("glass.glb");
     auto camera = std::make_shared<Camera>();
-    auto light = std::make_shared<Light>(Light::LightType::Omni);
+    auto light = std::make_shared<Light>(Light::LightType::Directional);
     auto node = std::make_shared<Node>();
     
-    node->geometry(std::make_shared<Box>());
+    node->geometry(std::make_shared<Surface>());
     node->geometry()->color(color::RGBA::RED_01);
-    node->position(Vec3(0,-1,-5));
-    node->yaw(45);
+    
+    std::string modifier =
+    "_geometry.position +="
+    "    float4(_geometry.normal *"
+    "    (1.5*_geometry.position.y*_geometry.position.x) *"
+    "    sin(1.0 * scn_frame.time),1.0);";
+    
+    node->pitch(-90);
+    node->position(Vec3(0,-.5f,0));
     
     light->position(Vec3(0,4,4));
     light->color(color::RGB::WHITE_01);
     light->shadows(true);
-
+    light->look_at(Vec3::ZERO);
 
     if (scene == nullptr) {
         constructed_scene();
@@ -217,21 +224,36 @@ void test_gltf_loader()
     scene->add_node(node);
 
     camera->name("camera2");
-    camera->position(Vec3(0,.2f,2));
+    camera->position(Vec3(0,1.0f,3));
+    camera->look_at(Vec3::ZERO);
 
     for (auto node : scene->nodes()) {
         std::cout << "node name: " << node->name() << std::endl;
         
         if (node->name() == "BCHH2364_v6_LOD2") {
-            node->position(Vec3(0,0,-5));
-            node->action(RepeatForever::make(SpinBy::make(2,720)));
+            node->position(Vec3(0,0,0));
+            node->action(RepeatForever::make(SpinBy::make(8,720)));
+            
+            std::function<void(std::vector<NodePtr>)> f = [&](std::vector<NodePtr> children) {
+                for (auto& node : children) {
+                    if (node->geometry() != nullptr) {
+                        node->geometry()->modify_shader_geometry(modifier);
+                        std::cout << "geometry" << std::endl;
+                    }
+                    
+                    f(node->nodes());
+                    std::cout << "Node " << node->name() << std::endl;
+                }
+            };
+            
+            f(node->nodes());
         }
     }
 
     scene->add_node(camera);
     scene->camera("camera2");
     
-    camera->action(MoveBy::make(60,Vec3(0,0,-10)));
+    camera->action(MoveBy::make(40,Vec3(0,0,-10)));
 }
 
 void test_scheduler()
