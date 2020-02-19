@@ -193,6 +193,11 @@ void test_gltf_loader()
     auto scene = Scene::load("glass.glb");
     auto camera = std::make_shared<Camera>();
     auto light = std::make_shared<Light>(Light::LightType::Omni);
+    auto node = std::make_shared<Node>();
+    
+    node->geometry(std::make_shared<Box>());
+    node->geometry()->color(color::RGBA::RED_01);
+    node->position(Vec3(0,0,-5));
     
     light->position(Vec3(0,4,4));
     light->color(color::RGB::WHITE_01);
@@ -208,6 +213,7 @@ void test_gltf_loader()
     
     scene->add_node(light);
     scene->add_node(camera);
+    scene->add_node(node);
 
     camera->name("camera2");
     camera->position(Vec3(0,.2f,2));

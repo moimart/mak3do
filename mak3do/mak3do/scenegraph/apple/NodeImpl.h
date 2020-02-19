@@ -51,6 +51,7 @@ private:
     std::vector<NodePtr> m_children;
     
     NodePtr m_parent_node { nullptr };
+    GeometryPtr m_geometry;
     
     friend class SceneImpl;
     friend class LightImpl;

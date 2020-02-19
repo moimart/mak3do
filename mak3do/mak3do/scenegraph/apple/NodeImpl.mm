@@ -174,11 +174,13 @@ void NodeImpl::geometry(GeometryPtr geometry)
     SCNGeometry* __geometry = (__bridge SCNGeometry*)geometry->m_geometry_pimpl->m_native_geometry;
     
     [__node setGeometry: __geometry];
+    
+    m_geometry = geometry;
 }
 
 GeometryPtr NodeImpl::geometry() const
 {
-    return nullptr;
+    return m_geometry;
 }
 
 }

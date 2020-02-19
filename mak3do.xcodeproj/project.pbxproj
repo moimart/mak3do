@@ -950,6 +950,7 @@
 				0DE8484323FC24BB00A876B2 /* LightImpl.h */,
 				0DE8484423FC24BB00A876B2 /* BoxImpl.h */,
 				0DE8484523FC24BB00A876B2 /* NodeImpl.h */,
+				0DE8485223FC24BB00A876B2 /* NodeImpl.mm */,
 				0DE8484623FC24BB00A876B2 /* LightImpl.mm */,
 				0DE8484723FC24BB00A876B2 /* DirectorImpl.h */,
 				0DE8484823FC24BB00A876B2 /* BoxImpl.mm */,
@@ -962,7 +963,6 @@
 				0DE8484F23FC24BB00A876B2 /* SphereImpl.h */,
 				0DE8485023FC24BB00A876B2 /* GeometryImpl.mm */,
 				0DE8485123FC24BB00A876B2 /* CameraImpl.mm */,
-				0DE8485223FC24BB00A876B2 /* NodeImpl.mm */,
 			);
 			path = apple;
 			sourceTree = "<group>";
