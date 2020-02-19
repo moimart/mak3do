@@ -196,7 +196,7 @@ void test_gltf_loader()
     auto node = std::make_shared<Node>();
     
     node->geometry(std::make_shared<Surface>());
-    node->geometry()->color(color::RGBA::RED_01);
+    node->geometry()->color(color::RGBA::WHITE_01);
     
     std::string modifier =
     "_geometry.position +="
@@ -205,7 +205,7 @@ void test_gltf_loader()
     "    sin(1.0 * scn_frame.time),1.0);";
     
     node->pitch(-90);
-    node->position(Vec3(0,-.5f,0));
+    node->position(Vec3(0,-.5f,-3));
     
     light->position(Vec3(0,4,4));
     light->color(color::RGB::WHITE_01);
@@ -237,7 +237,7 @@ void test_gltf_loader()
             std::function<void(std::vector<NodePtr>)> f = [&](std::vector<NodePtr> children) {
                 for (auto& node : children) {
                     if (node->geometry() != nullptr) {
-                        node->geometry()->modify_shader_geometry(modifier);
+                        //node->geometry()->modify_shader_geometry(modifier);
                         std::cout << "geometry" << std::endl;
                     }
                     
