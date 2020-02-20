@@ -117,6 +117,12 @@
 		0D8D1A3223FC0D4100DBDECD /* libBulletCollision-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8D1A2223FC0D3300DBDECD /* libBulletCollision-ios.a */; };
 		0D8D1A3323FC0D4100DBDECD /* libBulletDynamics-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8D1A2B23FC0D3400DBDECD /* libBulletDynamics-ios.a */; };
 		0D8D1A3423FC0D4100DBDECD /* libLinearMath-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8D1A1923FC0D1000DBDECD /* libLinearMath-ios.a */; };
+		0DC5D05D23FE7A9A0084EB79 /* GameControllerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */; };
+		0DC5D05E23FE7A9A0084EB79 /* GameControllerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */; };
+		0DC5D05F23FE7A9A0084EB79 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05823FE7A9A0084EB79 /* GameController.cpp */; };
+		0DC5D06023FE7A9A0084EB79 /* GameController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D05923FE7A9A0084EB79 /* GameController.h */; };
+		0DC5D06223FE7ACA0084EB79 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D06123FE7ACA0084EB79 /* types.h */; };
+		0DC5D06C23FEB8CC0084EB79 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC5D06B23FEB8CC0084EB79 /* GameController.framework */; };
 		0DE8487B23FC24BC00A876B2 /* Game.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FD23FC24BB00A876B2 /* Game.hpp */; };
 		0DE8487C23FC24BC00A876B2 /* tests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FF23FC24BB00A876B2 /* tests.hpp */; };
 		0DE8488223FC24BC00A876B2 /* PhysicsWorld3DImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8480723FC24BB00A876B2 /* PhysicsWorld3DImpl.h */; };
@@ -385,6 +391,12 @@
 		0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = mak3do/externals/bullet3/build3/xcode4/BulletCollision.xcodeproj; sourceTree = "<group>"; };
 		0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = mak3do/externals/bullet3/build3/xcode4/BulletDynamics.xcodeproj; sourceTree = "<group>"; };
 		0DA9450623D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameControllerImpl.mm; sourceTree = "<group>"; };
+		0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameControllerImpl.h; sourceTree = "<group>"; };
+		0DC5D05823FE7A9A0084EB79 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameController.cpp; sourceTree = "<group>"; };
+		0DC5D05923FE7A9A0084EB79 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		0DC5D06123FE7ACA0084EB79 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		0DC5D06B23FEB8CC0084EB79 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		0DD1B0CF23D79FDE00E65C07 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -505,6 +517,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DC5D06C23FEB8CC0084EB79 /* GameController.framework in Frameworks */,
 				0D181C4F23FD1B92001BA6F4 /* GLTFSceneKit.framework in Frameworks */,
 				0D8D1A3223FC0D4100DBDECD /* libBulletCollision-ios.a in Frameworks */,
 				0D8D1A3323FC0D4100DBDECD /* libBulletDynamics-ios.a in Frameworks */,
@@ -767,9 +780,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0DC5D05423FE7A9A0084EB79 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				0DC5D05523FE7A9A0084EB79 /* apple */,
+				0DC5D06123FE7ACA0084EB79 /* types.h */,
+				0DC5D05823FE7A9A0084EB79 /* GameController.cpp */,
+				0DC5D05923FE7A9A0084EB79 /* GameController.h */,
+			);
+			path = io;
+			sourceTree = "<group>";
+		};
+		0DC5D05523FE7A9A0084EB79 /* apple */ = {
+			isa = PBXGroup;
+			children = (
+				0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */,
+				0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */,
+			);
+			path = apple;
+			sourceTree = "<group>";
+		};
 		0DD1B0CE23D79FDE00E65C07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DC5D06B23FEB8CC0084EB79 /* GameController.framework */,
 				0D181C4A23FD1B32001BA6F4 /* iOS */,
 				0D181C4323FD1A33001BA6F4 /* GLTFSceneKit.framework */,
 				0D1FAAD223FC09C50036B70E /* SceneKit.framework */,
@@ -787,6 +821,7 @@
 			isa = PBXGroup;
 			children = (
 				0DE847FD23FC24BB00A876B2 /* Game.hpp */,
+				0DC5D05423FE7A9A0084EB79 /* io */,
 				0DE847FE23FC24BB00A876B2 /* tests */,
 				0DE8480023FC24BB00A876B2 /* game */,
 				0DE8481D23FC24BB00A876B2 /* math */,
@@ -1037,6 +1072,7 @@
 				0D8D1A0323FC0CDC00DBDECD /* b2_contact_manager.h in Headers */,
 				0D8D19E423FC0CDC00DBDECD /* b2_dynamic_tree.h in Headers */,
 				0D8D1A0123FC0CDC00DBDECD /* b2_timer.h in Headers */,
+				0DC5D06023FE7A9A0084EB79 /* GameController.h in Headers */,
 				0D8D19E223FC0CDC00DBDECD /* b2_motor_joint.h in Headers */,
 				0DE848B923FC24BC00A876B2 /* DirectorImpl.h in Headers */,
 				0D8D19FE23FC0CDC00DBDECD /* b2_rope_joint.h in Headers */,
@@ -1071,6 +1107,7 @@
 				0D8D19F523FC0CDC00DBDECD /* b2_friction_joint.h in Headers */,
 				0D8D198723FC0CC500DBDECD /* b2_edge_circle_contact.h in Headers */,
 				0DE848BB23FC24BC00A876B2 /* CameraImpl.h in Headers */,
+				0DC5D06223FE7ACA0084EB79 /* types.h in Headers */,
 				0D8D19F823FC0CDC00DBDECD /* b2_world.h in Headers */,
 				0D8D19EB23FC0CDC00DBDECD /* b2_rope.h in Headers */,
 				0D8D19F123FC0CDC00DBDECD /* b2_circle_shape.h in Headers */,
@@ -1090,6 +1127,7 @@
 				0DE8488823FC24BC00A876B2 /* PhysicsWorld2DImpl.h in Headers */,
 				0D181C5723FD3BA9001BA6F4 /* Surface.h in Headers */,
 				0D8D19F323FC0CDC00DBDECD /* b2_time_of_impact.h in Headers */,
+				0DC5D05E23FE7A9A0084EB79 /* GameControllerImpl.h in Headers */,
 				0D8D19FB23FC0CDC00DBDECD /* b2_growable_stack.h in Headers */,
 				0DE848AF23FC24BC00A876B2 /* ShaderTypes.h in Headers */,
 				0D8D19EA23FC0CDC00DBDECD /* b2_revolute_joint.h in Headers */,
@@ -1315,10 +1353,12 @@
 				0D8D198A23FC0CC500DBDECD /* b2_revolute_joint.cpp in Sources */,
 				0D8D199A23FC0CC500DBDECD /* b2_motor_joint.cpp in Sources */,
 				0D8D19A923FC0CC500DBDECD /* b2_settings.cpp in Sources */,
+				0DC5D05D23FE7A9A0084EB79 /* GameControllerImpl.mm in Sources */,
 				0DE848E523FC24BC00A876B2 /* Scheduler.cpp in Sources */,
 				0DE848DF23FC24BC00A876B2 /* Camera.cpp in Sources */,
 				0D8D19AD23FC0CC500DBDECD /* b2_collision.cpp in Sources */,
 				0DE8489123FC24BC00A876B2 /* PhysicsWorld2DImpl.cpp in Sources */,
+				0DC5D05F23FE7A9A0084EB79 /* GameController.cpp in Sources */,
 				0D8D198C23FC0CC500DBDECD /* b2_contact_solver.cpp in Sources */,
 				0D8D19B223FC0CC500DBDECD /* b2_polygon_shape.cpp in Sources */,
 				0DE848E323FC24BC00A876B2 /* Light.cpp in Sources */,
