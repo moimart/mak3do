@@ -50,6 +50,8 @@ void constructed_scene()
     camera->action(MoveBy::make(120,Vec3(0,0,100)));
 }
 
+NodePtr hanging_node = nullptr;
+
 void imported_scene()
 {
     auto director = Director::get();
@@ -85,7 +87,8 @@ void imported_scene()
                 )
             );
        } else if (node->name() == "camera2") {
-           node->action(MoveBy::make(240,Vec3(0,0,100)));
+           //node->action(MoveBy::make(240,Vec3(0,0,100)));
+           hanging_node = node;
        } else if (node->name() == "box") {
            node->action(RepeatForever::make(SpinBy::make(2,720)));
        }
@@ -94,7 +97,28 @@ void imported_scene()
     scene->add_node(camera);
     scene->camera("camera2");
     
-    //camera->action(SpinBy::make(5,Vec3(0,360,0)));
+    camera->action(SpinBy::make(5,Vec3(0,360,0)));
+    
+    using namespace io;
+    
+    auto gcm = GameControllerManager::get();
+    auto controller_added = std::make_shared<ControllerFoundCallback>();
+    
+    controller_added->lambda = [&](GameControllerPtr controller) {
+        auto left_stick = std::make_shared<AnalogCallback>();
+        left_stick->lambda = [=](float x, float y) {
+            std::cout << "value " << y << std::endl;
+           
+            auto pos = hanging_node->position();
+            
+            pos.z -= y;
+            hanging_node->position(pos);
+        };
+    
+        controller->left_stick_changed(left_stick);
+    };
+    
+    gcm->controller_added(controller_added);
 }
 
 void shader_modifier()
