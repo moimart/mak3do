@@ -123,6 +123,7 @@
 		0DC5D06023FE7A9A0084EB79 /* GameController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D05923FE7A9A0084EB79 /* GameController.h */; };
 		0DC5D06223FE7ACA0084EB79 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D06123FE7ACA0084EB79 /* types.h */; };
 		0DC5D06C23FEB8CC0084EB79 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC5D06B23FEB8CC0084EB79 /* GameController.framework */; };
+		0DC5D06E23FEC17F0084EB79 /* all in Resources */ = {isa = PBXBuildFile; fileRef = 0DC5D06D23FEC17F0084EB79 /* all */; };
 		0DE8487B23FC24BC00A876B2 /* Game.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FD23FC24BB00A876B2 /* Game.hpp */; };
 		0DE8487C23FC24BC00A876B2 /* tests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FF23FC24BB00A876B2 /* tests.hpp */; };
 		0DE8488223FC24BC00A876B2 /* PhysicsWorld3DImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8480723FC24BB00A876B2 /* PhysicsWorld3DImpl.h */; };
@@ -395,8 +396,9 @@
 		0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameControllerImpl.h; sourceTree = "<group>"; };
 		0DC5D05823FE7A9A0084EB79 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameController.cpp; sourceTree = "<group>"; };
 		0DC5D05923FE7A9A0084EB79 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
-		0DC5D06123FE7ACA0084EB79 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		0DC5D06123FE7ACA0084EB79 /* types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = types.h; sourceTree = "<group>"; };
 		0DC5D06B23FEB8CC0084EB79 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		0DC5D06D23FEC17F0084EB79 /* all */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = all; sourceTree = "<group>"; };
 		0DD1B0CF23D79FDE00E65C07 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -787,6 +789,7 @@
 				0DC5D06123FE7ACA0084EB79 /* types.h */,
 				0DC5D05823FE7A9A0084EB79 /* GameController.cpp */,
 				0DC5D05923FE7A9A0084EB79 /* GameController.h */,
+				0DC5D06D23FEC17F0084EB79 /* all */,
 			);
 			path = io;
 			sourceTree = "<group>";
@@ -1284,6 +1287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DC5D06E23FEC17F0084EB79 /* all in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

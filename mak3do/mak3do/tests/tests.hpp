@@ -1,6 +1,7 @@
 #pragma once
 #include <mak3do/scenegraph/all>
 #include <mak3do/game/all>
+#include <mak3do/io/all>
 
 namespace mak3do {
 namespace tests {
@@ -284,6 +285,26 @@ void test_scheduler()
     };
     
     sched->schedule(2,task3);
+}
+
+void test_controller_api()
+{
+    using namespace io;
+    auto world = test_basic_game_api();
+    
+    auto gcm = GameControllerManager::get();
+    auto controller_added = std::make_shared<ControllerFoundCallback>();
+    
+    controller_added->lambda = [&](GameControllerPtr controller) {
+        auto button_pressed = std::make_shared<ButtonCallback>();
+        button_pressed->lambda = [&](controller::Button button, float value) {
+            std::cout << "value " << value << std::endl;
+        };
+    
+        controller->button_pressed(button_pressed);
+    };
+    
+    gcm->controller_added(controller_added);
 }
 
 }

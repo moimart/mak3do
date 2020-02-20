@@ -39,9 +39,9 @@ class GameControllerManager;
 class GameControllerManagerImpl;
 
 typedef std::shared_ptr<GameController> GameControllerPtr;
-typedef std::shared_ptr<GameController> GameControllerManagerPtr;
+typedef std::shared_ptr<GameControllerManager> GameControllerManagerPtr;
 typedef std::shared_ptr<GameControllerImpl> GameControllerImplPtr;
-typedef std::shared_ptr<GameController> GameControllerManagerImplPtr;
+typedef std::shared_ptr<GameControllerManagerImpl> GameControllerManagerImplPtr;
 
 template <class R>
 struct _ControllerCallback {
@@ -52,7 +52,6 @@ struct _ControllerCallback {
 typedef _ControllerCallback<void(GameControllerPtr)> ControllerFoundCallback;
 typedef std::shared_ptr<ControllerFoundCallback> ControllerFoundCallbackPtr;
 
-    
 typedef _ControllerCallback<void(controller::Button, float)> ButtonCallback;
 typedef std::shared_ptr<ButtonCallback> ButtonCallbackPtr;
 

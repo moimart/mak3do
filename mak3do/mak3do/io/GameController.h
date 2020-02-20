@@ -68,7 +68,7 @@ namespace io {
         static GameControllerManager* get();
 
         std::vector<GameControllerPtr> controllers() const;
-        std::map<int, GameControllerPtr> mapped_controllers() const;
+        std::map<int,GameControllerPtr> mapped_controllers() const;
 
         void controller_added(ControllerFoundCallbackPtr callback);
         void stop(ControllerFoundCallbackPtr callback);
