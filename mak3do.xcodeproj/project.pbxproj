@@ -196,13 +196,13 @@
 		0D5A8FEA23FF338800BEC130 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACE23FC09BB0036B70E /* Metal.framework */; };
 		0D5A8FEB23FF338800BEC130 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACF23FC09BB0036B70E /* MetalKit.framework */; };
 		0D5A8FED23FF338800BEC130 /* all in Resources */ = {isa = PBXBuildFile; fileRef = 0DC5D06D23FEC17F0084EB79 /* all */; };
-		0D5A8FF723FF33E200BEC130 /* mak3do-tv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */; };
 		0D5A8FF823FF33E200BEC130 /* mak3do-tv.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D5A908623FF36E400BEC130 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0D5A908723FF36EB00BEC130 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D5A908B23FF376700BEC130 /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; };
 		0D5A908D23FF379E00BEC130 /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D34016523F0074B00183EAC /* test_scene.scn */; };
 		0D5A908E23FF386500BEC130 /* glass.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D181C5423FD1EE0001BA6F4 /* glass.glb */; };
+		0D5A90CC23FF3AEE00BEC130 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D5A90CF23FF3B6F00BEC130 /* mak3do-tv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */; };
 		0D881B2023FC46EA001A8250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D881B1F23FC46EA001A8250 /* Assets.xcassets */; };
 		0D881B2623FC46EA001A8250 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D881B2523FC46EA001A8250 /* main.m */; };
 		0D881B2B23FC4789001A8250 /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D34016523F0074B00183EAC /* test_scene.scn */; };
@@ -445,11 +445,11 @@
 			remoteGlobalIDString = 0D5A907F23FF36B400BEC130;
 			remoteInfo = GLTFSceneKit_tvOS;
 		};
-		0D5A908423FF36DB00BEC130 /* PBXContainerItemProxy */ = {
+		0D5A90CD23FF3B0200BEC130 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D5A904623FF36B400BEC130;
+			remoteGlobalIDString = 0D5A908F23FF3A8A00BEC130;
 			remoteInfo = GLTFSceneKit_tvOS;
 		};
 		0D881B2C23FC47E9001A8250 /* PBXContainerItemProxy */ = {
@@ -565,8 +565,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0D5A90CC23FF3AEE00BEC130 /* GLTFSceneKit.framework in Embed Frameworks */,
 				0D5A8FF823FF33E200BEC130 /* mak3do-tv.framework in Embed Frameworks */,
-				0D5A908723FF36EB00BEC130 /* GLTFSceneKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -836,7 +836,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D5A8FF723FF33E200BEC130 /* mak3do-tv.framework in Frameworks */,
+				0D5A90CF23FF3B6F00BEC130 /* mak3do-tv.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1624,7 +1624,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				0D5A908523FF36DB00BEC130 /* PBXTargetDependency */,
+				0D5A90CE23FF3B0200BEC130 /* PBXTargetDependency */,
 				0D5A8F3523FF338800BEC130 /* PBXTargetDependency */,
 				0D5A8F3723FF338800BEC130 /* PBXTargetDependency */,
 				0D5A8F3923FF338800BEC130 /* PBXTargetDependency */,
@@ -2113,10 +2113,10 @@
 			target = 0D5A8F3223FF338800BEC130 /* mak3do-tv */;
 			targetProxy = 0D5A8FF523FF33D300BEC130 /* PBXContainerItemProxy */;
 		};
-		0D5A908523FF36DB00BEC130 /* PBXTargetDependency */ = {
+		0D5A90CE23FF3B0200BEC130 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GLTFSceneKit_tvOS;
-			targetProxy = 0D5A908423FF36DB00BEC130 /* PBXContainerItemProxy */;
+			targetProxy = 0D5A90CD23FF3B0200BEC130 /* PBXContainerItemProxy */;
 		};
 		0D881B2D23FC47E9001A8250 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

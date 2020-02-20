@@ -6,4 +6,4 @@
 	url = git@github.com:bulletphysics/bullet3.git
 [submodule "mak3do/externals/GLTFSceneKit"]
 	path = mak3do/externals/GLTFSceneKit
-	url = https://github.com/magicien/GLTFSceneKit
+	url = git@github.com:moimart/GLTFSceneKit.git
