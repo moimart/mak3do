@@ -305,7 +305,7 @@ void test_controller_api()
             auto objects = world->objects("test-object");
             
             if (objects.size() == 1) {
-                objects[0]->physics_element("main-element")->impulse(Vec3(0,3,0),Vec3::ZERO);
+                objects[0]->physics_element("main-element")->impulse(Vec3(0,value,0),Vec3::ZERO);
             }
         };
     
