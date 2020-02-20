@@ -21,6 +21,188 @@
 		0D522FCD23FF1FA70093D45A /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D522FC523FF1F850093D45A /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D5A8F1023FF215000BEC130 /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D522FC523FF1F850093D45A /* GLTFSceneKit.framework */; };
 		0D5A8F1123FF215000BEC130 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D522FC523FF1F850093D45A /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D5A8F2823FF32FC00BEC130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D5A8F2723FF32FC00BEC130 /* Assets.xcassets */; };
+		0D5A8F2E23FF32FC00BEC130 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A8F2D23FF32FC00BEC130 /* main.m */; };
+		0D5A8F3D23FF338800BEC130 /* all in Headers */ = {isa = PBXBuildFile; fileRef = 0DE848EB23FC27C400A876B2 /* all */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D5A8F3E23FF338800BEC130 /* box2d.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19C123FC0CDC00DBDECD /* box2d.h */; };
+		0D5A8F3F23FF338800BEC130 /* b2_collision.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19D723FC0CDC00DBDECD /* b2_collision.h */; };
+		0D5A8F4023FF338800BEC130 /* b2_stack_allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19C023FC0CDC00DBDECD /* b2_stack_allocator.h */; };
+		0D5A8F4123FF338800BEC130 /* b2_contact_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */; };
+		0D5A8F4223FF338800BEC130 /* b2_dynamic_tree.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19BE23FC0CDC00DBDECD /* b2_dynamic_tree.h */; };
+		0D5A8F4323FF338800BEC130 /* b2_timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DB23FC0CDC00DBDECD /* b2_timer.h */; };
+		0D5A8F4423FF338800BEC130 /* GameController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D05923FE7A9A0084EB79 /* GameController.h */; };
+		0D5A8F4523FF338800BEC130 /* b2_motor_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19BC23FC0CDC00DBDECD /* b2_motor_joint.h */; };
+		0D5A8F4623FF338800BEC130 /* DirectorImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484723FC24BB00A876B2 /* DirectorImpl.h */; };
+		0D5A8F4723FF338800BEC130 /* b2_rope_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19D823FC0CDC00DBDECD /* b2_rope_joint.h */; };
+		0D5A8F4823FF338800BEC130 /* Vec4.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8482B23FC24BB00A876B2 /* Vec4.h */; };
+		0D5A8F4923FF338800BEC130 /* DirectorDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8483D23FC24BB00A876B2 /* DirectorDisplayLink.h */; };
+		0D5A8F4A23FF338800BEC130 /* b2_time_step.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19C923FC0CDC00DBDECD /* b2_time_step.h */; };
+		0D5A8F4B23FF338800BEC130 /* ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484023FC24BB00A876B2 /* ViewController.h */; };
+		0D5A8F4C23FF338800BEC130 /* b2_edge_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */; };
+		0D5A8F4D23FF338800BEC130 /* b2_math.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19CC23FC0CDC00DBDECD /* b2_math.h */; };
+		0D5A8F4E23FF338800BEC130 /* Vec3.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8483123FC24BB00A876B2 /* Vec3.h */; };
+		0D5A8F4F23FF338800BEC130 /* LightImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484323FC24BB00A876B2 /* LightImpl.h */; };
+		0D5A8F5023FF338800BEC130 /* b2_edge_polygon_contact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D195523FC0CC500DBDECD /* b2_edge_polygon_contact.h */; };
+		0D5A8F5123FF338800BEC130 /* SurfaceImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D181C5923FD3C21001BA6F4 /* SurfaceImpl.h */; };
+		0D5A8F5223FF338800BEC130 /* tests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FF23FC24BB00A876B2 /* tests.hpp */; };
+		0D5A8F5323FF338800BEC130 /* b2_distance.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19C823FC0CDC00DBDECD /* b2_distance.h */; };
+		0D5A8F5423FF338800BEC130 /* b2_body.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19C723FC0CDC00DBDECD /* b2_body.h */; };
+		0D5A8F5523FF338800BEC130 /* b2_chain_circle_contact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D194723FC0CC500DBDECD /* b2_chain_circle_contact.h */; };
+		0D5A8F5623FF338800BEC130 /* b2_contact_solver.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D195023FC0CC500DBDECD /* b2_contact_solver.h */; };
+		0D5A8F5723FF338800BEC130 /* PhysicsElement2DImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8480D23FC24BB00A876B2 /* PhysicsElement2DImpl.h */; };
+		0D5A8F5823FF338800BEC130 /* b2_polygon_contact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D195E23FC0CC500DBDECD /* b2_polygon_contact.h */; };
+		0D5A8F5923FF338800BEC130 /* b2_polygon_circle_contact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D194823FC0CC500DBDECD /* b2_polygon_circle_contact.h */; };
+		0D5A8F5A23FF338800BEC130 /* NodeImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484523FC24BB00A876B2 /* NodeImpl.h */; };
+		0D5A8F5B23FF338800BEC130 /* b2_broad_phase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19C223FC0CDC00DBDECD /* b2_broad_phase.h */; };
+		0D5A8F5C23FF338800BEC130 /* b2_weld_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19BD23FC0CDC00DBDECD /* b2_weld_joint.h */; };
+		0D5A8F5D23FF338800BEC130 /* b2_chain_polygon_contact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D194523FC0CC500DBDECD /* b2_chain_polygon_contact.h */; };
+		0D5A8F5E23FF338800BEC130 /* b2_polygon_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19D323FC0CDC00DBDECD /* b2_polygon_shape.h */; };
+		0D5A8F5F23FF338800BEC130 /* b2_chain_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19D923FC0CDC00DBDECD /* b2_chain_shape.h */; };
+		0D5A8F6023FF338800BEC130 /* b2_settings.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19C323FC0CDC00DBDECD /* b2_settings.h */; };
+		0D5A8F6123FF338800BEC130 /* b2_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19B923FC0CDC00DBDECD /* b2_joint.h */; };
+		0D5A8F6223FF338800BEC130 /* GeometryImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484E23FC24BB00A876B2 /* GeometryImpl.h */; };
+		0D5A8F6323FF338800BEC130 /* BoxImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484423FC24BB00A876B2 /* BoxImpl.h */; };
+		0D5A8F6423FF338800BEC130 /* b2_friction_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19CF23FC0CDC00DBDECD /* b2_friction_joint.h */; };
+		0D5A8F6523FF338800BEC130 /* b2_edge_circle_contact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D194C23FC0CC500DBDECD /* b2_edge_circle_contact.h */; };
+		0D5A8F6623FF338800BEC130 /* CameraImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484923FC24BB00A876B2 /* CameraImpl.h */; };
+		0D5A8F6723FF338800BEC130 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D06123FE7ACA0084EB79 /* types.h */; };
+		0D5A8F6823FF338800BEC130 /* b2_world.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19D223FC0CDC00DBDECD /* b2_world.h */; };
+		0D5A8F6923FF338800BEC130 /* b2_rope.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19C523FC0CDC00DBDECD /* b2_rope.h */; };
+		0D5A8F6A23FF338800BEC130 /* b2_circle_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19CB23FC0CDC00DBDECD /* b2_circle_shape.h */; };
+		0D5A8F6B23FF338800BEC130 /* b2_distance_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19C623FC0CDC00DBDECD /* b2_distance_joint.h */; };
+		0D5A8F6C23FF338800BEC130 /* b2_prismatic_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19D123FC0CDC00DBDECD /* b2_prismatic_joint.h */; };
+		0D5A8F6D23FF338800BEC130 /* b2_wheel_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19D423FC0CDC00DBDECD /* b2_wheel_joint.h */; };
+		0D5A8F6E23FF338800BEC130 /* SceneImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484D23FC24BB00A876B2 /* SceneImpl.h */; };
+		0D5A8F6F23FF338800BEC130 /* b2_world_callbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DC23FC0CDC00DBDECD /* b2_world_callbacks.h */; };
+		0D5A8F7023FF338800BEC130 /* b2_pulley_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19CA23FC0CDC00DBDECD /* b2_pulley_joint.h */; };
+		0D5A8F7123FF338800BEC130 /* PhysicsElement3DImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8480823FC24BB00A876B2 /* PhysicsElement3DImpl.h */; };
+		0D5A8F7223FF338800BEC130 /* b2_island.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D196723FC0CC500DBDECD /* b2_island.h */; };
+		0D5A8F7323FF338800BEC130 /* b2_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19BA23FC0CDC00DBDECD /* b2_shape.h */; };
+		0D5A8F7423FF338800BEC130 /* b2_contact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19D023FC0CDC00DBDECD /* b2_contact.h */; };
+		0D5A8F7523FF338800BEC130 /* b2_mouse_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19CE23FC0CDC00DBDECD /* b2_mouse_joint.h */; };
+		0D5A8F7623FF338800BEC130 /* b2_block_allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19BB23FC0CDC00DBDECD /* b2_block_allocator.h */; };
+		0D5A8F7723FF338800BEC130 /* Game.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FD23FC24BB00A876B2 /* Game.hpp */; };
+		0D5A8F7823FF338800BEC130 /* PhysicsWorld2DImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8480E23FC24BB00A876B2 /* PhysicsWorld2DImpl.h */; };
+		0D5A8F7923FF338800BEC130 /* Surface.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D181C5623FD3BA9001BA6F4 /* Surface.h */; };
+		0D5A8F7A23FF338800BEC130 /* b2_time_of_impact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19CD23FC0CDC00DBDECD /* b2_time_of_impact.h */; };
+		0D5A8F7B23FF338800BEC130 /* GameControllerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */; };
+		0D5A8F7C23FF338800BEC130 /* b2_growable_stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19D523FC0CDC00DBDECD /* b2_growable_stack.h */; };
+		0D5A8F7D23FF338800BEC130 /* ShaderTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8483B23FC24BB00A876B2 /* ShaderTypes.h */; };
+		0D5A8F7E23FF338800BEC130 /* b2_revolute_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19C423FC0CDC00DBDECD /* b2_revolute_joint.h */; };
+		0D5A8F7F23FF338800BEC130 /* b2_fixture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19BF23FC0CDC00DBDECD /* b2_fixture.h */; };
+		0D5A8F8023FF338800BEC130 /* PhysicsWorld3DImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8480723FC24BB00A876B2 /* PhysicsWorld3DImpl.h */; };
+		0D5A8F8123FF338800BEC130 /* b2_draw.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19D623FC0CDC00DBDECD /* b2_draw.h */; };
+		0D5A8F8223FF338800BEC130 /* b2_gear_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DA23FC0CDC00DBDECD /* b2_gear_joint.h */; };
+		0D5A8F8323FF338800BEC130 /* b2_circle_contact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D194923FC0CC500DBDECD /* b2_circle_contact.h */; };
+		0D5A8F8423FF338800BEC130 /* SphereImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484F23FC24BB00A876B2 /* SphereImpl.h */; };
+		0D5A8F8623FF338800BEC130 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8482123FC24BB00A876B2 /* utils.cpp */; };
+		0D5A8F8723FF338800BEC130 /* PhysicsElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481C23FC24BB00A876B2 /* PhysicsElement.cpp */; };
+		0D5A8F8823FF338800BEC130 /* b2_collide_edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197623FC0CC500DBDECD /* b2_collide_edge.cpp */; };
+		0D5A8F8923FF338800BEC130 /* b2_rope_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196023FC0CC500DBDECD /* b2_rope_joint.cpp */; };
+		0D5A8F8A23FF338800BEC130 /* b2_contact_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195723FC0CC500DBDECD /* b2_contact_manager.cpp */; };
+		0D5A8F8B23FF338800BEC130 /* b2_collide_circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197323FC0CC500DBDECD /* b2_collide_circle.cpp */; };
+		0D5A8F8C23FF338800BEC130 /* PhysicsWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481723FC24BB00A876B2 /* PhysicsWorld.cpp */; };
+		0D5A8F8D23FF338800BEC130 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8486E23FC24BB00A876B2 /* Scene.cpp */; };
+		0D5A8F8E23FF338800BEC130 /* b2_friction_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195C23FC0CC500DBDECD /* b2_friction_joint.cpp */; };
+		0D5A8F8F23FF338800BEC130 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487523FC24BB00A876B2 /* Color.cpp */; };
+		0D5A8F9023FF338800BEC130 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481B23FC24BB00A876B2 /* World.cpp */; };
+		0D5A8F9123FF338800BEC130 /* Vec3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483423FC24BB00A876B2 /* Vec3.cpp */; };
+		0D5A8F9223FF338800BEC130 /* SceneImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8484A23FC24BB00A876B2 /* SceneImpl.mm */; };
+		0D5A8F9323FF338800BEC130 /* b2_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194E23FC0CC500DBDECD /* b2_contact.cpp */; };
+		0D5A8F9423FF338800BEC130 /* b2_edge_circle_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195A23FC0CC500DBDECD /* b2_edge_circle_contact.cpp */; };
+		0D5A8F9523FF338800BEC130 /* b2_weld_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194A23FC0CC500DBDECD /* b2_weld_joint.cpp */; };
+		0D5A8F9623FF338800BEC130 /* DirectorDisplayLink.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483923FC24BB00A876B2 /* DirectorDisplayLink.mm */; };
+		0D5A8F9723FF338800BEC130 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483323FC24BB00A876B2 /* Plane.cpp */; };
+		0D5A8F9823FF338800BEC130 /* PhysicsWorld3DImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481623FC24BB00A876B2 /* PhysicsWorld3DImpl.cpp */; };
+		0D5A8F9923FF338800BEC130 /* b2_dynamic_tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197923FC0CC500DBDECD /* b2_dynamic_tree.cpp */; };
+		0D5A8F9A23FF338800BEC130 /* SurfaceImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D181C5823FD3C21001BA6F4 /* SurfaceImpl.mm */; };
+		0D5A8F9B23FF338800BEC130 /* PhysicsElement3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481223FC24BB00A876B2 /* PhysicsElement3D.cpp */; };
+		0D5A8F9C23FF338800BEC130 /* NodeImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8485223FC24BB00A876B2 /* NodeImpl.mm */; };
+		0D5A8F9D23FF338800BEC130 /* b2_gear_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195B23FC0CC500DBDECD /* b2_gear_joint.cpp */; };
+		0D5A8F9E23FF338800BEC130 /* b2_wheel_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195D23FC0CC500DBDECD /* b2_wheel_joint.cpp */; };
+		0D5A8F9F23FF338800BEC130 /* LightImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8484623FC24BB00A876B2 /* LightImpl.mm */; };
+		0D5A8FA023FF338800BEC130 /* b2_revolute_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194F23FC0CC500DBDECD /* b2_revolute_joint.cpp */; };
+		0D5A8FA123FF338800BEC130 /* b2_motor_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195F23FC0CC500DBDECD /* b2_motor_joint.cpp */; };
+		0D5A8FA223FF338800BEC130 /* b2_settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197023FC0CC500DBDECD /* b2_settings.cpp */; };
+		0D5A8FA323FF338800BEC130 /* GameControllerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */; };
+		0D5A8FA423FF338800BEC130 /* Scheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487623FC24BB00A876B2 /* Scheduler.cpp */; };
+		0D5A8FA523FF338800BEC130 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487023FC24BB00A876B2 /* Camera.cpp */; };
+		0D5A8FA623FF338800BEC130 /* b2_collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197523FC0CC500DBDECD /* b2_collision.cpp */; };
+		0D5A8FA723FF338800BEC130 /* PhysicsWorld2DImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481A23FC24BB00A876B2 /* PhysicsWorld2DImpl.cpp */; };
+		0D5A8FA823FF338800BEC130 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05823FE7A9A0084EB79 /* GameController.cpp */; };
+		0D5A8FA923FF338800BEC130 /* b2_contact_solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195123FC0CC500DBDECD /* b2_contact_solver.cpp */; };
+		0D5A8FAA23FF338800BEC130 /* b2_polygon_shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197A23FC0CC500DBDECD /* b2_polygon_shape.cpp */; };
+		0D5A8FAB23FF338800BEC130 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487423FC24BB00A876B2 /* Light.cpp */; };
+		0D5A8FAC23FF338800BEC130 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487323FC24BB00A876B2 /* Node.cpp */; };
+		0D5A8FAD23FF338800BEC130 /* PhysicsElement2DImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481923FC24BB00A876B2 /* PhysicsElement2DImpl.cpp */; };
+		0D5A8FAE23FF338800BEC130 /* b2_mouse_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196323FC0CC500DBDECD /* b2_mouse_joint.cpp */; };
+		0D5A8FAF23FF338800BEC130 /* PhysicsElement3DImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481523FC24BB00A876B2 /* PhysicsElement3DImpl.cpp */; };
+		0D5A8FB023FF338800BEC130 /* DirectorImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8484C23FC24BB00A876B2 /* DirectorImpl.mm */; };
+		0D5A8FB123FF338800BEC130 /* PhysicsElement2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481323FC24BB00A876B2 /* PhysicsElement2D.cpp */; };
+		0D5A8FB223FF338800BEC130 /* Director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8486B23FC24BB00A876B2 /* Director.cpp */; };
+		0D5A8FB323FF338800BEC130 /* b2_fixture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196623FC0CC500DBDECD /* b2_fixture.cpp */; };
+		0D5A8FB423FF338800BEC130 /* TestShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483C23FC24BB00A876B2 /* TestShaders.metal */; };
+		0D5A8FB523FF338800BEC130 /* b2_block_allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196E23FC0CC500DBDECD /* b2_block_allocator.cpp */; };
+		0D5A8FB623FF338800BEC130 /* b2_rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196A23FC0CC500DBDECD /* b2_rope.cpp */; };
+		0D5A8FB723FF338800BEC130 /* b2_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196C23FC0CC500DBDECD /* b2_draw.cpp */; };
+		0D5A8FB823FF338800BEC130 /* b2_math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197123FC0CC500DBDECD /* b2_math.cpp */; };
+		0D5A8FB923FF338800BEC130 /* b2_edge_shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197C23FC0CC500DBDECD /* b2_edge_shape.cpp */; };
+		0D5A8FBA23FF338800BEC130 /* GeometryImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8485023FC24BB00A876B2 /* GeometryImpl.mm */; };
+		0D5A8FBB23FF338800BEC130 /* b2_island.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196223FC0CC500DBDECD /* b2_island.cpp */; };
+		0D5A8FBC23FF338800BEC130 /* b2_world.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196123FC0CC500DBDECD /* b2_world.cpp */; };
+		0D5A8FBD23FF338800BEC130 /* b2_polygon_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195823FC0CC500DBDECD /* b2_polygon_contact.cpp */; };
+		0D5A8FBE23FF338800BEC130 /* Surface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D181C5C23FD3C31001BA6F4 /* Surface.cpp */; };
+		0D5A8FBF23FF338800BEC130 /* Quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8482E23FC24BB00A876B2 /* Quaternion.cpp */; };
+		0D5A8FC023FF338800BEC130 /* b2_prismatic_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196523FC0CC500DBDECD /* b2_prismatic_joint.cpp */; };
+		0D5A8FC123FF338800BEC130 /* Vec4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483023FC24BB00A876B2 /* Vec4.cpp */; };
+		0D5A8FC223FF338800BEC130 /* Vec2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483223FC24BB00A876B2 /* Vec2.cpp */; };
+		0D5A8FC323FF338800BEC130 /* CameraImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8485123FC24BB00A876B2 /* CameraImpl.mm */; };
+		0D5A8FC423FF338800BEC130 /* b2_time_of_impact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197D23FC0CC500DBDECD /* b2_time_of_impact.cpp */; };
+		0D5A8FC523FF338800BEC130 /* Mat4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8482C23FC24BB00A876B2 /* Mat4.cpp */; };
+		0D5A8FC623FF338800BEC130 /* b2_circle_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196423FC0CC500DBDECD /* b2_circle_contact.cpp */; };
+		0D5A8FC723FF338800BEC130 /* b2_distance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197E23FC0CC500DBDECD /* b2_distance.cpp */; };
+		0D5A8FC823FF338800BEC130 /* b2_collide_polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197B23FC0CC500DBDECD /* b2_collide_polygon.cpp */; };
+		0D5A8FC923FF338800BEC130 /* b2_chain_polygon_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194B23FC0CC500DBDECD /* b2_chain_polygon_contact.cpp */; };
+		0D5A8FCA23FF338800BEC130 /* Box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8486F23FC24BB00A876B2 /* Box.cpp */; };
+		0D5A8FCB23FF338800BEC130 /* b2_edge_polygon_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195923FC0CC500DBDECD /* b2_edge_polygon_contact.cpp */; };
+		0D5A8FCC23FF338800BEC130 /* BoxImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8484823FC24BB00A876B2 /* BoxImpl.mm */; };
+		0D5A8FCD23FF338800BEC130 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481123FC24BB00A876B2 /* GameObject.cpp */; };
+		0D5A8FCE23FF338800BEC130 /* b2_chain_circle_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194623FC0CC500DBDECD /* b2_chain_circle_contact.cpp */; };
+		0D5A8FCF23FF338800BEC130 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483F23FC24BB00A876B2 /* AppDelegate.mm */; };
+		0D5A8FD023FF338800BEC130 /* Geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8486D23FC24BB00A876B2 /* Geometry.cpp */; };
+		0D5A8FD123FF338800BEC130 /* ActionInterval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487823FC24BB00A876B2 /* ActionInterval.cpp */; };
+		0D5A8FD223FF338800BEC130 /* b2_broad_phase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197823FC0CC500DBDECD /* b2_broad_phase.cpp */; };
+		0D5A8FD323FF338800BEC130 /* b2_distance_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195623FC0CC500DBDECD /* b2_distance_joint.cpp */; };
+		0D5A8FD423FF338800BEC130 /* Action.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487A23FC24BB00A876B2 /* Action.cpp */; };
+		0D5A8FD523FF338800BEC130 /* b2_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194423FC0CC500DBDECD /* b2_joint.cpp */; };
+		0D5A8FD623FF338800BEC130 /* b2_timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196D23FC0CC500DBDECD /* b2_timer.cpp */; };
+		0D5A8FD723FF338800BEC130 /* b2_polygon_circle_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195423FC0CC500DBDECD /* b2_polygon_circle_contact.cpp */; };
+		0D5A8FD823FF338800BEC130 /* b2_stack_allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196F23FC0CC500DBDECD /* b2_stack_allocator.cpp */; };
+		0D5A8FD923FF338800BEC130 /* b2_chain_shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197723FC0CC500DBDECD /* b2_chain_shape.cpp */; };
+		0D5A8FDA23FF338800BEC130 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483A23FC24BB00A876B2 /* ViewController.m */; };
+		0D5A8FDB23FF338800BEC130 /* b2_pulley_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195323FC0CC500DBDECD /* b2_pulley_joint.cpp */; };
+		0D5A8FDC23FF338800BEC130 /* b2_body.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194D23FC0CC500DBDECD /* b2_body.cpp */; };
+		0D5A8FDD23FF338800BEC130 /* SceneRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483823FC24BB00A876B2 /* SceneRenderer.mm */; };
+		0D5A8FDE23FF338800BEC130 /* b2_world_callbacks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D195223FC0CC500DBDECD /* b2_world_callbacks.cpp */; };
+		0D5A8FDF23FF338800BEC130 /* ActionRunner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487723FC24BB00A876B2 /* ActionRunner.cpp */; };
+		0D5A8FE023FF338800BEC130 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487923FC24BB00A876B2 /* Sphere.cpp */; };
+		0D5A8FE123FF338800BEC130 /* SphereImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8484B23FC24BB00A876B2 /* SphereImpl.mm */; };
+		0D5A8FE223FF338800BEC130 /* b2_circle_shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197423FC0CC500DBDECD /* b2_circle_shape.cpp */; };
+		0D5A8FE523FF338800BEC130 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC5D06B23FEB8CC0084EB79 /* GameController.framework */; };
+		0D5A8FE623FF338800BEC130 /* libBulletCollision-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8D1A2223FC0D3300DBDECD /* libBulletCollision-ios.a */; };
+		0D5A8FE723FF338800BEC130 /* libBulletDynamics-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8D1A2B23FC0D3400DBDECD /* libBulletDynamics-ios.a */; };
+		0D5A8FE823FF338800BEC130 /* libLinearMath-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8D1A1923FC0D1000DBDECD /* libLinearMath-ios.a */; };
+		0D5A8FE923FF338800BEC130 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAAD223FC09C50036B70E /* SceneKit.framework */; };
+		0D5A8FEA23FF338800BEC130 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACE23FC09BB0036B70E /* Metal.framework */; };
+		0D5A8FEB23FF338800BEC130 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACF23FC09BB0036B70E /* MetalKit.framework */; };
+		0D5A8FED23FF338800BEC130 /* all in Resources */ = {isa = PBXBuildFile; fileRef = 0DC5D06D23FEC17F0084EB79 /* all */; };
+		0D5A8FF723FF33E200BEC130 /* mak3do-tv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */; };
+		0D5A8FF823FF33E200BEC130 /* mak3do-tv.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D5A908623FF36E400BEC130 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D5A908723FF36EB00BEC130 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D5A908B23FF376700BEC130 /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; };
+		0D5A908D23FF379E00BEC130 /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D34016523F0074B00183EAC /* test_scene.scn */; };
+		0D5A908E23FF386500BEC130 /* glass.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D181C5423FD1EE0001BA6F4 /* glass.glb */; };
 		0D881B2023FC46EA001A8250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D881B1F23FC46EA001A8250 /* Assets.xcassets */; };
 		0D881B2623FC46EA001A8250 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D881B2523FC46EA001A8250 /* main.m */; };
 		0D881B2B23FC4789001A8250 /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D34016523F0074B00183EAC /* test_scene.scn */; };
@@ -228,6 +410,48 @@
 			remoteGlobalIDString = DD3EB0701F52476B009F32D2;
 			remoteInfo = GLTFSceneKit_iOS;
 		};
+		0D5A8F3623FF338800BEC130 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D522EB823FC8D9F0093D45A;
+			remoteInfo = "BulletCollision-ios";
+		};
+		0D5A8F3823FF338800BEC130 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D522F2123FC8DA90093D45A;
+			remoteInfo = "BulletDynamics-ios";
+		};
+		0D5A8F3A23FF338800BEC130 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D522F5223FC8DB50093D45A;
+			remoteInfo = "LinearMath-ios";
+		};
+		0D5A8FF523FF33D300BEC130 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DA944EA23D6429D00AEBEAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D5A8F3223FF338800BEC130;
+			remoteInfo = "mak3do-tv";
+		};
+		0D5A908223FF36D700BEC130 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D5A907F23FF36B400BEC130;
+			remoteInfo = GLTFSceneKit_tvOS;
+		};
+		0D5A908423FF36DB00BEC130 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D5A904623FF36B400BEC130;
+			remoteInfo = GLTFSceneKit_tvOS;
+		};
 		0D881B2C23FC47E9001A8250 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DA944EA23D6429D00AEBEAA /* Project object */;
@@ -324,6 +548,29 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0D5A8FEE23FF338800BEC130 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0D5A908623FF36E400BEC130 /* GLTFSceneKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D5A8FFD23FF33E200BEC130 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0D5A8FF823FF33E200BEC130 /* mak3do-tv.framework in Embed Frameworks */,
+				0D5A908723FF36EB00BEC130 /* GLTFSceneKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -340,6 +587,12 @@
 		0D34016523F0074B00183EAC /* test_scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = test_scene.scn; sourceTree = "<group>"; };
 		0D522F9923FF1D3B0093D45A /* mak3do-sandbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "mak3do-sandbox.entitlements"; sourceTree = "<group>"; };
 		0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GLTFSceneKit.xcodeproj; path = mak3do/externals/GLTFSceneKit/GLTFSceneKit.xcodeproj; sourceTree = "<group>"; };
+		0D5A8F1623FF32FA00BEC130 /* mak3do-sandbox-tv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mak3do-sandbox-tv.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D5A8F2723FF32FC00BEC130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D5A8F2C23FF32FC00BEC130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D5A8F2D23FF32FC00BEC130 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "mak3do-tv.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D5A8FF423FF338800BEC130 /* mak3do copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "mak3do copy-Info.plist"; path = "/Users/moimart/kikkei-labs/apple/mak3do/mak3do copy-Info.plist"; sourceTree = "<absolute>"; };
 		0D881B1123FC46E7001A8250 /* mak3do-sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mak3do-sandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D881B1F23FC46EA001A8250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D881B2423FC46EA001A8250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -579,6 +832,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0D5A8F1323FF32FA00BEC130 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D5A8FF723FF33E200BEC130 /* mak3do-tv.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D5A8FE323FF338800BEC130 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D5A908B23FF376700BEC130 /* GLTFSceneKit.framework in Frameworks */,
+				0D5A8FE523FF338800BEC130 /* GameController.framework in Frameworks */,
+				0D5A8FE623FF338800BEC130 /* libBulletCollision-ios.a in Frameworks */,
+				0D5A8FE723FF338800BEC130 /* libBulletDynamics-ios.a in Frameworks */,
+				0D5A8FE823FF338800BEC130 /* libLinearMath-ios.a in Frameworks */,
+				0D5A8FE923FF338800BEC130 /* SceneKit.framework in Frameworks */,
+				0D5A8FEA23FF338800BEC130 /* Metal.framework in Frameworks */,
+				0D5A8FEB23FF338800BEC130 /* MetalKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D881B0E23FC46E7001A8250 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -596,10 +872,21 @@
 			children = (
 				0D522FC323FF1F850093D45A /* GLTFSceneKit.framework */,
 				0D522FC523FF1F850093D45A /* GLTFSceneKit.framework */,
+				0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */,
 				0D522FC723FF1F850093D45A /* GLTFSceneKitSample.app */,
 				0D522FC923FF1F850093D45A /* GLTFSceneKitSample.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0D5A8F1723FF32FA00BEC130 /* mak3do-sandbox-tv */ = {
+			isa = PBXGroup;
+			children = (
+				0D5A8F2723FF32FC00BEC130 /* Assets.xcassets */,
+				0D5A8F2C23FF32FC00BEC130 /* Info.plist */,
+				0D5A8F2D23FF32FC00BEC130 /* main.m */,
+			);
+			path = "mak3do-sandbox-tv";
 			sourceTree = "<group>";
 		};
 		0D881B1223FC46E7001A8250 /* mak3do-sandbox */ = {
@@ -820,8 +1107,10 @@
 				0D34016523F0074B00183EAC /* test_scene.scn */,
 				0D181C5423FD1EE0001BA6F4 /* glass.glb */,
 				0D881B1223FC46E7001A8250 /* mak3do-sandbox */,
+				0D5A8F1723FF32FA00BEC130 /* mak3do-sandbox-tv */,
 				0DA944F323D6429D00AEBEAA /* Products */,
 				0DD1B0CE23D79FDE00E65C07 /* Frameworks */,
+				0D5A8FF423FF338800BEC130 /* mak3do copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -830,6 +1119,8 @@
 			children = (
 				0D1FAA5223FC08050036B70E /* mak3do.framework */,
 				0D881B1123FC46E7001A8250 /* mak3do-sandbox.app */,
+				0D5A8F1623FF32FA00BEC130 /* mak3do-sandbox-tv.app */,
+				0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1194,6 +1485,85 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0D5A8F3C23FF338800BEC130 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D5A8F3D23FF338800BEC130 /* all in Headers */,
+				0D5A8F3E23FF338800BEC130 /* box2d.h in Headers */,
+				0D5A8F3F23FF338800BEC130 /* b2_collision.h in Headers */,
+				0D5A8F4023FF338800BEC130 /* b2_stack_allocator.h in Headers */,
+				0D5A8F4123FF338800BEC130 /* b2_contact_manager.h in Headers */,
+				0D5A8F4223FF338800BEC130 /* b2_dynamic_tree.h in Headers */,
+				0D5A8F4323FF338800BEC130 /* b2_timer.h in Headers */,
+				0D5A8F4423FF338800BEC130 /* GameController.h in Headers */,
+				0D5A8F4523FF338800BEC130 /* b2_motor_joint.h in Headers */,
+				0D5A8F4623FF338800BEC130 /* DirectorImpl.h in Headers */,
+				0D5A8F4723FF338800BEC130 /* b2_rope_joint.h in Headers */,
+				0D5A8F4823FF338800BEC130 /* Vec4.h in Headers */,
+				0D5A8F4923FF338800BEC130 /* DirectorDisplayLink.h in Headers */,
+				0D5A8F4A23FF338800BEC130 /* b2_time_step.h in Headers */,
+				0D5A8F4B23FF338800BEC130 /* ViewController.h in Headers */,
+				0D5A8F4C23FF338800BEC130 /* b2_edge_shape.h in Headers */,
+				0D5A8F4D23FF338800BEC130 /* b2_math.h in Headers */,
+				0D5A8F4E23FF338800BEC130 /* Vec3.h in Headers */,
+				0D5A8F4F23FF338800BEC130 /* LightImpl.h in Headers */,
+				0D5A8F5023FF338800BEC130 /* b2_edge_polygon_contact.h in Headers */,
+				0D5A8F5123FF338800BEC130 /* SurfaceImpl.h in Headers */,
+				0D5A8F5223FF338800BEC130 /* tests.hpp in Headers */,
+				0D5A8F5323FF338800BEC130 /* b2_distance.h in Headers */,
+				0D5A8F5423FF338800BEC130 /* b2_body.h in Headers */,
+				0D5A8F5523FF338800BEC130 /* b2_chain_circle_contact.h in Headers */,
+				0D5A8F5623FF338800BEC130 /* b2_contact_solver.h in Headers */,
+				0D5A8F5723FF338800BEC130 /* PhysicsElement2DImpl.h in Headers */,
+				0D5A8F5823FF338800BEC130 /* b2_polygon_contact.h in Headers */,
+				0D5A8F5923FF338800BEC130 /* b2_polygon_circle_contact.h in Headers */,
+				0D5A8F5A23FF338800BEC130 /* NodeImpl.h in Headers */,
+				0D5A8F5B23FF338800BEC130 /* b2_broad_phase.h in Headers */,
+				0D5A8F5C23FF338800BEC130 /* b2_weld_joint.h in Headers */,
+				0D5A8F5D23FF338800BEC130 /* b2_chain_polygon_contact.h in Headers */,
+				0D5A8F5E23FF338800BEC130 /* b2_polygon_shape.h in Headers */,
+				0D5A8F5F23FF338800BEC130 /* b2_chain_shape.h in Headers */,
+				0D5A8F6023FF338800BEC130 /* b2_settings.h in Headers */,
+				0D5A8F6123FF338800BEC130 /* b2_joint.h in Headers */,
+				0D5A8F6223FF338800BEC130 /* GeometryImpl.h in Headers */,
+				0D5A8F6323FF338800BEC130 /* BoxImpl.h in Headers */,
+				0D5A8F6423FF338800BEC130 /* b2_friction_joint.h in Headers */,
+				0D5A8F6523FF338800BEC130 /* b2_edge_circle_contact.h in Headers */,
+				0D5A8F6623FF338800BEC130 /* CameraImpl.h in Headers */,
+				0D5A8F6723FF338800BEC130 /* types.h in Headers */,
+				0D5A8F6823FF338800BEC130 /* b2_world.h in Headers */,
+				0D5A8F6923FF338800BEC130 /* b2_rope.h in Headers */,
+				0D5A8F6A23FF338800BEC130 /* b2_circle_shape.h in Headers */,
+				0D5A8F6B23FF338800BEC130 /* b2_distance_joint.h in Headers */,
+				0D5A8F6C23FF338800BEC130 /* b2_prismatic_joint.h in Headers */,
+				0D5A8F6D23FF338800BEC130 /* b2_wheel_joint.h in Headers */,
+				0D5A8F6E23FF338800BEC130 /* SceneImpl.h in Headers */,
+				0D5A8F6F23FF338800BEC130 /* b2_world_callbacks.h in Headers */,
+				0D5A8F7023FF338800BEC130 /* b2_pulley_joint.h in Headers */,
+				0D5A8F7123FF338800BEC130 /* PhysicsElement3DImpl.h in Headers */,
+				0D5A8F7223FF338800BEC130 /* b2_island.h in Headers */,
+				0D5A8F7323FF338800BEC130 /* b2_shape.h in Headers */,
+				0D5A8F7423FF338800BEC130 /* b2_contact.h in Headers */,
+				0D5A8F7523FF338800BEC130 /* b2_mouse_joint.h in Headers */,
+				0D5A8F7623FF338800BEC130 /* b2_block_allocator.h in Headers */,
+				0D5A8F7723FF338800BEC130 /* Game.hpp in Headers */,
+				0D5A8F7823FF338800BEC130 /* PhysicsWorld2DImpl.h in Headers */,
+				0D5A8F7923FF338800BEC130 /* Surface.h in Headers */,
+				0D5A8F7A23FF338800BEC130 /* b2_time_of_impact.h in Headers */,
+				0D5A8F7B23FF338800BEC130 /* GameControllerImpl.h in Headers */,
+				0D5A8F7C23FF338800BEC130 /* b2_growable_stack.h in Headers */,
+				0D5A8F7D23FF338800BEC130 /* ShaderTypes.h in Headers */,
+				0D5A8F7E23FF338800BEC130 /* b2_revolute_joint.h in Headers */,
+				0D5A8F7F23FF338800BEC130 /* b2_fixture.h in Headers */,
+				0D5A8F8023FF338800BEC130 /* PhysicsWorld3DImpl.h in Headers */,
+				0D5A8F8123FF338800BEC130 /* b2_draw.h in Headers */,
+				0D5A8F8223FF338800BEC130 /* b2_gear_joint.h in Headers */,
+				0D5A8F8323FF338800BEC130 /* b2_circle_contact.h in Headers */,
+				0D5A8F8423FF338800BEC130 /* SphereImpl.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -1219,6 +1589,49 @@
 			name = mak3do;
 			productName = mak3do;
 			productReference = 0D1FAA5223FC08050036B70E /* mak3do.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0D5A8F1523FF32FA00BEC130 /* mak3do-sandbox-tv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D5A8F2F23FF32FC00BEC130 /* Build configuration list for PBXNativeTarget "mak3do-sandbox-tv" */;
+			buildPhases = (
+				0D5A8F1223FF32FA00BEC130 /* Sources */,
+				0D5A8F1323FF32FA00BEC130 /* Frameworks */,
+				0D5A8F1423FF32FA00BEC130 /* Resources */,
+				0D5A8FFD23FF33E200BEC130 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D5A8FF623FF33D300BEC130 /* PBXTargetDependency */,
+			);
+			name = "mak3do-sandbox-tv";
+			productName = "mak3do-sandbox-tv";
+			productReference = 0D5A8F1623FF32FA00BEC130 /* mak3do-sandbox-tv.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0D5A8F3223FF338800BEC130 /* mak3do-tv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D5A8FF023FF338800BEC130 /* Build configuration list for PBXNativeTarget "mak3do-tv" */;
+			buildPhases = (
+				0D5A8F3B23FF338800BEC130 /* ShellScript */,
+				0D5A8F3C23FF338800BEC130 /* Headers */,
+				0D5A8F8523FF338800BEC130 /* Sources */,
+				0D5A8FE323FF338800BEC130 /* Frameworks */,
+				0D5A8FEC23FF338800BEC130 /* Resources */,
+				0D5A8FEE23FF338800BEC130 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D5A908523FF36DB00BEC130 /* PBXTargetDependency */,
+				0D5A8F3523FF338800BEC130 /* PBXTargetDependency */,
+				0D5A8F3723FF338800BEC130 /* PBXTargetDependency */,
+				0D5A8F3923FF338800BEC130 /* PBXTargetDependency */,
+			);
+			name = "mak3do-tv";
+			productName = mak3do;
+			productReference = 0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		0D881B1023FC46E7001A8250 /* mak3do-sandbox */ = {
@@ -1250,6 +1663,9 @@
 				ORGANIZATIONNAME = "Moises Martinez";
 				TargetAttributes = {
 					0D1FAA5123FC08050036B70E = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					0D5A8F1523FF32FA00BEC130 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 					0D881B1023FC46E7001A8250 = {
@@ -1289,7 +1705,9 @@
 			projectRoot = "";
 			targets = (
 				0D1FAA5123FC08050036B70E /* mak3do */,
+				0D5A8F3223FF338800BEC130 /* mak3do-tv */,
 				0D881B1023FC46E7001A8250 /* mak3do-sandbox */,
+				0D5A8F1523FF32FA00BEC130 /* mak3do-sandbox-tv */,
 			);
 		};
 /* End PBXProject section */
@@ -1321,6 +1739,13 @@
 			fileType = wrapper.application;
 			path = GLTFSceneKitSample.app;
 			remoteRef = 0D522FC823FF1F850093D45A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GLTFSceneKit.framework;
+			remoteRef = 0D5A908223FF36D700BEC130 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		0D8D1A1723FC0D1000DBDECD /* libLinearMath_xcode4_x64_debug.a */ = {
@@ -1376,6 +1801,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0D5A8F1423FF32FA00BEC130 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D5A908E23FF386500BEC130 /* glass.glb in Resources */,
+				0D5A8F2823FF32FC00BEC130 /* Assets.xcassets in Resources */,
+				0D5A908D23FF379E00BEC130 /* test_scene.scn in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D5A8FEC23FF338800BEC130 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D5A8FED23FF338800BEC130 /* all in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D881B0F23FC46E7001A8250 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1389,6 +1832,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0D5A8F3B23FF338800BEC130 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${SRCROOT}/mak3do/mak3do\"\n\necho 'Copying headers into Framework..'\nfor H in `find . -name \"*.h\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\nfor H in `find . -name \"all\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\n";
+		};
 		0DE848EA23FC267E00A876B2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1509,6 +1969,114 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0D5A8F1223FF32FA00BEC130 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D5A8F2E23FF32FC00BEC130 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D5A8F8523FF338800BEC130 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D5A8F8623FF338800BEC130 /* utils.cpp in Sources */,
+				0D5A8F8723FF338800BEC130 /* PhysicsElement.cpp in Sources */,
+				0D5A8F8823FF338800BEC130 /* b2_collide_edge.cpp in Sources */,
+				0D5A8F8923FF338800BEC130 /* b2_rope_joint.cpp in Sources */,
+				0D5A8F8A23FF338800BEC130 /* b2_contact_manager.cpp in Sources */,
+				0D5A8F8B23FF338800BEC130 /* b2_collide_circle.cpp in Sources */,
+				0D5A8F8C23FF338800BEC130 /* PhysicsWorld.cpp in Sources */,
+				0D5A8F8D23FF338800BEC130 /* Scene.cpp in Sources */,
+				0D5A8F8E23FF338800BEC130 /* b2_friction_joint.cpp in Sources */,
+				0D5A8F8F23FF338800BEC130 /* Color.cpp in Sources */,
+				0D5A8F9023FF338800BEC130 /* World.cpp in Sources */,
+				0D5A8F9123FF338800BEC130 /* Vec3.cpp in Sources */,
+				0D5A8F9223FF338800BEC130 /* SceneImpl.mm in Sources */,
+				0D5A8F9323FF338800BEC130 /* b2_contact.cpp in Sources */,
+				0D5A8F9423FF338800BEC130 /* b2_edge_circle_contact.cpp in Sources */,
+				0D5A8F9523FF338800BEC130 /* b2_weld_joint.cpp in Sources */,
+				0D5A8F9623FF338800BEC130 /* DirectorDisplayLink.mm in Sources */,
+				0D5A8F9723FF338800BEC130 /* Plane.cpp in Sources */,
+				0D5A8F9823FF338800BEC130 /* PhysicsWorld3DImpl.cpp in Sources */,
+				0D5A8F9923FF338800BEC130 /* b2_dynamic_tree.cpp in Sources */,
+				0D5A8F9A23FF338800BEC130 /* SurfaceImpl.mm in Sources */,
+				0D5A8F9B23FF338800BEC130 /* PhysicsElement3D.cpp in Sources */,
+				0D5A8F9C23FF338800BEC130 /* NodeImpl.mm in Sources */,
+				0D5A8F9D23FF338800BEC130 /* b2_gear_joint.cpp in Sources */,
+				0D5A8F9E23FF338800BEC130 /* b2_wheel_joint.cpp in Sources */,
+				0D5A8F9F23FF338800BEC130 /* LightImpl.mm in Sources */,
+				0D5A8FA023FF338800BEC130 /* b2_revolute_joint.cpp in Sources */,
+				0D5A8FA123FF338800BEC130 /* b2_motor_joint.cpp in Sources */,
+				0D5A8FA223FF338800BEC130 /* b2_settings.cpp in Sources */,
+				0D5A8FA323FF338800BEC130 /* GameControllerImpl.mm in Sources */,
+				0D5A8FA423FF338800BEC130 /* Scheduler.cpp in Sources */,
+				0D5A8FA523FF338800BEC130 /* Camera.cpp in Sources */,
+				0D5A8FA623FF338800BEC130 /* b2_collision.cpp in Sources */,
+				0D5A8FA723FF338800BEC130 /* PhysicsWorld2DImpl.cpp in Sources */,
+				0D5A8FA823FF338800BEC130 /* GameController.cpp in Sources */,
+				0D5A8FA923FF338800BEC130 /* b2_contact_solver.cpp in Sources */,
+				0D5A8FAA23FF338800BEC130 /* b2_polygon_shape.cpp in Sources */,
+				0D5A8FAB23FF338800BEC130 /* Light.cpp in Sources */,
+				0D5A8FAC23FF338800BEC130 /* Node.cpp in Sources */,
+				0D5A8FAD23FF338800BEC130 /* PhysicsElement2DImpl.cpp in Sources */,
+				0D5A8FAE23FF338800BEC130 /* b2_mouse_joint.cpp in Sources */,
+				0D5A8FAF23FF338800BEC130 /* PhysicsElement3DImpl.cpp in Sources */,
+				0D5A8FB023FF338800BEC130 /* DirectorImpl.mm in Sources */,
+				0D5A8FB123FF338800BEC130 /* PhysicsElement2D.cpp in Sources */,
+				0D5A8FB223FF338800BEC130 /* Director.cpp in Sources */,
+				0D5A8FB323FF338800BEC130 /* b2_fixture.cpp in Sources */,
+				0D5A8FB423FF338800BEC130 /* TestShaders.metal in Sources */,
+				0D5A8FB523FF338800BEC130 /* b2_block_allocator.cpp in Sources */,
+				0D5A8FB623FF338800BEC130 /* b2_rope.cpp in Sources */,
+				0D5A8FB723FF338800BEC130 /* b2_draw.cpp in Sources */,
+				0D5A8FB823FF338800BEC130 /* b2_math.cpp in Sources */,
+				0D5A8FB923FF338800BEC130 /* b2_edge_shape.cpp in Sources */,
+				0D5A8FBA23FF338800BEC130 /* GeometryImpl.mm in Sources */,
+				0D5A8FBB23FF338800BEC130 /* b2_island.cpp in Sources */,
+				0D5A8FBC23FF338800BEC130 /* b2_world.cpp in Sources */,
+				0D5A8FBD23FF338800BEC130 /* b2_polygon_contact.cpp in Sources */,
+				0D5A8FBE23FF338800BEC130 /* Surface.cpp in Sources */,
+				0D5A8FBF23FF338800BEC130 /* Quaternion.cpp in Sources */,
+				0D5A8FC023FF338800BEC130 /* b2_prismatic_joint.cpp in Sources */,
+				0D5A8FC123FF338800BEC130 /* Vec4.cpp in Sources */,
+				0D5A8FC223FF338800BEC130 /* Vec2.cpp in Sources */,
+				0D5A8FC323FF338800BEC130 /* CameraImpl.mm in Sources */,
+				0D5A8FC423FF338800BEC130 /* b2_time_of_impact.cpp in Sources */,
+				0D5A8FC523FF338800BEC130 /* Mat4.cpp in Sources */,
+				0D5A8FC623FF338800BEC130 /* b2_circle_contact.cpp in Sources */,
+				0D5A8FC723FF338800BEC130 /* b2_distance.cpp in Sources */,
+				0D5A8FC823FF338800BEC130 /* b2_collide_polygon.cpp in Sources */,
+				0D5A8FC923FF338800BEC130 /* b2_chain_polygon_contact.cpp in Sources */,
+				0D5A8FCA23FF338800BEC130 /* Box.cpp in Sources */,
+				0D5A8FCB23FF338800BEC130 /* b2_edge_polygon_contact.cpp in Sources */,
+				0D5A8FCC23FF338800BEC130 /* BoxImpl.mm in Sources */,
+				0D5A8FCD23FF338800BEC130 /* GameObject.cpp in Sources */,
+				0D5A8FCE23FF338800BEC130 /* b2_chain_circle_contact.cpp in Sources */,
+				0D5A8FCF23FF338800BEC130 /* AppDelegate.mm in Sources */,
+				0D5A8FD023FF338800BEC130 /* Geometry.cpp in Sources */,
+				0D5A8FD123FF338800BEC130 /* ActionInterval.cpp in Sources */,
+				0D5A8FD223FF338800BEC130 /* b2_broad_phase.cpp in Sources */,
+				0D5A8FD323FF338800BEC130 /* b2_distance_joint.cpp in Sources */,
+				0D5A8FD423FF338800BEC130 /* Action.cpp in Sources */,
+				0D5A8FD523FF338800BEC130 /* b2_joint.cpp in Sources */,
+				0D5A8FD623FF338800BEC130 /* b2_timer.cpp in Sources */,
+				0D5A8FD723FF338800BEC130 /* b2_polygon_circle_contact.cpp in Sources */,
+				0D5A8FD823FF338800BEC130 /* b2_stack_allocator.cpp in Sources */,
+				0D5A8FD923FF338800BEC130 /* b2_chain_shape.cpp in Sources */,
+				0D5A8FDA23FF338800BEC130 /* ViewController.m in Sources */,
+				0D5A8FDB23FF338800BEC130 /* b2_pulley_joint.cpp in Sources */,
+				0D5A8FDC23FF338800BEC130 /* b2_body.cpp in Sources */,
+				0D5A8FDD23FF338800BEC130 /* SceneRenderer.mm in Sources */,
+				0D5A8FDE23FF338800BEC130 /* b2_world_callbacks.cpp in Sources */,
+				0D5A8FDF23FF338800BEC130 /* ActionRunner.cpp in Sources */,
+				0D5A8FE023FF338800BEC130 /* Sphere.cpp in Sources */,
+				0D5A8FE123FF338800BEC130 /* SphereImpl.mm in Sources */,
+				0D5A8FE223FF338800BEC130 /* b2_circle_shape.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D881B0D23FC46E7001A8250 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1524,6 +2092,31 @@
 			isa = PBXTargetDependency;
 			name = GLTFSceneKit_iOS;
 			targetProxy = 0D522FCA23FF1F930093D45A /* PBXContainerItemProxy */;
+		};
+		0D5A8F3523FF338800BEC130 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BulletCollision-ios";
+			targetProxy = 0D5A8F3623FF338800BEC130 /* PBXContainerItemProxy */;
+		};
+		0D5A8F3723FF338800BEC130 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BulletDynamics-ios";
+			targetProxy = 0D5A8F3823FF338800BEC130 /* PBXContainerItemProxy */;
+		};
+		0D5A8F3923FF338800BEC130 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LinearMath-ios";
+			targetProxy = 0D5A8F3A23FF338800BEC130 /* PBXContainerItemProxy */;
+		};
+		0D5A8FF623FF33D300BEC130 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D5A8F3223FF338800BEC130 /* mak3do-tv */;
+			targetProxy = 0D5A8FF523FF33D300BEC130 /* PBXContainerItemProxy */;
+		};
+		0D5A908523FF36DB00BEC130 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GLTFSceneKit_tvOS;
+			targetProxy = 0D5A908423FF36DB00BEC130 /* PBXContainerItemProxy */;
 		};
 		0D881B2D23FC47E9001A8250 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1623,6 +2216,128 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0D5A8F3023FF32FC00BEC130 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 39E4GQM8LC;
+				INFOPLIST_FILE = "mak3do-sandbox-tv/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kikkei.mak3do.mak3do-sandbox-tv";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Debug;
+		};
+		0D5A8F3123FF32FC00BEC130 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 39E4GQM8LC;
+				INFOPLIST_FILE = "mak3do-sandbox-tv/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kikkei.mak3do.mak3do-sandbox-tv";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Release;
+		};
+		0D5A8FF123FF338800BEC130 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 39E4GQM8LC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/mak3do/externals/box2d/include",
+					"$(SRCROOT)/mak3do/externals/box2d/src",
+					"$(SRCROOT)/mak3do/externals/bullet3/src",
+					"$(SRCROOT)/mak3do",
+				);
+				INFOPLIST_FILE = "mak3do copy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kikkei.mak3do;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0D5A8FF223FF338800BEC130 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 39E4GQM8LC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/mak3do/externals/box2d/include",
+					"$(SRCROOT)/mak3do/externals/box2d/src",
+					"$(SRCROOT)/mak3do/externals/bullet3/src",
+					"$(SRCROOT)/mak3do",
+				);
+				INFOPLIST_FILE = "mak3do copy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kikkei.mak3do;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1786,6 +2501,24 @@
 			buildConfigurations = (
 				0D1FAA5C23FC08050036B70E /* Debug */,
 				0D1FAA5D23FC08050036B70E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D5A8F2F23FF32FC00BEC130 /* Build configuration list for PBXNativeTarget "mak3do-sandbox-tv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D5A8F3023FF32FC00BEC130 /* Debug */,
+				0D5A8F3123FF32FC00BEC130 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D5A8FF023FF338800BEC130 /* Build configuration list for PBXNativeTarget "mak3do-tv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D5A8FF123FF338800BEC130 /* Debug */,
+				0D5A8FF223FF338800BEC130 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

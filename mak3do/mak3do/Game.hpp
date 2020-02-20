@@ -9,7 +9,7 @@ class Game {
 public:
     void start()
     {
-        //ests::shader_modifier();
+        //tests::shader_modifier();
         //tests::test_basic_game_api();
         //tests::test_gltf_loader();
         //tests::test_scheduler();
