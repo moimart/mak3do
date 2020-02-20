@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D181C4F23FD1B92001BA6F4 /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */; };
-		0D181C5023FD1B92001BA6F4 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D181C5523FD1EE0001BA6F4 /* glass.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D181C5423FD1EE0001BA6F4 /* glass.glb */; };
 		0D181C5723FD3BA9001BA6F4 /* Surface.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D181C5623FD3BA9001BA6F4 /* Surface.h */; };
 		0D181C5A23FD3C21001BA6F4 /* SurfaceImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D181C5823FD3C21001BA6F4 /* SurfaceImpl.mm */; };
@@ -17,10 +15,15 @@
 		0D1FAAD023FC09BB0036B70E /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACE23FC09BB0036B70E /* Metal.framework */; };
 		0D1FAAD123FC09BB0036B70E /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACF23FC09BB0036B70E /* MetalKit.framework */; };
 		0D1FAAD323FC09C50036B70E /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAAD223FC09C50036B70E /* SceneKit.framework */; };
+		0D522F7E23FF1A680093D45A /* mak3do.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAA5223FC08050036B70E /* mak3do.framework */; };
+		0D522F7F23FF1A680093D45A /* mak3do.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAA5223FC08050036B70E /* mak3do.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D522FCC23FF1F9B0093D45A /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D522FC523FF1F850093D45A /* GLTFSceneKit.framework */; };
+		0D522FCD23FF1FA70093D45A /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D522FC523FF1F850093D45A /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D5A8F1023FF215000BEC130 /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D522FC523FF1F850093D45A /* GLTFSceneKit.framework */; };
+		0D5A8F1123FF215000BEC130 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D522FC523FF1F850093D45A /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D881B2023FC46EA001A8250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D881B1F23FC46EA001A8250 /* Assets.xcassets */; };
 		0D881B2623FC46EA001A8250 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D881B2523FC46EA001A8250 /* main.m */; };
 		0D881B2B23FC4789001A8250 /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D34016523F0074B00183EAC /* test_scene.scn */; };
-		0D881B2E23FC47EF001A8250 /* mak3do.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAA5223FC08050036B70E /* mak3do.framework */; };
 		0D8D197F23FC0CC500DBDECD /* b2_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194423FC0CC500DBDECD /* b2_joint.cpp */; };
 		0D8D198023FC0CC500DBDECD /* b2_chain_polygon_contact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D194523FC0CC500DBDECD /* b2_chain_polygon_contact.h */; };
 		0D8D198123FC0CC500DBDECD /* b2_chain_circle_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194623FC0CC500DBDECD /* b2_chain_circle_contact.cpp */; };
@@ -190,6 +193,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0D522FC223FF1F850093D45A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DD83924C1F466C2D006A1CAC;
+			remoteInfo = GLTFSceneKit_macOS;
+		};
+		0D522FC423FF1F850093D45A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DD3EB0711F52476B009F32D2;
+			remoteInfo = GLTFSceneKit_iOS;
+		};
+		0D522FC623FF1F850093D45A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DDE6FDB41F4671B000CB11D6;
+			remoteInfo = GLTFSceneKitSample_macOS;
+		};
+		0D522FC823FF1F850093D45A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DDB221DA1F525D6E002CFA4D;
+			remoteInfo = GLTFSceneKitSample_iOS;
+		};
+		0D522FCA23FF1F930093D45A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DD3EB0701F52476B009F32D2;
+			remoteInfo = GLTFSceneKit_iOS;
+		};
 		0D881B2C23FC47E9001A8250 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DA944EA23D6429D00AEBEAA /* Project object */;
@@ -243,21 +281,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D881B2F23FC51DC001A8250;
+			remoteGlobalIDString = 0D522EB823FC8D9F0093D45A;
 			remoteInfo = "BulletCollision-ios";
 		};
 		0D8D1A2E23FC0D3800DBDECD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D881B9823FC51E8001A8250;
+			remoteGlobalIDString = 0D522F2123FC8DA90093D45A;
 			remoteInfo = "BulletDynamics-ios";
 		};
 		0D8D1A3023FC0D3800DBDECD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D881BC923FC51F1001A8250;
+			remoteGlobalIDString = 0D522F5223FC8DB50093D45A;
 			remoteInfo = "LinearMath-ios";
 		};
 /* End PBXContainerItemProxy section */
@@ -265,11 +303,23 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		0D181C5123FD1B92001BA6F4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0D522FCD23FF1FA70093D45A /* GLTFSceneKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D522F8023FF1A680093D45A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0D181C5023FD1B92001BA6F4 /* GLTFSceneKit.framework in Embed Frameworks */,
+				0D522F7F23FF1A680093D45A /* mak3do.framework in Embed Frameworks */,
+				0D5A8F1123FF215000BEC130 /* GLTFSceneKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,9 +328,6 @@
 
 /* Begin PBXFileReference section */
 		0D181C4323FD1A33001BA6F4 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLTFSceneKit.framework; path = Carthage/Build/iOS/GLTFSceneKit.framework; sourceTree = "<group>"; };
-		0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GLTFSceneKit.framework; sourceTree = "<group>"; };
-		0D181C4C23FD1B32001BA6F4 /* GLTFSceneKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = GLTFSceneKit.framework.dSYM; sourceTree = "<group>"; };
-		0D181C4D23FD1B32001BA6F4 /* AC50B667-7E05-3E01-8C8D-9358D417E77D.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "AC50B667-7E05-3E01-8C8D-9358D417E77D.bcsymbolmap"; sourceTree = "<group>"; };
 		0D181C5423FD1EE0001BA6F4 /* glass.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = glass.glb; sourceTree = "<group>"; };
 		0D181C5623FD3BA9001BA6F4 /* Surface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Surface.h; sourceTree = "<group>"; };
 		0D181C5823FD3C21001BA6F4 /* SurfaceImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SurfaceImpl.mm; sourceTree = "<group>"; };
@@ -291,6 +338,8 @@
 		0D1FAACF23FC09BB0036B70E /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
 		0D1FAAD223FC09C50036B70E /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
 		0D34016523F0074B00183EAC /* test_scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = test_scene.scn; sourceTree = "<group>"; };
+		0D522F9923FF1D3B0093D45A /* mak3do-sandbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "mak3do-sandbox.entitlements"; sourceTree = "<group>"; };
+		0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GLTFSceneKit.xcodeproj; path = mak3do/externals/GLTFSceneKit/GLTFSceneKit.xcodeproj; sourceTree = "<group>"; };
 		0D881B1123FC46E7001A8250 /* mak3do-sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mak3do-sandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D881B1F23FC46EA001A8250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D881B2423FC46EA001A8250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -519,8 +568,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D522FCC23FF1F9B0093D45A /* GLTFSceneKit.framework in Frameworks */,
 				0DC5D06C23FEB8CC0084EB79 /* GameController.framework in Frameworks */,
-				0D181C4F23FD1B92001BA6F4 /* GLTFSceneKit.framework in Frameworks */,
 				0D8D1A3223FC0D4100DBDECD /* libBulletCollision-ios.a in Frameworks */,
 				0D8D1A3323FC0D4100DBDECD /* libBulletDynamics-ios.a in Frameworks */,
 				0D8D1A3423FC0D4100DBDECD /* libLinearMath-ios.a in Frameworks */,
@@ -534,27 +583,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D881B2E23FC47EF001A8250 /* mak3do.framework in Frameworks */,
+				0D522F7E23FF1A680093D45A /* mak3do.framework in Frameworks */,
+				0D5A8F1023FF215000BEC130 /* GLTFSceneKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D181C4A23FD1B32001BA6F4 /* iOS */ = {
+		0D522FBC23FF1F850093D45A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0D181C4B23FD1B32001BA6F4 /* GLTFSceneKit.framework */,
-				0D181C4C23FD1B32001BA6F4 /* GLTFSceneKit.framework.dSYM */,
-				0D181C4D23FD1B32001BA6F4 /* AC50B667-7E05-3E01-8C8D-9358D417E77D.bcsymbolmap */,
+				0D522FC323FF1F850093D45A /* GLTFSceneKit.framework */,
+				0D522FC523FF1F850093D45A /* GLTFSceneKit.framework */,
+				0D522FC723FF1F850093D45A /* GLTFSceneKitSample.app */,
+				0D522FC923FF1F850093D45A /* GLTFSceneKitSample.app */,
 			);
-			name = iOS;
-			path = Carthage/Build/iOS;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		0D881B1223FC46E7001A8250 /* mak3do-sandbox */ = {
 			isa = PBXGroup;
 			children = (
+				0D522F9923FF1D3B0093D45A /* mak3do-sandbox.entitlements */,
 				0D881B1F23FC46EA001A8250 /* Assets.xcassets */,
 				0D881B2423FC46EA001A8250 /* Info.plist */,
 				0D881B2523FC46EA001A8250 /* main.m */,
@@ -758,6 +809,7 @@
 		0DA944E923D6429D00AEBEAA = {
 			isa = PBXGroup;
 			children = (
+				0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */,
 				0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */,
 				0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */,
 				0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */,
@@ -807,7 +859,6 @@
 			isa = PBXGroup;
 			children = (
 				0DC5D06B23FEB8CC0084EB79 /* GameController.framework */,
-				0D181C4A23FD1B32001BA6F4 /* iOS */,
 				0D181C4323FD1A33001BA6F4 /* GLTFSceneKit.framework */,
 				0D1FAAD223FC09C50036B70E /* SceneKit.framework */,
 				0DDF681023DC620B00827D46 /* MetalKit.framework */,
@@ -1160,6 +1211,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0D522FCB23FF1F930093D45A /* PBXTargetDependency */,
 				0D8D1A2D23FC0D3800DBDECD /* PBXTargetDependency */,
 				0D8D1A2F23FC0D3800DBDECD /* PBXTargetDependency */,
 				0D8D1A3123FC0D3800DBDECD /* PBXTargetDependency */,
@@ -1176,6 +1228,7 @@
 				0D881B0D23FC46E7001A8250 /* Sources */,
 				0D881B0E23FC46E7001A8250 /* Frameworks */,
 				0D881B0F23FC46E7001A8250 /* Resources */,
+				0D522F8023FF1A680093D45A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1225,6 +1278,10 @@
 					ProjectRef = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
 				},
 				{
+					ProductGroup = 0D522FBC23FF1F850093D45A /* Products */;
+					ProjectRef = 0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */;
+				},
+				{
 					ProductGroup = 0D8D1A1223FC0D1000DBDECD /* Products */;
 					ProjectRef = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
 				},
@@ -1238,6 +1295,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		0D522FC323FF1F850093D45A /* GLTFSceneKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GLTFSceneKit.framework;
+			remoteRef = 0D522FC223FF1F850093D45A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D522FC523FF1F850093D45A /* GLTFSceneKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GLTFSceneKit.framework;
+			remoteRef = 0D522FC423FF1F850093D45A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D522FC723FF1F850093D45A /* GLTFSceneKitSample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = GLTFSceneKitSample.app;
+			remoteRef = 0D522FC623FF1F850093D45A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D522FC923FF1F850093D45A /* GLTFSceneKitSample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = GLTFSceneKitSample.app;
+			remoteRef = 0D522FC823FF1F850093D45A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		0D8D1A1723FC0D1000DBDECD /* libLinearMath_xcode4_x64_debug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1435,6 +1520,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0D522FCB23FF1F930093D45A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GLTFSceneKit_iOS;
+			targetProxy = 0D522FCA23FF1F930093D45A /* PBXContainerItemProxy */;
+		};
 		0D881B2D23FC47E9001A8250 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0D1FAA5123FC08050036B70E /* mak3do */;
@@ -1461,7 +1551,8 @@
 		0D1FAA5C23FC08050036B70E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1469,6 +1560,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1488,6 +1580,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kikkei.mak3do;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1498,7 +1592,8 @@
 		0D1FAA5D23FC08050036B70E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1506,6 +1601,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1525,6 +1621,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kikkei.mak3do;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1536,8 +1634,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "mak3do-sandbox/mak3do-sandbox.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39E4GQM8LC;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "mak3do-sandbox/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1553,8 +1653,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "mak3do-sandbox/mak3do-sandbox.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39E4GQM8LC;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "mak3do-sandbox/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
