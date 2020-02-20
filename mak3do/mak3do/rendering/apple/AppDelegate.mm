@@ -33,8 +33,6 @@
     self.viewController = [[ViewController alloc] initWithNibName:nil bundle:nil];
 
     self.viewController.view = renderer.view;//[[MKMapView alloc] initWithFrame:r];
-    
-    //[self.window addSubview: self.viewController.view];
     [self.window setRootViewController:self.viewController];
     [self.window makeKeyAndVisible];
     

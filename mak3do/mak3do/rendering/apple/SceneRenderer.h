@@ -11,6 +11,7 @@
 + (instancetype _Nonnull) renderer:(CGRect)frameRect;
 - (id _Nonnull) initWithFrame:(CGRect)frameRect;
 - (void) render: (float)dt;
+- (void) update: (float)dt;
 - (void) setCameraName:(NSString*_Nonnull)cameraName;
 @end
 

@@ -286,19 +286,27 @@ void test_scheduler()
     
     sched->schedule(2,task3);
 }
-
+WorldPtr world = nullptr;
 void test_controller_api()
 {
     using namespace io;
-    auto world = test_basic_game_api();
+    world = test_basic_game_api();
+    
+    world->physics_world()->gravity(Vec3(0,0,0));
     
     auto gcm = GameControllerManager::get();
     auto controller_added = std::make_shared<ControllerFoundCallback>();
     
     controller_added->lambda = [&](GameControllerPtr controller) {
         auto button_pressed = std::make_shared<ButtonCallback>();
-        button_pressed->lambda = [&](controller::Button button, float value) {
+        button_pressed->lambda = [=](controller::Button button, float value) {
             std::cout << "value " << value << std::endl;
+            
+            auto objects = world->objects("test-object");
+            
+            if (objects.size() == 1) {
+                objects[0]->physics_element("main-element")->impulse(Vec3(0,3,0),Vec3::ZERO);
+            }
         };
     
         controller->button_pressed(button_pressed);
