@@ -1,4 +1,4 @@
-<img width="256" src="./mak3do_logo.svg">
+<img width="512" src="./mak3do_logo.svg">
 
  # mak3do 2.0 - Scene graph-based engine
 
