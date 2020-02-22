@@ -203,6 +203,30 @@
 		0D5A908E23FF386500BEC130 /* glass.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D181C5423FD1EE0001BA6F4 /* glass.glb */; };
 		0D5A90CC23FF3AEE00BEC130 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D5A90CF23FF3B6F00BEC130 /* mak3do-tv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */; };
+		0D5A90E0240189C800BEC130 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90D7240189C800BEC130 /* Texture.h */; };
+		0D5A90E1240189C800BEC130 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90D7240189C800BEC130 /* Texture.h */; };
+		0D5A90E2240189C800BEC130 /* Material.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90DE240189C800BEC130 /* Material.h */; };
+		0D5A90E3240189C800BEC130 /* Material.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90DE240189C800BEC130 /* Material.h */; };
+		0D5A90E4240189C800BEC130 /* Mesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90DF240189C800BEC130 /* Mesh.h */; };
+		0D5A90E5240189C800BEC130 /* Mesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90DF240189C800BEC130 /* Mesh.h */; };
+		0D5A90E924018CA000BEC130 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90E624018CA000BEC130 /* Mesh.cpp */; };
+		0D5A90EA24018CA000BEC130 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90E624018CA000BEC130 /* Mesh.cpp */; };
+		0D5A90EB24018CA000BEC130 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90E724018CA000BEC130 /* Texture.cpp */; };
+		0D5A90EC24018CA000BEC130 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90E724018CA000BEC130 /* Texture.cpp */; };
+		0D5A90ED24018CA000BEC130 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90E824018CA000BEC130 /* Material.cpp */; };
+		0D5A90EE24018CA000BEC130 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90E824018CA000BEC130 /* Material.cpp */; };
+		0D5A90F524018D5300BEC130 /* MeshImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90EF24018D5200BEC130 /* MeshImpl.mm */; };
+		0D5A90F624018D5300BEC130 /* MeshImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90EF24018D5200BEC130 /* MeshImpl.mm */; };
+		0D5A90F724018D5300BEC130 /* TextureImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90F024018D5300BEC130 /* TextureImpl.h */; };
+		0D5A90F824018D5300BEC130 /* TextureImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90F024018D5300BEC130 /* TextureImpl.h */; };
+		0D5A90F924018D5300BEC130 /* TextureImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90F124018D5300BEC130 /* TextureImpl.mm */; };
+		0D5A90FA24018D5300BEC130 /* TextureImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90F124018D5300BEC130 /* TextureImpl.mm */; };
+		0D5A90FB24018D5300BEC130 /* MeshImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90F224018D5300BEC130 /* MeshImpl.h */; };
+		0D5A90FC24018D5300BEC130 /* MeshImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90F224018D5300BEC130 /* MeshImpl.h */; };
+		0D5A90FD24018D5300BEC130 /* MaterialImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90F324018D5300BEC130 /* MaterialImpl.h */; };
+		0D5A90FE24018D5300BEC130 /* MaterialImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90F324018D5300BEC130 /* MaterialImpl.h */; };
+		0D5A90FF24018D5300BEC130 /* MaterialImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90F424018D5300BEC130 /* MaterialImpl.mm */; };
+		0D5A910024018D5300BEC130 /* MaterialImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90F424018D5300BEC130 /* MaterialImpl.mm */; };
 		0D881B2023FC46EA001A8250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D881B1F23FC46EA001A8250 /* Assets.xcassets */; };
 		0D881B2623FC46EA001A8250 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D881B2523FC46EA001A8250 /* main.m */; };
 		0D881B2B23FC4789001A8250 /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D34016523F0074B00183EAC /* test_scene.scn */; };
@@ -416,21 +440,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D881B2F23FC51DC001A8250;
+			remoteGlobalIDString = 0D522EB823FC8D9F0093D45A;
 			remoteInfo = "BulletCollision-ios";
 		};
 		0D5A8F3823FF338800BEC130 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D881B9823FC51E8001A8250;
+			remoteGlobalIDString = 0D522F2123FC8DA90093D45A;
 			remoteInfo = "BulletDynamics-ios";
 		};
 		0D5A8F3A23FF338800BEC130 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D881BC923FC51F1001A8250;
+			remoteGlobalIDString = 0D522F5223FC8DB50093D45A;
 			remoteInfo = "LinearMath-ios";
 		};
 		0D5A8FF523FF33D300BEC130 /* PBXContainerItemProxy */ = {
@@ -507,21 +531,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D881B2F23FC51DC001A8250;
+			remoteGlobalIDString = 0D522EB823FC8D9F0093D45A;
 			remoteInfo = "BulletCollision-ios";
 		};
 		0D8D1A2E23FC0D3800DBDECD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D881B9823FC51E8001A8250;
+			remoteGlobalIDString = 0D522F2123FC8DA90093D45A;
 			remoteInfo = "BulletDynamics-ios";
 		};
 		0D8D1A3023FC0D3800DBDECD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D881BC923FC51F1001A8250;
+			remoteGlobalIDString = 0D522F5223FC8DB50093D45A;
 			remoteInfo = "LinearMath-ios";
 		};
 /* End PBXContainerItemProxy section */
@@ -595,6 +619,18 @@
 		0D5A8F2D23FF32FC00BEC130 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "mak3do-tv.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5A8FF423FF338800BEC130 /* mak3do copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "mak3do copy-Info.plist"; path = "/Users/moimart/kikkei-labs/apple/mak3do/mak3do copy-Info.plist"; sourceTree = "<absolute>"; };
+		0D5A90D7240189C800BEC130 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		0D5A90DE240189C800BEC130 /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
+		0D5A90DF240189C800BEC130 /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		0D5A90E624018CA000BEC130 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		0D5A90E724018CA000BEC130 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		0D5A90E824018CA000BEC130 /* Material.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Material.cpp; sourceTree = "<group>"; };
+		0D5A90EF24018D5200BEC130 /* MeshImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MeshImpl.mm; sourceTree = "<group>"; };
+		0D5A90F024018D5300BEC130 /* TextureImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureImpl.h; sourceTree = "<group>"; };
+		0D5A90F124018D5300BEC130 /* TextureImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TextureImpl.mm; sourceTree = "<group>"; };
+		0D5A90F224018D5300BEC130 /* MeshImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshImpl.h; sourceTree = "<group>"; };
+		0D5A90F324018D5300BEC130 /* MaterialImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialImpl.h; sourceTree = "<group>"; };
+		0D5A90F424018D5300BEC130 /* MaterialImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MaterialImpl.mm; sourceTree = "<group>"; };
 		0D881B1123FC46E7001A8250 /* mak3do-sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mak3do-sandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D881B1F23FC46EA001A8250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D881B2423FC46EA001A8250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1332,6 +1368,9 @@
 				0DE8485B23FC24BB00A876B2 /* Node.h */,
 				0DE8486823FC24BB00A876B2 /* Geometry.h */,
 				0DE8486923FC24BB00A876B2 /* Scene.h */,
+				0D5A90DE240189C800BEC130 /* Material.h */,
+				0D5A90DF240189C800BEC130 /* Mesh.h */,
+				0D5A90D7240189C800BEC130 /* Texture.h */,
 			);
 			path = scenegraph;
 			sourceTree = "<group>";
@@ -1339,6 +1378,12 @@
 		0DE8484223FC24BB00A876B2 /* apple */ = {
 			isa = PBXGroup;
 			children = (
+				0D5A90F324018D5300BEC130 /* MaterialImpl.h */,
+				0D5A90F424018D5300BEC130 /* MaterialImpl.mm */,
+				0D5A90F224018D5300BEC130 /* MeshImpl.h */,
+				0D5A90EF24018D5200BEC130 /* MeshImpl.mm */,
+				0D5A90F024018D5300BEC130 /* TextureImpl.h */,
+				0D5A90F124018D5300BEC130 /* TextureImpl.mm */,
 				0D181C5923FD3C21001BA6F4 /* SurfaceImpl.h */,
 				0D181C5823FD3C21001BA6F4 /* SurfaceImpl.mm */,
 				0DE8484323FC24BB00A876B2 /* LightImpl.h */,
@@ -1389,6 +1434,9 @@
 		0DE8486A23FC24BB00A876B2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				0D5A90E824018CA000BEC130 /* Material.cpp */,
+				0D5A90E624018CA000BEC130 /* Mesh.cpp */,
+				0D5A90E724018CA000BEC130 /* Texture.cpp */,
 				0D181C5C23FD3C31001BA6F4 /* Surface.cpp */,
 				0DE8486B23FC24BB00A876B2 /* Director.cpp */,
 				0DE8486D23FC24BB00A876B2 /* Geometry.cpp */,
@@ -1424,7 +1472,9 @@
 				0DC5D06023FE7A9A0084EB79 /* GameController.h in Headers */,
 				0D8D19E223FC0CDC00DBDECD /* b2_motor_joint.h in Headers */,
 				0DE848B923FC24BC00A876B2 /* DirectorImpl.h in Headers */,
+				0D5A90F724018D5300BEC130 /* TextureImpl.h in Headers */,
 				0D8D19FE23FC0CDC00DBDECD /* b2_rope_joint.h in Headers */,
+				0D5A90FB24018D5300BEC130 /* MeshImpl.h in Headers */,
 				0DE848A123FC24BC00A876B2 /* Vec4.h in Headers */,
 				0DE848B123FC24BC00A876B2 /* DirectorDisplayLink.h in Headers */,
 				0D8D19EF23FC0CDC00DBDECD /* b2_time_step.h in Headers */,
@@ -1469,10 +1519,13 @@
 				0DE8488323FC24BC00A876B2 /* PhysicsElement3DImpl.h in Headers */,
 				0D8D19A223FC0CC500DBDECD /* b2_island.h in Headers */,
 				0D8D19E023FC0CDC00DBDECD /* b2_shape.h in Headers */,
+				0D5A90E4240189C800BEC130 /* Mesh.h in Headers */,
 				0D8D19F623FC0CDC00DBDECD /* b2_contact.h in Headers */,
 				0D8D19F423FC0CDC00DBDECD /* b2_mouse_joint.h in Headers */,
 				0D8D19E123FC0CDC00DBDECD /* b2_block_allocator.h in Headers */,
+				0D5A90FD24018D5300BEC130 /* MaterialImpl.h in Headers */,
 				0DE8487B23FC24BC00A876B2 /* Game.hpp in Headers */,
+				0D5A90E2240189C800BEC130 /* Material.h in Headers */,
 				0DE8488823FC24BC00A876B2 /* PhysicsWorld2DImpl.h in Headers */,
 				0D181C5723FD3BA9001BA6F4 /* Surface.h in Headers */,
 				0D8D19F323FC0CDC00DBDECD /* b2_time_of_impact.h in Headers */,
@@ -1481,6 +1534,7 @@
 				0DE848AF23FC24BC00A876B2 /* ShaderTypes.h in Headers */,
 				0D8D19EA23FC0CDC00DBDECD /* b2_revolute_joint.h in Headers */,
 				0D8D19E523FC0CDC00DBDECD /* b2_fixture.h in Headers */,
+				0D5A90E0240189C800BEC130 /* Texture.h in Headers */,
 				0DE8488223FC24BC00A876B2 /* PhysicsWorld3DImpl.h in Headers */,
 				0D8D19FC23FC0CDC00DBDECD /* b2_draw.h in Headers */,
 				0D8D1A0023FC0CDC00DBDECD /* b2_gear_joint.h in Headers */,
@@ -1503,7 +1557,9 @@
 				0D5A8F4423FF338800BEC130 /* GameController.h in Headers */,
 				0D5A8F4523FF338800BEC130 /* b2_motor_joint.h in Headers */,
 				0D5A8F4623FF338800BEC130 /* DirectorImpl.h in Headers */,
+				0D5A90F824018D5300BEC130 /* TextureImpl.h in Headers */,
 				0D5A8F4723FF338800BEC130 /* b2_rope_joint.h in Headers */,
+				0D5A90FC24018D5300BEC130 /* MeshImpl.h in Headers */,
 				0D5A8F4823FF338800BEC130 /* Vec4.h in Headers */,
 				0D5A8F4923FF338800BEC130 /* DirectorDisplayLink.h in Headers */,
 				0D5A8F4A23FF338800BEC130 /* b2_time_step.h in Headers */,
@@ -1548,10 +1604,13 @@
 				0D5A8F7123FF338800BEC130 /* PhysicsElement3DImpl.h in Headers */,
 				0D5A8F7223FF338800BEC130 /* b2_island.h in Headers */,
 				0D5A8F7323FF338800BEC130 /* b2_shape.h in Headers */,
+				0D5A90E5240189C800BEC130 /* Mesh.h in Headers */,
 				0D5A8F7423FF338800BEC130 /* b2_contact.h in Headers */,
 				0D5A8F7523FF338800BEC130 /* b2_mouse_joint.h in Headers */,
 				0D5A8F7623FF338800BEC130 /* b2_block_allocator.h in Headers */,
+				0D5A90FE24018D5300BEC130 /* MaterialImpl.h in Headers */,
 				0D5A8F7723FF338800BEC130 /* Game.hpp in Headers */,
+				0D5A90E3240189C800BEC130 /* Material.h in Headers */,
 				0D5A8F7823FF338800BEC130 /* PhysicsWorld2DImpl.h in Headers */,
 				0D5A8F7923FF338800BEC130 /* Surface.h in Headers */,
 				0D5A8F7A23FF338800BEC130 /* b2_time_of_impact.h in Headers */,
@@ -1560,6 +1619,7 @@
 				0D5A8F7D23FF338800BEC130 /* ShaderTypes.h in Headers */,
 				0D5A8F7E23FF338800BEC130 /* b2_revolute_joint.h in Headers */,
 				0D5A8F7F23FF338800BEC130 /* b2_fixture.h in Headers */,
+				0D5A90E1240189C800BEC130 /* Texture.h in Headers */,
 				0D5A8F8023FF338800BEC130 /* PhysicsWorld3DImpl.h in Headers */,
 				0D5A8F8123FF338800BEC130 /* b2_draw.h in Headers */,
 				0D5A8F8223FF338800BEC130 /* b2_gear_joint.h in Headers */,
@@ -1884,9 +1944,11 @@
 				0D8D19AE23FC0CC500DBDECD /* b2_collide_edge.cpp in Sources */,
 				0D8D199B23FC0CC500DBDECD /* b2_rope_joint.cpp in Sources */,
 				0D8D199223FC0CC500DBDECD /* b2_contact_manager.cpp in Sources */,
+				0D5A90F524018D5300BEC130 /* MeshImpl.mm in Sources */,
 				0D8D19AB23FC0CC500DBDECD /* b2_collide_circle.cpp in Sources */,
 				0DE8488F23FC24BC00A876B2 /* PhysicsWorld.cpp in Sources */,
 				0DE848DD23FC24BC00A876B2 /* Scene.cpp in Sources */,
+				0D5A90FF24018D5300BEC130 /* MaterialImpl.mm in Sources */,
 				0D8D199723FC0CC500DBDECD /* b2_friction_joint.cpp in Sources */,
 				0DE848E423FC24BC00A876B2 /* Color.cpp in Sources */,
 				0DE8489223FC24BC00A876B2 /* World.cpp in Sources */,
@@ -1907,11 +1969,13 @@
 				0DE848B823FC24BC00A876B2 /* LightImpl.mm in Sources */,
 				0D8D198A23FC0CC500DBDECD /* b2_revolute_joint.cpp in Sources */,
 				0D8D199A23FC0CC500DBDECD /* b2_motor_joint.cpp in Sources */,
+				0D5A90E924018CA000BEC130 /* Mesh.cpp in Sources */,
 				0D8D19A923FC0CC500DBDECD /* b2_settings.cpp in Sources */,
 				0DC5D05D23FE7A9A0084EB79 /* GameControllerImpl.mm in Sources */,
 				0DE848E523FC24BC00A876B2 /* Scheduler.cpp in Sources */,
 				0DE848DF23FC24BC00A876B2 /* Camera.cpp in Sources */,
 				0D8D19AD23FC0CC500DBDECD /* b2_collision.cpp in Sources */,
+				0D5A90F924018D5300BEC130 /* TextureImpl.mm in Sources */,
 				0DE8489123FC24BC00A876B2 /* PhysicsWorld2DImpl.cpp in Sources */,
 				0DC5D05F23FE7A9A0084EB79 /* GameController.cpp in Sources */,
 				0D8D198C23FC0CC500DBDECD /* b2_contact_solver.cpp in Sources */,
@@ -1922,6 +1986,7 @@
 				0D8D199E23FC0CC500DBDECD /* b2_mouse_joint.cpp in Sources */,
 				0DE8488D23FC24BC00A876B2 /* PhysicsElement3DImpl.cpp in Sources */,
 				0DE848BE23FC24BC00A876B2 /* DirectorImpl.mm in Sources */,
+				0D5A90ED24018CA000BEC130 /* Material.cpp in Sources */,
 				0DE8488C23FC24BC00A876B2 /* PhysicsElement2D.cpp in Sources */,
 				0DE848DA23FC24BC00A876B2 /* Director.cpp in Sources */,
 				0D8D19A123FC0CC500DBDECD /* b2_fixture.cpp in Sources */,
@@ -1948,6 +2013,7 @@
 				0D8D19B323FC0CC500DBDECD /* b2_collide_polygon.cpp in Sources */,
 				0D8D198623FC0CC500DBDECD /* b2_chain_polygon_contact.cpp in Sources */,
 				0DE848DE23FC24BC00A876B2 /* Box.cpp in Sources */,
+				0D5A90EB24018CA000BEC130 /* Texture.cpp in Sources */,
 				0D8D199423FC0CC500DBDECD /* b2_edge_polygon_contact.cpp in Sources */,
 				0DE848BA23FC24BC00A876B2 /* BoxImpl.mm in Sources */,
 				0DE8488A23FC24BC00A876B2 /* GameObject.cpp in Sources */,
@@ -1992,9 +2058,11 @@
 				0D5A8F8823FF338800BEC130 /* b2_collide_edge.cpp in Sources */,
 				0D5A8F8923FF338800BEC130 /* b2_rope_joint.cpp in Sources */,
 				0D5A8F8A23FF338800BEC130 /* b2_contact_manager.cpp in Sources */,
+				0D5A90F624018D5300BEC130 /* MeshImpl.mm in Sources */,
 				0D5A8F8B23FF338800BEC130 /* b2_collide_circle.cpp in Sources */,
 				0D5A8F8C23FF338800BEC130 /* PhysicsWorld.cpp in Sources */,
 				0D5A8F8D23FF338800BEC130 /* Scene.cpp in Sources */,
+				0D5A910024018D5300BEC130 /* MaterialImpl.mm in Sources */,
 				0D5A8F8E23FF338800BEC130 /* b2_friction_joint.cpp in Sources */,
 				0D5A8F8F23FF338800BEC130 /* Color.cpp in Sources */,
 				0D5A8F9023FF338800BEC130 /* World.cpp in Sources */,
@@ -2015,11 +2083,13 @@
 				0D5A8F9F23FF338800BEC130 /* LightImpl.mm in Sources */,
 				0D5A8FA023FF338800BEC130 /* b2_revolute_joint.cpp in Sources */,
 				0D5A8FA123FF338800BEC130 /* b2_motor_joint.cpp in Sources */,
+				0D5A90EA24018CA000BEC130 /* Mesh.cpp in Sources */,
 				0D5A8FA223FF338800BEC130 /* b2_settings.cpp in Sources */,
 				0D5A8FA323FF338800BEC130 /* GameControllerImpl.mm in Sources */,
 				0D5A8FA423FF338800BEC130 /* Scheduler.cpp in Sources */,
 				0D5A8FA523FF338800BEC130 /* Camera.cpp in Sources */,
 				0D5A8FA623FF338800BEC130 /* b2_collision.cpp in Sources */,
+				0D5A90FA24018D5300BEC130 /* TextureImpl.mm in Sources */,
 				0D5A8FA723FF338800BEC130 /* PhysicsWorld2DImpl.cpp in Sources */,
 				0D5A8FA823FF338800BEC130 /* GameController.cpp in Sources */,
 				0D5A8FA923FF338800BEC130 /* b2_contact_solver.cpp in Sources */,
@@ -2030,6 +2100,7 @@
 				0D5A8FAE23FF338800BEC130 /* b2_mouse_joint.cpp in Sources */,
 				0D5A8FAF23FF338800BEC130 /* PhysicsElement3DImpl.cpp in Sources */,
 				0D5A8FB023FF338800BEC130 /* DirectorImpl.mm in Sources */,
+				0D5A90EE24018CA000BEC130 /* Material.cpp in Sources */,
 				0D5A8FB123FF338800BEC130 /* PhysicsElement2D.cpp in Sources */,
 				0D5A8FB223FF338800BEC130 /* Director.cpp in Sources */,
 				0D5A8FB323FF338800BEC130 /* b2_fixture.cpp in Sources */,
@@ -2056,6 +2127,7 @@
 				0D5A8FC823FF338800BEC130 /* b2_collide_polygon.cpp in Sources */,
 				0D5A8FC923FF338800BEC130 /* b2_chain_polygon_contact.cpp in Sources */,
 				0D5A8FCA23FF338800BEC130 /* Box.cpp in Sources */,
+				0D5A90EC24018CA000BEC130 /* Texture.cpp in Sources */,
 				0D5A8FCB23FF338800BEC130 /* b2_edge_polygon_contact.cpp in Sources */,
 				0D5A8FCC23FF338800BEC130 /* BoxImpl.mm in Sources */,
 				0D5A8FCD23FF338800BEC130 /* GameObject.cpp in Sources */,

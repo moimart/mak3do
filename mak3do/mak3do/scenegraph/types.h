@@ -55,6 +55,12 @@ class Sphere;
 class Box;
 class Surface;
 
+class Texture;
+class Material;
+class MaterialProperty;
+class Mesh;
+class VertexAttribute;
+
 class Action;
 class ActionRunner;
 
@@ -67,6 +73,9 @@ class GeometryImpl;
 class SphereImpl;
 class BoxImpl;
 class SurfaceImpl;
+class MeshImpl;
+class MaterialImpl;
+class TextureImpl;
 
 typedef std::shared_ptr<Scheduler> SchedulerPtr;
 typedef std::shared_ptr<Timer> TimerPtr;
@@ -74,6 +83,11 @@ typedef std::shared_ptr<Scene> ScenePtr;
 typedef std::shared_ptr<Node> NodePtr;
 typedef std::shared_ptr<Camera> CameraPtr;
 typedef std::shared_ptr<Light> LightPtr;
+typedef std::shared_ptr<Material> MaterialPtr;
+typedef std::shared_ptr<MaterialProperty> MaterialPropertyPtr;
+typedef std::shared_ptr<Mesh> MeshPtr;
+typedef std::shared_ptr<VertexAttribute> VertexAttributePtr;
+typedef std::shared_ptr<Texture> TexturePtr;
 typedef std::shared_ptr<Geometry> GeometryPtr;
 typedef std::shared_ptr<Sphere> SpherePtr;
 typedef std::shared_ptr<Box> BoxPtr;
@@ -90,4 +104,8 @@ typedef std::shared_ptr<GeometryImpl> GeometryImplPtr;
 typedef std::shared_ptr<SphereImpl> SphereImplPtr;
 typedef std::shared_ptr<BoxImpl> BoxImplPtr;
 typedef std::shared_ptr<SurfaceImpl> SurfaceImplPtr;
+typedef std::shared_ptr<MaterialImpl> MaterialImplPtr;
+typedef std::shared_ptr<MeshImpl> MeshImplPtr;
+typedef std::shared_ptr<TextureImpl> TextureImplPtr;
+
 }
