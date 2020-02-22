@@ -309,6 +309,8 @@
 		0DC5D06223FE7ACA0084EB79 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D06123FE7ACA0084EB79 /* types.h */; };
 		0DC5D06C23FEB8CC0084EB79 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC5D06B23FEB8CC0084EB79 /* GameController.framework */; };
 		0DC5D06E23FEC17F0084EB79 /* all in Resources */ = {isa = PBXBuildFile; fileRef = 0DC5D06D23FEC17F0084EB79 /* all */; };
+		0DC97E462400481A00721590 /* DamagedHelmet.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0DC97E3F2400481A00721590 /* DamagedHelmet.glb */; };
+		0DC97E472400481B00721590 /* DamagedHelmet.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0DC97E3F2400481A00721590 /* DamagedHelmet.glb */; };
 		0DE8487B23FC24BC00A876B2 /* Game.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FD23FC24BB00A876B2 /* Game.hpp */; };
 		0DE8487C23FC24BC00A876B2 /* tests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FF23FC24BB00A876B2 /* tests.hpp */; };
 		0DE8488223FC24BC00A876B2 /* PhysicsWorld3DImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8480723FC24BB00A876B2 /* PhysicsWorld3DImpl.h */; };
@@ -414,21 +416,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D522EB823FC8D9F0093D45A;
+			remoteGlobalIDString = 0D881B2F23FC51DC001A8250;
 			remoteInfo = "BulletCollision-ios";
 		};
 		0D5A8F3823FF338800BEC130 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D522F2123FC8DA90093D45A;
+			remoteGlobalIDString = 0D881B9823FC51E8001A8250;
 			remoteInfo = "BulletDynamics-ios";
 		};
 		0D5A8F3A23FF338800BEC130 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D522F5223FC8DB50093D45A;
+			remoteGlobalIDString = 0D881BC923FC51F1001A8250;
 			remoteInfo = "LinearMath-ios";
 		};
 		0D5A8FF523FF33D300BEC130 /* PBXContainerItemProxy */ = {
@@ -505,21 +507,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D522EB823FC8D9F0093D45A;
+			remoteGlobalIDString = 0D881B2F23FC51DC001A8250;
 			remoteInfo = "BulletCollision-ios";
 		};
 		0D8D1A2E23FC0D3800DBDECD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D522F2123FC8DA90093D45A;
+			remoteGlobalIDString = 0D881B9823FC51E8001A8250;
 			remoteInfo = "BulletDynamics-ios";
 		};
 		0D8D1A3023FC0D3800DBDECD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D522F5223FC8DB50093D45A;
+			remoteGlobalIDString = 0D881BC923FC51F1001A8250;
 			remoteInfo = "LinearMath-ios";
 		};
 /* End PBXContainerItemProxy section */
@@ -701,6 +703,7 @@
 		0DC5D06123FE7ACA0084EB79 /* types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = types.h; sourceTree = "<group>"; };
 		0DC5D06B23FEB8CC0084EB79 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		0DC5D06D23FEC17F0084EB79 /* all */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = all; sourceTree = "<group>"; };
+		0DC97E3F2400481A00721590 /* DamagedHelmet.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = DamagedHelmet.glb; sourceTree = "<group>"; };
 		0DD1B0CF23D79FDE00E65C07 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -1105,6 +1108,7 @@
 				0D8D194023FC0C9000DBDECD /* externals */,
 				0DA9450623D6429F00AEBEAA /* Info.plist */,
 				0D34016523F0074B00183EAC /* test_scene.scn */,
+				0DC97E3F2400481A00721590 /* DamagedHelmet.glb */,
 				0D181C5423FD1EE0001BA6F4 /* glass.glb */,
 				0D881B1223FC46E7001A8250 /* mak3do-sandbox */,
 				0D5A8F1723FF32FA00BEC130 /* mak3do-sandbox-tv */,
@@ -1807,6 +1811,7 @@
 			files = (
 				0D5A908E23FF386500BEC130 /* glass.glb in Resources */,
 				0D5A8F2823FF32FC00BEC130 /* Assets.xcassets in Resources */,
+				0DC97E472400481B00721590 /* DamagedHelmet.glb in Resources */,
 				0D5A908D23FF379E00BEC130 /* test_scene.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1825,6 +1830,7 @@
 			files = (
 				0D181C5523FD1EE0001BA6F4 /* glass.glb in Resources */,
 				0D881B2023FC46EA001A8250 /* Assets.xcassets in Resources */,
+				0DC97E462400481A00721590 /* DamagedHelmet.glb in Resources */,
 				0D881B2B23FC4789001A8250 /* test_scene.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

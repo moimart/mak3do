@@ -215,9 +215,9 @@ WorldPtr test_basic_game_api()
 void test_gltf_loader()
 {
     auto director = Director::get();
-    auto scene = Scene::load("glass.glb");
+    auto scene = Scene::load("DamagedHelmet.glb");
     auto camera = std::make_shared<Camera>();
-    auto light = std::make_shared<Light>(Light::LightType::Directional);
+    auto light = std::make_shared<Light>(Light::LightType::Omni);
     auto node = std::make_shared<Node>();
     
     node->geometry(std::make_shared<Surface>());
@@ -255,7 +255,7 @@ void test_gltf_loader()
     for (auto node : scene->nodes()) {
         std::cout << "node name: " << node->name() << std::endl;
         
-        if (node->name() == "BCHH2364_v6_LOD2") {
+        if (node->name() == "node_damagedHelmet_-6514") {
             node->position(Vec3(0,0,0));
             node->action(RepeatForever::make(SpinBy::make(8,720)));
             
@@ -278,7 +278,7 @@ void test_gltf_loader()
     scene->add_node(camera);
     scene->camera("camera2");
     
-    camera->action(MoveBy::make(40,Vec3(0,0,-10)));
+    //camera->action(MoveBy::make(40,Vec3(0,0,-10)));
 }
 
 void test_scheduler()
