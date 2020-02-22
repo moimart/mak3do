@@ -77,6 +77,22 @@ class MeshImpl;
 class MaterialImpl;
 class TextureImpl;
 
+class Pimpl;
+class Pimpl : public std::enable_shared_from_this<Pimpl>
+{
+public:
+    virtual ~Pimpl() = default;
+};
+typedef std::shared_ptr<Pimpl> PimplPtr;
+
+class Base;
+class Base : public std::enable_shared_from_this<Base> {
+public:
+    virtual PimplPtr pimpl() const { return m_base_pimpl; };
+protected:
+    PimplPtr m_base_pimpl;
+};
+
 typedef std::shared_ptr<Scheduler> SchedulerPtr;
 typedef std::shared_ptr<Timer> TimerPtr;
 typedef std::shared_ptr<Scene> ScenePtr;

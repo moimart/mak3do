@@ -4,12 +4,14 @@
 #include <mak3do/scenegraph/Color.h>
 
 namespace mak3do {
-class GeometryImpl {
+class GeometryImpl : public Pimpl {
 public:
     GeometryImpl(Geometry* parent);
-    ~GeometryImpl();
+    virtual ~GeometryImpl();
     
     void color(const color::RGBA& color);
+    
+    void material(MaterialPtr material);
     
     void modify_shader_geometry(const std::string& modifier_code);
     
@@ -20,5 +22,6 @@ private:
     
     friend class NodeImpl;
     friend class SceneImpl;
+    friend class MaterialImpl;
 };
 }

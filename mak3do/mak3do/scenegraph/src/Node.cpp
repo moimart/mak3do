@@ -116,12 +116,13 @@ std::string Node::name() const
 
 void Node::action(ActionPtr action)
 {
-    Director::get()->action_runner()->add_action(action,this->shared_from_this());
+    Director::get()->action_runner()->add_action(action,
+                                                 std::dynamic_pointer_cast<Node>(this->shared_from_this()));
 }
 
 void Node::stop_all_actions()
 {
-    Director::get()->action_runner()->remove_target(this->shared_from_this());
+    Director::get()->action_runner()->remove_target(std::dynamic_pointer_cast<Node>(this->shared_from_this()));
 }
 
 void Node::geometry(GeometryPtr geometry)

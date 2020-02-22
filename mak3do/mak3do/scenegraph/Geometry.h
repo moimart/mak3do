@@ -8,16 +8,16 @@ namespace mak3do {
 
 class Geometry;
 
-class Geometry : std::enable_shared_from_this<Geometry> {
+class Geometry : public Base {
 public:
     Geometry();
     ~Geometry();
     
-    GeometryImplPtr pimpl() const { return m_geometry_pimpl; };
-    
     void color(const color::RGBA& color);
     
     void modify_shader_geometry(const std::string& modifier_code);
+    
+    void material(MaterialPtr material);
 protected:
     GeometryImplPtr m_geometry_pimpl;
     

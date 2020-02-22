@@ -8,6 +8,9 @@
 #include "Camera.h"
 #include "Light.h"
 #include "Geometry.h"
+#include "Texture.h"
+#include "Material.h"
+#include "Mesh.h"
 
 #include "actions/ActionInterval.h"
 

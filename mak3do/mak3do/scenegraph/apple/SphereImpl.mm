@@ -11,7 +11,8 @@ SphereImpl::SphereImpl(Sphere* parent)
     SCNGeometry* sphere = [SCNSphere sphereWithRadius:1];
     sphere.materials.firstObject.diffuse.contents = [UIColor whiteColor];
     
-    parent->pimpl()->replace_geometry((__bridge void*)sphere);
+    auto pimpl = std::dynamic_pointer_cast<GeometryImpl>(parent->pimpl());
+    pimpl->replace_geometry((__bridge void*)sphere);
 }
 
 }

@@ -11,7 +11,7 @@ struct MaterialProperty
     TexturePtr texture;
 };
 
-class Material : public std::enable_shared_from_this<Material>
+class Material : public Base
 {
 public:
     Material();
@@ -21,6 +21,18 @@ public:
     
     void specular(MaterialPropertyPtr property);
     MaterialPropertyPtr specular() const;
+    
+    void ambient(MaterialPropertyPtr property);
+    MaterialPropertyPtr ambient() const;
+    
+    void emission(MaterialPropertyPtr property);
+    MaterialPropertyPtr emission() const;
+    
+    void transparent(MaterialPropertyPtr property);
+    MaterialPropertyPtr transparent() const;
+    
+    void displacement(MaterialPropertyPtr property);
+    MaterialPropertyPtr displacement() const;
     
     void normal(MaterialPropertyPtr property);
     MaterialPropertyPtr normal() const;

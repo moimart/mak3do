@@ -18,7 +18,7 @@ struct VertexAttribute
     Format format;
 };
     
-class Mesh : public std::enable_shared_from_this<Mesh>
+class Mesh : public Base
 {
 public:
     Mesh(const std::vector<std::vector<Vec3> >& vertices);

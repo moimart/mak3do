@@ -3,7 +3,7 @@
 #include <mak3do/scenegraph/types.h>
 
 namespace mak3do {
-class CameraImpl {
+class CameraImpl : public Pimpl {
 public:
     CameraImpl(Camera* parent);
     ~CameraImpl();

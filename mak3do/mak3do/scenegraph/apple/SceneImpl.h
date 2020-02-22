@@ -3,7 +3,7 @@
 #include <mak3do/scenegraph/types.h>
 
 namespace mak3do {
-class SceneImpl {
+class SceneImpl : public Pimpl {
 public:
     SceneImpl(Scene* parent);
     ~SceneImpl();

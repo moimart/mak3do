@@ -5,7 +5,7 @@
 #include <mak3do/scenegraph/Color.h>
 
 namespace mak3do {
-class LightImpl {
+class LightImpl : public Pimpl {
 public:
     LightImpl(Light* parent);
     LightImpl(const Light::LightType& type, Light* parent);

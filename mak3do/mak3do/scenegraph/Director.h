@@ -5,7 +5,7 @@
 
 namespace mak3do {
 
-class Director {
+class Director : public Base {
 public:
     static Director* get();
     void loop();

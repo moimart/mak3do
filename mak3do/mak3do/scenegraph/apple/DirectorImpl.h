@@ -4,7 +4,7 @@
 
 namespace mak3do {
 
-class DirectorImpl {
+class DirectorImpl : public Pimpl {
 public:
     DirectorImpl(mak3do::Director* parent);
     

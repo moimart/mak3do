@@ -11,7 +11,8 @@ SurfaceImpl::SurfaceImpl(Surface* parent)
     SCNGeometry* plane = [SCNPlane planeWithWidth:1.5 height:1.5];
     plane.materials.firstObject.diffuse.contents = [UIColor whiteColor];
     
-    parent->pimpl()->replace_geometry((__bridge void*)plane);
+    auto pimpl = std::dynamic_pointer_cast<GeometryImpl>(parent->pimpl());
+    pimpl->replace_geometry((__bridge void*)plane);
 }
 
 }

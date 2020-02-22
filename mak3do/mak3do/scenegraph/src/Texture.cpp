@@ -8,9 +8,9 @@
 namespace mak3do {
 
 Texture::Texture(const std::string& filename)
-: m_pimpl(std::make_shared<TextureImpl>(this))
 {
-    
+    m_pimpl = std::make_shared<TextureImpl>(this,filename);
+    m_base_pimpl = std::dynamic_pointer_cast<Pimpl>(m_pimpl);
 }
 }
 

@@ -11,7 +11,8 @@ BoxImpl::BoxImpl(Box* parent)
     SCNGeometry* box = [SCNBox boxWithWidth:1 height:1 length:1 chamferRadius:0];
     box.materials.firstObject.diffuse.contents = [UIColor whiteColor];
     
-    parent->pimpl()->replace_geometry((__bridge void*)box);
+    auto pimpl = std::dynamic_pointer_cast<GeometryImpl>(parent->pimpl());
+    pimpl->replace_geometry((__bridge void*)box);
 }
 
 }

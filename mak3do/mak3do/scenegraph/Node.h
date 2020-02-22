@@ -5,7 +5,7 @@
 class Node;
 
 namespace mak3do {
-class Node : public std::enable_shared_from_this<Node> {
+class Node : public Base {
 public:
     Node();
     virtual ~Node() = default;

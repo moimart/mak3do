@@ -1,8 +1,9 @@
 #include "GeometryImpl.h"
+#include "MaterialImpl.h"
 #include <mak3do/scenegraph/Geometry.h>
+#include <mak3do/scenegraph/Material.h>
 #include <mak3do/scenegraph/Color.h>
 #import <SceneKit/SceneKit.h>
-
 
 namespace mak3do {
 
@@ -34,6 +35,15 @@ void GeometryImpl::color(const color::RGBA& color)
     
     UIColor* __color = [UIColor colorWithRed:color.r green:color.g blue:color.b alpha:color.a];
     __geometry.materials.firstObject.diffuse.contents = __color;
+}
+
+void GeometryImpl::material(MaterialPtr material)
+{
+    SCNGeometry* __geometry = (__bridge SCNGeometry*)m_native_geometry;
+    
+    auto pimpl = std::dynamic_pointer_cast<MaterialImpl>(material->pimpl());
+    SCNMaterial* __material = (__bridge SCNMaterial*)pimpl->m_native_material;
+    __geometry.firstMaterial = __material;
 }
 
 void GeometryImpl::modify_shader_geometry(const std::string& modifier_code)

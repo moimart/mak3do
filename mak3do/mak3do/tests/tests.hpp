@@ -339,5 +339,51 @@ void test_controller_api()
     gcm->controller_added(controller_added);
 }
 
+void test_materials()
+{
+    auto director = Director::get();
+    auto scene = std::make_shared<Scene>();
+    auto node = std::make_shared<Node>();
+    auto camera = std::make_shared<Camera>();
+    auto light = std::make_shared<Light>(Light::LightType::Omni);
+    auto geometry = std::make_shared<Sphere>();
+    
+    geometry->color(color::RGBA(color::RGBA(.92f,.12f,0.65f)));
+    
+    node->geometry(geometry);
+    
+    camera->name("main_camera");
+    camera->position(Vec3(0,1.2f,4));
+    
+    light->position(Vec3(0,4,4));
+    light->color(color::RGB::WHITE_01);
+    light->shadows(true);
+    
+    scene->add_node(node);
+    scene->add_node(camera);
+    scene->add_node(light);
+    
+    director->scene(scene);
+    
+    scene->camera("main_camera");
+    
+    auto material = std::make_shared<Material>();
+    auto diffuse = std::make_shared<MaterialProperty>();
+    auto normal = std::make_shared<MaterialProperty>();
+    auto specular = std::make_shared<MaterialProperty>();
+    
+    diffuse->texture = std::make_shared<Texture>("earth_diffuse.png");
+    normal->texture = std::make_shared<Texture>("earth_normal.png");
+    specular->texture = std::make_shared<Texture>("earth_specular.png");
+    
+    material->diffuse(diffuse);
+    material->normal(normal);
+    material->specular(specular);
+    
+    geometry->material(material);
+    
+    node->action(RepeatForever::make(SpinBy::make(8, 360)));
+}
+
 }
 }

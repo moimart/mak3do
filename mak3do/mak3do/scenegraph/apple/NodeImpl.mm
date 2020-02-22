@@ -28,7 +28,8 @@ void NodeImpl::addChild(NodePtr node)
     [native_node addChildNode:child_native_node];
     m_children.push_back(node);
     
-    node->m_pimpl->m_parent_node = m_abstract->shared_from_this();
+    node->m_pimpl->m_parent_node =
+    std::dynamic_pointer_cast<Node>(m_abstract->shared_from_this());
 }
 
 std::vector<NodePtr> NodeImpl::getChildren() const

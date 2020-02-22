@@ -3,7 +3,7 @@
 #include <mak3do/scenegraph/types.h>
 
 namespace mak3do {
-class SurfaceImpl {
+class SurfaceImpl : public Pimpl {
 public:
     SurfaceImpl(Surface* parent);
 private:
