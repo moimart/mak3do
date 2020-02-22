@@ -11,9 +11,7 @@
  * GameObject API with 2D (box2D) and 3D (bullet3) physics
 
  ## Plans
-* Sound
-* SceneForm (or Filament) on Android
-* Cocos2d-x
+* Filament-based SceneGraph
 
 ## How to build
 
