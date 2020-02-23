@@ -1,9 +1,11 @@
 #pragma once
-#include <future>
+#include <functional>
 
 namespace mak3do {
 class Game {
 public:
-    void start();
+    void start(std::function<void(void)> function = nullptr);
+private:
+    void tests();
 };
 }
