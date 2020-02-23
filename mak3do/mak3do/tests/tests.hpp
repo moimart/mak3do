@@ -345,7 +345,7 @@ void test_materials()
     auto scene = std::make_shared<Scene>();
     auto node = std::make_shared<Node>();
     auto camera = std::make_shared<Camera>();
-    auto light = std::make_shared<Light>(Light::LightType::Omni);
+    auto light = std::make_shared<Light>(Light::LightType::Directional);
     auto geometry = std::make_shared<Sphere>();
     
     geometry->color(color::RGBA(color::RGBA(.92f,.12f,0.65f)));
@@ -353,9 +353,10 @@ void test_materials()
     node->geometry(geometry);
     
     camera->name("main_camera");
-    camera->position(Vec3(0,1.2f,4));
+    camera->position(Vec3(0,0,4));
     
-    light->position(Vec3(0,4,4));
+    light->position(Vec3(-15,6,20));
+    light->look_at(Vec3::ZERO);
     light->color(color::RGB::WHITE_01);
     light->shadows(true);
     
