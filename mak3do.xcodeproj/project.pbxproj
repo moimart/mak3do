@@ -189,9 +189,6 @@
 		0D5A8FE123FF338800BEC130 /* SphereImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8484B23FC24BB00A876B2 /* SphereImpl.mm */; };
 		0D5A8FE223FF338800BEC130 /* b2_circle_shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197423FC0CC500DBDECD /* b2_circle_shape.cpp */; };
 		0D5A8FE523FF338800BEC130 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC5D06B23FEB8CC0084EB79 /* GameController.framework */; };
-		0D5A8FE623FF338800BEC130 /* libBulletCollision-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8D1A2223FC0D3300DBDECD /* libBulletCollision-ios.a */; };
-		0D5A8FE723FF338800BEC130 /* libBulletDynamics-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8D1A2B23FC0D3400DBDECD /* libBulletDynamics-ios.a */; };
-		0D5A8FE823FF338800BEC130 /* libLinearMath-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8D1A1923FC0D1000DBDECD /* libLinearMath-ios.a */; };
 		0D5A8FE923FF338800BEC130 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAAD223FC09C50036B70E /* SceneKit.framework */; };
 		0D5A8FEA23FF338800BEC130 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACE23FC09BB0036B70E /* Metal.framework */; };
 		0D5A8FEB23FF338800BEC130 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACF23FC09BB0036B70E /* MetalKit.framework */; };
@@ -233,6 +230,12 @@
 		0D5A91072401BBDB00BEC130 /* earth_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5A91022401BBDB00BEC130 /* earth_normal.png */; };
 		0D5A91082401BBDB00BEC130 /* earth_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5A91032401BBDB00BEC130 /* earth_specular.png */; };
 		0D5A91092401BBDB00BEC130 /* earth_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5A91032401BBDB00BEC130 /* earth_specular.png */; };
+		0D5EA95B24029BC40043D3C3 /* libBulletCollision-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA94B24029B9C0043D3C3 /* libBulletCollision-ios.a */; };
+		0D5EA95C24029BC40043D3C3 /* libBulletDynamics-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA94224029B9B0043D3C3 /* libBulletDynamics-ios.a */; };
+		0D5EA95D24029BC40043D3C3 /* libLinearMath-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA95424029B9C0043D3C3 /* libLinearMath-ios.a */; };
+		0D5EA96424029C5B0043D3C3 /* libBulletCollision-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA94B24029B9C0043D3C3 /* libBulletCollision-ios.a */; };
+		0D5EA96524029C5B0043D3C3 /* libBulletDynamics-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA94224029B9B0043D3C3 /* libBulletDynamics-ios.a */; };
+		0D5EA96624029C5B0043D3C3 /* libLinearMath-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA95424029B9C0043D3C3 /* libLinearMath-ios.a */; };
 		0D881B2023FC46EA001A8250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D881B1F23FC46EA001A8250 /* Assets.xcassets */; };
 		0D881B2623FC46EA001A8250 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D881B2523FC46EA001A8250 /* main.m */; };
 		0D881B2B23FC4789001A8250 /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D34016523F0074B00183EAC /* test_scene.scn */; };
@@ -329,9 +332,6 @@
 		0D8D1A0223FC0CDC00DBDECD /* b2_world_callbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DC23FC0CDC00DBDECD /* b2_world_callbacks.h */; };
 		0D8D1A0323FC0CDC00DBDECD /* b2_contact_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */; };
 		0D8D1A0423FC0CDC00DBDECD /* b2_edge_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */; };
-		0D8D1A3223FC0D4100DBDECD /* libBulletCollision-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8D1A2223FC0D3300DBDECD /* libBulletCollision-ios.a */; };
-		0D8D1A3323FC0D4100DBDECD /* libBulletDynamics-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8D1A2B23FC0D3400DBDECD /* libBulletDynamics-ios.a */; };
-		0D8D1A3423FC0D4100DBDECD /* libLinearMath-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8D1A1923FC0D1000DBDECD /* libLinearMath-ios.a */; };
 		0DC5D05D23FE7A9A0084EB79 /* GameControllerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */; };
 		0DC5D05E23FE7A9A0084EB79 /* GameControllerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */; };
 		0DC5D05F23FE7A9A0084EB79 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05823FE7A9A0084EB79 /* GameController.cpp */; };
@@ -442,27 +442,6 @@
 			remoteGlobalIDString = DD3EB0701F52476B009F32D2;
 			remoteInfo = GLTFSceneKit_iOS;
 		};
-		0D5A8F3623FF338800BEC130 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D522EB823FC8D9F0093D45A;
-			remoteInfo = "BulletCollision-ios";
-		};
-		0D5A8F3823FF338800BEC130 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D522F2123FC8DA90093D45A;
-			remoteInfo = "BulletDynamics-ios";
-		};
-		0D5A8F3A23FF338800BEC130 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D522F5223FC8DB50093D45A;
-			remoteInfo = "LinearMath-ios";
-		};
 		0D5A8FF523FF33D300BEC130 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DA944EA23D6429D00AEBEAA /* Project object */;
@@ -484,75 +463,96 @@
 			remoteGlobalIDString = 0D5A908F23FF3A8A00BEC130;
 			remoteInfo = GLTFSceneKit_tvOS;
 		};
+		0D5EA93F24029B9B0043D3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B6C697803710E685ED77793;
+			remoteInfo = BulletDynamics;
+		};
+		0D5EA94124029B9B0043D3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D881BC823FC51E8001A8250;
+			remoteInfo = "BulletDynamics-ios";
+		};
+		0D5EA94824029B9C0043D3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5FAF02B412CB658A511376C3;
+			remoteInfo = BulletCollision;
+		};
+		0D5EA94A24029B9C0043D3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D881B9723FC51DC001A8250;
+			remoteInfo = "BulletCollision-ios";
+		};
+		0D5EA95124029B9C0043D3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 63B05B634AB631FC589330F2;
+			remoteInfo = LinearMath;
+		};
+		0D5EA95324029B9C0043D3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D881BDD23FC51F1001A8250;
+			remoteInfo = "LinearMath-ios";
+		};
+		0D5EA95524029BBA0043D3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D881B2F23FC51DC001A8250;
+			remoteInfo = "BulletCollision-ios";
+		};
+		0D5EA95724029BBA0043D3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D881B9823FC51E8001A8250;
+			remoteInfo = "BulletDynamics-ios";
+		};
+		0D5EA95924029BBA0043D3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D881BC923FC51F1001A8250;
+			remoteInfo = "LinearMath-ios";
+		};
+		0D5EA95E24029C540043D3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D881B2F23FC51DC001A8250;
+			remoteInfo = "BulletCollision-ios";
+		};
+		0D5EA96024029C540043D3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D881B9823FC51E8001A8250;
+			remoteInfo = "BulletDynamics-ios";
+		};
+		0D5EA96224029C540043D3C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D881BC923FC51F1001A8250;
+			remoteInfo = "LinearMath-ios";
+		};
 		0D881B2C23FC47E9001A8250 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DA944EA23D6429D00AEBEAA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0D1FAA5123FC08050036B70E;
 			remoteInfo = mak3do;
-		};
-		0D8D1A1623FC0D1000DBDECD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 52B5000D73CD1EC93B10197D;
-			remoteInfo = LinearMath;
-		};
-		0D8D1A1823FC0D1000DBDECD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D1FA9C723FA73E30036B70E;
-			remoteInfo = "LinearMath-ios";
-		};
-		0D8D1A1F23FC0D3300DBDECD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 356B307F77E83FEC2BF376B3;
-			remoteInfo = BulletCollision;
-		};
-		0D8D1A2123FC0D3300DBDECD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D1FAA3023FA73FA0036B70E;
-			remoteInfo = "BulletCollision-ios";
-		};
-		0D8D1A2823FC0D3400DBDECD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6C66398B7C0E225123350E99;
-			remoteInfo = BulletDynamics;
-		};
-		0D8D1A2A23FC0D3400DBDECD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D1FA9B223FA73D00036B70E;
-			remoteInfo = "BulletDynamics-ios";
-		};
-		0D8D1A2C23FC0D3800DBDECD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D522EB823FC8D9F0093D45A;
-			remoteInfo = "BulletCollision-ios";
-		};
-		0D8D1A2E23FC0D3800DBDECD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D522F2123FC8DA90093D45A;
-			remoteInfo = "BulletDynamics-ios";
-		};
-		0D8D1A3023FC0D3800DBDECD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D522F5223FC8DB50093D45A;
-			remoteInfo = "LinearMath-ios";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -640,6 +640,9 @@
 		0D5A91012401BBDA00BEC130 /* earth_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_diffuse.png; sourceTree = "<group>"; };
 		0D5A91022401BBDB00BEC130 /* earth_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_normal.png; sourceTree = "<group>"; };
 		0D5A91032401BBDB00BEC130 /* earth_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_specular.png; sourceTree = "<group>"; };
+		0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = "mak3do/externals/bullet-project-ios/BulletDynamics.xcodeproj"; sourceTree = "<group>"; };
+		0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = "mak3do/externals/bullet-project-ios/BulletCollision.xcodeproj"; sourceTree = "<group>"; };
+		0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = "mak3do/externals/bullet-project-ios/LinearMath.xcodeproj"; sourceTree = "<group>"; };
 		0D881B1123FC46E7001A8250 /* mak3do-sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mak3do-sandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D881B1F23FC46EA001A8250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D881B2423FC46EA001A8250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -737,9 +740,6 @@
 		0D8D19DC23FC0CDC00DBDECD /* b2_world_callbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_world_callbacks.h; sourceTree = "<group>"; };
 		0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_contact_manager.h; sourceTree = "<group>"; };
 		0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_edge_shape.h; sourceTree = "<group>"; };
-		0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = mak3do/externals/bullet3/build3/xcode4/LinearMath.xcodeproj; sourceTree = "<group>"; };
-		0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = mak3do/externals/bullet3/build3/xcode4/BulletCollision.xcodeproj; sourceTree = "<group>"; };
-		0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = mak3do/externals/bullet3/build3/xcode4/BulletDynamics.xcodeproj; sourceTree = "<group>"; };
 		0DA9450623D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameControllerImpl.mm; sourceTree = "<group>"; };
 		0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameControllerImpl.h; sourceTree = "<group>"; };
@@ -869,11 +869,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D5EA95B24029BC40043D3C3 /* libBulletCollision-ios.a in Frameworks */,
+				0D5EA95C24029BC40043D3C3 /* libBulletDynamics-ios.a in Frameworks */,
+				0D5EA95D24029BC40043D3C3 /* libLinearMath-ios.a in Frameworks */,
 				0D522FCC23FF1F9B0093D45A /* GLTFSceneKit.framework in Frameworks */,
 				0DC5D06C23FEB8CC0084EB79 /* GameController.framework in Frameworks */,
-				0D8D1A3223FC0D4100DBDECD /* libBulletCollision-ios.a in Frameworks */,
-				0D8D1A3323FC0D4100DBDECD /* libBulletDynamics-ios.a in Frameworks */,
-				0D8D1A3423FC0D4100DBDECD /* libLinearMath-ios.a in Frameworks */,
 				0D1FAAD323FC09C50036B70E /* SceneKit.framework in Frameworks */,
 				0D1FAAD023FC09BB0036B70E /* Metal.framework in Frameworks */,
 				0D1FAAD123FC09BB0036B70E /* MetalKit.framework in Frameworks */,
@@ -892,11 +892,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D5EA96424029C5B0043D3C3 /* libBulletCollision-ios.a in Frameworks */,
+				0D5EA96524029C5B0043D3C3 /* libBulletDynamics-ios.a in Frameworks */,
+				0D5EA96624029C5B0043D3C3 /* libLinearMath-ios.a in Frameworks */,
 				0D5A908B23FF376700BEC130 /* GLTFSceneKit.framework in Frameworks */,
 				0D5A8FE523FF338800BEC130 /* GameController.framework in Frameworks */,
-				0D5A8FE623FF338800BEC130 /* libBulletCollision-ios.a in Frameworks */,
-				0D5A8FE723FF338800BEC130 /* libBulletDynamics-ios.a in Frameworks */,
-				0D5A8FE823FF338800BEC130 /* libLinearMath-ios.a in Frameworks */,
 				0D5A8FE923FF338800BEC130 /* SceneKit.framework in Frameworks */,
 				0D5A8FEA23FF338800BEC130 /* Metal.framework in Frameworks */,
 				0D5A8FEB23FF338800BEC130 /* MetalKit.framework in Frameworks */,
@@ -935,6 +935,33 @@
 				0D5A8F2D23FF32FC00BEC130 /* main.m */,
 			);
 			path = "mak3do-sandbox-tv";
+			sourceTree = "<group>";
+		};
+		0D5EA93B24029B9B0043D3C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D5EA94024029B9B0043D3C3 /* libBulletDynamics_xcode4_x64_debug.a */,
+				0D5EA94224029B9B0043D3C3 /* libBulletDynamics-ios.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D5EA94424029B9B0043D3C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D5EA94924029B9C0043D3C3 /* libBulletCollision_xcode4_x64_debug.a */,
+				0D5EA94B24029B9C0043D3C3 /* libBulletCollision-ios.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D5EA94D24029B9C0043D3C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D5EA95224029B9C0043D3C3 /* libLinearMath_xcode4_x64_debug.a */,
+				0D5EA95424029B9C0043D3C3 /* libLinearMath-ios.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		0D881B1223FC46E7001A8250 /* mak3do-sandbox */ = {
@@ -1114,40 +1141,13 @@
 			path = box2d;
 			sourceTree = "<group>";
 		};
-		0D8D1A1223FC0D1000DBDECD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0D8D1A1723FC0D1000DBDECD /* libLinearMath_xcode4_x64_debug.a */,
-				0D8D1A1923FC0D1000DBDECD /* libLinearMath-ios.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		0D8D1A1B23FC0D3300DBDECD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0D8D1A2023FC0D3300DBDECD /* libBulletCollision_xcode4_x64_debug.a */,
-				0D8D1A2223FC0D3300DBDECD /* libBulletCollision-ios.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		0D8D1A2423FC0D3300DBDECD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0D8D1A2923FC0D3400DBDECD /* libBulletDynamics_xcode4_x64_debug.a */,
-				0D8D1A2B23FC0D3400DBDECD /* libBulletDynamics-ios.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		0DA944E923D6429D00AEBEAA = {
 			isa = PBXGroup;
 			children = (
+				0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */,
+				0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */,
+				0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */,
 				0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */,
-				0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */,
-				0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */,
-				0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */,
 				0DE848EB23FC27C400A876B2 /* all */,
 				0DE847FC23FC24BB00A876B2 /* mak3do */,
 				0D8D194023FC0C9000DBDECD /* externals */,
@@ -1657,10 +1657,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				0D5EA95624029BBA0043D3C3 /* PBXTargetDependency */,
+				0D5EA95824029BBA0043D3C3 /* PBXTargetDependency */,
+				0D5EA95A24029BBA0043D3C3 /* PBXTargetDependency */,
 				0D522FCB23FF1F930093D45A /* PBXTargetDependency */,
-				0D8D1A2D23FC0D3800DBDECD /* PBXTargetDependency */,
-				0D8D1A2F23FC0D3800DBDECD /* PBXTargetDependency */,
-				0D8D1A3123FC0D3800DBDECD /* PBXTargetDependency */,
 			);
 			name = mak3do;
 			productName = mak3do;
@@ -1700,10 +1700,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				0D5EA95F24029C540043D3C3 /* PBXTargetDependency */,
+				0D5EA96124029C540043D3C3 /* PBXTargetDependency */,
+				0D5EA96324029C540043D3C3 /* PBXTargetDependency */,
 				0D5A90CE23FF3B0200BEC130 /* PBXTargetDependency */,
-				0D5A8F3523FF338800BEC130 /* PBXTargetDependency */,
-				0D5A8F3723FF338800BEC130 /* PBXTargetDependency */,
-				0D5A8F3923FF338800BEC130 /* PBXTargetDependency */,
 			);
 			name = "mak3do-tv";
 			productName = mak3do;
@@ -1762,20 +1762,20 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0D8D1A1B23FC0D3300DBDECD /* Products */;
-					ProjectRef = 0D8D1A1A23FC0D3300DBDECD /* BulletCollision.xcodeproj */;
+					ProductGroup = 0D5EA94424029B9B0043D3C3 /* Products */;
+					ProjectRef = 0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */;
 				},
 				{
-					ProductGroup = 0D8D1A2423FC0D3300DBDECD /* Products */;
-					ProjectRef = 0D8D1A2323FC0D3300DBDECD /* BulletDynamics.xcodeproj */;
+					ProductGroup = 0D5EA93B24029B9B0043D3C3 /* Products */;
+					ProjectRef = 0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */;
 				},
 				{
 					ProductGroup = 0D522FBC23FF1F850093D45A /* Products */;
 					ProjectRef = 0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */;
 				},
 				{
-					ProductGroup = 0D8D1A1223FC0D1000DBDECD /* Products */;
-					ProjectRef = 0D8D1A1123FC0D1000DBDECD /* LinearMath.xcodeproj */;
+					ProductGroup = 0D5EA94D24029B9C0043D3C3 /* Products */;
+					ProjectRef = 0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1824,46 +1824,46 @@
 			remoteRef = 0D5A908223FF36D700BEC130 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0D8D1A1723FC0D1000DBDECD /* libLinearMath_xcode4_x64_debug.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libLinearMath_xcode4_x64_debug.a;
-			remoteRef = 0D8D1A1623FC0D1000DBDECD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0D8D1A1923FC0D1000DBDECD /* libLinearMath-ios.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libLinearMath-ios.a";
-			remoteRef = 0D8D1A1823FC0D1000DBDECD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0D8D1A2023FC0D3300DBDECD /* libBulletCollision_xcode4_x64_debug.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libBulletCollision_xcode4_x64_debug.a;
-			remoteRef = 0D8D1A1F23FC0D3300DBDECD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0D8D1A2223FC0D3300DBDECD /* libBulletCollision-ios.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libBulletCollision-ios.a";
-			remoteRef = 0D8D1A2123FC0D3300DBDECD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0D8D1A2923FC0D3400DBDECD /* libBulletDynamics_xcode4_x64_debug.a */ = {
+		0D5EA94024029B9B0043D3C3 /* libBulletDynamics_xcode4_x64_debug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libBulletDynamics_xcode4_x64_debug.a;
-			remoteRef = 0D8D1A2823FC0D3400DBDECD /* PBXContainerItemProxy */;
+			remoteRef = 0D5EA93F24029B9B0043D3C3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0D8D1A2B23FC0D3400DBDECD /* libBulletDynamics-ios.a */ = {
+		0D5EA94224029B9B0043D3C3 /* libBulletDynamics-ios.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libBulletDynamics-ios.a";
-			remoteRef = 0D8D1A2A23FC0D3400DBDECD /* PBXContainerItemProxy */;
+			remoteRef = 0D5EA94124029B9B0043D3C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D5EA94924029B9C0043D3C3 /* libBulletCollision_xcode4_x64_debug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBulletCollision_xcode4_x64_debug.a;
+			remoteRef = 0D5EA94824029B9C0043D3C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D5EA94B24029B9C0043D3C3 /* libBulletCollision-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libBulletCollision-ios.a";
+			remoteRef = 0D5EA94A24029B9C0043D3C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D5EA95224029B9C0043D3C3 /* libLinearMath_xcode4_x64_debug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLinearMath_xcode4_x64_debug.a;
+			remoteRef = 0D5EA95124029B9C0043D3C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D5EA95424029B9C0043D3C3 /* libLinearMath-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libLinearMath-ios.a";
+			remoteRef = 0D5EA95324029B9C0043D3C3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2189,21 +2189,6 @@
 			name = GLTFSceneKit_iOS;
 			targetProxy = 0D522FCA23FF1F930093D45A /* PBXContainerItemProxy */;
 		};
-		0D5A8F3523FF338800BEC130 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "BulletCollision-ios";
-			targetProxy = 0D5A8F3623FF338800BEC130 /* PBXContainerItemProxy */;
-		};
-		0D5A8F3723FF338800BEC130 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "BulletDynamics-ios";
-			targetProxy = 0D5A8F3823FF338800BEC130 /* PBXContainerItemProxy */;
-		};
-		0D5A8F3923FF338800BEC130 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "LinearMath-ios";
-			targetProxy = 0D5A8F3A23FF338800BEC130 /* PBXContainerItemProxy */;
-		};
 		0D5A8FF623FF33D300BEC130 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0D5A8F3223FF338800BEC130 /* mak3do-tv */;
@@ -2214,25 +2199,40 @@
 			name = GLTFSceneKit_tvOS;
 			targetProxy = 0D5A90CD23FF3B0200BEC130 /* PBXContainerItemProxy */;
 		};
+		0D5EA95624029BBA0043D3C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BulletCollision-ios";
+			targetProxy = 0D5EA95524029BBA0043D3C3 /* PBXContainerItemProxy */;
+		};
+		0D5EA95824029BBA0043D3C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BulletDynamics-ios";
+			targetProxy = 0D5EA95724029BBA0043D3C3 /* PBXContainerItemProxy */;
+		};
+		0D5EA95A24029BBA0043D3C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LinearMath-ios";
+			targetProxy = 0D5EA95924029BBA0043D3C3 /* PBXContainerItemProxy */;
+		};
+		0D5EA95F24029C540043D3C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BulletCollision-ios";
+			targetProxy = 0D5EA95E24029C540043D3C3 /* PBXContainerItemProxy */;
+		};
+		0D5EA96124029C540043D3C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BulletDynamics-ios";
+			targetProxy = 0D5EA96024029C540043D3C3 /* PBXContainerItemProxy */;
+		};
+		0D5EA96324029C540043D3C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LinearMath-ios";
+			targetProxy = 0D5EA96224029C540043D3C3 /* PBXContainerItemProxy */;
+		};
 		0D881B2D23FC47E9001A8250 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0D1FAA5123FC08050036B70E /* mak3do */;
 			targetProxy = 0D881B2C23FC47E9001A8250 /* PBXContainerItemProxy */;
-		};
-		0D8D1A2D23FC0D3800DBDECD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "BulletCollision-ios";
-			targetProxy = 0D8D1A2C23FC0D3800DBDECD /* PBXContainerItemProxy */;
-		};
-		0D8D1A2F23FC0D3800DBDECD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "BulletDynamics-ios";
-			targetProxy = 0D8D1A2E23FC0D3800DBDECD /* PBXContainerItemProxy */;
-		};
-		0D8D1A3123FC0D3800DBDECD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "LinearMath-ios";
-			targetProxy = 0D8D1A3023FC0D3800DBDECD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
