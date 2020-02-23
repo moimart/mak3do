@@ -9,14 +9,21 @@
  * glTF loaded scenes
  * Scenekit (.scn) scenes (only on iOS, watchOS and macOS)
  * GameObject API with 2D (box2D) and 3D (bullet3) physics
+ * Actions for node animations (not SceneKit-native's ones)
+ * Materials (partial)
 
  ## Plans
 * Filament-based SceneGraph
 
 ## How to build
 
-### iOS
+### iOS, tvOS, macOS
 
-### watchOS
+```
+#1 Clone the repo
+#2 update modules
+$ git submodule update --init --recursive
+#3 Open XCode 11
+# Build the targets mak3do-sandbox, mak3do-sandbox-tv or mak3do-sandbox-mac for iOS, tvOS and macOS respectively to run the tests
+```
 
-### macOS
