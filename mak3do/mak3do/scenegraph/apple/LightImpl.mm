@@ -3,6 +3,9 @@
 #include <mak3do/scenegraph/Light.h>
 #import <SceneKit/SceneKit.h>
 
+#if TARGET_OS_OSX
+#define UIColor NSColor
+#endif
 
 namespace mak3do {
 
@@ -80,11 +83,8 @@ Light::LightType LightImpl::type() const
 
 void LightImpl::color(const color::RGB& color)
 {
-#if TARGET_OS_MAC
-    NSColor* __color = [NSColor colorWithRed:color.r green:color.g blue:color.b alpha:1.0];
-#else
     UIColor* __color = [UIColor colorWithRed:color.r green:color.g blue:color.b alpha:1.0];
-#endif
+
     SCNLight* light = (__bridge SCNLight*)m_native;
     
     [light setColor:__color];

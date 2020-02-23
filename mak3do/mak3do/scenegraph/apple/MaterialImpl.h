@@ -32,6 +32,9 @@ public:
     void roughness(MaterialPropertyPtr property);
     MaterialPropertyPtr roughness();
     
+    void occlusion(MaterialPropertyPtr property);
+    MaterialPropertyPtr occlusion();
+    
 private:
     Material* m_abstract;
     void* m_native_material;

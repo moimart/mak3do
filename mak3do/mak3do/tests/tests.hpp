@@ -369,13 +369,9 @@ void test_materials()
     scene->camera("main_camera");
     
     auto material = std::make_shared<Material>();
-    auto diffuse = std::make_shared<MaterialProperty>();
-    auto normal = std::make_shared<MaterialProperty>();
-    auto specular = std::make_shared<MaterialProperty>();
-    
-    diffuse->texture = std::make_shared<Texture>("earth_diffuse.png");
-    normal->texture = std::make_shared<Texture>("earth_normal.png");
-    specular->texture = std::make_shared<Texture>("earth_specular.png");
+    auto diffuse = std::make_shared<MaterialProperty>("earth_diffuse.png");
+    auto normal = std::make_shared<MaterialProperty>("earth_normal.png");
+    auto specular = std::make_shared<MaterialProperty>("earth_specular.png");
     
     material->diffuse(diffuse);
     material->normal(normal);

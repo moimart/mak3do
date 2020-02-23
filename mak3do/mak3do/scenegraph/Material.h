@@ -9,6 +9,12 @@ struct MaterialProperty
 {
     color::RGB color;
     TexturePtr texture;
+    
+    MaterialProperty() = default;
+    MaterialProperty(const std::string& texture);
+    MaterialProperty(const color::RGB& color);
+    
+    virtual ~MaterialProperty() = default;
 };
 
 class Material : public Base
@@ -39,6 +45,9 @@ public:
     
     void roughness(MaterialPropertyPtr property);
     MaterialPropertyPtr roughness() const;
+    
+    void occlusion(MaterialPropertyPtr property);
+    MaterialPropertyPtr occlusion() const;
     
 private:
     MaterialImplPtr m_pimpl;

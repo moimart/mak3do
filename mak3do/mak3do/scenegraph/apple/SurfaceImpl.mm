@@ -3,17 +3,18 @@
 #include <mak3do/scenegraph/geometries/Surface.h>
 #import <SceneKit/SceneKit.h>
 
+#if TARGET_OS_OSX
+#define UIColor NSColor
+#endif
+
 namespace mak3do {
 
 SurfaceImpl::SurfaceImpl(Surface* parent)
 : m_abstract(parent)
 {
     SCNGeometry* plane = [SCNPlane planeWithWidth:1.5 height:1.5];
-#if TARGET_OS_MAC
-    plane.materials.firstObject.diffuse.contents = [NSColor whiteColor];
-#else
     plane.materials.firstObject.diffuse.contents = [UIColor whiteColor];
-#endif
+
     auto pimpl = std::dynamic_pointer_cast<GeometryImpl>(parent->pimpl());
     pimpl->replace_geometry((__bridge void*)plane);
 }

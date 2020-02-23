@@ -1,4 +1,5 @@
 #include <mak3do/scenegraph/Material.h>
+#include <mak3do/scenegraph/Texture.h>
 #ifdef M3D_PLAT_APPLE
 #include <mak3do/scenegraph/apple/MaterialImpl.h>
 #elif M3D_PLAT_ANDROID
@@ -6,6 +7,16 @@
 #endif
 
 namespace mak3do {
+
+MaterialProperty::MaterialProperty(const std::string& _texture)
+: texture(std::make_shared<Texture>(_texture))
+{
+}
+
+MaterialProperty::MaterialProperty(const color::RGB& _color)
+: color(_color)
+{
+}
 
 Material::Material()
 {
@@ -32,6 +43,7 @@ MATERIAL_IMPLEMENTATION(transparent);
 MATERIAL_IMPLEMENTATION(displacement);
 MATERIAL_IMPLEMENTATION(normal);
 MATERIAL_IMPLEMENTATION(roughness);
+MATERIAL_IMPLEMENTATION(occlusion);
 
 }
 

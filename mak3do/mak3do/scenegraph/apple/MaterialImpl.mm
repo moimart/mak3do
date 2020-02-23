@@ -4,7 +4,7 @@
 #include <mak3do/scenegraph/Texture.h>
 #import <SceneKit/SceneKit.h>
 
-#if TARGET_OS_MAC
+#if TARGET_OS_OSX
 #define UIColor NSColor
 #endif
 
@@ -190,6 +190,25 @@ MaterialPropertyPtr MaterialImpl::roughness()
     SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
     
     fill_material(__material, material, __material.roughness.contents);
+    
+    return material;
+}
+
+void MaterialImpl::occlusion(MaterialPropertyPtr property)
+{
+    if (property->texture != nullptr) {
+        auto texture_pimpl = std::dynamic_pointer_cast<TextureImpl>(property->texture->pimpl());
+        SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
+        __material.ambientOcclusion.contents = [NSString stringWithUTF8String:texture_pimpl->m_native_texture.c_str()];
+    }
+}
+
+MaterialPropertyPtr MaterialImpl::occlusion()
+{
+    auto material = std::make_shared<MaterialProperty>();
+    SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
+    
+    fill_material(__material, material, __material.ambientOcclusion.contents);
     
     return material;
 }
