@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D181C5523FD1EE0001BA6F4 /* glass.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D181C5423FD1EE0001BA6F4 /* glass.glb */; };
+		0D0CC5112402C81300E02342 /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC50B2402C81300E02342 /* test_scene.scn */; };
+		0D0CC5122402C81300E02342 /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC50B2402C81300E02342 /* test_scene.scn */; };
+		0D0CC5132402C81300E02342 /* glass.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC50C2402C81300E02342 /* glass.glb */; };
+		0D0CC5142402C81300E02342 /* glass.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC50C2402C81300E02342 /* glass.glb */; };
+		0D0CC5152402C81300E02342 /* DamagedHelmet.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC50D2402C81300E02342 /* DamagedHelmet.glb */; };
+		0D0CC5162402C81300E02342 /* DamagedHelmet.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC50D2402C81300E02342 /* DamagedHelmet.glb */; };
+		0D0CC5172402C81300E02342 /* earth_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC50E2402C81300E02342 /* earth_normal.png */; };
+		0D0CC5182402C81300E02342 /* earth_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC50E2402C81300E02342 /* earth_normal.png */; };
+		0D0CC5192402C81300E02342 /* earth_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC50F2402C81300E02342 /* earth_diffuse.png */; };
+		0D0CC51A2402C81300E02342 /* earth_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC50F2402C81300E02342 /* earth_diffuse.png */; };
+		0D0CC51B2402C81300E02342 /* earth_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC5102402C81300E02342 /* earth_specular.png */; };
+		0D0CC51C2402C81300E02342 /* earth_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC5102402C81300E02342 /* earth_specular.png */; };
+		0D0CC51E2402C89A00E02342 /* mak3do-tv-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC51D2402C89900E02342 /* mak3do-tv-Info.plist */; };
 		0D181C5723FD3BA9001BA6F4 /* Surface.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D181C5623FD3BA9001BA6F4 /* Surface.h */; };
 		0D181C5A23FD3C21001BA6F4 /* SurfaceImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D181C5823FD3C21001BA6F4 /* SurfaceImpl.mm */; };
 		0D181C5B23FD3C21001BA6F4 /* SurfaceImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D181C5923FD3C21001BA6F4 /* SurfaceImpl.h */; };
@@ -196,8 +208,6 @@
 		0D5A8FF823FF33E200BEC130 /* mak3do-tv.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D5A908623FF36E400BEC130 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D5A908B23FF376700BEC130 /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; };
-		0D5A908D23FF379E00BEC130 /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D34016523F0074B00183EAC /* test_scene.scn */; };
-		0D5A908E23FF386500BEC130 /* glass.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D181C5423FD1EE0001BA6F4 /* glass.glb */; };
 		0D5A90CC23FF3AEE00BEC130 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D5A90CF23FF3B6F00BEC130 /* mak3do-tv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */; };
 		0D5A90E0240189C800BEC130 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90D7240189C800BEC130 /* Texture.h */; };
@@ -224,12 +234,6 @@
 		0D5A90FE24018D5300BEC130 /* MaterialImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90F324018D5300BEC130 /* MaterialImpl.h */; };
 		0D5A90FF24018D5300BEC130 /* MaterialImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90F424018D5300BEC130 /* MaterialImpl.mm */; };
 		0D5A910024018D5300BEC130 /* MaterialImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A90F424018D5300BEC130 /* MaterialImpl.mm */; };
-		0D5A91042401BBDB00BEC130 /* earth_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5A91012401BBDA00BEC130 /* earth_diffuse.png */; };
-		0D5A91052401BBDB00BEC130 /* earth_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5A91012401BBDA00BEC130 /* earth_diffuse.png */; };
-		0D5A91062401BBDB00BEC130 /* earth_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5A91022401BBDB00BEC130 /* earth_normal.png */; };
-		0D5A91072401BBDB00BEC130 /* earth_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5A91022401BBDB00BEC130 /* earth_normal.png */; };
-		0D5A91082401BBDB00BEC130 /* earth_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5A91032401BBDB00BEC130 /* earth_specular.png */; };
-		0D5A91092401BBDB00BEC130 /* earth_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5A91032401BBDB00BEC130 /* earth_specular.png */; };
 		0D5EA95B24029BC40043D3C3 /* libBulletCollision-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA94B24029B9C0043D3C3 /* libBulletCollision-ios.a */; };
 		0D5EA95C24029BC40043D3C3 /* libBulletDynamics-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA94224029B9B0043D3C3 /* libBulletDynamics-ios.a */; };
 		0D5EA95D24029BC40043D3C3 /* libLinearMath-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA95424029B9C0043D3C3 /* libLinearMath-ios.a */; };
@@ -238,7 +242,6 @@
 		0D5EA96624029C5B0043D3C3 /* libLinearMath-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA95424029B9C0043D3C3 /* libLinearMath-ios.a */; };
 		0D881B2023FC46EA001A8250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D881B1F23FC46EA001A8250 /* Assets.xcassets */; };
 		0D881B2623FC46EA001A8250 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D881B2523FC46EA001A8250 /* main.m */; };
-		0D881B2B23FC4789001A8250 /* test_scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0D34016523F0074B00183EAC /* test_scene.scn */; };
 		0D8D197F23FC0CC500DBDECD /* b2_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194423FC0CC500DBDECD /* b2_joint.cpp */; };
 		0D8D198023FC0CC500DBDECD /* b2_chain_polygon_contact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D194523FC0CC500DBDECD /* b2_chain_polygon_contact.h */; };
 		0D8D198123FC0CC500DBDECD /* b2_chain_circle_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194623FC0CC500DBDECD /* b2_chain_circle_contact.cpp */; };
@@ -339,8 +342,6 @@
 		0DC5D06223FE7ACA0084EB79 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D06123FE7ACA0084EB79 /* types.h */; };
 		0DC5D06C23FEB8CC0084EB79 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC5D06B23FEB8CC0084EB79 /* GameController.framework */; };
 		0DC5D06E23FEC17F0084EB79 /* all in Resources */ = {isa = PBXBuildFile; fileRef = 0DC5D06D23FEC17F0084EB79 /* all */; };
-		0DC97E462400481A00721590 /* DamagedHelmet.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0DC97E3F2400481A00721590 /* DamagedHelmet.glb */; };
-		0DC97E472400481B00721590 /* DamagedHelmet.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0DC97E3F2400481A00721590 /* DamagedHelmet.glb */; };
 		0DE8487B23FC24BC00A876B2 /* Game.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FD23FC24BB00A876B2 /* Game.hpp */; };
 		0DE8487C23FC24BC00A876B2 /* tests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FF23FC24BB00A876B2 /* tests.hpp */; };
 		0DE8488223FC24BC00A876B2 /* PhysicsWorld3DImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8480723FC24BB00A876B2 /* PhysicsWorld3DImpl.h */; };
@@ -606,8 +607,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D0CC50B2402C81300E02342 /* test_scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = test_scene.scn; sourceTree = "<group>"; };
+		0D0CC50C2402C81300E02342 /* glass.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = glass.glb; sourceTree = "<group>"; };
+		0D0CC50D2402C81300E02342 /* DamagedHelmet.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = DamagedHelmet.glb; sourceTree = "<group>"; };
+		0D0CC50E2402C81300E02342 /* earth_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_normal.png; sourceTree = "<group>"; };
+		0D0CC50F2402C81300E02342 /* earth_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_diffuse.png; sourceTree = "<group>"; };
+		0D0CC5102402C81300E02342 /* earth_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_specular.png; sourceTree = "<group>"; };
+		0D0CC51D2402C89900E02342 /* mak3do-tv-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mak3do-tv-Info.plist"; sourceTree = "<group>"; };
 		0D181C4323FD1A33001BA6F4 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLTFSceneKit.framework; path = Carthage/Build/iOS/GLTFSceneKit.framework; sourceTree = "<group>"; };
-		0D181C5423FD1EE0001BA6F4 /* glass.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = glass.glb; sourceTree = "<group>"; };
 		0D181C5623FD3BA9001BA6F4 /* Surface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Surface.h; sourceTree = "<group>"; };
 		0D181C5823FD3C21001BA6F4 /* SurfaceImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SurfaceImpl.mm; sourceTree = "<group>"; };
 		0D181C5923FD3C21001BA6F4 /* SurfaceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurfaceImpl.h; sourceTree = "<group>"; };
@@ -616,7 +623,6 @@
 		0D1FAACE23FC09BB0036B70E /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
 		0D1FAACF23FC09BB0036B70E /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
 		0D1FAAD223FC09C50036B70E /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
-		0D34016523F0074B00183EAC /* test_scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = test_scene.scn; sourceTree = "<group>"; };
 		0D522F9923FF1D3B0093D45A /* mak3do-sandbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "mak3do-sandbox.entitlements"; sourceTree = "<group>"; };
 		0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GLTFSceneKit.xcodeproj; path = mak3do/externals/GLTFSceneKit/GLTFSceneKit.xcodeproj; sourceTree = "<group>"; };
 		0D5A8F1623FF32FA00BEC130 /* mak3do-sandbox-tv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mak3do-sandbox-tv.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -624,7 +630,6 @@
 		0D5A8F2C23FF32FC00BEC130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D5A8F2D23FF32FC00BEC130 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "mak3do-tv.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D5A8FF423FF338800BEC130 /* mak3do copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "mak3do copy-Info.plist"; path = "/Users/moimart/kikkei-labs/apple/mak3do/mak3do copy-Info.plist"; sourceTree = "<absolute>"; };
 		0D5A90D7240189C800BEC130 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		0D5A90DE240189C800BEC130 /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
 		0D5A90DF240189C800BEC130 /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
@@ -637,9 +642,6 @@
 		0D5A90F224018D5300BEC130 /* MeshImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshImpl.h; sourceTree = "<group>"; };
 		0D5A90F324018D5300BEC130 /* MaterialImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialImpl.h; sourceTree = "<group>"; };
 		0D5A90F424018D5300BEC130 /* MaterialImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MaterialImpl.mm; sourceTree = "<group>"; };
-		0D5A91012401BBDA00BEC130 /* earth_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_diffuse.png; sourceTree = "<group>"; };
-		0D5A91022401BBDB00BEC130 /* earth_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_normal.png; sourceTree = "<group>"; };
-		0D5A91032401BBDB00BEC130 /* earth_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_specular.png; sourceTree = "<group>"; };
 		0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = "mak3do/externals/bullet-project-ios/BulletDynamics.xcodeproj"; sourceTree = "<group>"; };
 		0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = "mak3do/externals/bullet-project-ios/BulletCollision.xcodeproj"; sourceTree = "<group>"; };
 		0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = "mak3do/externals/bullet-project-ios/LinearMath.xcodeproj"; sourceTree = "<group>"; };
@@ -748,7 +750,6 @@
 		0DC5D06123FE7ACA0084EB79 /* types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = types.h; sourceTree = "<group>"; };
 		0DC5D06B23FEB8CC0084EB79 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		0DC5D06D23FEC17F0084EB79 /* all */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = all; sourceTree = "<group>"; };
-		0DC97E3F2400481A00721590 /* DamagedHelmet.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = DamagedHelmet.glb; sourceTree = "<group>"; };
 		0DD1B0CF23D79FDE00E65C07 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -915,6 +916,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0CC50A2402C81300E02342 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				0D0CC50B2402C81300E02342 /* test_scene.scn */,
+				0D0CC50C2402C81300E02342 /* glass.glb */,
+				0D0CC50D2402C81300E02342 /* DamagedHelmet.glb */,
+				0D0CC50E2402C81300E02342 /* earth_normal.png */,
+				0D0CC50F2402C81300E02342 /* earth_diffuse.png */,
+				0D0CC5102402C81300E02342 /* earth_specular.png */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		0D522FBC23FF1F850093D45A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1149,20 +1163,15 @@
 				0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */,
 				0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */,
 				0DE848EB23FC27C400A876B2 /* all */,
+				0D0CC50A2402C81300E02342 /* resources */,
 				0DE847FC23FC24BB00A876B2 /* mak3do */,
 				0D8D194023FC0C9000DBDECD /* externals */,
 				0DA9450623D6429F00AEBEAA /* Info.plist */,
-				0D34016523F0074B00183EAC /* test_scene.scn */,
-				0DC97E3F2400481A00721590 /* DamagedHelmet.glb */,
-				0D5A91012401BBDA00BEC130 /* earth_diffuse.png */,
-				0D5A91022401BBDB00BEC130 /* earth_normal.png */,
-				0D5A91032401BBDB00BEC130 /* earth_specular.png */,
-				0D181C5423FD1EE0001BA6F4 /* glass.glb */,
+				0D0CC51D2402C89900E02342 /* mak3do-tv-Info.plist */,
 				0D881B1223FC46E7001A8250 /* mak3do-sandbox */,
 				0D5A8F1723FF32FA00BEC130 /* mak3do-sandbox-tv */,
 				0DA944F323D6429D00AEBEAA /* Products */,
 				0DD1B0CE23D79FDE00E65C07 /* Frameworks */,
-				0D5A8FF423FF338800BEC130 /* mak3do copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1881,13 +1890,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D5A91052401BBDB00BEC130 /* earth_diffuse.png in Resources */,
-				0D5A91072401BBDB00BEC130 /* earth_normal.png in Resources */,
-				0D5A908E23FF386500BEC130 /* glass.glb in Resources */,
 				0D5A8F2823FF32FC00BEC130 /* Assets.xcassets in Resources */,
-				0DC97E472400481B00721590 /* DamagedHelmet.glb in Resources */,
-				0D5A91092401BBDB00BEC130 /* earth_specular.png in Resources */,
-				0D5A908D23FF379E00BEC130 /* test_scene.scn in Resources */,
+				0D0CC5182402C81300E02342 /* earth_normal.png in Resources */,
+				0D0CC51A2402C81300E02342 /* earth_diffuse.png in Resources */,
+				0D0CC5142402C81300E02342 /* glass.glb in Resources */,
+				0D0CC5122402C81300E02342 /* test_scene.scn in Resources */,
+				0D0CC5162402C81300E02342 /* DamagedHelmet.glb in Resources */,
+				0D0CC51C2402C81300E02342 /* earth_specular.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1896,6 +1905,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5A8FED23FF338800BEC130 /* all in Resources */,
+				0D0CC51E2402C89A00E02342 /* mak3do-tv-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1903,13 +1913,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D5A91042401BBDB00BEC130 /* earth_diffuse.png in Resources */,
-				0D5A91062401BBDB00BEC130 /* earth_normal.png in Resources */,
-				0D181C5523FD1EE0001BA6F4 /* glass.glb in Resources */,
 				0D881B2023FC46EA001A8250 /* Assets.xcassets in Resources */,
-				0DC97E462400481A00721590 /* DamagedHelmet.glb in Resources */,
-				0D5A91082401BBDB00BEC130 /* earth_specular.png in Resources */,
-				0D881B2B23FC4789001A8250 /* test_scene.scn in Resources */,
+				0D0CC5172402C81300E02342 /* earth_normal.png in Resources */,
+				0D0CC5192402C81300E02342 /* earth_diffuse.png in Resources */,
+				0D0CC5132402C81300E02342 /* glass.glb in Resources */,
+				0D0CC5112402C81300E02342 /* test_scene.scn in Resources */,
+				0D0CC5152402C81300E02342 /* DamagedHelmet.glb in Resources */,
+				0D0CC51B2402C81300E02342 /* earth_specular.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
