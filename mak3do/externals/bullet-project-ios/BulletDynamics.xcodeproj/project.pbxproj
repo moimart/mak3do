@@ -708,6 +708,7 @@
 				CONFIGURATION_BUILD_DIR = ../../bin;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../bullet3/src";
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = BulletDynamics_xcode4_x64_debug;
 				VALID_ARCHS = x86_64;
@@ -723,6 +724,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../bullet3/src";
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = BulletDynamics_xcode4_x64_release;
 				VALID_ARCHS = x86_64;

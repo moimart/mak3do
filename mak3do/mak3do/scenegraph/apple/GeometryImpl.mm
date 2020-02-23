@@ -14,7 +14,11 @@ GeometryImpl::GeometryImpl(Geometry* parent)
     
     //FIXME: Delete me! Just for testing
     SCNBox* box = [SCNBox boxWithWidth:1 height:1 length:1 chamferRadius:0];
+#if TARGET_OS_MAC
+    box.materials.firstObject.diffuse.contents = [NSColor redColor];
+#else
     box.materials.firstObject.diffuse.contents = [UIColor redColor];
+#endif
     
     geometry = box;
     
@@ -32,8 +36,11 @@ void GeometryImpl::replace_geometry(void* geometry)
 void GeometryImpl::color(const color::RGBA& color)
 {
     SCNGeometry* __geometry = (__bridge SCNGeometry*)m_native_geometry;
-    
+#if TARGET_OS_MAC
+    NSColor* __color = [NSColor colorWithRed:color.r green:color.g blue:color.b alpha:color.a];
+#else
     UIColor* __color = [UIColor colorWithRed:color.r green:color.g blue:color.b alpha:color.a];
+#endif
     __geometry.materials.firstObject.diffuse.contents = __color;
 }
 

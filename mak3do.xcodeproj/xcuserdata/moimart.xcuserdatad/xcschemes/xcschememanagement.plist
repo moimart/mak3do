@@ -9,25 +9,30 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>mak3do copy.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>13</integer>
-		</dict>
 		<key>mak3do-mac-sandbox.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
+		<key>mak3do-mac.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>mak3do-sandbox-mac.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>mak3do-sandbox-tv.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
 		<key>mak3do-sandbox.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>mak3do-tv.xcscheme_^#shared#^_</key>
 		<dict>
@@ -53,6 +58,16 @@
 			<true/>
 		</dict>
 		<key>0D5A8F3223FF338800BEC130</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0D794F022402DDC40046D19B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0D794FE82402E2F90046D19B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

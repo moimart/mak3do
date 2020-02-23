@@ -4,6 +4,10 @@
 #include <mak3do/scenegraph/Texture.h>
 #import <SceneKit/SceneKit.h>
 
+#if TARGET_OS_MAC
+#define UIColor NSColor
+#endif
+
 namespace mak3do {
 
 MaterialImpl::MaterialImpl(Material* parent)

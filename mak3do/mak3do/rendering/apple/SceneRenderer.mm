@@ -44,7 +44,10 @@ static SceneRenderer* _renderer = nil;
     _scnRenderer = [SCNRenderer rendererWithDevice:_device options:nil];
     
     _view = [[MTKView alloc] initWithFrame:frameRect device:_device];
+#if TARGET_OS_MAC
+#else
     _view.contentScaleFactor = [UIScreen mainScreen].scale;
+#endif
     _view.delegate = self;
     
     _viewportSize.x = _view.drawableSize.width;
