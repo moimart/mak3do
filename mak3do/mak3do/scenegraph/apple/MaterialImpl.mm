@@ -1,8 +1,11 @@
 #include "MaterialImpl.h"
 #include "TextureImpl.h"
+#include "VideoTextureImpl.h"
 #include <mak3do/scenegraph/Material.h>
 #include <mak3do/scenegraph/Texture.h>
+#include <mak3do/scenegraph/VideoTexture.h>
 #import <SceneKit/SceneKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 #if TARGET_OS_OSX
 #define UIColor NSColor
@@ -27,9 +30,18 @@ MaterialImpl::~MaterialImpl()
 void MaterialImpl::diffuse(MaterialPropertyPtr property)
 {
     if (property->texture != nullptr) {
+        
+        auto video_texture = std::dynamic_pointer_cast<VideoTexture>(property->texture);
         auto texture_pimpl = std::dynamic_pointer_cast<TextureImpl>(property->texture->pimpl());
-        SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
-        __material.diffuse.contents = [NSString stringWithUTF8String:texture_pimpl->m_native_texture.c_str()];
+        
+        if (video_texture != nullptr) {
+            auto video_texture_pimpl = std::dynamic_pointer_cast<VideoTextureImpl>(property->texture->pimpl());
+            SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
+            __material.diffuse.contents = (__bridge AVPlayer*)video_texture_pimpl->m_player;
+        } else {
+            SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
+            __material.diffuse.contents = [NSString stringWithUTF8String:texture_pimpl->m_native_texture.c_str()];
+        }
     } else {
         SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
         __material.diffuse.contents = [UIColor colorWithRed:property->color.r

@@ -9,6 +9,7 @@
 #include "Light.h"
 #include "Geometry.h"
 #include "Texture.h"
+#include "VideoTexture.h"
 #include "Material.h"
 #include "Mesh.h"
 

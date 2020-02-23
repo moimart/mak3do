@@ -10,7 +10,7 @@ public:
     Texture(const std::string& filename);
     virtual ~Texture() = default;
     
-private:
+protected:
     TextureImplPtr m_pimpl;
     
     friend class MaterialImpl;

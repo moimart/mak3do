@@ -445,6 +445,24 @@
 		0D79500E2402E53E0046D19B /* earth_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC50E2402C81300E02342 /* earth_normal.png */; };
 		0D79500F2402E53E0046D19B /* earth_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC50F2402C81300E02342 /* earth_diffuse.png */; };
 		0D7950102402E53E0046D19B /* earth_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC5102402C81300E02342 /* earth_specular.png */; };
+		0D79504C240312740046D19B /* VideoTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D79504B240312730046D19B /* VideoTexture.h */; };
+		0D79504D240312740046D19B /* VideoTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D79504B240312730046D19B /* VideoTexture.h */; };
+		0D79504E240312740046D19B /* VideoTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D79504B240312730046D19B /* VideoTexture.h */; };
+		0D795050240312C80046D19B /* VideoTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D79504F240312C80046D19B /* VideoTexture.cpp */; };
+		0D795051240312C80046D19B /* VideoTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D79504F240312C80046D19B /* VideoTexture.cpp */; };
+		0D795052240312C80046D19B /* VideoTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D79504F240312C80046D19B /* VideoTexture.cpp */; };
+		0D795054240314360046D19B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D795053240314360046D19B /* AVFoundation.framework */; };
+		0D7950562403143D0046D19B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7950552403143C0046D19B /* AVFoundation.framework */; };
+		0D795057240314430046D19B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D795053240314360046D19B /* AVFoundation.framework */; };
+		0D795059240315C00046D19B /* kikkei_7sec.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D795058240315BF0046D19B /* kikkei_7sec.mp4 */; };
+		0D79505A240315C00046D19B /* kikkei_7sec.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D795058240315BF0046D19B /* kikkei_7sec.mp4 */; };
+		0D79505B240315C00046D19B /* kikkei_7sec.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D795058240315BF0046D19B /* kikkei_7sec.mp4 */; };
+		0D79506124031A420046D19B /* VideoTextureImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D79505D240317430046D19B /* VideoTextureImpl.mm */; };
+		0D79506224031A420046D19B /* VideoTextureImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D79505D240317430046D19B /* VideoTextureImpl.mm */; };
+		0D79506324031A430046D19B /* VideoTextureImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D79505D240317430046D19B /* VideoTextureImpl.mm */; };
+		0D79506424031A4B0046D19B /* VideoTextureImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D79505C240317420046D19B /* VideoTextureImpl.h */; };
+		0D79506624031A4C0046D19B /* VideoTextureImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D79505C240317420046D19B /* VideoTextureImpl.h */; };
+		0D79506724031A4D0046D19B /* VideoTextureImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D79505C240317420046D19B /* VideoTextureImpl.h */; };
 		0D881B2023FC46EA001A8250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D881B1F23FC46EA001A8250 /* Assets.xcassets */; };
 		0D881B2623FC46EA001A8250 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D881B2523FC46EA001A8250 /* main.m */; };
 		0D8D197F23FC0CC500DBDECD /* b2_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194423FC0CC500DBDECD /* b2_joint.cpp */; };
@@ -946,6 +964,14 @@
 		0D794FFC2402E2FA0046D19B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D794FFD2402E2FA0046D19B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D794FFF2402E2FA0046D19B /* mak3do_sandbox_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mak3do_sandbox_mac.entitlements; sourceTree = "<group>"; };
+		0D79504B240312730046D19B /* VideoTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTexture.h; sourceTree = "<group>"; };
+		0D79504F240312C80046D19B /* VideoTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoTexture.cpp; sourceTree = "<group>"; };
+		0D795053240314360046D19B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		0D7950552403143C0046D19B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS13.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		0D795058240315BF0046D19B /* kikkei_7sec.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = kikkei_7sec.mp4; sourceTree = "<group>"; };
+		0D79505C240317420046D19B /* VideoTextureImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTextureImpl.h; sourceTree = "<group>"; };
+		0D79505D240317430046D19B /* VideoTextureImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoTextureImpl.mm; sourceTree = "<group>"; };
+		0D79506824031D290046D19B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
 		0D881B1123FC46E7001A8250 /* mak3do-sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mak3do-sandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D881B1F23FC46EA001A8250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D881B2423FC46EA001A8250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1170,6 +1196,7 @@
 			files = (
 				0D5EA95B24029BC40043D3C3 /* libBulletCollision-ios.a in Frameworks */,
 				0D5EA95C24029BC40043D3C3 /* libBulletDynamics-ios.a in Frameworks */,
+				0D795054240314360046D19B /* AVFoundation.framework in Frameworks */,
 				0D5EA95D24029BC40043D3C3 /* libLinearMath-ios.a in Frameworks */,
 				0D522FCC23FF1F9B0093D45A /* GLTFSceneKit.framework in Frameworks */,
 				0DC5D06C23FEB8CC0084EB79 /* GameController.framework in Frameworks */,
@@ -1193,6 +1220,7 @@
 			files = (
 				0D0CC6022402D90600E02342 /* libBulletCollision-tvos.a in Frameworks */,
 				0D0CC6032402D90600E02342 /* libBulletDynamics-tvos.a in Frameworks */,
+				0D7950562403143D0046D19B /* AVFoundation.framework in Frameworks */,
 				0D0CC6042402D90600E02342 /* libLinearMath-tvos.a in Frameworks */,
 				0D5A908B23FF376700BEC130 /* GLTFSceneKit.framework in Frameworks */,
 				0D5A8FE523FF338800BEC130 /* GameController.framework in Frameworks */,
@@ -1208,6 +1236,7 @@
 			files = (
 				0D794FE32402E22D0046D19B /* AppKit.framework in Frameworks */,
 				0D794FDE2402DEC70046D19B /* libBulletCollision_xcode4_x64_debug.a in Frameworks */,
+				0D795057240314430046D19B /* AVFoundation.framework in Frameworks */,
 				0D794FDF2402DEC70046D19B /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */,
 				0D794FE02402DEC70046D19B /* GLTFSceneKit.framework in Frameworks */,
 				0D794FE12402DEC70046D19B /* libLinearMath_xcode4_x64_debug.a in Frameworks */,
@@ -1248,6 +1277,7 @@
 				0D0CC50E2402C81300E02342 /* earth_normal.png */,
 				0D0CC50F2402C81300E02342 /* earth_diffuse.png */,
 				0D0CC5102402C81300E02342 /* earth_specular.png */,
+				0D795058240315BF0046D19B /* kikkei_7sec.mp4 */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -1560,6 +1590,9 @@
 		0DD1B0CE23D79FDE00E65C07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D79506824031D290046D19B /* CoreMedia.framework */,
+				0D795053240314360046D19B /* AVFoundation.framework */,
+				0D7950552403143C0046D19B /* AVFoundation.framework */,
 				0D794FE22402E22D0046D19B /* AppKit.framework */,
 				0DC5D06B23FEB8CC0084EB79 /* GameController.framework */,
 				0D181C4323FD1A33001BA6F4 /* GLTFSceneKit.framework */,
@@ -1742,6 +1775,7 @@
 				0D5A90DE240189C800BEC130 /* Material.h */,
 				0D5A90DF240189C800BEC130 /* Mesh.h */,
 				0D5A90D7240189C800BEC130 /* Texture.h */,
+				0D79504B240312730046D19B /* VideoTexture.h */,
 			);
 			path = scenegraph;
 			sourceTree = "<group>";
@@ -1753,6 +1787,8 @@
 				0D5A90F424018D5300BEC130 /* MaterialImpl.mm */,
 				0D5A90F224018D5300BEC130 /* MeshImpl.h */,
 				0D5A90EF24018D5200BEC130 /* MeshImpl.mm */,
+				0D79505C240317420046D19B /* VideoTextureImpl.h */,
+				0D79505D240317430046D19B /* VideoTextureImpl.mm */,
 				0D5A90F024018D5300BEC130 /* TextureImpl.h */,
 				0D5A90F124018D5300BEC130 /* TextureImpl.mm */,
 				0D181C5923FD3C21001BA6F4 /* SurfaceImpl.h */,
@@ -1805,6 +1841,7 @@
 		0DE8486A23FC24BB00A876B2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				0D79504F240312C80046D19B /* VideoTexture.cpp */,
 				0D5A90E824018CA000BEC130 /* Material.cpp */,
 				0D5A90E624018CA000BEC130 /* Mesh.cpp */,
 				0D5A90E724018CA000BEC130 /* Texture.cpp */,
@@ -1867,6 +1904,7 @@
 				0D8D198323FC0CC500DBDECD /* b2_polygon_circle_contact.h in Headers */,
 				0DE848B723FC24BC00A876B2 /* NodeImpl.h in Headers */,
 				0D8D19E823FC0CDC00DBDECD /* b2_broad_phase.h in Headers */,
+				0D79506424031A4B0046D19B /* VideoTextureImpl.h in Headers */,
 				0D8D19E323FC0CDC00DBDECD /* b2_weld_joint.h in Headers */,
 				0D8D198023FC0CC500DBDECD /* b2_chain_polygon_contact.h in Headers */,
 				0D8D19F923FC0CDC00DBDECD /* b2_polygon_shape.h in Headers */,
@@ -1905,6 +1943,7 @@
 				0DE848AF23FC24BC00A876B2 /* ShaderTypes.h in Headers */,
 				0D8D19EA23FC0CDC00DBDECD /* b2_revolute_joint.h in Headers */,
 				0D8D19E523FC0CDC00DBDECD /* b2_fixture.h in Headers */,
+				0D79504C240312740046D19B /* VideoTexture.h in Headers */,
 				0D5A90E0240189C800BEC130 /* Texture.h in Headers */,
 				0DE8488223FC24BC00A876B2 /* PhysicsWorld3DImpl.h in Headers */,
 				0D8D19FC23FC0CDC00DBDECD /* b2_draw.h in Headers */,
@@ -1952,6 +1991,7 @@
 				0D5A8F5923FF338800BEC130 /* b2_polygon_circle_contact.h in Headers */,
 				0D5A8F5A23FF338800BEC130 /* NodeImpl.h in Headers */,
 				0D5A8F5B23FF338800BEC130 /* b2_broad_phase.h in Headers */,
+				0D79506624031A4C0046D19B /* VideoTextureImpl.h in Headers */,
 				0D5A8F5C23FF338800BEC130 /* b2_weld_joint.h in Headers */,
 				0D5A8F5D23FF338800BEC130 /* b2_chain_polygon_contact.h in Headers */,
 				0D5A8F5E23FF338800BEC130 /* b2_polygon_shape.h in Headers */,
@@ -1990,6 +2030,7 @@
 				0D5A8F7D23FF338800BEC130 /* ShaderTypes.h in Headers */,
 				0D5A8F7E23FF338800BEC130 /* b2_revolute_joint.h in Headers */,
 				0D5A8F7F23FF338800BEC130 /* b2_fixture.h in Headers */,
+				0D79504D240312740046D19B /* VideoTexture.h in Headers */,
 				0D5A90E1240189C800BEC130 /* Texture.h in Headers */,
 				0D5A8F8023FF338800BEC130 /* PhysicsWorld3DImpl.h in Headers */,
 				0D5A8F8123FF338800BEC130 /* b2_draw.h in Headers */,
@@ -2033,6 +2074,7 @@
 				0D794F292402DDC40046D19B /* b2_contact_solver.h in Headers */,
 				0D794F2A2402DDC40046D19B /* PhysicsElement2DImpl.h in Headers */,
 				0D794F2B2402DDC40046D19B /* b2_polygon_contact.h in Headers */,
+				0D79504E240312740046D19B /* VideoTexture.h in Headers */,
 				0D794F2C2402DDC40046D19B /* b2_polygon_circle_contact.h in Headers */,
 				0D794F2D2402DDC40046D19B /* NodeImpl.h in Headers */,
 				0D794F2E2402DDC40046D19B /* b2_broad_phase.h in Headers */,
@@ -2055,6 +2097,7 @@
 				0D794F3F2402DDC40046D19B /* b2_prismatic_joint.h in Headers */,
 				0D794F402402DDC40046D19B /* b2_wheel_joint.h in Headers */,
 				0D794F412402DDC40046D19B /* SceneImpl.h in Headers */,
+				0D79506724031A4D0046D19B /* VideoTextureImpl.h in Headers */,
 				0D794F422402DDC40046D19B /* b2_world_callbacks.h in Headers */,
 				0D794F432402DDC40046D19B /* b2_pulley_joint.h in Headers */,
 				0D794F442402DDC40046D19B /* PhysicsElement3DImpl.h in Headers */,
@@ -2400,6 +2443,7 @@
 				0D0CC5122402C81300E02342 /* test_scene.scn in Resources */,
 				0D0CC5162402C81300E02342 /* DamagedHelmet.glb in Resources */,
 				0D0CC51C2402C81300E02342 /* earth_specular.png in Resources */,
+				0D79505A240315C00046D19B /* kikkei_7sec.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2429,6 +2473,7 @@
 				0D794FFB2402E2FA0046D19B /* Main.storyboard in Resources */,
 				0D79500F2402E53E0046D19B /* earth_diffuse.png in Resources */,
 				0D79500C2402E53E0046D19B /* glass.glb in Resources */,
+				0D79505B240315C00046D19B /* kikkei_7sec.mp4 in Resources */,
 				0D79500B2402E53E0046D19B /* test_scene.scn in Resources */,
 				0D79500D2402E53E0046D19B /* DamagedHelmet.glb in Resources */,
 				0D7950102402E53E0046D19B /* earth_specular.png in Resources */,
@@ -2446,6 +2491,7 @@
 				0D0CC5112402C81300E02342 /* test_scene.scn in Resources */,
 				0D0CC5152402C81300E02342 /* DamagedHelmet.glb in Resources */,
 				0D0CC51B2402C81300E02342 /* earth_specular.png in Resources */,
+				0D795059240315C00046D19B /* kikkei_7sec.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2511,6 +2557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DE8489723FC24BC00A876B2 /* utils.cpp in Sources */,
+				0D795050240312C80046D19B /* VideoTexture.cpp in Sources */,
 				0DE8489323FC24BC00A876B2 /* PhysicsElement.cpp in Sources */,
 				0D8D19AE23FC0CC500DBDECD /* b2_collide_edge.cpp in Sources */,
 				0D8D199B23FC0CC500DBDECD /* b2_rope_joint.cpp in Sources */,
@@ -2536,6 +2583,7 @@
 				0D181C5A23FD3C21001BA6F4 /* SurfaceImpl.mm in Sources */,
 				0DE8488B23FC24BC00A876B2 /* PhysicsElement3D.cpp in Sources */,
 				0DE848C423FC24BC00A876B2 /* NodeImpl.mm in Sources */,
+				0D79506324031A430046D19B /* VideoTextureImpl.mm in Sources */,
 				0D8D199623FC0CC500DBDECD /* b2_gear_joint.cpp in Sources */,
 				0D8D199823FC0CC500DBDECD /* b2_wheel_joint.cpp in Sources */,
 				0DE848B823FC24BC00A876B2 /* LightImpl.mm in Sources */,
@@ -2626,6 +2674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5A8F8623FF338800BEC130 /* utils.cpp in Sources */,
+				0D795051240312C80046D19B /* VideoTexture.cpp in Sources */,
 				0D5A8F8723FF338800BEC130 /* PhysicsElement.cpp in Sources */,
 				0D5A8F8823FF338800BEC130 /* b2_collide_edge.cpp in Sources */,
 				0D5A8F8923FF338800BEC130 /* b2_rope_joint.cpp in Sources */,
@@ -2651,6 +2700,7 @@
 				0D5A8F9A23FF338800BEC130 /* SurfaceImpl.mm in Sources */,
 				0D5A8F9B23FF338800BEC130 /* PhysicsElement3D.cpp in Sources */,
 				0D5A8F9C23FF338800BEC130 /* NodeImpl.mm in Sources */,
+				0D79506224031A420046D19B /* VideoTextureImpl.mm in Sources */,
 				0D5A8F9D23FF338800BEC130 /* b2_gear_joint.cpp in Sources */,
 				0D5A8F9E23FF338800BEC130 /* b2_wheel_joint.cpp in Sources */,
 				0D5A8F9F23FF338800BEC130 /* LightImpl.mm in Sources */,
@@ -2752,6 +2802,7 @@
 				0D794F6E2402DDC40046D19B /* Game.cpp in Sources */,
 				0D794F6F2402DDC40046D19B /* DirectorDisplayLink.mm in Sources */,
 				0D794F702402DDC40046D19B /* Plane.cpp in Sources */,
+				0D79506124031A420046D19B /* VideoTextureImpl.mm in Sources */,
 				0D794F712402DDC40046D19B /* PhysicsWorld3DImpl.cpp in Sources */,
 				0D794F722402DDC40046D19B /* b2_dynamic_tree.cpp in Sources */,
 				0D794F732402DDC40046D19B /* SurfaceImpl.mm in Sources */,
@@ -2801,6 +2852,7 @@
 				0D794F9F2402DDC40046D19B /* CameraImpl.mm in Sources */,
 				0D794FA02402DDC40046D19B /* b2_time_of_impact.cpp in Sources */,
 				0D794FA12402DDC40046D19B /* Mat4.cpp in Sources */,
+				0D795052240312C80046D19B /* VideoTexture.cpp in Sources */,
 				0D794FA22402DDC40046D19B /* b2_circle_contact.cpp in Sources */,
 				0D794FA32402DDC40046D19B /* b2_distance.cpp in Sources */,
 				0D794FA42402DDC40046D19B /* b2_collide_polygon.cpp in Sources */,

@@ -56,6 +56,7 @@ class Box;
 class Surface;
 
 class Texture;
+class VideoTexture;
 class Material;
 class MaterialProperty;
 class Mesh;
@@ -76,6 +77,7 @@ class SurfaceImpl;
 class MeshImpl;
 class MaterialImpl;
 class TextureImpl;
+class VideoTextureImpl;
 
 class Pimpl;
 class Pimpl : public std::enable_shared_from_this<Pimpl>
@@ -104,6 +106,7 @@ typedef std::shared_ptr<MaterialProperty> MaterialPropertyPtr;
 typedef std::shared_ptr<Mesh> MeshPtr;
 typedef std::shared_ptr<VertexAttribute> VertexAttributePtr;
 typedef std::shared_ptr<Texture> TexturePtr;
+typedef std::shared_ptr<VideoTexture> VideoTexturePtr;
 typedef std::shared_ptr<Geometry> GeometryPtr;
 typedef std::shared_ptr<Sphere> SpherePtr;
 typedef std::shared_ptr<Box> BoxPtr;
@@ -123,5 +126,6 @@ typedef std::shared_ptr<SurfaceImpl> SurfaceImplPtr;
 typedef std::shared_ptr<MaterialImpl> MaterialImplPtr;
 typedef std::shared_ptr<MeshImpl> MeshImplPtr;
 typedef std::shared_ptr<TextureImpl> TextureImplPtr;
+typedef std::shared_ptr<VideoTextureImpl> VideoTextureImplPtr;
 
 }
