@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0CC5DF2402D8DB00E02342 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0D5EABD424029E7F0043D3C3 /* CMakeLists.txt */; };
+		0D0CC5E12402D8DB00E02342 /* btTaskScheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EAC1524029E900043D3C3 /* btTaskScheduler.cpp */; };
+		0D0CC5E22402D8DB00E02342 /* btThreads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EABE824029E800043D3C3 /* btThreads.cpp */; };
+		0D0CC5E32402D8DB00E02342 /* btQuickprof.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EABDB24029E7F0043D3C3 /* btQuickprof.cpp */; };
+		0D0CC5E42402D8DB00E02342 /* btSerializer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EABF824029E810043D3C3 /* btSerializer.cpp */; };
+		0D0CC5E52402D8DB00E02342 /* btThreadSupportWin32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EAC1324029E900043D3C3 /* btThreadSupportWin32.cpp */; };
+		0D0CC5E62402D8DB00E02342 /* btThreadSupportPosix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EAC1224029E900043D3C3 /* btThreadSupportPosix.cpp */; };
+		0D0CC5E72402D8DB00E02342 /* btGeometryUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EABF224029E810043D3C3 /* btGeometryUtil.cpp */; };
+		0D0CC5E82402D8DB00E02342 /* btConvexHullComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EABEE24029E800043D3C3 /* btConvexHullComputer.cpp */; };
+		0D0CC5E92402D8DB00E02342 /* btPolarDecomposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EABF324029E810043D3C3 /* btPolarDecomposition.cpp */; };
+		0D0CC5EA2402D8DB00E02342 /* btAlignedAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EABD824029E7F0043D3C3 /* btAlignedAllocator.cpp */; };
+		0D0CC5EB2402D8DB00E02342 /* btConvexHull.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EABDA24029E7F0043D3C3 /* btConvexHull.cpp */; };
+		0D0CC5EC2402D8DB00E02342 /* btSerializer64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EABDF24029E7F0043D3C3 /* btSerializer64.cpp */; };
+		0D0CC5ED2402D8DB00E02342 /* btVector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EABD724029E7F0043D3C3 /* btVector3.cpp */; };
 		0D5EABFC24029E810043D3C3 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0D5EABD424029E7F0043D3C3 /* CMakeLists.txt */; };
 		0D5EABFD24029E810043D3C3 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0D5EABD424029E7F0043D3C3 /* CMakeLists.txt */; };
 		0D5EABFE24029E810043D3C3 /* btVector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EABD724029E7F0043D3C3 /* btVector3.cpp */; };
@@ -38,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D0CC5F22402D8DB00E02342 /* libLinearMath-tvos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libLinearMath-tvos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5EABD224029E7F0043D3C3 /* btStackAlloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = btStackAlloc.h; path = ../bullet3/src/LinearMath/btStackAlloc.h; sourceTree = "<group>"; };
 		0D5EABD324029E7F0043D3C3 /* btTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = btTransform.h; path = ../bullet3/src/LinearMath/btTransform.h; sourceTree = "<group>"; };
 		0D5EABD424029E7F0043D3C3 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = ../bullet3/src/LinearMath/CMakeLists.txt; sourceTree = "<group>"; };
@@ -89,6 +104,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0D0CC5EE2402D8DB00E02342 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D881BD923FC51F1001A8250 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -111,6 +133,7 @@
 			children = (
 				63B05B634AB631FC589330F2 /* libLinearMath_xcode4_x64_debug.a */,
 				0D881BDD23FC51F1001A8250 /* libLinearMath-ios.a */,
+				0D0CC5F22402D8DB00E02342 /* libLinearMath-tvos.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,6 +219,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0D0CC5DD2402D8DB00E02342 /* LinearMath-tvos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D0CC5EF2402D8DB00E02342 /* Build configuration list for PBXNativeTarget "LinearMath-tvos" */;
+			buildPhases = (
+				0D0CC5DE2402D8DB00E02342 /* Resources */,
+				0D0CC5E02402D8DB00E02342 /* Sources */,
+				0D0CC5EE2402D8DB00E02342 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LinearMath-tvos";
+			productName = LinearMath;
+			productReference = 0D0CC5F22402D8DB00E02342 /* libLinearMath-tvos.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		0D881BC923FC51F1001A8250 /* LinearMath-ios */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D881BDA23FC51F1001A8250 /* Build configuration list for PBXNativeTarget "LinearMath-ios" */;
@@ -252,11 +292,20 @@
 			targets = (
 				122A0E2A716A6A1809AE1C24 /* LinearMath */,
 				0D881BC923FC51F1001A8250 /* LinearMath-ios */,
+				0D0CC5DD2402D8DB00E02342 /* LinearMath-tvos */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0D0CC5DE2402D8DB00E02342 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D0CC5DF2402D8DB00E02342 /* CMakeLists.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D881BCA23FC51F1001A8250 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,6 +325,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0D0CC5E02402D8DB00E02342 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D0CC5E12402D8DB00E02342 /* btTaskScheduler.cpp in Sources */,
+				0D0CC5E22402D8DB00E02342 /* btThreads.cpp in Sources */,
+				0D0CC5E32402D8DB00E02342 /* btQuickprof.cpp in Sources */,
+				0D0CC5E42402D8DB00E02342 /* btSerializer.cpp in Sources */,
+				0D0CC5E52402D8DB00E02342 /* btThreadSupportWin32.cpp in Sources */,
+				0D0CC5E62402D8DB00E02342 /* btThreadSupportPosix.cpp in Sources */,
+				0D0CC5E72402D8DB00E02342 /* btGeometryUtil.cpp in Sources */,
+				0D0CC5E82402D8DB00E02342 /* btConvexHullComputer.cpp in Sources */,
+				0D0CC5E92402D8DB00E02342 /* btPolarDecomposition.cpp in Sources */,
+				0D0CC5EA2402D8DB00E02342 /* btAlignedAllocator.cpp in Sources */,
+				0D0CC5EB2402D8DB00E02342 /* btConvexHull.cpp in Sources */,
+				0D0CC5EC2402D8DB00E02342 /* btSerializer64.cpp in Sources */,
+				0D0CC5ED2402D8DB00E02342 /* btVector3.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D881BCB23FC51F1001A8250 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,6 +431,39 @@
 				VALID_ARCHS = x86_64;
 			};
 			name = Release;
+		};
+		0D0CC5F02402D8DB00E02342 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CONFIGURATION_BUILD_DIR = ../../bin;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../bullet3/src";
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				VALID_ARCHS = "x86_64 arm64 arm64e armv7 armv7s";
+			};
+			name = Release;
+		};
+		0D0CC5F12402D8DB00E02342 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CONFIGURATION_BUILD_DIR = ../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../bullet3/src";
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				VALID_ARCHS = "x86_64 arm64 arm64e armv7 armv7s";
+			};
+			name = Debug;
 		};
 		0D881BDB23FC51F1001A8250 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -475,6 +577,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0D0CC5EF2402D8DB00E02342 /* Build configuration list for PBXNativeTarget "LinearMath-tvos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D0CC5F02402D8DB00E02342 /* Release */,
+				0D0CC5F12402D8DB00E02342 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0D881BDA23FC51F1001A8250 /* Build configuration list for PBXNativeTarget "LinearMath-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

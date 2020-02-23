@@ -12,7 +12,7 @@
 #import "SceneRenderer.h"
 #import <MapKit/MapKit.h>
 
-#include <mak3do/Game.hpp>
+#include <mak3do/Game.h>
 
 @interface AppDelegate ()
 
@@ -37,7 +37,6 @@
     [self.window makeKeyAndVisible];
     
     auto game = std::make_shared<mak3do::Game>();
-    
     game->start();
 
     [[DirectorDisplayLink shared] startMainLoop];

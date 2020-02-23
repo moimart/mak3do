@@ -20,6 +20,11 @@
 		0D0CC51B2402C81300E02342 /* earth_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC5102402C81300E02342 /* earth_specular.png */; };
 		0D0CC51C2402C81300E02342 /* earth_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC5102402C81300E02342 /* earth_specular.png */; };
 		0D0CC51E2402C89A00E02342 /* mak3do-tv-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D0CC51D2402C89900E02342 /* mak3do-tv-Info.plist */; };
+		0D0CC53F2402D45C00E02342 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D0CC53D2402D45C00E02342 /* AppDelegate.mm */; };
+		0D0CC5422402D47000E02342 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D0CC5412402D47000E02342 /* AppDelegate.mm */; };
+		0D0CC6022402D90600E02342 /* libBulletCollision-tvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0CC5F52402D8F100E02342 /* libBulletCollision-tvos.a */; };
+		0D0CC6032402D90600E02342 /* libBulletDynamics-tvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0CC5F82402D8F100E02342 /* libBulletDynamics-tvos.a */; };
+		0D0CC6042402D90600E02342 /* libLinearMath-tvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0CC5FB2402D8F100E02342 /* libLinearMath-tvos.a */; };
 		0D181C5723FD3BA9001BA6F4 /* Surface.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D181C5623FD3BA9001BA6F4 /* Surface.h */; };
 		0D181C5A23FD3C21001BA6F4 /* SurfaceImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D181C5823FD3C21001BA6F4 /* SurfaceImpl.mm */; };
 		0D181C5B23FD3C21001BA6F4 /* SurfaceImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D181C5923FD3C21001BA6F4 /* SurfaceImpl.h */; };
@@ -93,7 +98,6 @@
 		0D5A8F7423FF338800BEC130 /* b2_contact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19D023FC0CDC00DBDECD /* b2_contact.h */; };
 		0D5A8F7523FF338800BEC130 /* b2_mouse_joint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19CE23FC0CDC00DBDECD /* b2_mouse_joint.h */; };
 		0D5A8F7623FF338800BEC130 /* b2_block_allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19BB23FC0CDC00DBDECD /* b2_block_allocator.h */; };
-		0D5A8F7723FF338800BEC130 /* Game.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FD23FC24BB00A876B2 /* Game.hpp */; };
 		0D5A8F7823FF338800BEC130 /* PhysicsWorld2DImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8480E23FC24BB00A876B2 /* PhysicsWorld2DImpl.h */; };
 		0D5A8F7923FF338800BEC130 /* Surface.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D181C5623FD3BA9001BA6F4 /* Surface.h */; };
 		0D5A8F7A23FF338800BEC130 /* b2_time_of_impact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19CD23FC0CDC00DBDECD /* b2_time_of_impact.h */; };
@@ -180,7 +184,6 @@
 		0D5A8FCC23FF338800BEC130 /* BoxImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8484823FC24BB00A876B2 /* BoxImpl.mm */; };
 		0D5A8FCD23FF338800BEC130 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481123FC24BB00A876B2 /* GameObject.cpp */; };
 		0D5A8FCE23FF338800BEC130 /* b2_chain_circle_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194623FC0CC500DBDECD /* b2_chain_circle_contact.cpp */; };
-		0D5A8FCF23FF338800BEC130 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483F23FC24BB00A876B2 /* AppDelegate.mm */; };
 		0D5A8FD023FF338800BEC130 /* Geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8486D23FC24BB00A876B2 /* Geometry.cpp */; };
 		0D5A8FD123FF338800BEC130 /* ActionInterval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8487823FC24BB00A876B2 /* ActionInterval.cpp */; };
 		0D5A8FD223FF338800BEC130 /* b2_broad_phase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D197823FC0CC500DBDECD /* b2_broad_phase.cpp */; };
@@ -205,11 +208,11 @@
 		0D5A8FEA23FF338800BEC130 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACE23FC09BB0036B70E /* Metal.framework */; };
 		0D5A8FEB23FF338800BEC130 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1FAACF23FC09BB0036B70E /* MetalKit.framework */; };
 		0D5A8FED23FF338800BEC130 /* all in Resources */ = {isa = PBXBuildFile; fileRef = 0DC5D06D23FEC17F0084EB79 /* all */; };
-		0D5A8FF823FF33E200BEC130 /* mak3do-tv.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D5A8FF823FF33E200BEC130 /* mak3do.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8FF323FF338800BEC130 /* mak3do.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D5A908623FF36E400BEC130 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D5A908B23FF376700BEC130 /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; };
 		0D5A90CC23FF3AEE00BEC130 /* GLTFSceneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A908323FF36D700BEC130 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0D5A90CF23FF3B6F00BEC130 /* mak3do-tv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */; };
+		0D5A90CF23FF3B6F00BEC130 /* mak3do.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8FF323FF338800BEC130 /* mak3do.framework */; };
 		0D5A90E0240189C800BEC130 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90D7240189C800BEC130 /* Texture.h */; };
 		0D5A90E1240189C800BEC130 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90D7240189C800BEC130 /* Texture.h */; };
 		0D5A90E2240189C800BEC130 /* Material.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5A90DE240189C800BEC130 /* Material.h */; };
@@ -237,9 +240,10 @@
 		0D5EA95B24029BC40043D3C3 /* libBulletCollision-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA94B24029B9C0043D3C3 /* libBulletCollision-ios.a */; };
 		0D5EA95C24029BC40043D3C3 /* libBulletDynamics-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA94224029B9B0043D3C3 /* libBulletDynamics-ios.a */; };
 		0D5EA95D24029BC40043D3C3 /* libLinearMath-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA95424029B9C0043D3C3 /* libLinearMath-ios.a */; };
-		0D5EA96424029C5B0043D3C3 /* libBulletCollision-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA94B24029B9C0043D3C3 /* libBulletCollision-ios.a */; };
-		0D5EA96524029C5B0043D3C3 /* libBulletDynamics-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA94224029B9B0043D3C3 /* libBulletDynamics-ios.a */; };
-		0D5EA96624029C5B0043D3C3 /* libLinearMath-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA95424029B9C0043D3C3 /* libLinearMath-ios.a */; };
+		0D794EFE2402DB100046D19B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D794EFC2402DB100046D19B /* Game.cpp */; };
+		0D794EFF2402DB100046D19B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D794EFC2402DB100046D19B /* Game.cpp */; };
+		0D794F002402DB100046D19B /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D794EFD2402DB100046D19B /* Game.h */; };
+		0D794F012402DB100046D19B /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D794EFD2402DB100046D19B /* Game.h */; };
 		0D881B2023FC46EA001A8250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D881B1F23FC46EA001A8250 /* Assets.xcassets */; };
 		0D881B2623FC46EA001A8250 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D881B2523FC46EA001A8250 /* main.m */; };
 		0D8D197F23FC0CC500DBDECD /* b2_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194423FC0CC500DBDECD /* b2_joint.cpp */; };
@@ -342,7 +346,6 @@
 		0DC5D06223FE7ACA0084EB79 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D06123FE7ACA0084EB79 /* types.h */; };
 		0DC5D06C23FEB8CC0084EB79 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC5D06B23FEB8CC0084EB79 /* GameController.framework */; };
 		0DC5D06E23FEC17F0084EB79 /* all in Resources */ = {isa = PBXBuildFile; fileRef = 0DC5D06D23FEC17F0084EB79 /* all */; };
-		0DE8487B23FC24BC00A876B2 /* Game.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FD23FC24BB00A876B2 /* Game.hpp */; };
 		0DE8487C23FC24BC00A876B2 /* tests.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0DE847FF23FC24BB00A876B2 /* tests.hpp */; };
 		0DE8488223FC24BC00A876B2 /* PhysicsWorld3DImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8480723FC24BB00A876B2 /* PhysicsWorld3DImpl.h */; };
 		0DE8488323FC24BC00A876B2 /* PhysicsElement3DImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8480823FC24BB00A876B2 /* PhysicsElement3DImpl.h */; };
@@ -373,7 +376,6 @@
 		0DE848AF23FC24BC00A876B2 /* ShaderTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8483B23FC24BB00A876B2 /* ShaderTypes.h */; };
 		0DE848B023FC24BC00A876B2 /* TestShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483C23FC24BB00A876B2 /* TestShaders.metal */; };
 		0DE848B123FC24BC00A876B2 /* DirectorDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8483D23FC24BB00A876B2 /* DirectorDisplayLink.h */; };
-		0DE848B323FC24BC00A876B2 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483F23FC24BB00A876B2 /* AppDelegate.mm */; };
 		0DE848B423FC24BC00A876B2 /* ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484023FC24BB00A876B2 /* ViewController.h */; };
 		0DE848B523FC24BC00A876B2 /* LightImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484323FC24BB00A876B2 /* LightImpl.h */; };
 		0DE848B623FC24BC00A876B2 /* BoxImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484423FC24BB00A876B2 /* BoxImpl.h */; };
@@ -408,6 +410,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0D0CC5F42402D8F100E02342 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D0CC5AB2402D8B200E02342;
+			remoteInfo = "BulletCollision-tvos";
+		};
+		0D0CC5F72402D8F100E02342 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D0CC5DC2402D8C500E02342;
+			remoteInfo = "BulletDynamics-tvos";
+		};
+		0D0CC5FA2402D8F100E02342 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D0CC5F22402D8DB00E02342;
+			remoteInfo = "LinearMath-tvos";
+		};
+		0D0CC5FC2402D8FA00E02342 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D0CC5432402D8B200E02342;
+			remoteInfo = "BulletCollision-tvos";
+		};
+		0D0CC5FE2402D8FA00E02342 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D0CC5AC2402D8C500E02342;
+			remoteInfo = "BulletDynamics-tvos";
+		};
+		0D0CC6002402D8FA00E02342 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D0CC5DD2402D8DB00E02342;
+			remoteInfo = "LinearMath-tvos";
+		};
 		0D522FC223FF1F850093D45A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */;
@@ -527,27 +571,6 @@
 			remoteGlobalIDString = 0D881BC923FC51F1001A8250;
 			remoteInfo = "LinearMath-ios";
 		};
-		0D5EA95E24029C540043D3C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D881B2F23FC51DC001A8250;
-			remoteInfo = "BulletCollision-ios";
-		};
-		0D5EA96024029C540043D3C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D881B9823FC51E8001A8250;
-			remoteInfo = "BulletDynamics-ios";
-		};
-		0D5EA96224029C540043D3C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D881BC923FC51F1001A8250;
-			remoteInfo = "LinearMath-ios";
-		};
 		0D881B2C23FC47E9001A8250 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DA944EA23D6429D00AEBEAA /* Project object */;
@@ -599,7 +622,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0D5A90CC23FF3AEE00BEC130 /* GLTFSceneKit.framework in Embed Frameworks */,
-				0D5A8FF823FF33E200BEC130 /* mak3do-tv.framework in Embed Frameworks */,
+				0D5A8FF823FF33E200BEC130 /* mak3do.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,6 +637,10 @@
 		0D0CC50F2402C81300E02342 /* earth_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_diffuse.png; sourceTree = "<group>"; };
 		0D0CC5102402C81300E02342 /* earth_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_specular.png; sourceTree = "<group>"; };
 		0D0CC51D2402C89900E02342 /* mak3do-tv-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mak3do-tv-Info.plist"; sourceTree = "<group>"; };
+		0D0CC53D2402D45C00E02342 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		0D0CC53E2402D45C00E02342 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0D0CC5402402D47000E02342 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0D0CC5412402D47000E02342 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		0D181C4323FD1A33001BA6F4 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLTFSceneKit.framework; path = Carthage/Build/iOS/GLTFSceneKit.framework; sourceTree = "<group>"; };
 		0D181C5623FD3BA9001BA6F4 /* Surface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Surface.h; sourceTree = "<group>"; };
 		0D181C5823FD3C21001BA6F4 /* SurfaceImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SurfaceImpl.mm; sourceTree = "<group>"; };
@@ -629,7 +656,7 @@
 		0D5A8F2723FF32FC00BEC130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D5A8F2C23FF32FC00BEC130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D5A8F2D23FF32FC00BEC130 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "mak3do-tv.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D5A8FF323FF338800BEC130 /* mak3do.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mak3do.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5A90D7240189C800BEC130 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		0D5A90DE240189C800BEC130 /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
 		0D5A90DF240189C800BEC130 /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
@@ -645,6 +672,8 @@
 		0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = "mak3do/externals/bullet-project-ios/BulletDynamics.xcodeproj"; sourceTree = "<group>"; };
 		0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = "mak3do/externals/bullet-project-ios/BulletCollision.xcodeproj"; sourceTree = "<group>"; };
 		0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = "mak3do/externals/bullet-project-ios/LinearMath.xcodeproj"; sourceTree = "<group>"; };
+		0D794EFC2402DB100046D19B /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		0D794EFD2402DB100046D19B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		0D881B1123FC46E7001A8250 /* mak3do-sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mak3do-sandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D881B1F23FC46EA001A8250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D881B2423FC46EA001A8250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -754,7 +783,6 @@
 		0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0DDF681023DC620B00827D46 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
-		0DE847FD23FC24BB00A876B2 /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		0DE847FF23FC24BB00A876B2 /* tests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tests.hpp; sourceTree = "<group>"; };
 		0DE8480123FC24BB00A876B2 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
 		0DE8480223FC24BB00A876B2 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
@@ -802,7 +830,6 @@
 		0DE8483223FC24BB00A876B2 /* Vec2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vec2.cpp; sourceTree = "<group>"; };
 		0DE8483323FC24BB00A876B2 /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Plane.cpp; sourceTree = "<group>"; };
 		0DE8483423FC24BB00A876B2 /* Vec3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vec3.cpp; sourceTree = "<group>"; };
-		0DE8483723FC24BB00A876B2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0DE8483823FC24BB00A876B2 /* SceneRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneRenderer.mm; sourceTree = "<group>"; };
 		0DE8483923FC24BB00A876B2 /* DirectorDisplayLink.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DirectorDisplayLink.mm; sourceTree = "<group>"; };
 		0DE8483A23FC24BB00A876B2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -810,7 +837,6 @@
 		0DE8483C23FC24BB00A876B2 /* TestShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = TestShaders.metal; sourceTree = "<group>"; };
 		0DE8483D23FC24BB00A876B2 /* DirectorDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectorDisplayLink.h; sourceTree = "<group>"; };
 		0DE8483E23FC24BB00A876B2 /* SceneRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneRenderer.h; sourceTree = "<group>"; };
-		0DE8483F23FC24BB00A876B2 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		0DE8484023FC24BB00A876B2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0DE8484323FC24BB00A876B2 /* LightImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightImpl.h; sourceTree = "<group>"; };
 		0DE8484423FC24BB00A876B2 /* BoxImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxImpl.h; sourceTree = "<group>"; };
@@ -885,7 +911,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D5A90CF23FF3B6F00BEC130 /* mak3do-tv.framework in Frameworks */,
+				0D5A90CF23FF3B6F00BEC130 /* mak3do.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,9 +919,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D5EA96424029C5B0043D3C3 /* libBulletCollision-ios.a in Frameworks */,
-				0D5EA96524029C5B0043D3C3 /* libBulletDynamics-ios.a in Frameworks */,
-				0D5EA96624029C5B0043D3C3 /* libLinearMath-ios.a in Frameworks */,
+				0D0CC6022402D90600E02342 /* libBulletCollision-tvos.a in Frameworks */,
+				0D0CC6032402D90600E02342 /* libBulletDynamics-tvos.a in Frameworks */,
+				0D0CC6042402D90600E02342 /* libLinearMath-tvos.a in Frameworks */,
 				0D5A908B23FF376700BEC130 /* GLTFSceneKit.framework in Frameworks */,
 				0D5A8FE523FF338800BEC130 /* GameController.framework in Frameworks */,
 				0D5A8FE923FF338800BEC130 /* SceneKit.framework in Frameworks */,
@@ -946,6 +972,8 @@
 			children = (
 				0D5A8F2723FF32FC00BEC130 /* Assets.xcassets */,
 				0D5A8F2C23FF32FC00BEC130 /* Info.plist */,
+				0D0CC5402402D47000E02342 /* AppDelegate.h */,
+				0D0CC5412402D47000E02342 /* AppDelegate.mm */,
 				0D5A8F2D23FF32FC00BEC130 /* main.m */,
 			);
 			path = "mak3do-sandbox-tv";
@@ -956,6 +984,7 @@
 			children = (
 				0D5EA94024029B9B0043D3C3 /* libBulletDynamics_xcode4_x64_debug.a */,
 				0D5EA94224029B9B0043D3C3 /* libBulletDynamics-ios.a */,
+				0D0CC5F82402D8F100E02342 /* libBulletDynamics-tvos.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -965,6 +994,7 @@
 			children = (
 				0D5EA94924029B9C0043D3C3 /* libBulletCollision_xcode4_x64_debug.a */,
 				0D5EA94B24029B9C0043D3C3 /* libBulletCollision-ios.a */,
+				0D0CC5F52402D8F100E02342 /* libBulletCollision-tvos.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -974,6 +1004,7 @@
 			children = (
 				0D5EA95224029B9C0043D3C3 /* libLinearMath_xcode4_x64_debug.a */,
 				0D5EA95424029B9C0043D3C3 /* libLinearMath-ios.a */,
+				0D0CC5FB2402D8F100E02342 /* libLinearMath-tvos.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -984,6 +1015,8 @@
 				0D522F9923FF1D3B0093D45A /* mak3do-sandbox.entitlements */,
 				0D881B1F23FC46EA001A8250 /* Assets.xcassets */,
 				0D881B2423FC46EA001A8250 /* Info.plist */,
+				0D0CC53E2402D45C00E02342 /* AppDelegate.h */,
+				0D0CC53D2402D45C00E02342 /* AppDelegate.mm */,
 				0D881B2523FC46EA001A8250 /* main.m */,
 			);
 			path = "mak3do-sandbox";
@@ -1181,7 +1214,7 @@
 				0D1FAA5223FC08050036B70E /* mak3do.framework */,
 				0D881B1123FC46E7001A8250 /* mak3do-sandbox.app */,
 				0D5A8F1623FF32FA00BEC130 /* mak3do-sandbox-tv.app */,
-				0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */,
+				0D5A8FF323FF338800BEC130 /* mak3do.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1226,7 +1259,8 @@
 		0DE847FC23FC24BB00A876B2 /* mak3do */ = {
 			isa = PBXGroup;
 			children = (
-				0DE847FD23FC24BB00A876B2 /* Game.hpp */,
+				0D794EFC2402DB100046D19B /* Game.cpp */,
+				0D794EFD2402DB100046D19B /* Game.h */,
 				0DC5D05423FE7A9A0084EB79 /* io */,
 				0DE847FE23FC24BB00A876B2 /* tests */,
 				0DE8480023FC24BB00A876B2 /* game */,
@@ -1357,7 +1391,6 @@
 		0DE8483623FC24BB00A876B2 /* apple */ = {
 			isa = PBXGroup;
 			children = (
-				0DE8483723FC24BB00A876B2 /* AppDelegate.h */,
 				0DE8483823FC24BB00A876B2 /* SceneRenderer.mm */,
 				0DE8483923FC24BB00A876B2 /* DirectorDisplayLink.mm */,
 				0DE8483A23FC24BB00A876B2 /* ViewController.m */,
@@ -1365,7 +1398,6 @@
 				0DE8483C23FC24BB00A876B2 /* TestShaders.metal */,
 				0DE8483D23FC24BB00A876B2 /* DirectorDisplayLink.h */,
 				0DE8483E23FC24BB00A876B2 /* SceneRenderer.h */,
-				0DE8483F23FC24BB00A876B2 /* AppDelegate.mm */,
 				0DE8484023FC24BB00A876B2 /* ViewController.h */,
 			);
 			path = apple;
@@ -1509,6 +1541,7 @@
 				0DE8487C23FC24BC00A876B2 /* tests.hpp in Headers */,
 				0D8D19EE23FC0CDC00DBDECD /* b2_distance.h in Headers */,
 				0D8D19ED23FC0CDC00DBDECD /* b2_body.h in Headers */,
+				0D794F002402DB100046D19B /* Game.h in Headers */,
 				0D8D198223FC0CC500DBDECD /* b2_chain_circle_contact.h in Headers */,
 				0D8D198B23FC0CC500DBDECD /* b2_contact_solver.h in Headers */,
 				0DE8488723FC24BC00A876B2 /* PhysicsElement2DImpl.h in Headers */,
@@ -1545,7 +1578,6 @@
 				0D8D19F423FC0CDC00DBDECD /* b2_mouse_joint.h in Headers */,
 				0D8D19E123FC0CDC00DBDECD /* b2_block_allocator.h in Headers */,
 				0D5A90FD24018D5300BEC130 /* MaterialImpl.h in Headers */,
-				0DE8487B23FC24BC00A876B2 /* Game.hpp in Headers */,
 				0D5A90E2240189C800BEC130 /* Material.h in Headers */,
 				0DE8488823FC24BC00A876B2 /* PhysicsWorld2DImpl.h in Headers */,
 				0D181C5723FD3BA9001BA6F4 /* Surface.h in Headers */,
@@ -1594,6 +1626,7 @@
 				0D5A8F5223FF338800BEC130 /* tests.hpp in Headers */,
 				0D5A8F5323FF338800BEC130 /* b2_distance.h in Headers */,
 				0D5A8F5423FF338800BEC130 /* b2_body.h in Headers */,
+				0D794F012402DB100046D19B /* Game.h in Headers */,
 				0D5A8F5523FF338800BEC130 /* b2_chain_circle_contact.h in Headers */,
 				0D5A8F5623FF338800BEC130 /* b2_contact_solver.h in Headers */,
 				0D5A8F5723FF338800BEC130 /* PhysicsElement2DImpl.h in Headers */,
@@ -1630,7 +1663,6 @@
 				0D5A8F7523FF338800BEC130 /* b2_mouse_joint.h in Headers */,
 				0D5A8F7623FF338800BEC130 /* b2_block_allocator.h in Headers */,
 				0D5A90FE24018D5300BEC130 /* MaterialImpl.h in Headers */,
-				0D5A8F7723FF338800BEC130 /* Game.hpp in Headers */,
 				0D5A90E3240189C800BEC130 /* Material.h in Headers */,
 				0D5A8F7823FF338800BEC130 /* PhysicsWorld2DImpl.h in Headers */,
 				0D5A8F7923FF338800BEC130 /* Surface.h in Headers */,
@@ -1709,14 +1741,14 @@
 			buildRules = (
 			);
 			dependencies = (
-				0D5EA95F24029C540043D3C3 /* PBXTargetDependency */,
-				0D5EA96124029C540043D3C3 /* PBXTargetDependency */,
-				0D5EA96324029C540043D3C3 /* PBXTargetDependency */,
+				0D0CC5FD2402D8FA00E02342 /* PBXTargetDependency */,
+				0D0CC5FF2402D8FA00E02342 /* PBXTargetDependency */,
+				0D0CC6012402D8FA00E02342 /* PBXTargetDependency */,
 				0D5A90CE23FF3B0200BEC130 /* PBXTargetDependency */,
 			);
 			name = "mak3do-tv";
 			productName = mak3do;
-			productReference = 0D5A8FF323FF338800BEC130 /* mak3do-tv.framework */;
+			productReference = 0D5A8FF323FF338800BEC130 /* mak3do.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		0D881B1023FC46E7001A8250 /* mak3do-sandbox */ = {
@@ -1798,6 +1830,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		0D0CC5F52402D8F100E02342 /* libBulletCollision-tvos.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libBulletCollision-tvos.a";
+			remoteRef = 0D0CC5F42402D8F100E02342 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D0CC5F82402D8F100E02342 /* libBulletDynamics-tvos.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libBulletDynamics-tvos.a";
+			remoteRef = 0D0CC5F72402D8F100E02342 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0D0CC5FB2402D8F100E02342 /* libLinearMath-tvos.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libLinearMath-tvos.a";
+			remoteRef = 0D0CC5FA2402D8F100E02342 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		0D522FC323FF1F850093D45A /* GLTFSceneKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1941,7 +1994,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"${SRCROOT}/mak3do/mak3do\"\n\necho 'Copying headers into Framework..'\nfor H in `find . -name \"*.h\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\nfor H in `find . -name \"all\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\n";
+			shellScript = "cd \"${SRCROOT}/mak3do/mak3do\"\n\necho 'Copying headers into Framework..'\nfor H in `find . -name \"*.h\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\nfor H in `find . -name \"all\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\nfor H in `find . -name \"*.inl\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\nfor H in `find . -name \"*.hpp\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\n";
 		};
 		0DE848EA23FC267E00A876B2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1958,7 +2011,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"${SRCROOT}/mak3do/mak3do\"\n\necho 'Copying headers into Framework..'\nfor H in `find . -name \"*.h\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\nfor H in `find . -name \"all\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\n";
+			shellScript = "cd \"${SRCROOT}/mak3do/mak3do\"\n\necho 'Copying headers into Framework..'\nfor H in `find . -name \"*.h\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\nfor H in `find . -name \"all\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\nfor H in `find . -name \"*.inl\"`;  do\n    echo \"copying ${H} to ${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\n    ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/${H}\"\ndone\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1985,6 +2038,7 @@
 				0D8D198923FC0CC500DBDECD /* b2_contact.cpp in Sources */,
 				0D8D199523FC0CC500DBDECD /* b2_edge_circle_contact.cpp in Sources */,
 				0D8D198523FC0CC500DBDECD /* b2_weld_joint.cpp in Sources */,
+				0D794EFE2402DB100046D19B /* Game.cpp in Sources */,
 				0DE848AD23FC24BC00A876B2 /* DirectorDisplayLink.mm in Sources */,
 				0DE848A923FC24BC00A876B2 /* Plane.cpp in Sources */,
 				0DE8488E23FC24BC00A876B2 /* PhysicsWorld3DImpl.cpp in Sources */,
@@ -2046,7 +2100,6 @@
 				0DE848BA23FC24BC00A876B2 /* BoxImpl.mm in Sources */,
 				0DE8488A23FC24BC00A876B2 /* GameObject.cpp in Sources */,
 				0D8D198123FC0CC500DBDECD /* b2_chain_circle_contact.cpp in Sources */,
-				0DE848B323FC24BC00A876B2 /* AppDelegate.mm in Sources */,
 				0DE848DC23FC24BC00A876B2 /* Geometry.cpp in Sources */,
 				0DE848E723FC24BC00A876B2 /* ActionInterval.cpp in Sources */,
 				0D8D19B023FC0CC500DBDECD /* b2_broad_phase.cpp in Sources */,
@@ -2073,6 +2126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0CC5422402D47000E02342 /* AppDelegate.mm in Sources */,
 				0D5A8F2E23FF32FC00BEC130 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2099,6 +2153,7 @@
 				0D5A8F9323FF338800BEC130 /* b2_contact.cpp in Sources */,
 				0D5A8F9423FF338800BEC130 /* b2_edge_circle_contact.cpp in Sources */,
 				0D5A8F9523FF338800BEC130 /* b2_weld_joint.cpp in Sources */,
+				0D794EFF2402DB100046D19B /* Game.cpp in Sources */,
 				0D5A8F9623FF338800BEC130 /* DirectorDisplayLink.mm in Sources */,
 				0D5A8F9723FF338800BEC130 /* Plane.cpp in Sources */,
 				0D5A8F9823FF338800BEC130 /* PhysicsWorld3DImpl.cpp in Sources */,
@@ -2160,7 +2215,6 @@
 				0D5A8FCC23FF338800BEC130 /* BoxImpl.mm in Sources */,
 				0D5A8FCD23FF338800BEC130 /* GameObject.cpp in Sources */,
 				0D5A8FCE23FF338800BEC130 /* b2_chain_circle_contact.cpp in Sources */,
-				0D5A8FCF23FF338800BEC130 /* AppDelegate.mm in Sources */,
 				0D5A8FD023FF338800BEC130 /* Geometry.cpp in Sources */,
 				0D5A8FD123FF338800BEC130 /* ActionInterval.cpp in Sources */,
 				0D5A8FD223FF338800BEC130 /* b2_broad_phase.cpp in Sources */,
@@ -2187,6 +2241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0CC53F2402D45C00E02342 /* AppDelegate.mm in Sources */,
 				0D881B2623FC46EA001A8250 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2194,6 +2249,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0D0CC5FD2402D8FA00E02342 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BulletCollision-tvos";
+			targetProxy = 0D0CC5FC2402D8FA00E02342 /* PBXContainerItemProxy */;
+		};
+		0D0CC5FF2402D8FA00E02342 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BulletDynamics-tvos";
+			targetProxy = 0D0CC5FE2402D8FA00E02342 /* PBXContainerItemProxy */;
+		};
+		0D0CC6012402D8FA00E02342 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LinearMath-tvos";
+			targetProxy = 0D0CC6002402D8FA00E02342 /* PBXContainerItemProxy */;
+		};
 		0D522FCB23FF1F930093D45A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GLTFSceneKit_iOS;
@@ -2223,21 +2293,6 @@
 			isa = PBXTargetDependency;
 			name = "LinearMath-ios";
 			targetProxy = 0D5EA95924029BBA0043D3C3 /* PBXContainerItemProxy */;
-		};
-		0D5EA95F24029C540043D3C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "BulletCollision-ios";
-			targetProxy = 0D5EA95E24029C540043D3C3 /* PBXContainerItemProxy */;
-		};
-		0D5EA96124029C540043D3C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "BulletDynamics-ios";
-			targetProxy = 0D5EA96024029C540043D3C3 /* PBXContainerItemProxy */;
-		};
-		0D5EA96324029C540043D3C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "LinearMath-ios";
-			targetProxy = 0D5EA96224029C540043D3C3 /* PBXContainerItemProxy */;
 		};
 		0D881B2D23FC47E9001A8250 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2398,7 +2453,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kikkei.mak3do;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = mak3do;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = appletvos;
@@ -2440,7 +2495,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kikkei.mak3do;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = mak3do;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = appletvos;

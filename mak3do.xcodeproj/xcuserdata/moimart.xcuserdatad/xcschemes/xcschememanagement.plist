@@ -14,10 +14,15 @@
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
+		<key>mak3do-mac-sandbox.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
 		<key>mak3do-sandbox-tv.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>3</integer>
 		</dict>
 		<key>mak3do-sandbox.xcscheme_^#shared#^_</key>
 		<dict>
@@ -27,7 +32,7 @@
 		<key>mak3do-tv.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>1</integer>
 		</dict>
 		<key>mak3do.xcscheme_^#shared#^_</key>
 		<dict>
@@ -38,6 +43,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>0D1FAA5123FC08050036B70E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0D5A8F1523FF32FA00BEC130</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0D5A8F3223FF338800BEC130</key>
 		<dict>
 			<key>primary</key>
 			<true/>
