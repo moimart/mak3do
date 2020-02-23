@@ -2380,7 +2380,7 @@
 					"$(SRCROOT)/mak3do/externals/bullet3/src",
 					"$(SRCROOT)/mak3do",
 				);
-				INFOPLIST_FILE = "mak3do copy-Info.plist";
+				INFOPLIST_FILE = "mak3do-tv-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2422,7 +2422,7 @@
 					"$(SRCROOT)/mak3do/externals/bullet3/src",
 					"$(SRCROOT)/mak3do",
 				);
-				INFOPLIST_FILE = "mak3do copy-Info.plist";
+				INFOPLIST_FILE = "mak3do-tv-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
