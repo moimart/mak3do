@@ -37,6 +37,9 @@ public:
     void normal(MaterialPropertyPtr property);
     MaterialPropertyPtr normal() const;
     
+    void roughness(MaterialPropertyPtr property);
+    MaterialPropertyPtr roughness() const;
+    
 private:
     MaterialImplPtr m_pimpl;
     

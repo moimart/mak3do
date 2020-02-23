@@ -38,7 +38,7 @@ void MaterialImpl::diffuse(MaterialPropertyPtr property)
 inline void fill_material(SCNMaterial* __material, MaterialPropertyPtr material, id contents)
 {
     if ([__material.diffuse.contents isKindOfClass: [UIColor class]]) {
-        UIColor* color = __material.diffuse.contents;
+        UIColor* color = contents;
         CGFloat r,g,b;
         [color getRed:&r green:&g blue:&b alpha:nil];
         material->color = color::RGB(r,g,b);
@@ -86,7 +86,7 @@ MaterialPropertyPtr MaterialImpl::specular()
 void MaterialImpl::ambient(MaterialPropertyPtr property)
 {
     SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
-    __material.diffuse.contents = [UIColor colorWithRed:property->color.r
+    __material.ambient.contents = [UIColor colorWithRed:property->color.r
                                                   green:property->color.g
                                                    blue:property->color.b
                                                   alpha:1.0];
@@ -107,10 +107,10 @@ void MaterialImpl::emission(MaterialPropertyPtr property)
     if (property->texture != nullptr) {
         auto texture_pimpl = std::dynamic_pointer_cast<TextureImpl>(property->texture->pimpl());
         SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
-        __material.diffuse.contents = [NSString stringWithUTF8String:texture_pimpl->m_native_texture.c_str()];
+        __material.emission.contents = [NSString stringWithUTF8String:texture_pimpl->m_native_texture.c_str()];
     } else {
         SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
-        __material.diffuse.contents = [UIColor colorWithRed:property->color.r
+        __material.emission.contents = [UIColor colorWithRed:property->color.r
                                                       green:property->color.g
                                                        blue:property->color.b
                                                       alpha:1.0];
@@ -132,10 +132,10 @@ void MaterialImpl::transparent(MaterialPropertyPtr property)
     if (property->texture != nullptr) {
         auto texture_pimpl = std::dynamic_pointer_cast<TextureImpl>(property->texture->pimpl());
         SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
-        __material.diffuse.contents = [NSString stringWithUTF8String:texture_pimpl->m_native_texture.c_str()];
+        __material.transparent.contents = [NSString stringWithUTF8String:texture_pimpl->m_native_texture.c_str()];
     } else {
         SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
-        __material.diffuse.contents = [UIColor colorWithRed:property->color.r
+        __material.transparent.contents = [UIColor colorWithRed:property->color.r
                                                       green:property->color.g
                                                        blue:property->color.b
                                                       alpha:1.0];
@@ -157,7 +157,7 @@ void MaterialImpl::displacement(MaterialPropertyPtr property)
     if (property->texture != nullptr) {
         auto texture_pimpl = std::dynamic_pointer_cast<TextureImpl>(property->texture->pimpl());
         SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
-        __material.diffuse.contents = [NSString stringWithUTF8String:texture_pimpl->m_native_texture.c_str()];
+        __material.displacement.contents = [NSString stringWithUTF8String:texture_pimpl->m_native_texture.c_str()];
     }
 }
 
@@ -167,6 +167,25 @@ MaterialPropertyPtr MaterialImpl::displacement()
     SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
     
     fill_material(__material, material, __material.displacement.contents);
+    
+    return material;
+}
+
+void MaterialImpl::roughness(MaterialPropertyPtr property)
+{
+    if (property->texture != nullptr) {
+        auto texture_pimpl = std::dynamic_pointer_cast<TextureImpl>(property->texture->pimpl());
+        SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
+        __material.roughness.contents = [NSString stringWithUTF8String:texture_pimpl->m_native_texture.c_str()];
+    }
+}
+
+MaterialPropertyPtr MaterialImpl::roughness()
+{
+    auto material = std::make_shared<MaterialProperty>();
+    SCNMaterial* __material = (__bridge SCNMaterial*)m_native_material;
+    
+    fill_material(__material, material, __material.roughness.contents);
     
     return material;
 }

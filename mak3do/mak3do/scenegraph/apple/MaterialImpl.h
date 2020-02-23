@@ -29,6 +29,9 @@ public:
     void normal(MaterialPropertyPtr property);
     MaterialPropertyPtr normal();
     
+    void roughness(MaterialPropertyPtr property);
+    MaterialPropertyPtr roughness();
+    
 private:
     Material* m_abstract;
     void* m_native_material;

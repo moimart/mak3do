@@ -11,7 +11,7 @@ class Geometry;
 class Geometry : public Base {
 public:
     Geometry();
-    ~Geometry();
+    virtual ~Geometry();
     
     void color(const color::RGBA& color);
     

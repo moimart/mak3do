@@ -8,6 +8,7 @@ class Texture : public Base
 {
 public:
     Texture(const std::string& filename);
+    virtual ~Texture() = default;
     
 private:
     TextureImplPtr m_pimpl;
