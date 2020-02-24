@@ -62,8 +62,8 @@
             filePath = "mak3do/mak3do/rendering/apple/SceneRenderer.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "-render:"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "mak3do/mak3do/rendering/apple/SceneRenderer.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-drawInMTKView:"
             landmarkType = "7">
          </BreakpointContent>

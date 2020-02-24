@@ -3,6 +3,7 @@
 #include <mak3do/scenegraph/Geometry.h>
 #include <mak3do/scenegraph/Material.h>
 #include <mak3do/scenegraph/Color.h>
+#include <mak3do/rendering/apple/SceneRenderer.h>
 #import <SceneKit/SceneKit.h>
 
 #if TARGET_OS_OSX
@@ -62,36 +63,27 @@ void GeometryImpl::value(const std::string& name, float value)
 {
     SCNGeometry* __geometry = (__bridge SCNGeometry*)m_native_geometry;
     
-    [SCNTransaction begin];
-    {
-        [__geometry setValue:[NSNumber numberWithFloat:value]
-                  forKeyPath:[NSString stringWithUTF8String:name.c_str()]];
-    }
-    [SCNTransaction commit];
+    [[SceneRenderer shared] updateValue:[NSNumber numberWithFloat:value]
+                                   name:[NSString stringWithUTF8String:name.c_str()]
+                                 object:__geometry];
 }
 
 void GeometryImpl::value(const std::string& name, const Vec3& value)
 {
     SCNGeometry* __geometry = (__bridge SCNGeometry*)m_native_geometry;
     
-    [SCNTransaction begin];
-    {
-        [__geometry setValue:[NSValue valueWithSCNVector3:SCNVector3Make(value.x, value.y, value.z)]
-                  forKeyPath:[NSString stringWithUTF8String:name.c_str()]];
-    }
-    [SCNTransaction commit];
+    [[SceneRenderer shared] updateValue:[NSValue valueWithSCNVector3:SCNVector3Make(value.x, value.y, value.z)]
+                                   name:[NSString stringWithUTF8String:name.c_str()]
+                                 object:__geometry];
 }
 
 void GeometryImpl::value(const std::string& name, const Vec4& value)
 {
     SCNGeometry* __geometry = (__bridge SCNGeometry*)m_native_geometry;
-    
-    [SCNTransaction begin];
-    {
-        [__geometry setValue:[NSValue valueWithSCNVector4:SCNVector4Make(value.x, value.y, value.z, value.w)]
-                  forKeyPath:[NSString stringWithUTF8String:name.c_str()]];
-    }
-    [SCNTransaction commit];
+
+    [[SceneRenderer shared] updateValue:[NSValue valueWithSCNVector4:SCNVector4Make(value.x, value.y, value.z, value.w)]
+                                   name:[NSString stringWithUTF8String:name.c_str()]
+                                 object:__geometry];
 }
 
 GeometryImpl::~GeometryImpl()

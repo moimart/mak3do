@@ -1,6 +1,9 @@
 #import "SceneRenderer.h"
 #import <Metal/Metal.h>
 
+#include <vector>
+#include <tuple>
+
 static SceneRenderer* _renderer = nil;
 
 @implementation SceneRenderer {
@@ -16,6 +19,8 @@ static SceneRenderer* _renderer = nil;
     
     NSString* _cameraName;
     SCNNode* _mainCamera;
+    
+    std::vector<std::tuple<NSValue*,NSString*,SCNGeometry*> > _values;
 };
 
 + (instancetype _Nonnull) shared {
@@ -29,6 +34,11 @@ static SceneRenderer* _renderer = nil;
     }
     
     return _renderer;
+}
+
+- (void)updateValue: (NSValue*_Nonnull)value name:(NSString*_Nonnull)name object:(NSObject*_Nonnull)object
+{
+    _values.push_back(std::make_tuple(value,name,object));
 }
 
 - (void)mtkView:(nonnull MTKView *)view drawableSizeWillChange:(CGSize)size
@@ -69,6 +79,20 @@ static SceneRenderer* _renderer = nil;
 
 - (void) update:(float)dt {
     _at += dt;
+    
+    //[SCNTransaction begin];
+    {
+        for (auto& t : _values) {
+            SCNGeometry* geometry = std::get<2>(t);
+            NSValue* value = std::get<0>(t);
+            NSString* string = std::get<1>(t);
+            
+            [geometry setValue:value forKeyPath:string];
+        }
+    }
+    //[SCNTransaction commit];
+    
+    _values.clear();
 }
 
 - (void) render: (float)dt {

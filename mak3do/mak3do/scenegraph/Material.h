@@ -49,6 +49,9 @@ public:
     void occlusion(MaterialPropertyPtr property);
     MaterialPropertyPtr occlusion() const;
     
+    void value(const std::string& name, float value);
+    void value(const std::string& name, const Vec3& value);
+    void value(const std::string& name, const Vec4& value);
 private:
     MaterialImplPtr m_pimpl;
     

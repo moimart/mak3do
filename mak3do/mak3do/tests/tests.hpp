@@ -391,6 +391,19 @@ void test_materials()
     node->add_node(node2);
     node2->action(RepeatForever::make(SpinBy::make(4, Vec3(0,360,0))));
     node->scale(Vec3::ONE*1.5f);
+    
+    std::string modifier =
+    "#pragma arguments\n"
+    "float amplitude;\n"
+    "#pragma body\n"
+    "_geometry.position +="
+    "    float4(_geometry.normal *"
+    "    (amplitude*_geometry.position.y*_geometry.position.x) *"
+    "    sin(1.0 * scn_frame.time),1.0);";
+    
+    geometry->modify_shader_geometry(modifier);
+    geometry->value("amplitude", .5f);
+    
 }
 
 }

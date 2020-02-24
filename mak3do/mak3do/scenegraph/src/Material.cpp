@@ -45,6 +45,22 @@ MATERIAL_IMPLEMENTATION(normal);
 MATERIAL_IMPLEMENTATION(roughness);
 MATERIAL_IMPLEMENTATION(occlusion);
 
+
+void Material::value(const std::string& name, float value)
+{
+    m_pimpl->value(name,value);
+}
+
+void Material::value(const std::string& name, const Vec3& value)
+{
+    m_pimpl->value(name,value);
+}
+
+void Material::value(const std::string& name, const Vec4& value)
+{
+    m_pimpl->value(name,value);
+}
+
 }
 
 

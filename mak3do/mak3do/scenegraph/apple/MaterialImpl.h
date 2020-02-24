@@ -35,6 +35,9 @@ public:
     void occlusion(MaterialPropertyPtr property);
     MaterialPropertyPtr occlusion();
     
+    void value(const std::string& name, float value);
+    void value(const std::string& name, const Vec3& value);
+    void value(const std::string& name, const Vec4& value);
 private:
     Material* m_abstract;
     void* m_native_material;
