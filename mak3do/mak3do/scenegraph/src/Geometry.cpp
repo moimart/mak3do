@@ -28,6 +28,21 @@ void Geometry::material(MaterialPtr material)
     m_geometry_pimpl->material(material);
 }
 
+void Geometry::value(const std::string& name, float value)
+{
+    m_geometry_pimpl->value(name,value);
+}
+
+void Geometry::value(const std::string& name, const Vec3& value)
+{
+    m_geometry_pimpl->value(name,value);
+}
+
+void Geometry::value(const std::string& name, const Vec4& value)
+{
+    m_geometry_pimpl->value(name,value);
+}
+
 Geometry::~Geometry()
 {
     std::string s = "";

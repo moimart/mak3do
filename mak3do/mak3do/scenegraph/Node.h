@@ -22,8 +22,8 @@ public:
     void visible(bool visible);
     bool visible() const;
     
-    void scale(float scale);
-    float scale() const;
+    void scale(const Vec3& scale);
+    Vec3 scale() const;
     
     void yaw(float yaw);
     float yaw() const;

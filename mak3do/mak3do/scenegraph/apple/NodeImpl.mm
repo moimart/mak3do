@@ -78,16 +78,17 @@ bool NodeImpl::visible() const
     return !node.isHidden;
 }
 
-void NodeImpl::scale(float scale)
+void NodeImpl::scale(const Vec3& scale)
 {
     SCNNode* node = (__bridge SCNNode*)m_native;
+    [node setScale:SCNVector3Make(scale.x, scale.y, scale.z)];
 }
 
-float NodeImpl::scale() const
+Vec3 NodeImpl::scale() const
 {
     SCNNode* node = (__bridge SCNNode*)m_native;
-    
-    return 1;
+    SCNVector3 scale = node.scale;
+    return Vec3(scale.x,scale.y,scale.z);
 }
 
 inline void set_ypr(SCNNode* node, const Vec3& ypr)

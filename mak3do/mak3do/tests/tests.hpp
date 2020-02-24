@@ -380,6 +380,17 @@ void test_materials()
     geometry->material(material);
     
     node->action(RepeatForever::make(SpinBy::make(8, 360)));
+    
+    auto node2 = std::make_shared<Node>();
+    auto geom2 = std::make_shared<Box>();
+    
+    geom2->material(material);
+    node2->geometry(geom2);
+    node2->position(Vec3(3,0,0));
+    
+    node->add_node(node2);
+    node2->action(RepeatForever::make(SpinBy::make(4, Vec3(0,360,0))));
+    node->scale(Vec3::ONE*1.5f);
 }
 
 }

@@ -58,6 +58,42 @@ void GeometryImpl::modify_shader_geometry(const std::string& modifier_code)
             [NSString stringWithUTF8String:modifier_code.c_str()]};
 }
 
+void GeometryImpl::value(const std::string& name, float value)
+{
+    SCNGeometry* __geometry = (__bridge SCNGeometry*)m_native_geometry;
+    
+    [SCNTransaction begin];
+    {
+        [__geometry setValue:[NSNumber numberWithFloat:value]
+                  forKeyPath:[NSString stringWithUTF8String:name.c_str()]];
+    }
+    [SCNTransaction commit];
+}
+
+void GeometryImpl::value(const std::string& name, const Vec3& value)
+{
+    SCNGeometry* __geometry = (__bridge SCNGeometry*)m_native_geometry;
+    
+    [SCNTransaction begin];
+    {
+        [__geometry setValue:[NSValue valueWithSCNVector3:SCNVector3Make(value.x, value.y, value.z)]
+                  forKeyPath:[NSString stringWithUTF8String:name.c_str()]];
+    }
+    [SCNTransaction commit];
+}
+
+void GeometryImpl::value(const std::string& name, const Vec4& value)
+{
+    SCNGeometry* __geometry = (__bridge SCNGeometry*)m_native_geometry;
+    
+    [SCNTransaction begin];
+    {
+        [__geometry setValue:[NSValue valueWithSCNVector4:SCNVector4Make(value.x, value.y, value.z, value.w)]
+                  forKeyPath:[NSString stringWithUTF8String:name.c_str()]];
+    }
+    [SCNTransaction commit];
+}
+
 GeometryImpl::~GeometryImpl()
 {
     SCNGeometry* geometry = (SCNGeometry*)CFBridgingRelease(m_native_geometry);

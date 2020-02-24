@@ -1098,7 +1098,7 @@ bool ScaleTo::init(float duration, float sx, float sy)
 void ScaleTo::start(NodePtr pTarget)
 {
     ActionInterval::start(pTarget);
-    m_fStartScaleX = pTarget->scale();
+    m_fStartScaleX = pTarget->scale().x;
     m_fDeltaX = m_fEndScaleX - m_fStartScaleX;
 }
 

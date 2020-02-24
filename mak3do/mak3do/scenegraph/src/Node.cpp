@@ -54,12 +54,12 @@ bool Node::visible() const
     return m_pimpl->visible();
 }
 
-void Node::scale(float scale)
+void Node::scale(const Vec3& scale)
 {
     m_pimpl->scale(scale);
 }
 
-float Node::scale() const
+Vec3 Node::scale() const
 {
     return m_pimpl->scale();
 }

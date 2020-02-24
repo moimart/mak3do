@@ -18,6 +18,10 @@ public:
     void modify_shader_geometry(const std::string& modifier_code);
     
     void material(MaterialPtr material);
+    
+    void value(const std::string& name, float value);
+    void value(const std::string& name, const Vec3& value);
+    void value(const std::string& name, const Vec4& value);
 protected:
     GeometryImplPtr m_geometry_pimpl;
     

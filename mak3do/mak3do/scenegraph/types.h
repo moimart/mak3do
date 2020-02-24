@@ -91,6 +91,9 @@ class Base;
 class Base : public std::enable_shared_from_this<Base> {
 public:
     virtual PimplPtr pimpl() const { return m_base_pimpl; };
+    virtual void value(const std::string& name, float value){}
+    virtual void value(const std::string& name, const Vec3& value){}
+    virtual void value(const std::string& name, const Vec4& value){}
 protected:
     PimplPtr m_base_pimpl;
 };
