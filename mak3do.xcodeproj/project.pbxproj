@@ -240,6 +240,7 @@
 		0D5EA95B24029BC40043D3C3 /* libBulletCollision-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA94B24029B9C0043D3C3 /* libBulletCollision-ios.a */; };
 		0D5EA95C24029BC40043D3C3 /* libBulletDynamics-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA94224029B9B0043D3C3 /* libBulletDynamics-ios.a */; };
 		0D5EA95D24029BC40043D3C3 /* libLinearMath-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5EA95424029B9C0043D3C3 /* libLinearMath-ios.a */; };
+		0D665C9A240849330005CED9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D665C97240849320005CED9 /* WebKit.framework */; };
 		0D794EFE2402DB100046D19B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D794EFC2402DB100046D19B /* Game.cpp */; };
 		0D794EFF2402DB100046D19B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D794EFC2402DB100046D19B /* Game.cpp */; };
 		0D794F002402DB100046D19B /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D794EFD2402DB100046D19B /* Game.h */; };
@@ -558,6 +559,8 @@
 		0D8D1A0223FC0CDC00DBDECD /* b2_world_callbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DC23FC0CDC00DBDECD /* b2_world_callbacks.h */; };
 		0D8D1A0323FC0CDC00DBDECD /* b2_contact_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */; };
 		0D8D1A0423FC0CDC00DBDECD /* b2_edge_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */; };
+		0D9CD39B24085D6800928297 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 0D9CD39A24085D6800928297 /* index.html */; };
+		0D9CD39C24085D6800928297 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 0D9CD39A24085D6800928297 /* index.html */; };
 		0DC5D05D23FE7A9A0084EB79 /* GameControllerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */; };
 		0DC5D05E23FE7A9A0084EB79 /* GameControllerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */; };
 		0DC5D05F23FE7A9A0084EB79 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05823FE7A9A0084EB79 /* GameController.cpp */; };
@@ -949,6 +952,7 @@
 		0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = "mak3do/externals/bullet-project-ios/BulletDynamics.xcodeproj"; sourceTree = "<group>"; };
 		0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = "mak3do/externals/bullet-project-ios/BulletCollision.xcodeproj"; sourceTree = "<group>"; };
 		0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = "mak3do/externals/bullet-project-ios/LinearMath.xcodeproj"; sourceTree = "<group>"; };
+		0D665C97240849320005CED9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		0D794EFC2402DB100046D19B /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		0D794EFD2402DB100046D19B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		0D794FCF2402DDC40046D19B /* mak3do.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mak3do.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1069,6 +1073,7 @@
 		0D8D19DC23FC0CDC00DBDECD /* b2_world_callbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_world_callbacks.h; sourceTree = "<group>"; };
 		0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_contact_manager.h; sourceTree = "<group>"; };
 		0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_edge_shape.h; sourceTree = "<group>"; };
+		0D9CD39A24085D6800928297 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		0DA9450623D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameControllerImpl.mm; sourceTree = "<group>"; };
 		0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameControllerImpl.h; sourceTree = "<group>"; };
@@ -1251,6 +1256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D665C9A240849330005CED9 /* WebKit.framework in Frameworks */,
 				0D7950062402E31E0046D19B /* mak3do.framework in Frameworks */,
 				0D7950092402E3270046D19B /* GLTFSceneKit.framework in Frameworks */,
 			);
@@ -1271,6 +1277,7 @@
 		0D0CC50A2402C81300E02342 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				0D9CD39A24085D6800928297 /* index.html */,
 				0D0CC50B2402C81300E02342 /* test_scene.scn */,
 				0D0CC50C2402C81300E02342 /* glass.glb */,
 				0D0CC50D2402C81300E02342 /* DamagedHelmet.glb */,
@@ -1590,6 +1597,7 @@
 		0DD1B0CE23D79FDE00E65C07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D665C97240849320005CED9 /* WebKit.framework */,
 				0D79506824031D290046D19B /* CoreMedia.framework */,
 				0D795053240314360046D19B /* AVFoundation.framework */,
 				0D7950552403143C0046D19B /* AVFoundation.framework */,
@@ -2429,6 +2437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DC5D06E23FEC17F0084EB79 /* all in Resources */,
+				0D9CD39B24085D6800928297 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2473,6 +2482,7 @@
 				0D794FFB2402E2FA0046D19B /* Main.storyboard in Resources */,
 				0D79500F2402E53E0046D19B /* earth_diffuse.png in Resources */,
 				0D79500C2402E53E0046D19B /* glass.glb in Resources */,
+				0D9CD39C24085D6800928297 /* index.html in Resources */,
 				0D79505B240315C00046D19B /* kikkei_7sec.mp4 in Resources */,
 				0D79500B2402E53E0046D19B /* test_scene.scn in Resources */,
 				0D79500D2402E53E0046D19B /* DamagedHelmet.glb in Resources */,
