@@ -24,10 +24,10 @@
     WKWebViewConfiguration* conf = [[WKWebViewConfiguration alloc] init];
     WKWebView* wv = [[WKWebView alloc] initWithFrame:self.view.frame configuration:conf];
     
-    NSURL* url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
-    //[wv setValue:[NSNumber numberWithBool:NO] forKey:@"drawsBackground"];
+    NSURL* url = [NSURL URLWithString:@"https://lh3.googleusercontent.com/proxy/H2IMmpB-EokvDz-2RpCOLaiIxJBLnF73zISJDHz4VExU5h6HMtiiSpQiH5dM0TDFUueBujbeBUNlXh6DfULaeMjAUvTQyLZyFU0UsKEecSIKZbu2o28ceNz-1e5Qpw"];//@"https://upload.wikimedia.org/wikipedia/commons/6/67/Firefox_Logo%2C_2017.svg"];
+    [wv setValue:[NSNumber numberWithBool:NO] forKey:@"drawsBackground"];
 
-    [wv loadFileURL:url allowingReadAccessToURL:url];
+    [wv loadRequest:[NSURLRequest requestWithURL:url]];
     wv.frame = self.view.bounds;
     
     [self.view addSubview:wv];
