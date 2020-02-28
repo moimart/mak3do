@@ -559,8 +559,6 @@
 		0D8D1A0223FC0CDC00DBDECD /* b2_world_callbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DC23FC0CDC00DBDECD /* b2_world_callbacks.h */; };
 		0D8D1A0323FC0CDC00DBDECD /* b2_contact_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */; };
 		0D8D1A0423FC0CDC00DBDECD /* b2_edge_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */; };
-		0D9CD39B24085D6800928297 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 0D9CD39A24085D6800928297 /* index.html */; };
-		0D9CD39C24085D6800928297 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 0D9CD39A24085D6800928297 /* index.html */; };
 		0DC5D05D23FE7A9A0084EB79 /* GameControllerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */; };
 		0DC5D05E23FE7A9A0084EB79 /* GameControllerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */; };
 		0DC5D05F23FE7A9A0084EB79 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05823FE7A9A0084EB79 /* GameController.cpp */; };
@@ -1073,7 +1071,6 @@
 		0D8D19DC23FC0CDC00DBDECD /* b2_world_callbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_world_callbacks.h; sourceTree = "<group>"; };
 		0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_contact_manager.h; sourceTree = "<group>"; };
 		0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_edge_shape.h; sourceTree = "<group>"; };
-		0D9CD39A24085D6800928297 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		0DA9450623D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameControllerImpl.mm; sourceTree = "<group>"; };
 		0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameControllerImpl.h; sourceTree = "<group>"; };
@@ -1277,7 +1274,6 @@
 		0D0CC50A2402C81300E02342 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				0D9CD39A24085D6800928297 /* index.html */,
 				0D0CC50B2402C81300E02342 /* test_scene.scn */,
 				0D0CC50C2402C81300E02342 /* glass.glb */,
 				0D0CC50D2402C81300E02342 /* DamagedHelmet.glb */,
@@ -2437,7 +2433,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DC5D06E23FEC17F0084EB79 /* all in Resources */,
-				0D9CD39B24085D6800928297 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2482,7 +2477,6 @@
 				0D794FFB2402E2FA0046D19B /* Main.storyboard in Resources */,
 				0D79500F2402E53E0046D19B /* earth_diffuse.png in Resources */,
 				0D79500C2402E53E0046D19B /* glass.glb in Resources */,
-				0D9CD39C24085D6800928297 /* index.html in Resources */,
 				0D79505B240315C00046D19B /* kikkei_7sec.mp4 in Resources */,
 				0D79500B2402E53E0046D19B /* test_scene.scn in Resources */,
 				0D79500D2402E53E0046D19B /* DamagedHelmet.glb in Resources */,
