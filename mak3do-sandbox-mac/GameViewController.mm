@@ -34,6 +34,14 @@
     _wv = wv;
 }
 
+- (NSSize)window:(NSWindow *)window willUseFullScreenContentSize:(NSSize)proposedSize
+{
+    _view.frame = self.view.bounds;
+    _wv.frame = self.view.bounds;
+    
+    return proposedSize;
+}
+
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)frameSize
 {
     _view.frame = self.view.bounds;
