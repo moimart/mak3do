@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <tuple>
+#include "RocketMetalRenderer.h"
 
 static SceneRenderer* _renderer = nil;
 
@@ -19,6 +20,8 @@ static SceneRenderer* _renderer = nil;
     
     NSString* _cameraName;
     SCNNode* _mainCamera;
+    
+    mak3do::rocket::RocketMetalRenderer* _rocket;
     
     std::vector<std::tuple<NSValue*,NSString*,SCNGeometry*> > _values;
 };
@@ -65,9 +68,11 @@ static SceneRenderer* _renderer = nil;
     
     _mainCamera = nil;
     
-    _at = 0;
+    _rocket =
+
+    _rocket = mak3do::rocket::RocketMetalRenderer::get(mak3do::Vec2(_viewportSize.x,_viewportSize.y),(__bridge void*)_device);
     
-    //_scene = [self setupScene];
+    _at = 0;
     
     return self;
 }
@@ -113,6 +118,11 @@ static SceneRenderer* _renderer = nil;
             auto frame = CGRectMake(0, 0, _viewportSize.x, _viewportSize.y);
             [_scnRenderer renderAtTime:_at viewport:frame commandBuffer:commandBuffer passDescriptor:renderPassDescriptor];
         }
+        
+        _rocket->render(mak3do::Vec2(_viewportSize.x,_viewportSize.y),
+                        (__bridge void*)commandBuffer,
+                        (__bridge void*)_view.currentDrawable.texture);
+        
         
         [commandBuffer presentDrawable:_view.currentDrawable];
     }

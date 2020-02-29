@@ -44,7 +44,12 @@ Director::Director()
     m_last_update = now;
 }
 
-void Director::deltaTime()
+float Director::delta() const
+{
+    return m_dt;
+}
+
+void Director::dt()
 {
     struct _timeval now;
 
@@ -67,7 +72,7 @@ void Director::deltaTime()
 
 void Director::loop()
 {
-    deltaTime();
+    dt();
     
     m_scheduler->update(m_dt);
     m_action_runner->update(m_dt);

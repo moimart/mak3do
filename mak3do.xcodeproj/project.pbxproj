@@ -157,7 +157,6 @@
 		0D5A8FB123FF338800BEC130 /* PhysicsElement2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481323FC24BB00A876B2 /* PhysicsElement2D.cpp */; };
 		0D5A8FB223FF338800BEC130 /* Director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8486B23FC24BB00A876B2 /* Director.cpp */; };
 		0D5A8FB323FF338800BEC130 /* b2_fixture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196623FC0CC500DBDECD /* b2_fixture.cpp */; };
-		0D5A8FB423FF338800BEC130 /* TestShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483C23FC24BB00A876B2 /* TestShaders.metal */; };
 		0D5A8FB523FF338800BEC130 /* b2_block_allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196E23FC0CC500DBDECD /* b2_block_allocator.cpp */; };
 		0D5A8FB623FF338800BEC130 /* b2_rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196A23FC0CC500DBDECD /* b2_rope.cpp */; };
 		0D5A8FB723FF338800BEC130 /* b2_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196C23FC0CC500DBDECD /* b2_draw.cpp */; };
@@ -373,7 +372,6 @@
 		0D794F8D2402DDC40046D19B /* PhysicsElement2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8481323FC24BB00A876B2 /* PhysicsElement2D.cpp */; };
 		0D794F8E2402DDC40046D19B /* Director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8486B23FC24BB00A876B2 /* Director.cpp */; };
 		0D794F8F2402DDC40046D19B /* b2_fixture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196623FC0CC500DBDECD /* b2_fixture.cpp */; };
-		0D794F902402DDC40046D19B /* TestShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483C23FC24BB00A876B2 /* TestShaders.metal */; };
 		0D794F912402DDC40046D19B /* b2_block_allocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196E23FC0CC500DBDECD /* b2_block_allocator.cpp */; };
 		0D794F922402DDC40046D19B /* b2_rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196A23FC0CC500DBDECD /* b2_rope.cpp */; };
 		0D794F932402DDC40046D19B /* b2_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D196C23FC0CC500DBDECD /* b2_draw.cpp */; };
@@ -465,6 +463,10 @@
 		0D79506724031A4D0046D19B /* VideoTextureImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D79505C240317420046D19B /* VideoTextureImpl.h */; };
 		0D881B2023FC46EA001A8250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D881B1F23FC46EA001A8250 /* Assets.xcassets */; };
 		0D881B2623FC46EA001A8250 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D881B2523FC46EA001A8250 /* main.m */; };
+		0D89B6CE240B0C16009A77E9 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC7AC3240AFB5400AA57DB /* libFreetype2.a */; };
+		0D89B6CF240B0CEA009A77E9 /* liblibrocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC7160240A7B8C00AA57DB /* liblibrocket.a */; };
+		0D89B6D2240B0DCC009A77E9 /* libFreetype2-tvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC7AC7240AFB5400AA57DB /* libFreetype2-tvos.a */; };
+		0D89B6D3240B0E09009A77E9 /* liblibrocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC76B7240A7E7400AA57DB /* liblibrocket-tvOS.a */; };
 		0D8D197F23FC0CC500DBDECD /* b2_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194423FC0CC500DBDECD /* b2_joint.cpp */; };
 		0D8D198023FC0CC500DBDECD /* b2_chain_polygon_contact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D194523FC0CC500DBDECD /* b2_chain_polygon_contact.h */; };
 		0D8D198123FC0CC500DBDECD /* b2_chain_circle_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D194623FC0CC500DBDECD /* b2_chain_circle_contact.cpp */; };
@@ -558,6 +560,17 @@
 		0D8D1A0223FC0CDC00DBDECD /* b2_world_callbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DC23FC0CDC00DBDECD /* b2_world_callbacks.h */; };
 		0D8D1A0323FC0CDC00DBDECD /* b2_contact_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */; };
 		0D8D1A0423FC0CDC00DBDECD /* b2_edge_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */; };
+		0DBC76C0240A801E00AA57DB /* RocketMetalRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */; };
+		0DBC76C1240A801E00AA57DB /* RocketMetalRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */; };
+		0DBC76C2240A801E00AA57DB /* RocketMetalRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */; };
+		0DBC76C3240A801E00AA57DB /* RocketMetalRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC76BF240A801E00AA57DB /* RocketMetalRenderer.h */; };
+		0DBC76C4240A801E00AA57DB /* RocketMetalRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC76BF240A801E00AA57DB /* RocketMetalRenderer.h */; };
+		0DBC76C5240A801E00AA57DB /* RocketMetalRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC76BF240A801E00AA57DB /* RocketMetalRenderer.h */; };
+		0DBC76CE240A9B8900AA57DB /* liblibrocket-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC76B9240A7E7400AA57DB /* liblibrocket-macOS.a */; };
+		0DBC76D1240AD83500AA57DB /* RocketShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76D0240AD83500AA57DB /* RocketShaders.metal */; };
+		0DBC76D2240AD83500AA57DB /* RocketShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76D0240AD83500AA57DB /* RocketShaders.metal */; };
+		0DBC76D3240AD83500AA57DB /* RocketShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76D0240AD83500AA57DB /* RocketShaders.metal */; };
+		0DBC7DA5240B019200AA57DB /* libFreetype2-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC7AC5240AFB5400AA57DB /* libFreetype2-mac.a */; };
 		0DC5D05D23FE7A9A0084EB79 /* GameControllerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */; };
 		0DC5D05E23FE7A9A0084EB79 /* GameControllerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */; };
 		0DC5D05F23FE7A9A0084EB79 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05823FE7A9A0084EB79 /* GameController.cpp */; };
@@ -593,7 +606,6 @@
 		0DE848AD23FC24BC00A876B2 /* DirectorDisplayLink.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483923FC24BB00A876B2 /* DirectorDisplayLink.mm */; };
 		0DE848AE23FC24BC00A876B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483A23FC24BB00A876B2 /* ViewController.m */; };
 		0DE848AF23FC24BC00A876B2 /* ShaderTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8483B23FC24BB00A876B2 /* ShaderTypes.h */; };
-		0DE848B023FC24BC00A876B2 /* TestShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DE8483C23FC24BB00A876B2 /* TestShaders.metal */; };
 		0DE848B123FC24BC00A876B2 /* DirectorDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8483D23FC24BB00A876B2 /* DirectorDisplayLink.h */; };
 		0DE848B423FC24BC00A876B2 /* ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484023FC24BB00A876B2 /* ViewController.h */; };
 		0DE848B523FC24BC00A876B2 /* LightImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE8484323FC24BB00A876B2 /* LightImpl.h */; };
@@ -831,6 +843,90 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0D1FAA5123FC08050036B70E;
 			remoteInfo = mak3do;
+		};
+		0D89B6C8240B0C0A009A77E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6382B1B00FB0FC5100ECAC02;
+			remoteInfo = Freetype2;
+		};
+		0D89B6D0240B0DC7009A77E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DBC7047240A787F00AA57DB;
+			remoteInfo = "Freetype2-tvos";
+		};
+		0DBC715F240A7B8C00AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0DBC714F240A7B8A00AA57DB;
+			remoteInfo = librocket;
+		};
+		0DBC76B2240A7E7300AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DBC7169240A7BBB00AA57DB;
+			remoteInfo = "librocket-macOS";
+		};
+		0DBC76B6240A7E7400AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0DBC7168240A7BB300AA57DB;
+			remoteInfo = "librocket-tvOS";
+		};
+		0DBC76B8240A7E7400AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0DBC7170240A7BBB00AA57DB;
+			remoteInfo = "librocket-macOS";
+		};
+		0DBC76BA240A7E8600AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DBC7161240A7BB300AA57DB;
+			remoteInfo = "librocket-tvOS";
+		};
+		0DBC76BC240A7E8E00AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DBC714E240A7B8A00AA57DB;
+			remoteInfo = librocket;
+		};
+		0DBC7AC2240AFB5400AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6382B1B10FB0FC5100ECAC02;
+			remoteInfo = Freetype2;
+		};
+		0DBC7AC4240AFB5400AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0DBC7046240A785700AA57DB;
+			remoteInfo = "Freetype2-mac";
+		};
+		0DBC7AC6240AFB5400AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0DBC7136240A787F00AA57DB;
+			remoteInfo = "Freetype2-tvos";
+		};
+		0DBC7DA3240B018A00AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DBC6F57240A785700AA57DB;
+			remoteInfo = "Freetype2-mac";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1070,6 +1166,11 @@
 		0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_contact_manager.h; sourceTree = "<group>"; };
 		0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_edge_shape.h; sourceTree = "<group>"; };
 		0DA9450623D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = librocket.xcodeproj; path = "mak3do/externals/rocket-project-xcode/librocket/librocket.xcodeproj"; sourceTree = "<group>"; };
+		0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RocketMetalRenderer.mm; sourceTree = "<group>"; };
+		0DBC76BF240A801E00AA57DB /* RocketMetalRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RocketMetalRenderer.h; sourceTree = "<group>"; };
+		0DBC76D0240AD83500AA57DB /* RocketShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = RocketShaders.metal; sourceTree = "<group>"; };
+		0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = freetype2.xcodeproj; path = "mak3do/externals/freetype2-project-xcode/freetype2.xcodeproj"; sourceTree = "<group>"; };
 		0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameControllerImpl.mm; sourceTree = "<group>"; };
 		0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameControllerImpl.h; sourceTree = "<group>"; };
 		0DC5D05823FE7A9A0084EB79 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameController.cpp; sourceTree = "<group>"; };
@@ -1132,7 +1233,6 @@
 		0DE8483923FC24BB00A876B2 /* DirectorDisplayLink.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DirectorDisplayLink.mm; sourceTree = "<group>"; };
 		0DE8483A23FC24BB00A876B2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0DE8483B23FC24BB00A876B2 /* ShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
-		0DE8483C23FC24BB00A876B2 /* TestShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = TestShaders.metal; sourceTree = "<group>"; };
 		0DE8483D23FC24BB00A876B2 /* DirectorDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectorDisplayLink.h; sourceTree = "<group>"; };
 		0DE8483E23FC24BB00A876B2 /* SceneRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneRenderer.h; sourceTree = "<group>"; };
 		0DE8484023FC24BB00A876B2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -1194,6 +1294,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D89B6CF240B0CEA009A77E9 /* liblibrocket.a in Frameworks */,
+				0D89B6CE240B0C16009A77E9 /* libFreetype2.a in Frameworks */,
 				0D5EA95B24029BC40043D3C3 /* libBulletCollision-ios.a in Frameworks */,
 				0D5EA95C24029BC40043D3C3 /* libBulletDynamics-ios.a in Frameworks */,
 				0D795054240314360046D19B /* AVFoundation.framework in Frameworks */,
@@ -1218,6 +1320,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D89B6D3240B0E09009A77E9 /* liblibrocket-tvOS.a in Frameworks */,
+				0D89B6D2240B0DCC009A77E9 /* libFreetype2-tvos.a in Frameworks */,
 				0D0CC6022402D90600E02342 /* libBulletCollision-tvos.a in Frameworks */,
 				0D0CC6032402D90600E02342 /* libBulletDynamics-tvos.a in Frameworks */,
 				0D7950562403143D0046D19B /* AVFoundation.framework in Frameworks */,
@@ -1234,6 +1338,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DBC7DA5240B019200AA57DB /* libFreetype2-mac.a in Frameworks */,
+				0DBC76CE240A9B8900AA57DB /* liblibrocket-macOS.a in Frameworks */,
 				0D794FE32402E22D0046D19B /* AppKit.framework in Frameworks */,
 				0D794FDE2402DEC70046D19B /* libBulletCollision_xcode4_x64_debug.a in Frameworks */,
 				0D795057240314430046D19B /* AVFoundation.framework in Frameworks */,
@@ -1534,6 +1640,8 @@
 		0DA944E923D6429D00AEBEAA = {
 			isa = PBXGroup;
 			children = (
+				0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */,
+				0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */,
 				0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */,
 				0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */,
 				0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */,
@@ -1562,6 +1670,26 @@
 				0D5A8FF323FF338800BEC130 /* mak3do.framework */,
 				0D794FCF2402DDC40046D19B /* mak3do.framework */,
 				0D794FE92402E2F90046D19B /* mak3do-sandbox-mac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0DBC715C240A7B8A00AA57DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DBC7160240A7B8C00AA57DB /* liblibrocket.a */,
+				0DBC76B7240A7E7400AA57DB /* liblibrocket-tvOS.a */,
+				0DBC76B9240A7E7400AA57DB /* liblibrocket-macOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0DBC7ABD240AFB5400AA57DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DBC7AC3240AFB5400AA57DB /* libFreetype2.a */,
+				0DBC7AC5240AFB5400AA57DB /* libFreetype2-mac.a */,
+				0DBC7AC7240AFB5400AA57DB /* libFreetype2-tvos.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1742,11 +1870,13 @@
 		0DE8483623FC24BB00A876B2 /* apple */ = {
 			isa = PBXGroup;
 			children = (
+				0DBC76BF240A801E00AA57DB /* RocketMetalRenderer.h */,
+				0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */,
 				0DE8483823FC24BB00A876B2 /* SceneRenderer.mm */,
 				0DE8483923FC24BB00A876B2 /* DirectorDisplayLink.mm */,
 				0DE8483A23FC24BB00A876B2 /* ViewController.m */,
 				0DE8483B23FC24BB00A876B2 /* ShaderTypes.h */,
-				0DE8483C23FC24BB00A876B2 /* TestShaders.metal */,
+				0DBC76D0240AD83500AA57DB /* RocketShaders.metal */,
 				0DE8483D23FC24BB00A876B2 /* DirectorDisplayLink.h */,
 				0DE8483E23FC24BB00A876B2 /* SceneRenderer.h */,
 				0DE8484023FC24BB00A876B2 /* ViewController.h */,
@@ -1903,6 +2033,7 @@
 				0D8D199923FC0CC500DBDECD /* b2_polygon_contact.h in Headers */,
 				0D8D198323FC0CC500DBDECD /* b2_polygon_circle_contact.h in Headers */,
 				0DE848B723FC24BC00A876B2 /* NodeImpl.h in Headers */,
+				0DBC76C3240A801E00AA57DB /* RocketMetalRenderer.h in Headers */,
 				0D8D19E823FC0CDC00DBDECD /* b2_broad_phase.h in Headers */,
 				0D79506424031A4B0046D19B /* VideoTextureImpl.h in Headers */,
 				0D8D19E323FC0CDC00DBDECD /* b2_weld_joint.h in Headers */,
@@ -1990,6 +2121,7 @@
 				0D5A8F5823FF338800BEC130 /* b2_polygon_contact.h in Headers */,
 				0D5A8F5923FF338800BEC130 /* b2_polygon_circle_contact.h in Headers */,
 				0D5A8F5A23FF338800BEC130 /* NodeImpl.h in Headers */,
+				0DBC76C4240A801E00AA57DB /* RocketMetalRenderer.h in Headers */,
 				0D5A8F5B23FF338800BEC130 /* b2_broad_phase.h in Headers */,
 				0D79506624031A4C0046D19B /* VideoTextureImpl.h in Headers */,
 				0D5A8F5C23FF338800BEC130 /* b2_weld_joint.h in Headers */,
@@ -2105,6 +2237,7 @@
 				0D794F462402DDC40046D19B /* b2_shape.h in Headers */,
 				0D794F472402DDC40046D19B /* Mesh.h in Headers */,
 				0D794F482402DDC40046D19B /* b2_contact.h in Headers */,
+				0DBC76C5240A801E00AA57DB /* RocketMetalRenderer.h in Headers */,
 				0D794F492402DDC40046D19B /* b2_mouse_joint.h in Headers */,
 				0D794F4A2402DDC40046D19B /* b2_block_allocator.h in Headers */,
 				0D794F4B2402DDC40046D19B /* MaterialImpl.h in Headers */,
@@ -2143,6 +2276,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				0DBC76BD240A7E8E00AA57DB /* PBXTargetDependency */,
+				0D89B6C9240B0C0A009A77E9 /* PBXTargetDependency */,
 				0D5EA95624029BBA0043D3C3 /* PBXTargetDependency */,
 				0D5EA95824029BBA0043D3C3 /* PBXTargetDependency */,
 				0D5EA95A24029BBA0043D3C3 /* PBXTargetDependency */,
@@ -2186,6 +2321,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				0D89B6D1240B0DC7009A77E9 /* PBXTargetDependency */,
+				0DBC76BB240A7E8600AA57DB /* PBXTargetDependency */,
 				0D0CC5FD2402D8FA00E02342 /* PBXTargetDependency */,
 				0D0CC5FF2402D8FA00E02342 /* PBXTargetDependency */,
 				0D0CC6012402D8FA00E02342 /* PBXTargetDependency */,
@@ -2210,6 +2347,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				0DBC7DA4240B018A00AA57DB /* PBXTargetDependency */,
+				0DBC76B3240A7E7300AA57DB /* PBXTargetDependency */,
 				0D794FD92402DE870046D19B /* PBXTargetDependency */,
 				0D794FD22402DE640046D19B /* PBXTargetDependency */,
 				0D794FD42402DE640046D19B /* PBXTargetDependency */,
@@ -2302,8 +2441,16 @@
 					ProjectRef = 0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */;
 				},
 				{
+					ProductGroup = 0DBC7ABD240AFB5400AA57DB /* Products */;
+					ProjectRef = 0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */;
+				},
+				{
 					ProductGroup = 0D522FBC23FF1F850093D45A /* Products */;
 					ProjectRef = 0D522FBB23FF1F850093D45A /* GLTFSceneKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 0DBC715C240A7B8A00AA57DB /* Products */;
+					ProjectRef = 0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */;
 				},
 				{
 					ProductGroup = 0D5EA94D24029B9C0043D3C3 /* Products */;
@@ -2419,6 +2566,48 @@
 			fileType = archive.ar;
 			path = "libLinearMath-ios.a";
 			remoteRef = 0D5EA95324029B9C0043D3C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DBC7160240A7B8C00AA57DB /* liblibrocket.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibrocket.a;
+			remoteRef = 0DBC715F240A7B8C00AA57DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DBC76B7240A7E7400AA57DB /* liblibrocket-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "liblibrocket-tvOS.a";
+			remoteRef = 0DBC76B6240A7E7400AA57DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DBC76B9240A7E7400AA57DB /* liblibrocket-macOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "liblibrocket-macOS.a";
+			remoteRef = 0DBC76B8240A7E7400AA57DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DBC7AC3240AFB5400AA57DB /* libFreetype2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFreetype2.a;
+			remoteRef = 0DBC7AC2240AFB5400AA57DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DBC7AC5240AFB5400AA57DB /* libFreetype2-mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFreetype2-mac.a";
+			remoteRef = 0DBC7AC4240AFB5400AA57DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DBC7AC7240AFB5400AA57DB /* libFreetype2-tvos.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFreetype2-tvos.a";
+			remoteRef = 0DBC7AC6240AFB5400AA57DB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2563,6 +2752,7 @@
 				0D8D199B23FC0CC500DBDECD /* b2_rope_joint.cpp in Sources */,
 				0D8D199223FC0CC500DBDECD /* b2_contact_manager.cpp in Sources */,
 				0D5A90F524018D5300BEC130 /* MeshImpl.mm in Sources */,
+				0DBC76D1240AD83500AA57DB /* RocketShaders.metal in Sources */,
 				0D8D19AB23FC0CC500DBDECD /* b2_collide_circle.cpp in Sources */,
 				0DE8488F23FC24BC00A876B2 /* PhysicsWorld.cpp in Sources */,
 				0DE848DD23FC24BC00A876B2 /* Scene.cpp in Sources */,
@@ -2594,6 +2784,7 @@
 				0DC5D05D23FE7A9A0084EB79 /* GameControllerImpl.mm in Sources */,
 				0DE848E523FC24BC00A876B2 /* Scheduler.cpp in Sources */,
 				0DE848DF23FC24BC00A876B2 /* Camera.cpp in Sources */,
+				0DBC76C0240A801E00AA57DB /* RocketMetalRenderer.mm in Sources */,
 				0D8D19AD23FC0CC500DBDECD /* b2_collision.cpp in Sources */,
 				0D5A90F924018D5300BEC130 /* TextureImpl.mm in Sources */,
 				0DE8489123FC24BC00A876B2 /* PhysicsWorld2DImpl.cpp in Sources */,
@@ -2610,7 +2801,6 @@
 				0DE8488C23FC24BC00A876B2 /* PhysicsElement2D.cpp in Sources */,
 				0DE848DA23FC24BC00A876B2 /* Director.cpp in Sources */,
 				0D8D19A123FC0CC500DBDECD /* b2_fixture.cpp in Sources */,
-				0DE848B023FC24BC00A876B2 /* TestShaders.metal in Sources */,
 				0D8D19A723FC0CC500DBDECD /* b2_block_allocator.cpp in Sources */,
 				0D8D19A423FC0CC500DBDECD /* b2_rope.cpp in Sources */,
 				0D8D19A523FC0CC500DBDECD /* b2_draw.cpp in Sources */,
@@ -2680,6 +2870,7 @@
 				0D5A8F8923FF338800BEC130 /* b2_rope_joint.cpp in Sources */,
 				0D5A8F8A23FF338800BEC130 /* b2_contact_manager.cpp in Sources */,
 				0D5A90F624018D5300BEC130 /* MeshImpl.mm in Sources */,
+				0DBC76D2240AD83500AA57DB /* RocketShaders.metal in Sources */,
 				0D5A8F8B23FF338800BEC130 /* b2_collide_circle.cpp in Sources */,
 				0D5A8F8C23FF338800BEC130 /* PhysicsWorld.cpp in Sources */,
 				0D5A8F8D23FF338800BEC130 /* Scene.cpp in Sources */,
@@ -2711,6 +2902,7 @@
 				0D5A8FA323FF338800BEC130 /* GameControllerImpl.mm in Sources */,
 				0D5A8FA423FF338800BEC130 /* Scheduler.cpp in Sources */,
 				0D5A8FA523FF338800BEC130 /* Camera.cpp in Sources */,
+				0DBC76C1240A801E00AA57DB /* RocketMetalRenderer.mm in Sources */,
 				0D5A8FA623FF338800BEC130 /* b2_collision.cpp in Sources */,
 				0D5A90FA24018D5300BEC130 /* TextureImpl.mm in Sources */,
 				0D5A8FA723FF338800BEC130 /* PhysicsWorld2DImpl.cpp in Sources */,
@@ -2727,7 +2919,6 @@
 				0D5A8FB123FF338800BEC130 /* PhysicsElement2D.cpp in Sources */,
 				0D5A8FB223FF338800BEC130 /* Director.cpp in Sources */,
 				0D5A8FB323FF338800BEC130 /* b2_fixture.cpp in Sources */,
-				0D5A8FB423FF338800BEC130 /* TestShaders.metal in Sources */,
 				0D5A8FB523FF338800BEC130 /* b2_block_allocator.cpp in Sources */,
 				0D5A8FB623FF338800BEC130 /* b2_rope.cpp in Sources */,
 				0D5A8FB723FF338800BEC130 /* b2_draw.cpp in Sources */,
@@ -2807,6 +2998,7 @@
 				0D794F722402DDC40046D19B /* b2_dynamic_tree.cpp in Sources */,
 				0D794F732402DDC40046D19B /* SurfaceImpl.mm in Sources */,
 				0D794F742402DDC40046D19B /* PhysicsElement3D.cpp in Sources */,
+				0DBC76D3240AD83500AA57DB /* RocketShaders.metal in Sources */,
 				0D794F752402DDC40046D19B /* NodeImpl.mm in Sources */,
 				0D794F762402DDC40046D19B /* b2_gear_joint.cpp in Sources */,
 				0D794F772402DDC40046D19B /* b2_wheel_joint.cpp in Sources */,
@@ -2834,11 +3026,11 @@
 				0D794F8D2402DDC40046D19B /* PhysicsElement2D.cpp in Sources */,
 				0D794F8E2402DDC40046D19B /* Director.cpp in Sources */,
 				0D794F8F2402DDC40046D19B /* b2_fixture.cpp in Sources */,
-				0D794F902402DDC40046D19B /* TestShaders.metal in Sources */,
 				0D794F912402DDC40046D19B /* b2_block_allocator.cpp in Sources */,
 				0D794F922402DDC40046D19B /* b2_rope.cpp in Sources */,
 				0D794F932402DDC40046D19B /* b2_draw.cpp in Sources */,
 				0D794F942402DDC40046D19B /* b2_math.cpp in Sources */,
+				0DBC76C2240A801E00AA57DB /* RocketMetalRenderer.mm in Sources */,
 				0D794F952402DDC40046D19B /* b2_edge_shape.cpp in Sources */,
 				0D794F962402DDC40046D19B /* GeometryImpl.mm in Sources */,
 				0D794F972402DDC40046D19B /* b2_island.cpp in Sources */,
@@ -2981,6 +3173,36 @@
 			target = 0D1FAA5123FC08050036B70E /* mak3do */;
 			targetProxy = 0D881B2C23FC47E9001A8250 /* PBXContainerItemProxy */;
 		};
+		0D89B6C9240B0C0A009A77E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Freetype2;
+			targetProxy = 0D89B6C8240B0C0A009A77E9 /* PBXContainerItemProxy */;
+		};
+		0D89B6D1240B0DC7009A77E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Freetype2-tvos";
+			targetProxy = 0D89B6D0240B0DC7009A77E9 /* PBXContainerItemProxy */;
+		};
+		0DBC76B3240A7E7300AA57DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "librocket-macOS";
+			targetProxy = 0DBC76B2240A7E7300AA57DB /* PBXContainerItemProxy */;
+		};
+		0DBC76BB240A7E8600AA57DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "librocket-tvOS";
+			targetProxy = 0DBC76BA240A7E8600AA57DB /* PBXContainerItemProxy */;
+		};
+		0DBC76BD240A7E8E00AA57DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = librocket;
+			targetProxy = 0DBC76BC240A7E8E00AA57DB /* PBXContainerItemProxy */;
+		};
+		0DBC7DA4240B018A00AA57DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Freetype2-mac";
+			targetProxy = 0DBC7DA3240B018A00AA57DB /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -3017,6 +3239,8 @@
 					"$(SRCROOT)/mak3do/externals/box2d/src",
 					"$(SRCROOT)/mak3do/externals/bullet3/src",
 					"$(SRCROOT)/mak3do",
+					"$(SRCROOT)/mak3do/externals/libRocket/Include",
+					"$(SRCROOT)/mak3do/externals/freetype2-ios/include",
 				);
 				INFOPLIST_FILE = mak3do/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -3058,6 +3282,8 @@
 					"$(SRCROOT)/mak3do/externals/box2d/src",
 					"$(SRCROOT)/mak3do/externals/bullet3/src",
 					"$(SRCROOT)/mak3do",
+					"$(SRCROOT)/mak3do/externals/libRocket/Include",
+					"$(SRCROOT)/mak3do/externals/freetype2-ios/include",
 				);
 				INFOPLIST_FILE = mak3do/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -3137,6 +3363,8 @@
 					"$(SRCROOT)/mak3do/externals/box2d/src",
 					"$(SRCROOT)/mak3do/externals/bullet3/src",
 					"$(SRCROOT)/mak3do",
+					"$(SRCROOT)/mak3do/externals/libRocket/Include",
+					"$(SRCROOT)/mak3do/externals/freetype2-ios/include",
 				);
 				INFOPLIST_FILE = "mak3do-tv-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -3179,6 +3407,8 @@
 					"$(SRCROOT)/mak3do/externals/box2d/src",
 					"$(SRCROOT)/mak3do/externals/bullet3/src",
 					"$(SRCROOT)/mak3do",
+					"$(SRCROOT)/mak3do/externals/libRocket/Include",
+					"$(SRCROOT)/mak3do/externals/freetype2-ios/include",
 				);
 				INFOPLIST_FILE = "mak3do-tv-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -3221,6 +3451,8 @@
 					"$(SRCROOT)/mak3do/externals/box2d/src",
 					"$(SRCROOT)/mak3do/externals/bullet3/src",
 					"$(SRCROOT)/mak3do",
+					"$(SRCROOT)/mak3do/externals/libRocket/Include",
+					"$(SRCROOT)/mak3do/externals/freetype2-ios/include",
 				);
 				INFOPLIST_FILE = "mak3do-mac-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -3264,6 +3496,8 @@
 					"$(SRCROOT)/mak3do/externals/box2d/src",
 					"$(SRCROOT)/mak3do/externals/bullet3/src",
 					"$(SRCROOT)/mak3do",
+					"$(SRCROOT)/mak3do/externals/libRocket/Include",
+					"$(SRCROOT)/mak3do/externals/freetype2-ios/include",
 				);
 				INFOPLIST_FILE = "mak3do-mac-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
