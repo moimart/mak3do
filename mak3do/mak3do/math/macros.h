@@ -1,9 +1,8 @@
 #pragma once
 
-#include <assert.h>
-#include <math.h>
-#include <memory.h>
-#include <string.h>
+#include <cassert>
+#include <cmath>
+#include <cstring>
 
 #define MATH_DEG_TO_RAD(x) ((x)*0.0174532925f)
 #define MATH_RAD_TO_DEG(x) ((x)*57.29577951f)
@@ -27,12 +26,3 @@
 #define FLT_EPSILON 1.192092896e-07F
 #endif
 
-#ifdef __cplusplus
-#define NS_CC_MATH_BEGIN namespace mak3do {
-#define NS_CC_MATH_END }
-#define USING_NS_CC_MATH using namespace mak3do
-#else
-#define NS_CC_MATH_BEGIN
-#define NS_CC_MATH_END
-#define USING_NS_CC_MATH
-#endif
