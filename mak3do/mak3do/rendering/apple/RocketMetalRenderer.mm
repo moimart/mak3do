@@ -106,7 +106,7 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
     desc.fragmentFunction = color;
     desc.colorAttachments[0].pixelFormat = MTLPixelFormatBGRA8Unorm;
     desc.colorAttachments[0].blendingEnabled = YES;
-    desc.depthAttachmentPixelFormat = MTLPixelFormatDepth32Float_Stencil8;
+    desc.depthAttachmentPixelFormat = MTLPixelFormatInvalid;
     desc.colorAttachments[0].sourceAlphaBlendFactor = MTLBlendFactorSourceAlpha;
     desc.colorAttachments[0].sourceRGBBlendFactor = MTLBlendFactorSourceAlpha;
     desc.colorAttachments[0].destinationAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
@@ -122,7 +122,7 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
     desc.fragmentFunction = texture;
     desc.colorAttachments[0].pixelFormat = MTLPixelFormatBGRA8Unorm;
     desc.colorAttachments[0].blendingEnabled = YES;
-    desc.depthAttachmentPixelFormat = MTLPixelFormatDepth32Float_Stencil8;
+    desc.depthAttachmentPixelFormat = MTLPixelFormatInvalid;
     desc.colorAttachments[0].sourceAlphaBlendFactor = MTLBlendFactorSourceAlpha;
     desc.colorAttachments[0].sourceRGBBlendFactor = MTLBlendFactorSourceAlpha;
     desc.colorAttachments[0].destinationAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
@@ -193,22 +193,22 @@ void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
     }
     
     auto id_buffer = [m_impl->device newBufferWithBytes:indices
-                                                      length:num_indices
+                                                      length:num_indices*sizeof(unsigned int)
                                                      options:MTLResourceStorageModeShared];
     
     [m_impl->encoder setVertexBytes:vertices
-                             length:sizeof(num_vertices)
+                             length:sizeof(num_vertices)*sizeof(Rocket::Core::Vertex)
                             atIndex:0];
     
     [m_impl->encoder setVertexBytes:o.m
-                             length:sizeof(o.m)
+                             length:sizeof(float)*16
                             atIndex:1];
-
+    
     // Draw the triangle.
     [m_impl->encoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle
-                               indexCount:num_indices
-                                indexType:MTLIndexTypeUInt16
-                              indexBuffer:id_buffer
+                                indexCount:num_indices
+                                 indexType:MTLIndexTypeUInt32
+                               indexBuffer:id_buffer
                         indexBufferOffset:0];
 }
 
@@ -259,6 +259,10 @@ bool RocketMetalRenderer::LoadTexture(Rocket::Core::TextureHandle& texture_handl
     
     id<MTLTexture> _mtlTexture = m_impl->load_image(buffer, buffer_size);
     
+    if (_mtlTexture == nil) {
+        return false;
+    }
+    
     m_impl->texture_cache.push_back(_mtlTexture);
     
     texture_handle = reinterpret_cast<Rocket::Core::TextureHandle>((void*)CFBridgingRetain(_mtlTexture));
@@ -286,7 +290,7 @@ bool RocketMetalRenderer::GenerateTexture(Rocket::Core::TextureHandle& texture_h
     [_mtlTexture replaceRegion:region
                    mipmapLevel:0
                      withBytes:source
-                   bytesPerRow:8];
+                   bytesPerRow:4*source_dimensions.x];
     
     m_impl->texture_cache.push_back(_mtlTexture);
     
@@ -320,7 +324,7 @@ Rocket::Core::FileHandle RocketMetalRenderer::Open(const Rocket::Core::String& p
     
     auto __path =
     [[[NSBundle mainBundle] URLForResource:[NSString stringWithUTF8String:path.CString()]
-                             withExtension:@""] absoluteString];
+                             withExtension:@""] path];
 
     FILE* fp = fopen([__path UTF8String], "rb");
     if (fp != nullptr)

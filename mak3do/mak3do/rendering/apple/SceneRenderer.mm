@@ -4,6 +4,7 @@
 #include <vector>
 #include <tuple>
 #include "RocketMetalRenderer.h"
+#include <Rocket/Core.h>
 
 static SceneRenderer* _renderer = nil;
 
@@ -73,6 +74,11 @@ static SceneRenderer* _renderer = nil;
     _rocket = mak3do::rocket::RocketMetalRenderer::get(mak3do::Vec2(_viewportSize.x,_viewportSize.y),(__bridge void*)_device);
     
     _at = 0;
+    
+    Rocket::Core::FontDatabase::LoadFontFace("league.ttf");
+    
+    auto doc = _rocket->context()->LoadDocument("demo.rml");
+    doc->Show();
     
     return self;
 }

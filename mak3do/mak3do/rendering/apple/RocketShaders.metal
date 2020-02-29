@@ -5,12 +5,12 @@ using namespace metal;
 struct VertexOut {
   float4 position [[position]];
   float2 uv;
-  short4 color;
+  ushort4 color;
 };
 
 typedef struct  {
     float2 position;
-    short4 color;
+    ushort4 color;
     float2 uv;
 } _RocketVertextInput;
 
