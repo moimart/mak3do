@@ -15,10 +15,12 @@ public:
     ActionRunnerPtr action_runner() const;
     SchedulerPtr scheduler() const;
     
+    float delta() const;
+    
 protected:
     Director();
     
-    void deltaTime();
+    void dt();
     
 private:
     DirectorImplPtr m_pimpl;
