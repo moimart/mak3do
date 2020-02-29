@@ -556,9 +556,6 @@
 		0D8D1A0223FC0CDC00DBDECD /* b2_world_callbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DC23FC0CDC00DBDECD /* b2_world_callbacks.h */; };
 		0D8D1A0323FC0CDC00DBDECD /* b2_contact_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */; };
 		0D8D1A0423FC0CDC00DBDECD /* b2_edge_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */; };
-		0DBC713F240A792A00AA57DB /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC6F56240A784400AA57DB /* libFreetype2.a */; };
-		0DBC7142240A793A00AA57DB /* libFreetype2-tvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC713C240A78FB00AA57DB /* libFreetype2-tvos.a */; };
-		0DBC7145240A794600AA57DB /* libFreetype2-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC713A240A78FB00AA57DB /* libFreetype2-mac.a */; };
 		0DBC76C0240A801E00AA57DB /* RocketMetalRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */; };
 		0DBC76C1240A801E00AA57DB /* RocketMetalRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */; };
 		0DBC76C2240A801E00AA57DB /* RocketMetalRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */; };
@@ -569,6 +566,7 @@
 		0DBC76D1240AD83500AA57DB /* RocketShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76D0240AD83500AA57DB /* RocketShaders.metal */; };
 		0DBC76D2240AD83500AA57DB /* RocketShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76D0240AD83500AA57DB /* RocketShaders.metal */; };
 		0DBC76D3240AD83500AA57DB /* RocketShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76D0240AD83500AA57DB /* RocketShaders.metal */; };
+		0DBC7DA5240B019200AA57DB /* libFreetype2-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC7AC5240AFB5400AA57DB /* libFreetype2-mac.a */; };
 		0DC5D05D23FE7A9A0084EB79 /* GameControllerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */; };
 		0DC5D05E23FE7A9A0084EB79 /* GameControllerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */; };
 		0DC5D05F23FE7A9A0084EB79 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05823FE7A9A0084EB79 /* GameController.cpp */; };
@@ -842,48 +840,6 @@
 			remoteGlobalIDString = 0D1FAA5123FC08050036B70E;
 			remoteInfo = mak3do;
 		};
-		0DBC6F55240A784400AA57DB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0DBC6F51240A784400AA57DB /* freetype2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6382B1B10FB0FC5100ECAC02;
-			remoteInfo = Freetype2;
-		};
-		0DBC7139240A78FB00AA57DB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0DBC6F51240A784400AA57DB /* freetype2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0DBC7046240A785700AA57DB;
-			remoteInfo = "Freetype2-mac";
-		};
-		0DBC713B240A78FB00AA57DB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0DBC6F51240A784400AA57DB /* freetype2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0DBC7136240A787F00AA57DB;
-			remoteInfo = "Freetype2-tvos";
-		};
-		0DBC713D240A792100AA57DB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0DBC6F51240A784400AA57DB /* freetype2.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 6382B1B00FB0FC5100ECAC02;
-			remoteInfo = Freetype2;
-		};
-		0DBC7140240A793200AA57DB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0DBC6F51240A784400AA57DB /* freetype2.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0DBC7047240A787F00AA57DB;
-			remoteInfo = "Freetype2-tvos";
-		};
-		0DBC7143240A794100AA57DB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0DBC6F51240A784400AA57DB /* freetype2.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0DBC6F57240A785700AA57DB;
-			remoteInfo = "Freetype2-mac";
-		};
 		0DBC715F240A7B8C00AA57DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */;
@@ -925,6 +881,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0DBC714E240A7B8A00AA57DB;
 			remoteInfo = librocket;
+		};
+		0DBC7AC2240AFB5400AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6382B1B10FB0FC5100ECAC02;
+			remoteInfo = Freetype2;
+		};
+		0DBC7AC4240AFB5400AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0DBC7046240A785700AA57DB;
+			remoteInfo = "Freetype2-mac";
+		};
+		0DBC7AC6240AFB5400AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0DBC7136240A787F00AA57DB;
+			remoteInfo = "Freetype2-tvos";
+		};
+		0DBC7DA3240B018A00AA57DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DBC6F57240A785700AA57DB;
+			remoteInfo = "Freetype2-mac";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1164,11 +1148,11 @@
 		0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_contact_manager.h; sourceTree = "<group>"; };
 		0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_edge_shape.h; sourceTree = "<group>"; };
 		0DA9450623D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DBC6F51240A784400AA57DB /* freetype2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = freetype2.xcodeproj; path = "mak3do/externals/freetype2-ios/freetype2.xcodeproj"; sourceTree = "<group>"; };
 		0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = librocket.xcodeproj; path = "mak3do/externals/rocket-project-xcode/librocket/librocket.xcodeproj"; sourceTree = "<group>"; };
 		0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RocketMetalRenderer.mm; sourceTree = "<group>"; };
 		0DBC76BF240A801E00AA57DB /* RocketMetalRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RocketMetalRenderer.h; sourceTree = "<group>"; };
 		0DBC76D0240AD83500AA57DB /* RocketShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = RocketShaders.metal; sourceTree = "<group>"; };
+		0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = freetype2.xcodeproj; path = "mak3do/externals/freetype2-project-xcode/freetype2.xcodeproj"; sourceTree = "<group>"; };
 		0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameControllerImpl.mm; sourceTree = "<group>"; };
 		0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameControllerImpl.h; sourceTree = "<group>"; };
 		0DC5D05823FE7A9A0084EB79 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameController.cpp; sourceTree = "<group>"; };
@@ -1292,7 +1276,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DBC713F240A792A00AA57DB /* libFreetype2.a in Frameworks */,
 				0D5EA95B24029BC40043D3C3 /* libBulletCollision-ios.a in Frameworks */,
 				0D5EA95C24029BC40043D3C3 /* libBulletDynamics-ios.a in Frameworks */,
 				0D795054240314360046D19B /* AVFoundation.framework in Frameworks */,
@@ -1317,7 +1300,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DBC7142240A793A00AA57DB /* libFreetype2-tvos.a in Frameworks */,
 				0D0CC6022402D90600E02342 /* libBulletCollision-tvos.a in Frameworks */,
 				0D0CC6032402D90600E02342 /* libBulletDynamics-tvos.a in Frameworks */,
 				0D7950562403143D0046D19B /* AVFoundation.framework in Frameworks */,
@@ -1334,8 +1316,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DBC7DA5240B019200AA57DB /* libFreetype2-mac.a in Frameworks */,
 				0DBC76CE240A9B8900AA57DB /* liblibrocket-macOS.a in Frameworks */,
-				0DBC7145240A794600AA57DB /* libFreetype2-mac.a in Frameworks */,
 				0D794FE32402E22D0046D19B /* AppKit.framework in Frameworks */,
 				0D794FDE2402DEC70046D19B /* libBulletCollision_xcode4_x64_debug.a in Frameworks */,
 				0D795057240314430046D19B /* AVFoundation.framework in Frameworks */,
@@ -1636,8 +1618,8 @@
 		0DA944E923D6429D00AEBEAA = {
 			isa = PBXGroup;
 			children = (
+				0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */,
 				0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */,
-				0DBC6F51240A784400AA57DB /* freetype2.xcodeproj */,
 				0D5EA94324029B9B0043D3C3 /* BulletCollision.xcodeproj */,
 				0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */,
 				0D5EA94C24029B9C0043D3C3 /* LinearMath.xcodeproj */,
@@ -1670,22 +1652,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0DBC6F52240A784400AA57DB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0DBC6F56240A784400AA57DB /* libFreetype2.a */,
-				0DBC713A240A78FB00AA57DB /* libFreetype2-mac.a */,
-				0DBC713C240A78FB00AA57DB /* libFreetype2-tvos.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		0DBC715C240A7B8A00AA57DB /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				0DBC7160240A7B8C00AA57DB /* liblibrocket.a */,
 				0DBC76B7240A7E7400AA57DB /* liblibrocket-tvOS.a */,
 				0DBC76B9240A7E7400AA57DB /* liblibrocket-macOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0DBC7ABD240AFB5400AA57DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DBC7AC3240AFB5400AA57DB /* libFreetype2.a */,
+				0DBC7AC5240AFB5400AA57DB /* libFreetype2-mac.a */,
+				0DBC7AC7240AFB5400AA57DB /* libFreetype2-tvos.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2272,7 +2254,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0DBC713E240A792100AA57DB /* PBXTargetDependency */,
 				0DBC76BD240A7E8E00AA57DB /* PBXTargetDependency */,
 				0D5EA95624029BBA0043D3C3 /* PBXTargetDependency */,
 				0D5EA95824029BBA0043D3C3 /* PBXTargetDependency */,
@@ -2317,7 +2298,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0DBC7141240A793200AA57DB /* PBXTargetDependency */,
 				0DBC76BB240A7E8600AA57DB /* PBXTargetDependency */,
 				0D0CC5FD2402D8FA00E02342 /* PBXTargetDependency */,
 				0D0CC5FF2402D8FA00E02342 /* PBXTargetDependency */,
@@ -2343,7 +2323,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				0DBC7144240A794100AA57DB /* PBXTargetDependency */,
+				0DBC7DA4240B018A00AA57DB /* PBXTargetDependency */,
 				0DBC76B3240A7E7300AA57DB /* PBXTargetDependency */,
 				0D794FD92402DE870046D19B /* PBXTargetDependency */,
 				0D794FD22402DE640046D19B /* PBXTargetDependency */,
@@ -2437,8 +2417,8 @@
 					ProjectRef = 0D5EA93A24029B9B0043D3C3 /* BulletDynamics.xcodeproj */;
 				},
 				{
-					ProductGroup = 0DBC6F52240A784400AA57DB /* Products */;
-					ProjectRef = 0DBC6F51240A784400AA57DB /* freetype2.xcodeproj */;
+					ProductGroup = 0DBC7ABD240AFB5400AA57DB /* Products */;
+					ProjectRef = 0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */;
 				},
 				{
 					ProductGroup = 0D522FBC23FF1F850093D45A /* Products */;
@@ -2564,27 +2544,6 @@
 			remoteRef = 0D5EA95324029B9C0043D3C3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0DBC6F56240A784400AA57DB /* libFreetype2.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libFreetype2.a;
-			remoteRef = 0DBC6F55240A784400AA57DB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0DBC713A240A78FB00AA57DB /* libFreetype2-mac.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libFreetype2-mac.a";
-			remoteRef = 0DBC7139240A78FB00AA57DB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0DBC713C240A78FB00AA57DB /* libFreetype2-tvos.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libFreetype2-tvos.a";
-			remoteRef = 0DBC713B240A78FB00AA57DB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		0DBC7160240A7B8C00AA57DB /* liblibrocket.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -2604,6 +2563,27 @@
 			fileType = archive.ar;
 			path = "liblibrocket-macOS.a";
 			remoteRef = 0DBC76B8240A7E7400AA57DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DBC7AC3240AFB5400AA57DB /* libFreetype2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFreetype2.a;
+			remoteRef = 0DBC7AC2240AFB5400AA57DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DBC7AC5240AFB5400AA57DB /* libFreetype2-mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFreetype2-mac.a";
+			remoteRef = 0DBC7AC4240AFB5400AA57DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DBC7AC7240AFB5400AA57DB /* libFreetype2-tvos.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFreetype2-tvos.a";
+			remoteRef = 0DBC7AC6240AFB5400AA57DB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -3169,21 +3149,6 @@
 			target = 0D1FAA5123FC08050036B70E /* mak3do */;
 			targetProxy = 0D881B2C23FC47E9001A8250 /* PBXContainerItemProxy */;
 		};
-		0DBC713E240A792100AA57DB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Freetype2;
-			targetProxy = 0DBC713D240A792100AA57DB /* PBXContainerItemProxy */;
-		};
-		0DBC7141240A793200AA57DB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Freetype2-tvos";
-			targetProxy = 0DBC7140240A793200AA57DB /* PBXContainerItemProxy */;
-		};
-		0DBC7144240A794100AA57DB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Freetype2-mac";
-			targetProxy = 0DBC7143240A794100AA57DB /* PBXContainerItemProxy */;
-		};
 		0DBC76B3240A7E7300AA57DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "librocket-macOS";
@@ -3198,6 +3163,11 @@
 			isa = PBXTargetDependency;
 			name = librocket;
 			targetProxy = 0DBC76BC240A7E8E00AA57DB /* PBXContainerItemProxy */;
+		};
+		0DBC7DA4240B018A00AA57DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Freetype2-mac";
+			targetProxy = 0DBC7DA3240B018A00AA57DB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
