@@ -84,6 +84,9 @@ private:
 
     std::shared_ptr<Impl> m_impl;
     std::shared_ptr<Rocket::Core::FileInterface> m_file_interface;
+    
+    Mat4 m_projection;
+    Vec2 m_size;
 };
 }
 }

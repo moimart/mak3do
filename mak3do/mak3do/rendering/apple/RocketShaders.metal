@@ -16,9 +16,11 @@ typedef struct  {
 
 vertex VertexOut
 rocket_vertex(uint vertexID [[ vertex_id ]],
-              constant _RocketVertextInput *vertexArray [[ buffer(0) ]]) {
+              constant _RocketVertextInput *vertexArray [[ buffer(0) ]],
+              constant matrix_float4x4 &transform [[ buffer(1) ]]) {
     VertexOut out;
-    out.position.xy = vertexArray[vertexID].position;
+    float4 _pos = float4(vertexArray[vertexID].position.x,vertexArray[vertexID].position.y,0,1);
+    out.position = transform * _pos;
     out.uv = vertexArray[vertexID].uv;
     out.color = vertexArray[vertexID].color;
     return out;

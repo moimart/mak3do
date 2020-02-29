@@ -117,7 +117,7 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
     desc = nil;
     desc = [[MTLRenderPipelineDescriptor alloc] init];
     
-    desc.label = @"rocket_color";
+    desc.label = @"rocket_texture";
     desc.vertexFunction = vertex;
     desc.fragmentFunction = texture;
     desc.colorAttachments[0].pixelFormat = MTLPixelFormatBGRA8Unorm;
@@ -129,6 +129,8 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
     desc.colorAttachments[0].destinationRGBBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
     
     m_impl->pipeline_texture = [m_impl->device newRenderPipelineStateWithDescriptor:desc error:&error];
+    
+    Mat4::createOrthographic(size.width, size.height, -1024, 1024, &m_projection);
 }
 
 Rocket::Core::Context* RocketMetalRenderer::context() const
@@ -138,6 +140,7 @@ Rocket::Core::Context* RocketMetalRenderer::context() const
 
 void RocketMetalRenderer::render(const Vec2& viewport, void* __cb, void* __pd)
 {
+    m_size = viewport;
     id<MTLCommandBuffer> commandBuffer = (__bridge id<MTLCommandBuffer>)__cb;
     id<MTLTexture> __texture = (__bridge id<MTLTexture>)__pd;
     
@@ -171,6 +174,14 @@ void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
                                          Rocket::Core::TextureHandle texture,
                                          const Rocket::Core::Vector2f& translation)
 {
+    Quaternion q;
+    q.yaw_pitch_roll(180, 0, 180);
+    Mat4 t, o;
+    t.rotate(q);
+    t.translate(translation.x, translation.y, 0);
+    t.translate(-m_size.x, -m_size.y, 0);
+    o = m_projection * t;
+    
     id<MTLTexture> __texture = (__bridge id<MTLTexture>)reinterpret_cast<void*>(texture);
         
     if (__texture == nil) {
@@ -186,8 +197,12 @@ void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
                                                      options:MTLResourceStorageModeShared];
     
     [m_impl->encoder setVertexBytes:vertices
-                           length:sizeof(num_vertices)
-                          atIndex:0]; //TODO:
+                             length:sizeof(num_vertices)
+                            atIndex:0];
+    
+    [m_impl->encoder setVertexBytes:o.m
+                             length:sizeof(o.m)
+                            atIndex:1];
 
     // Draw the triangle.
     [m_impl->encoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle
@@ -204,7 +219,19 @@ void RocketMetalRenderer::EnableScissorRegion(bool enable)
 
 void RocketMetalRenderer::SetScissorRegion(int x, int y, int width, int height)
 {
+    MTLScissorRect rect { (NSUInteger)x, (NSUInteger)y, (NSUInteger)width, (NSUInteger)height };
     
+    if (x < 0) {
+        rect.x = 0;
+    }
+    
+    if (y < 0) {
+        rect.y = 0;
+    }
+    
+    if (x + width <= m_size.width && y + height <= m_size.height) {
+        [m_impl->encoder setScissorRect:rect];
+    }
 }
 
 bool RocketMetalRenderer::LoadTexture(Rocket::Core::TextureHandle& texture_handle,
