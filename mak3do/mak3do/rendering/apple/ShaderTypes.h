@@ -11,10 +11,10 @@ typedef enum RocketVertextInput
 typedef struct
 {
     vector_float2 position;
-    vector_short4 color;
+    vector_uchar4 color;
     vector_float2 texcoord;
 } RocketVertex;
 
-#include <SceneKit/scn_metal>
+//#include <SceneKit/scn_metal>
 
 #endif /* RocketTypes_h */

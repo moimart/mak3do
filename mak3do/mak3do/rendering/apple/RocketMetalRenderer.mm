@@ -4,6 +4,7 @@
 #import <Metal/Metal.h>
 #import <MetalKit/MetalKit.h>
 #import "SceneRenderer.h"
+#include "ShaderTypes.h"
 
 namespace mak3do {
 namespace rocket {
@@ -194,11 +195,24 @@ void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
     }
     
     auto id_buffer = [m_impl->device newBufferWithBytes:indices
-                                                      length:num_indices*sizeof(unsigned int)
+                                                      length:num_indices*sizeof(int)
                                                      options:MTLResourceStorageModeShared];
     
-    [m_impl->encoder setVertexBytes:vertices
-                             length:sizeof(num_vertices)*sizeof(Rocket::Core::Vertex)
+    std::vector<RocketVertex> __vertices;
+    
+    for (auto i = 0; i < num_vertices; i++) {
+        RocketVertex a;
+        a.position = simd_make_float2(vertices[i].position.x, vertices[i].position.y);
+        a.color = simd_make_uchar4(vertices[i].colour.red, vertices[i].colour.green, vertices[i].colour.blue, vertices[i].colour.alpha);
+        a.texcoord = simd_make_float2(vertices[i].tex_coord.x,vertices[i].tex_coord.y);
+        
+        __vertices.push_back(a);
+    }
+    
+    std::cout << "sizeof orig " << sizeof(Rocket::Core::Vertex) << " vs sizeof mtl " << sizeof(RocketVertex) << std::endl;
+    
+    [m_impl->encoder setVertexBytes:&__vertices[0]
+                             length:sizeof(num_vertices)*sizeof(RocketVertex)
                             atIndex:0];
     
     [m_impl->encoder setVertexBytes:o.m

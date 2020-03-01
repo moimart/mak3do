@@ -5,12 +5,12 @@ using namespace metal;
 struct VertexOut {
   float4 position [[position]];
   float2 uv;
-  ushort4 color;
+  uchar4 color;
 };
 
 typedef struct  {
     float2 position;
-    ushort4 color;
+    uchar4 color;
     float2 uv;
 } _RocketVertextInput;
 
@@ -19,7 +19,7 @@ rocket_vertex(uint vertexID [[ vertex_id ]],
               constant _RocketVertextInput *vertexArray [[ buffer(0) ]],
               constant matrix_float4x4 &transform [[ buffer(1) ]]) {
     VertexOut out;
-    float4 _pos = float4(vertexArray[vertexID].position.x,vertexArray[vertexID].position.y,0,1);
+    float4 _pos = float4(vertexArray[vertexID].position.x,vertexArray[vertexID].position.y,0.0,1.0);
     out.position = transform * _pos;
     out.uv = vertexArray[vertexID].uv;
     out.color = vertexArray[vertexID].color;
@@ -37,6 +37,6 @@ fragment float4 rocket_texture(VertexOut in [[stage_in]],
 {
     const half4 colorSample = colorTexture.sample(textureSampler, in.uv);
 
-    return float4(float3(colorSample.xyz),0.5);
+    return float4(float3(colorSample.xyz),1.0);
 }
 
