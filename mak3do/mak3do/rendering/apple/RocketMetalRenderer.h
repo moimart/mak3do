@@ -44,6 +44,16 @@ public:
                         int num_indices,
                         Rocket::Core::TextureHandle texture,
                         const Rocket::Core::Vector2f& translation);
+    
+    void RenderCompiledGeometry(Rocket::Core::CompiledGeometryHandle geometry,
+                                const Rocket::Core::Vector2f& translation);
+    
+    Rocket::Core::CompiledGeometryHandle
+    CompileGeometry(Rocket::Core::Vertex* vertices,
+                                         int num_vertices,
+                                         int* indices,
+                                         int num_indices,
+                                         Rocket::Core::TextureHandle texture);
 
     void EnableScissorRegion(bool enable);
 
