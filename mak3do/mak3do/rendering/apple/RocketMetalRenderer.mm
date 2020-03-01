@@ -141,6 +141,7 @@ Rocket::Core::Context* RocketMetalRenderer::context() const
 void RocketMetalRenderer::render(const Vec2& viewport, void* __cb, void* __pd)
 {
     m_size = viewport;
+    Mat4::createOrthographic(m_size.width, m_size.height, -1024, 1024, &m_projection);
     id<MTLCommandBuffer> commandBuffer = (__bridge id<MTLCommandBuffer>)__cb;
     id<MTLTexture> __texture = (__bridge id<MTLTexture>)__pd;
     
