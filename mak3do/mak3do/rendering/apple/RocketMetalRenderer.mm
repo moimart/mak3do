@@ -25,6 +25,13 @@ struct Impl {
     id<MTLTexture> load_image(void* data, unsigned long size);
 };
 
+struct RocketGeometry {
+    int index_count { 0 };
+    id<MTLBuffer> indices;
+    id<MTLBuffer> vertices;
+    id<MTLTexture> texture;
+};
+
 id<MTLTexture> Impl::load_image(void *__data,unsigned long size)
 {
     NSData* data = [[NSData alloc] initWithBytes:__data length:size];
@@ -188,12 +195,44 @@ void RocketMetalRenderer::render(const Vec2& viewport, void* __cb, void* __pd, v
     [renderEncoder endEncoding];
 }
 
-void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
-                                         int num_vertices,
-                                         int* indices,
-                                         int num_indices,
-                                         Rocket::Core::TextureHandle texture,
-                                         const Rocket::Core::Vector2f& translation)
+Rocket::Core::CompiledGeometryHandle
+RocketMetalRenderer::CompileGeometry(Rocket::Core::Vertex* vertices,
+                                     int num_vertices,
+                                     int* indices,
+                                     int num_indices,
+                                     Rocket::Core::TextureHandle texture)
+{
+    auto id_buffer = [m_impl->device newBufferWithBytes:indices
+                                                         length:num_indices*sizeof(int)
+                                                        options:MTLResourceStorageModeShared];
+       
+   std::vector<RocketVertex> __vertices;
+
+   for (auto i = 0; i < num_vertices; i++) {
+       RocketVertex a;
+       a.position = simd_make_float4(vertices[i].position.x, vertices[i].position.y,0,1);
+       a.color = simd_make_float4(vertices[i].colour.red/255.f, vertices[i].colour.green/255.f, vertices[i].colour.blue/255.f, vertices[i].colour.alpha/255.f);
+       a.texcoord = simd_make_float2(vertices[i].tex_coord.x,vertices[i].tex_coord.y);
+       
+       __vertices.push_back(a);
+   }
+
+   auto vertex_buffer = [m_impl->device newBufferWithBytes:&__vertices[0]
+                                                    length:__vertices.size()*sizeof(RocketVertex)
+                                                   options:MTLResourceStorageModeShared];
+    
+    auto rocket_geometry = new RocketGeometry();
+    
+    rocket_geometry->index_count = num_indices;
+    rocket_geometry->indices = id_buffer;
+    rocket_geometry->vertices = vertex_buffer;
+    rocket_geometry->texture = (__bridge id<MTLTexture>)reinterpret_cast<void*>(texture);
+    
+    return reinterpret_cast<Rocket::Core::CompiledGeometryHandle>(rocket_geometry);
+}
+
+void RocketMetalRenderer::RenderCompiledGeometry(Rocket::Core::CompiledGeometryHandle geometry,
+                                                 const Rocket::Core::Vector2f& translation)
 {
     Quaternion q;
     q.yaw_pitch_roll(180, 0, 180);
@@ -202,53 +241,43 @@ void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
     t.translate(translation.x, translation.y, 0);
     t.translate(-m_size.x*.75f, -m_size.y*.5f, 0);
     o = m_projection * t;
-    
-    id<MTLTexture> __texture = (__bridge id<MTLTexture>)reinterpret_cast<void*>(texture);
-    
-    [m_impl->encoder setFrontFacingWinding:MTLWindingCounterClockwise];
+
+    RocketGeometry* geom = reinterpret_cast<RocketGeometry*>(geometry);
+
+    [m_impl->encoder setFrontFacingWinding:MTLWindingClockwise];
     [m_impl->encoder setCullMode:MTLCullModeNone];
-        
-    if (__texture == nil) {
-        [m_impl->encoder setRenderPipelineState:m_impl->pipeline_color];
+      
+    if (geom->texture == nil) {
+      [m_impl->encoder setRenderPipelineState:m_impl->pipeline_color];
     } else {
-        [m_impl->encoder setRenderPipelineState:m_impl->pipeline_texture];
-        [m_impl->encoder setFragmentTexture:__texture atIndex:0];
-        [m_impl->encoder setFragmentSamplerState:m_impl->sampler atIndex:0];
-    }
-    
-    auto id_buffer = [m_impl->device newBufferWithBytes:indices
-                                                      length:num_indices*sizeof(int)
-                                                     options:MTLResourceStorageModeShared];
-    
-    std::vector<RocketVertex> __vertices;
-
-    for (auto i = 0; i < num_vertices; i++) {
-        RocketVertex a;
-        a.position = simd_make_float4(vertices[i].position.x, vertices[i].position.y,0,1);
-        a.color = simd_make_float4(vertices[i].colour.red/255.f, vertices[i].colour.green/255.f, vertices[i].colour.blue/255.f, vertices[i].colour.alpha/255.f);
-        a.texcoord = simd_make_float2(vertices[i].tex_coord.x,vertices[i].tex_coord.y);
-        
-        __vertices.push_back(a);
+      [m_impl->encoder setRenderPipelineState:m_impl->pipeline_texture];
+      [m_impl->encoder setFragmentTexture:geom->texture atIndex:0];
+      [m_impl->encoder setFragmentSamplerState:m_impl->sampler atIndex:0];
     }
 
-    auto vertex_buffer = [m_impl->device newBufferWithBytes:&__vertices[0]
-                                                     length:__vertices.size()*sizeof(RocketVertex)
-                                                    options:MTLResourceStorageModeShared];
-    
-    
-    [m_impl->encoder setVertexBuffer:vertex_buffer offset:0 atIndex:0];
-    
+    [m_impl->encoder setVertexBuffer:geom->vertices offset:0 atIndex:0];
+
     [m_impl->encoder setVertexBytes:o.m
-                             length:sizeof(float)*16
-                            atIndex:1];
-    
+                           length:sizeof(float)*16
+                          atIndex:1];
+
     [m_impl->encoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle
-                                indexCount:num_indices
-                                 indexType:MTLIndexTypeUInt32
-                               indexBuffer:id_buffer
-                        indexBufferOffset:0];
-    
+                              indexCount:geom->index_count
+                               indexType:MTLIndexTypeUInt32
+                             indexBuffer:geom->indices
+                      indexBufferOffset:0];
+
     [m_impl->encoder popDebugGroup];
+}
+
+void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
+                                         int num_vertices,
+                                         int* indices,
+                                         int num_indices,
+                                         Rocket::Core::TextureHandle texture,
+                                         const Rocket::Core::Vector2f& translation)
+{
+
 }
 
 void RocketMetalRenderer::EnableScissorRegion(bool enable)

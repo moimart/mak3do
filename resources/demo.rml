@@ -1,7 +1,7 @@
 <rml>
 	<head>
 		<title>Demo</title>
-		<link type="text/template" href="window.rml" />
+		<link type="text/template" href="window.rml"/>
 		<style>
 			body
 			{
@@ -23,7 +23,7 @@
 		</style>
 	</head>
 	<body template="window">
-		En un pais de la mancha de cuyo nombre no quiero acordarme. Patatin patatan
+		En un pais de la mancha de cuyo nombre no quiero acordarme. Patatin patatan y chimpon
 		<!-- img src="menu_fb_pic.png"/ -->
 	</body>
 </rml>
