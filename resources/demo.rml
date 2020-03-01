@@ -24,6 +24,6 @@
 	</head>
 	<body template="window">
 		En un pais de la mancha de cuyo nombre no quiero acordarme. Patatin patatan
-		<img src="menu_fb_pic.png"/>
+		<!-- img src="menu_fb_pic.png"/ -->
 	</body>
 </rml>

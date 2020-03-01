@@ -1,10 +1,10 @@
 #include "RocketMetalRenderer.h"
 #include <Rocket/Core.h>
-#include <mak3do/scenegraph/Director.h>
 #import <Metal/Metal.h>
 #import <MetalKit/MetalKit.h>
-#import "SceneRenderer.h"
 #include "ShaderTypes.h"
+#import "AAPLRenderer.h"
+#include <iostream>
 
 namespace mak3do {
 namespace rocket {
@@ -101,7 +101,7 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
     
     m_impl->sampler = [m_impl->device newSamplerStateWithDescriptor:samplerDesc];
     
-    NSBundle* bundle = [NSBundle bundleForClass:[SceneRenderer class]];
+    NSBundle* bundle = [NSBundle bundleForClass:[AAPLRenderer class]];
     NSError* error = nil;
     
     id<MTLLibrary> library = [m_impl->device newDefaultLibraryWithBundle:bundle error:&error];
@@ -134,8 +134,11 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
     desc.colorAttachments[0].pixelFormat = MTLPixelFormatBGRA8Unorm;
     desc.colorAttachments[0].blendingEnabled = YES;
     desc.depthAttachmentPixelFormat = MTLPixelFormatInvalid;
-    desc.colorAttachments[0].sourceAlphaBlendFactor = MTLBlendFactorSourceAlpha;
+    desc.stencilAttachmentPixelFormat = MTLPixelFormatInvalid;
+    desc.colorAttachments[0].rgbBlendOperation = MTLBlendOperationAdd;
+    desc.colorAttachments[0].alphaBlendOperation = MTLBlendOperationAdd;
     desc.colorAttachments[0].sourceRGBBlendFactor = MTLBlendFactorSourceAlpha;
+    desc.colorAttachments[0].sourceAlphaBlendFactor = MTLBlendFactorSourceAlpha;
     desc.colorAttachments[0].destinationAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
     desc.colorAttachments[0].destinationRGBBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
     
@@ -172,6 +175,7 @@ void RocketMetalRenderer::render(const Vec2& viewport, void* __cb, void* __pd, v
     id<MTLRenderCommandEncoder> renderEncoder =
     [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
     renderEncoder.label = @"Rocket";
+    [renderEncoder pushDebugGroup:@"drawRocket"];
     
     m_impl->encoder = nil;
     m_impl->encoder = renderEncoder;
@@ -200,6 +204,9 @@ void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
     o = m_projection * t;
     
     id<MTLTexture> __texture = (__bridge id<MTLTexture>)reinterpret_cast<void*>(texture);
+    
+    [m_impl->encoder setFrontFacingWinding:MTLWindingCounterClockwise];
+    [m_impl->encoder setCullMode:MTLCullModeNone];
         
     if (__texture == nil) {
         [m_impl->encoder setRenderPipelineState:m_impl->pipeline_color];
@@ -240,6 +247,8 @@ void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
                                  indexType:MTLIndexTypeUInt32
                                indexBuffer:id_buffer
                         indexBufferOffset:0];
+    
+    [m_impl->encoder popDebugGroup];
 }
 
 void RocketMetalRenderer::EnableScissorRegion(bool enable)
@@ -249,7 +258,7 @@ void RocketMetalRenderer::EnableScissorRegion(bool enable)
 
 void RocketMetalRenderer::SetScissorRegion(int x, int y, int width, int height)
 {
-    MTLScissorRect rect { (NSUInteger)x, (NSUInteger)y, (NSUInteger)width, (NSUInteger)height };
+    MTLScissorRect rect { (NSUInteger)x, (NSUInteger)m_size.height - ((NSUInteger)y + (NSUInteger)height), (NSUInteger)width, (NSUInteger)height };
     
     if (x >= 0) {
         [m_impl->encoder setScissorRect:rect];
@@ -298,16 +307,20 @@ bool RocketMetalRenderer::GenerateTexture(Rocket::Core::TextureHandle& texture_h
 {
     MTLTextureDescriptor* textureDescriptor =
         [MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatRGBA8Unorm
-         
                                                            width:source_dimensions.x
                                                           height:source_dimensions.y
                                                        mipmapped:NO];
 
-    textureDescriptor.usage = MTLTextureUsagePixelFormatView | MTLTextureUsageShaderRead;
+    textureDescriptor.usage = MTLTextureUsageShaderRead;
+    textureDescriptor.textureType = MTLTextureType2D;
     
     id<MTLTexture> _mtlTexture = [m_impl->device newTextureWithDescriptor:textureDescriptor];
     
-    MTLRegion region = MTLRegionMake2D(0, 0, source_dimensions.x, source_dimensions.y);
+    MTLRegion region = {
+        { 0, 0, 0 },
+        { (NSUInteger)source_dimensions.x, (NSUInteger)source_dimensions.y, 1 }
+    };
+
 
     [_mtlTexture setLabel:@"rocket_generated_texture"];
     [_mtlTexture replaceRegion:region
@@ -397,7 +410,7 @@ void RocketMetalRenderer::Release()
 
 float PrivateSystemInterface::GetElapsedTime()
 {
-    m_at += Director::get()->delta();
+    //m_at += Director::get()->delta();
     return m_at;
 }
 
