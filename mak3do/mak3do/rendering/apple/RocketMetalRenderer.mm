@@ -3,7 +3,7 @@
 #import <Metal/Metal.h>
 #import <MetalKit/MetalKit.h>
 #include "ShaderTypes.h"
-#import "AAPLRenderer.h"
+#import "SceneRenderer.h"
 #include <iostream>
 
 namespace mak3do {
@@ -101,7 +101,7 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
     
     m_impl->sampler = [m_impl->device newSamplerStateWithDescriptor:samplerDesc];
     
-    NSBundle* bundle = [NSBundle bundleForClass:[AAPLRenderer class]];
+    NSBundle* bundle = [NSBundle bundleForClass:[SceneRenderer class]];
     NSError* error = nil;
     
     id<MTLLibrary> library = [m_impl->device newDefaultLibraryWithBundle:bundle error:&error];
