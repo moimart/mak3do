@@ -229,7 +229,7 @@ void RocketMetalRenderer::SetScissorRegion(int x, int y, int width, int height)
     }
     
     if (x + width <= m_size.width && y + height <= m_size.height) {
-        //[m_impl->encoder setScissorRect:rect];
+        [m_impl->encoder setScissorRect:rect];
     }
 }
 
