@@ -37,7 +37,6 @@ fragment float4 rocket_texture(VertexOut in [[stage_in]],
 {
     const half4 colorSample = colorTexture.sample(textureSampler, in.uv);
 
-    // We return the color of the texture
-    return float4(float3(colorSample.xyz),float(colorSample.w));
+    return float4(float3(colorSample.xyz),0.5);
 }
 

@@ -204,7 +204,6 @@ void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
                              length:sizeof(float)*16
                             atIndex:1];
     
-    // Draw the triangle.
     [m_impl->encoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle
                                 indexCount:num_indices
                                  indexType:MTLIndexTypeUInt32
@@ -230,7 +229,7 @@ void RocketMetalRenderer::SetScissorRegion(int x, int y, int width, int height)
     }
     
     if (x + width <= m_size.width && y + height <= m_size.height) {
-        [m_impl->encoder setScissorRect:rect];
+        //[m_impl->encoder setScissorRect:rect];
     }
 }
 
