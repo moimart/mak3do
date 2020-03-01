@@ -29,11 +29,8 @@ fragment float4 rocket_texture(VertexOut in [[stage_in]],
                                texture2d<half> colorTexture [[ texture(0) ]],
                                sampler textureSampler [[sampler(0)]])
 {
-    constexpr sampler mySampler (mag_filter::linear,
-    min_filter::linear);
-    
-    const half4 colorSample = colorTexture.sample(mySampler, in.uv);
+    const half4 colorSample = colorTexture.sample(textureSampler, in.uv);
 
-    return float4(float3(colorSample.xyz),1.0);
+    return float4(colorSample);
 }
 
