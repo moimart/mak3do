@@ -29,6 +29,9 @@ id<MTLTexture> Impl::load_image(void *__data,unsigned long size)
 {
     NSData* data = [[NSData alloc] initWithBytes:__data length:size];
     MTKTextureLoader *loader = [[MTKTextureLoader alloc] initWithDevice: device];
+    
+    //NSURL* url = [[NSBundle mainBundle] URLForResource:@"earth_diffuse" withExtension:@"png"];
+    //id<MTLTexture> texture = [loader newTextureWithContentsOfURL:url options:nil error:nil];
 
     id<MTLTexture> texture = [loader newTextureWithData:data options:nil error:nil];
     
@@ -75,6 +78,8 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
 {
     m_impl->device = (__bridge id<MTLDevice>)__device;
     
+    m_size = size*.5f;
+    
     Rocket::Core::SetRenderInterface(this);
     Rocket::Core::Factory::RegisterEventListenerInstancer(this);
     Rocket::Core::SetFileInterface(this);
@@ -82,15 +87,17 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
     
     bool init = Rocket::Core::Initialise();
     
+    assert(init);
+    
     m_main_context =
-    Rocket::Core::CreateContext("main", Rocket::Core::Vector2i(size.w, size.h));
+    Rocket::Core::CreateContext("main", Rocket::Core::Vector2i(m_size.w, m_size.h));
     
     MTLSamplerDescriptor *samplerDesc = [MTLSamplerDescriptor new];
     samplerDesc.minFilter = MTLSamplerMinMagFilterLinear;
     samplerDesc.magFilter = MTLSamplerMinMagFilterLinear;
     samplerDesc.mipFilter = MTLSamplerMipFilterNotMipmapped;
-    samplerDesc.sAddressMode = MTLSamplerAddressModeClampToEdge;
-    samplerDesc.tAddressMode = MTLSamplerAddressModeClampToEdge;
+    samplerDesc.sAddressMode = MTLSamplerAddressModeRepeat;
+    samplerDesc.tAddressMode = MTLSamplerAddressModeRepeat;
     
     m_impl->sampler = [m_impl->device newSamplerStateWithDescriptor:samplerDesc];
     
@@ -134,7 +141,7 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
     
     m_impl->pipeline_texture = [m_impl->device newRenderPipelineStateWithDescriptor:desc error:&error];
     
-    Mat4::createOrthographic(size.width, size.height, -1024, 1024, &m_projection);
+    Mat4::createOrthographic(m_size.width, m_size.height, -1024, 1024, &m_projection);
 }
 
 Rocket::Core::Context* RocketMetalRenderer::context() const
@@ -144,7 +151,8 @@ Rocket::Core::Context* RocketMetalRenderer::context() const
 
 void RocketMetalRenderer::render(const Vec2& viewport, void* __cb, void* __pd, void* extra)
 {
-    m_size = viewport;
+    m_size = viewport*.5f;
+    m_main_context->SetDimensions(Rocket::Core::Vector2i(m_size.w,m_size.h));
     Mat4::createOrthographic(m_size.width, m_size.height, -1024, 1024, &m_projection);
     id<MTLCommandBuffer> commandBuffer = (__bridge id<MTLCommandBuffer>)__cb;
     id<MTLTexture> __texture = (__bridge id<MTLTexture>)__pd;
@@ -188,7 +196,7 @@ void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
     Mat4 t, o;
     t.rotate(q);
     t.translate(translation.x, translation.y, 0);
-    t.translate(-m_size.x, -m_size.y, 0);
+    t.translate(-m_size.x*.75f, -m_size.y*.5f, 0);
     o = m_projection * t;
     
     id<MTLTexture> __texture = (__bridge id<MTLTexture>)reinterpret_cast<void*>(texture);
@@ -206,16 +214,16 @@ void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
                                                      options:MTLResourceStorageModeShared];
     
     std::vector<RocketVertex> __vertices;
-    
+
     for (auto i = 0; i < num_vertices; i++) {
         RocketVertex a;
-        a.position = simd_make_float2(vertices[i].position.x, vertices[i].position.y);
-        a.color = simd_make_uchar4(vertices[i].colour.red, vertices[i].colour.green, vertices[i].colour.blue, vertices[i].colour.alpha);
+        a.position = simd_make_float4(vertices[i].position.x, vertices[i].position.y,0,1);
+        a.color = simd_make_float4(vertices[i].colour.red/255.f, vertices[i].colour.green/255.f, vertices[i].colour.blue/255.f, vertices[i].colour.alpha/255.f);
         a.texcoord = simd_make_float2(vertices[i].tex_coord.x,vertices[i].tex_coord.y);
         
         __vertices.push_back(a);
     }
-    
+
     auto vertex_buffer = [m_impl->device newBufferWithBytes:&__vertices[0]
                                                      length:__vertices.size()*sizeof(RocketVertex)
                                                     options:MTLResourceStorageModeShared];
@@ -243,17 +251,8 @@ void RocketMetalRenderer::SetScissorRegion(int x, int y, int width, int height)
 {
     MTLScissorRect rect { (NSUInteger)x, (NSUInteger)y, (NSUInteger)width, (NSUInteger)height };
     
-    if (x < 0) {
-        rect.x = 0;
-    }
-    
-    if (y < 0) {
-        rect.y = 0;
-    }
-    
-    if (m_impl->scissoring) {
-    //if (x + width <= m_size.width && y + height <= m_size.height) {
-        //[m_impl->encoder setScissorRect:rect];
+    if (x >= 0) {
+        [m_impl->encoder setScissorRect:rect];
     }
 }
 
@@ -299,6 +298,7 @@ bool RocketMetalRenderer::GenerateTexture(Rocket::Core::TextureHandle& texture_h
 {
     MTLTextureDescriptor* textureDescriptor =
         [MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatRGBA8Unorm
+         
                                                            width:source_dimensions.x
                                                           height:source_dimensions.y
                                                        mipmapped:NO];

@@ -10,8 +10,8 @@ typedef enum RocketVertextInput
 
 typedef struct
 {
-    vector_float2 position;
-    vector_uchar4 color;
+    vector_float4 position;
+    vector_float4 color;
     vector_float2 texcoord;
 } RocketVertex;
 

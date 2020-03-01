@@ -59,6 +59,7 @@ static SceneRenderer* _renderer = nil;
     
     _view = [[MTKView alloc] initWithFrame:frameRect device:_device];
 #if TARGET_OS_MAC
+    auto scale = [[NSScreen mainScreen] backingScaleFactor];
 #else
     _view.contentScaleFactor = [UIScreen mainScreen].scale;
 #endif
