@@ -15,9 +15,12 @@ struct Impl {
     id<MTLRenderCommandEncoder> encoder;
     id<MTLSamplerState> sampler;
     
+    
     id<MTLDevice> device;
     
     std::vector<id<MTLTexture> > texture_cache;
+    
+    bool scissoring { false };
     
     id<MTLTexture> load_image(void* data, unsigned long size);
 };
@@ -139,7 +142,7 @@ Rocket::Core::Context* RocketMetalRenderer::context() const
     return m_main_context;
 }
 
-void RocketMetalRenderer::render(const Vec2& viewport, void* __cb, void* __pd)
+void RocketMetalRenderer::render(const Vec2& viewport, void* __cb, void* __pd, void* extra)
 {
     m_size = viewport;
     Mat4::createOrthographic(m_size.width, m_size.height, -1024, 1024, &m_projection);
@@ -154,6 +157,10 @@ void RocketMetalRenderer::render(const Vec2& viewport, void* __cb, void* __pd)
     MTLRenderPassDescriptor *renderPassDescriptor = [MTLRenderPassDescriptor renderPassDescriptor];
     renderPassDescriptor.colorAttachments[0] = colorAttachment;
     
+    if (extra != nullptr) {
+        renderPassDescriptor = (__bridge MTLRenderPassDescriptor*)extra;
+    }
+    
     id<MTLRenderCommandEncoder> renderEncoder =
     [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
     renderEncoder.label = @"Rocket";
@@ -161,7 +168,7 @@ void RocketMetalRenderer::render(const Vec2& viewport, void* __cb, void* __pd)
     m_impl->encoder = nil;
     m_impl->encoder = renderEncoder;
     
-    [renderEncoder setViewport:(MTLViewport){0.0, 0.0, viewport.x, viewport.y, 0.0, 1.0 }];
+    [renderEncoder setViewport:(MTLViewport){0.0, 0.0, viewport.x, viewport.y, -1024.0, 1024.0}];
     
     m_main_context->Render();
     m_main_context->Update();
@@ -209,11 +216,12 @@ void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
         __vertices.push_back(a);
     }
     
-    std::cout << "sizeof orig " << sizeof(Rocket::Core::Vertex) << " vs sizeof mtl " << sizeof(RocketVertex) << std::endl;
+    auto vertex_buffer = [m_impl->device newBufferWithBytes:&__vertices[0]
+                                                     length:__vertices.size()*sizeof(RocketVertex)
+                                                    options:MTLResourceStorageModeShared];
     
-    [m_impl->encoder setVertexBytes:&__vertices[0]
-                             length:sizeof(num_vertices)*sizeof(RocketVertex)
-                            atIndex:0];
+    
+    [m_impl->encoder setVertexBuffer:vertex_buffer offset:0 atIndex:0];
     
     [m_impl->encoder setVertexBytes:o.m
                              length:sizeof(float)*16
@@ -228,7 +236,7 @@ void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
 
 void RocketMetalRenderer::EnableScissorRegion(bool enable)
 {
-    
+    m_impl->scissoring = enable;
 }
 
 void RocketMetalRenderer::SetScissorRegion(int x, int y, int width, int height)
@@ -243,8 +251,9 @@ void RocketMetalRenderer::SetScissorRegion(int x, int y, int width, int height)
         rect.y = 0;
     }
     
-    if (x + width <= m_size.width && y + height <= m_size.height) {
-        [m_impl->encoder setScissorRect:rect];
+    if (m_impl->scissoring) {
+    //if (x + width <= m_size.width && y + height <= m_size.height) {
+        //[m_impl->encoder setScissorRect:rect];
     }
 }
 

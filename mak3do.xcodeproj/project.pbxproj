@@ -1975,9 +1975,9 @@
 				0DBC76BF240A801E00AA57DB /* RocketMetalRenderer.h */,
 				0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */,
 				0DBC76D0240AD83500AA57DB /* RocketShaders.metal */,
+				0DE8483B23FC24BB00A876B2 /* ShaderTypes.h */,
 				0DE8483E23FC24BB00A876B2 /* SceneRenderer.h */,
 				0DE8483823FC24BB00A876B2 /* SceneRenderer.mm */,
-				0DE8483B23FC24BB00A876B2 /* ShaderTypes.h */,
 				0DE8484023FC24BB00A876B2 /* ViewController.h */,
 				0DE8483A23FC24BB00A876B2 /* ViewController.m */,
 			);

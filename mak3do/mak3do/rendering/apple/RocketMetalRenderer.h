@@ -36,7 +36,7 @@ public:
     
     RocketMetalRenderer(const Vec2& size, void* device);
     
-    void render(const Vec2& viewport, void* commandbuffer, void* pass_descriptor);
+    void render(const Vec2& viewport, void* commandbuffer, void* pass_descriptor, void* extra = nullptr);
 
     void RenderGeometry(Rocket::Core::Vertex* vertices,
                         int num_vertices,

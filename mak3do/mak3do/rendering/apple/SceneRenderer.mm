@@ -85,30 +85,8 @@ static SceneRenderer* _renderer = nil;
 
 - (void)drawInMTKView:(nonnull MTKView *)view
 {
-    [self render:0];
-}
-
-- (void) update:(float)dt {
-    _at += dt;
-    
-    //[SCNTransaction begin];
-    {
-        for (auto& t : _values) {
-            SCNGeometry* geometry = std::get<2>(t);
-            NSValue* value = std::get<0>(t);
-            NSString* string = std::get<1>(t);
-            
-            [geometry setValue:value forKeyPath:string];
-        }
-    }
-    //[SCNTransaction commit];
-    
-    _values.clear();
-}
-
-- (void) render: (float)dt {
-    
-    auto commandBuffer = [_commandQueue commandBuffer];
+    id<MTLCommandBuffer> commandBuffer = [_commandQueue commandBuffer];
+    commandBuffer.label = @"mak3do-render";
 
     MTLRenderPassDescriptor *renderPassDescriptor = _view.currentRenderPassDescriptor;
     
@@ -134,7 +112,24 @@ static SceneRenderer* _renderer = nil;
     }
     
     [commandBuffer commit];
-    [_view releaseDrawables];
+}
+
+- (void) update:(float)dt {
+    _at += dt;
+    
+    //[SCNTransaction begin];
+    {
+        for (auto& t : _values) {
+            SCNGeometry* geometry = std::get<2>(t);
+            NSValue* value = std::get<0>(t);
+            NSString* string = std::get<1>(t);
+            
+            [geometry setValue:value forKeyPath:string];
+        }
+    }
+    //[SCNTransaction commit];
+    
+    _values.clear();
 }
 
 - (void) setCameraName:(NSString *)cameraName {
