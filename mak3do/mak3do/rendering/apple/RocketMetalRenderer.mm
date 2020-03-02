@@ -270,6 +270,17 @@ void RocketMetalRenderer::RenderCompiledGeometry(Rocket::Core::CompiledGeometryH
     [m_impl->encoder popDebugGroup];
 }
 
+void RocketMetalRenderer::ReleaseCompiledGeometry(Rocket::Core::CompiledGeometryHandle geometry)
+{
+    RocketGeometry* geom = reinterpret_cast<RocketGeometry*>(geometry);
+    
+    geom->indices = nil;
+    geom->texture = nil;
+    geom->vertices = nil;
+    
+    delete geom;
+}
+
 void RocketMetalRenderer::RenderGeometry(Rocket::Core::Vertex* vertices,
                                          int num_vertices,
                                          int* indices,
@@ -324,6 +335,9 @@ bool RocketMetalRenderer::LoadTexture(Rocket::Core::TextureHandle& texture_handl
     }
     
     m_impl->texture_cache.push_back(_mtlTexture);
+    
+    texture_dimensions.x = (int)[_mtlTexture width];
+    texture_dimensions.y = (int)[_mtlTexture height];
     
     texture_handle = reinterpret_cast<Rocket::Core::TextureHandle>((void*)CFBridgingRetain(_mtlTexture));
     

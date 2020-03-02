@@ -54,6 +54,8 @@ public:
                                          int* indices,
                                          int num_indices,
                                          Rocket::Core::TextureHandle texture);
+    
+    void ReleaseCompiledGeometry(Rocket::Core::CompiledGeometryHandle geometry);
 
     void EnableScissorRegion(bool enable);
 
