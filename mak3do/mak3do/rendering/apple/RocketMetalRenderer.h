@@ -50,10 +50,10 @@ public:
     
     Rocket::Core::CompiledGeometryHandle
     CompileGeometry(Rocket::Core::Vertex* vertices,
-                                         int num_vertices,
-                                         int* indices,
-                                         int num_indices,
-                                         Rocket::Core::TextureHandle texture);
+                    int num_vertices,
+                    int* indices,
+                    int num_indices,
+                    Rocket::Core::TextureHandle texture);
     
     void ReleaseCompiledGeometry(Rocket::Core::CompiledGeometryHandle geometry);
 

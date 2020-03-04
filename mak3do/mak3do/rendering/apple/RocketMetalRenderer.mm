@@ -233,10 +233,8 @@ RocketMetalRenderer::CompileGeometry(Rocket::Core::Vertex* vertices,
 void RocketMetalRenderer::RenderCompiledGeometry(Rocket::Core::CompiledGeometryHandle geometry,
                                                  const Rocket::Core::Vector2f& translation)
 {
-    Quaternion q;
-    q.yaw_pitch_roll(180, 0, 180);
     Mat4 t, o;
-    t.rotate(q);
+    t.scale(1,-1,1);
     t.translate(translation.x, translation.y, 0);
     t.translate(-m_size.x*.5f, -m_size.y*.5f, 0);
     o = m_projection * t;
@@ -303,7 +301,7 @@ void RocketMetalRenderer::SetScissorRegion(int x, int y, int width, int height)
         (NSUInteger)width,
         (NSUInteger)height};
     
-    if (x >= 0) {
+    if (x >= 0 && rect.x + rect.width <= m_size.width && rect.y + rect.height <= m_size.height) {
         [m_impl->encoder setScissorRect:rect];
     }
 }
