@@ -23,7 +23,9 @@
 		</style>
 	</head>
 	<body template="window">
+        <p>
 		En un pais de la mancha de cuyo nombre no quiero acordarme. Patatin patatan y chimpon
-		<img src="menu_fb_pic.png"/>
+        </p>
+		<img width="128" src="earth_diffuse.png"/>
 	</body>
 </rml>

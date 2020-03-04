@@ -58,7 +58,6 @@ public:
         m_renderer->processEvent(event, m_value);
     }
 
-    /// Destroys the event.
     void OnDetach(Rocket::Core::Element* element)
     {
         delete this;
@@ -85,7 +84,7 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
 {
     m_impl->device = (__bridge id<MTLDevice>)__device;
     
-    m_size = size*.5f;
+    m_size = size;
     
     Rocket::Core::SetRenderInterface(this);
     Rocket::Core::Factory::RegisterEventListenerInstancer(this);
@@ -161,7 +160,7 @@ Rocket::Core::Context* RocketMetalRenderer::context() const
 
 void RocketMetalRenderer::render(const Vec2& viewport, void* __cb, void* __pd, void* extra)
 {
-    m_size = viewport*.5f;
+    m_size = viewport;
     m_main_context->SetDimensions(Rocket::Core::Vector2i(m_size.w,m_size.h));
     Mat4::createOrthographic(m_size.width, m_size.height, -1024, 1024, &m_projection);
     id<MTLCommandBuffer> commandBuffer = (__bridge id<MTLCommandBuffer>)__cb;
@@ -239,7 +238,7 @@ void RocketMetalRenderer::RenderCompiledGeometry(Rocket::Core::CompiledGeometryH
     Mat4 t, o;
     t.rotate(q);
     t.translate(translation.x, translation.y, 0);
-    t.translate(-m_size.x*.75f, -m_size.y*.5f, 0);
+    t.translate(-m_size.x*.5f, -m_size.y*.5f, 0);
     o = m_projection * t;
 
     RocketGeometry* geom = reinterpret_cast<RocketGeometry*>(geometry);
@@ -298,7 +297,11 @@ void RocketMetalRenderer::EnableScissorRegion(bool enable)
 
 void RocketMetalRenderer::SetScissorRegion(int x, int y, int width, int height)
 {
-    MTLScissorRect rect { (NSUInteger)x, (NSUInteger)m_size.height - ((NSUInteger)y + (NSUInteger)height), (NSUInteger)width, (NSUInteger)height };
+    MTLScissorRect rect {
+        (NSUInteger)x,
+        (NSUInteger)m_size.height - ((NSUInteger)y + (NSUInteger)height),
+        (NSUInteger)width,
+        (NSUInteger)height};
     
     if (x >= 0) {
         [m_impl->encoder setScissorRect:rect];
