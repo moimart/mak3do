@@ -1,5 +1,6 @@
 #import "SceneRenderer.h"
 #import <Metal/Metal.h>
+#import "RenderView.h"
 
 #include <vector>
 #include <tuple>
@@ -57,9 +58,9 @@ static SceneRenderer* _renderer = nil;
     _commandQueue = [_device newCommandQueue];
     _scnRenderer = [SCNRenderer rendererWithDevice:_device options:nil];
     
-    _view = [[MTKView alloc] initWithFrame:frameRect device:_device];
+    _view = [[RenderView alloc] initWithFrame:frameRect device:_device];
 #if TARGET_OS_MAC
-    auto scale = [[NSScreen mainScreen] backingScaleFactor];
+    //auto scale = [[NSScreen mainScreen] backingScaleFactor];
 #else
     _view.contentScaleFactor = [UIScreen mainScreen].scale;
 #endif

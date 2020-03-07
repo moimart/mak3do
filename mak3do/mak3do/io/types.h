@@ -78,7 +78,7 @@ struct _TouchCallback {
 
 struct Touch {
     Vec2 location { Vec2(-1,-1) };
-    unsigned int id { 0 };
+    unsigned int tid { 0 };
 };
 
 typedef std::shared_ptr<Touch> TouchPtr;

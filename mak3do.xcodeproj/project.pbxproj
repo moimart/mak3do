@@ -620,6 +620,12 @@
 		0D8D1A0223FC0CDC00DBDECD /* b2_world_callbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DC23FC0CDC00DBDECD /* b2_world_callbacks.h */; };
 		0D8D1A0323FC0CDC00DBDECD /* b2_contact_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */; };
 		0D8D1A0423FC0CDC00DBDECD /* b2_edge_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */; };
+		0DAC818C2413FD1400172202 /* RenderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DAC818A2413FD1400172202 /* RenderView.h */; };
+		0DAC818D2413FD1400172202 /* RenderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DAC818A2413FD1400172202 /* RenderView.h */; };
+		0DAC818E2413FD1400172202 /* RenderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DAC818A2413FD1400172202 /* RenderView.h */; };
+		0DAC818F2413FD1400172202 /* RenderView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DAC818B2413FD1400172202 /* RenderView.mm */; };
+		0DAC81902413FD1400172202 /* RenderView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DAC818B2413FD1400172202 /* RenderView.mm */; };
+		0DAC81912413FD1400172202 /* RenderView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DAC818B2413FD1400172202 /* RenderView.mm */; };
 		0DBC76C0240A801E00AA57DB /* RocketMetalRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */; };
 		0DBC76C1240A801E00AA57DB /* RocketMetalRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */; };
 		0DBC76C2240A801E00AA57DB /* RocketMetalRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */; };
@@ -1267,6 +1273,8 @@
 		0D8D19DD23FC0CDC00DBDECD /* b2_contact_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_contact_manager.h; sourceTree = "<group>"; };
 		0D8D19DE23FC0CDC00DBDECD /* b2_edge_shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_edge_shape.h; sourceTree = "<group>"; };
 		0DA9450623D6429F00AEBEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DAC818A2413FD1400172202 /* RenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderView.h; sourceTree = "<group>"; };
+		0DAC818B2413FD1400172202 /* RenderView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RenderView.mm; sourceTree = "<group>"; };
 		0DBC715B240A7B8A00AA57DB /* librocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = librocket.xcodeproj; path = "mak3do/externals/rocket-project-xcode/librocket/librocket.xcodeproj"; sourceTree = "<group>"; };
 		0DBC76BE240A801D00AA57DB /* RocketMetalRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RocketMetalRenderer.mm; sourceTree = "<group>"; };
 		0DBC76BF240A801E00AA57DB /* RocketMetalRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RocketMetalRenderer.h; sourceTree = "<group>"; };
@@ -1882,9 +1890,9 @@
 		0DE847FC23FC24BB00A876B2 /* mak3do */ = {
 			isa = PBXGroup;
 			children = (
-				0DBC7EBA2413AD0400AA57DB /* ui */,
 				0D794EFC2402DB100046D19B /* Game.cpp */,
 				0D794EFD2402DB100046D19B /* Game.h */,
+				0DBC7EBA2413AD0400AA57DB /* ui */,
 				0DC5D05423FE7A9A0084EB79 /* io */,
 				0DE847FE23FC24BB00A876B2 /* tests */,
 				0DE8480023FC24BB00A876B2 /* game */,
@@ -2015,6 +2023,8 @@
 		0DE8483623FC24BB00A876B2 /* apple */ = {
 			isa = PBXGroup;
 			children = (
+				0DAC818A2413FD1400172202 /* RenderView.h */,
+				0DAC818B2413FD1400172202 /* RenderView.mm */,
 				0DE8483D23FC24BB00A876B2 /* DirectorDisplayLink.h */,
 				0DE8483923FC24BB00A876B2 /* DirectorDisplayLink.mm */,
 				0DBC76BF240A801E00AA57DB /* RocketMetalRenderer.h */,
@@ -2218,6 +2228,7 @@
 				0D181C5723FD3BA9001BA6F4 /* Surface.h in Headers */,
 				0D8D19F323FC0CDC00DBDECD /* b2_time_of_impact.h in Headers */,
 				0DC5D05E23FE7A9A0084EB79 /* GameControllerImpl.h in Headers */,
+				0DAC818C2413FD1400172202 /* RenderView.h in Headers */,
 				0D8D19FB23FC0CDC00DBDECD /* b2_growable_stack.h in Headers */,
 				0DE848AF23FC24BC00A876B2 /* ShaderTypes.h in Headers */,
 				0D8D19EA23FC0CDC00DBDECD /* b2_revolute_joint.h in Headers */,
@@ -2310,6 +2321,7 @@
 				0D5A8F7923FF338800BEC130 /* Surface.h in Headers */,
 				0D5A8F7A23FF338800BEC130 /* b2_time_of_impact.h in Headers */,
 				0D5A8F7B23FF338800BEC130 /* GameControllerImpl.h in Headers */,
+				0DAC818D2413FD1400172202 /* RenderView.h in Headers */,
 				0D5A8F7C23FF338800BEC130 /* b2_growable_stack.h in Headers */,
 				0D5A8F7D23FF338800BEC130 /* ShaderTypes.h in Headers */,
 				0D5A8F7E23FF338800BEC130 /* b2_revolute_joint.h in Headers */,
@@ -2370,6 +2382,7 @@
 				0D794F322402DDC40046D19B /* b2_chain_shape.h in Headers */,
 				0D794F332402DDC40046D19B /* b2_settings.h in Headers */,
 				0D794F342402DDC40046D19B /* b2_joint.h in Headers */,
+				0DAC818E2413FD1400172202 /* RenderView.h in Headers */,
 				0D794F352402DDC40046D19B /* GeometryImpl.h in Headers */,
 				0DBC7EC82413AEC700AA57DB /* types.h in Headers */,
 				0D794F362402DDC40046D19B /* BoxImpl.h in Headers */,
@@ -2966,6 +2979,7 @@
 				0D795050240312C80046D19B /* VideoTexture.cpp in Sources */,
 				0DE8489323FC24BC00A876B2 /* PhysicsElement.cpp in Sources */,
 				0D8D19AE23FC0CC500DBDECD /* b2_collide_edge.cpp in Sources */,
+				0DAC818F2413FD1400172202 /* RenderView.mm in Sources */,
 				0D8D199B23FC0CC500DBDECD /* b2_rope_joint.cpp in Sources */,
 				0D8D199223FC0CC500DBDECD /* b2_contact_manager.cpp in Sources */,
 				0D5A90F524018D5300BEC130 /* MeshImpl.mm in Sources */,
@@ -3087,6 +3101,7 @@
 				0D795051240312C80046D19B /* VideoTexture.cpp in Sources */,
 				0D5A8F8723FF338800BEC130 /* PhysicsElement.cpp in Sources */,
 				0D5A8F8823FF338800BEC130 /* b2_collide_edge.cpp in Sources */,
+				0DAC81902413FD1400172202 /* RenderView.mm in Sources */,
 				0D5A8F8923FF338800BEC130 /* b2_rope_joint.cpp in Sources */,
 				0D5A8F8A23FF338800BEC130 /* b2_contact_manager.cpp in Sources */,
 				0D5A90F624018D5300BEC130 /* MeshImpl.mm in Sources */,
@@ -3263,6 +3278,7 @@
 				0DBC7EE02413B6D300AA57DB /* Touch.cpp in Sources */,
 				0D794F9B2402DDC40046D19B /* Quaternion.cpp in Sources */,
 				0D794F9C2402DDC40046D19B /* b2_prismatic_joint.cpp in Sources */,
+				0DAC81912413FD1400172202 /* RenderView.mm in Sources */,
 				0D794F9D2402DDC40046D19B /* Vec4.cpp in Sources */,
 				0D794F9E2402DDC40046D19B /* Vec2.cpp in Sources */,
 				0D794F9F2402DDC40046D19B /* CameraImpl.mm in Sources */,

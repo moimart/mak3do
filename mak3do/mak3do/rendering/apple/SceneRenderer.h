@@ -1,3 +1,4 @@
+#pragma once
 #import <SceneKit/SceneKit.h>
 #import <Metal/Metal.h>
 #import <MetalKit/MetalKit.h>

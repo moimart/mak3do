@@ -423,6 +423,19 @@ void test_ui() {
     };
     
     sched->schedule(5,task);
+    
+    auto touch = io::TouchManager::get();
+    auto callback = std::make_shared<io::TouchCallback>();
+    
+    callback->lambda = [=](const std::vector<io::TouchPtr>& touches) -> bool {
+        for (auto& touch : touches) {
+            std::cout << "Touch at x: " << touch->location.x << " y: " << touch->location.y << std::endl;
+        }
+        
+        return true;
+    };
+    
+    touch->touched(callback);
 }
 
 }
