@@ -10,7 +10,7 @@ public:
     UIOverlayImpl();
     
     void fonts(const std::vector<std::string>& font_resources);
-    bool load(const std::string& resource, const std::string& package = "");
+    bool load(const std::string& resource, const std::string& package);
 private:
     rocket::RocketMetalRenderer* m_renderer;
 };

@@ -64,5 +64,28 @@ typedef std::shared_ptr<AnalogCallback> AnalogCallbackPtr;
 typedef _ControllerCallback<void(const Vec3&, const Vec3&)> MotionCallback;
 typedef std::shared_ptr<MotionCallback> MotionCallbackPtr;
 
+class TouchManager;
+class TouchManagerImpl;
+
+typedef std::shared_ptr<TouchManager> TouchManagerPtr;
+typedef std::shared_ptr<TouchManagerImpl> TouchManagerImplPtr;
+
+template <class R>
+struct _TouchCallback {
+    std::function<R> lambda;
+    std::string cb_id;
+};
+
+struct Touch {
+    Vec2 location { Vec2(-1,-1) };
+    unsigned int id { 0 };
+};
+
+typedef std::shared_ptr<Touch> TouchPtr;
+
+typedef _TouchCallback<bool(const std::vector<TouchPtr>&)> TouchCallback;
+
+typedef std::shared_ptr<TouchCallback> TouchCallbackPtr;
+
 }
 }

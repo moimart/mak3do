@@ -414,6 +414,15 @@ void test_ui() {
     
     overlay->fonts({"league.ttf"});
     overlay->load("demo.rml");
+    
+    auto sched = Director::get()->scheduler();
+    auto task = Scheduler::task();
+    
+    task->lambda = [=](float dt) {
+        overlay->load(); //No UI overlay
+    };
+    
+    sched->schedule(5,task);
 }
 
 }
