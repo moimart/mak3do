@@ -423,6 +423,11 @@ void test_ui() {
     };
     
     sched->schedule(5,task);
+}
+
+void test_touch()
+{
+    test_ui();
     
     auto touch = io::TouchManager::get();
     auto callback = std::make_shared<io::TouchCallback>();
@@ -437,6 +442,5 @@ void test_ui() {
     
     touch->touched(callback);
 }
-
 }
 }

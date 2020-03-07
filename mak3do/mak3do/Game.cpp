@@ -22,7 +22,8 @@ void Game::tests()
     //tests::imported_scene();
     //tests::test_controller_api();
     //tests::test_materials();
-    tests::test_ui();
+    //tests::test_ui();
+    tests::test_touch();
 }
 
 }
