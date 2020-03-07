@@ -631,6 +631,15 @@
 		0DBC76D2240AD83500AA57DB /* RocketShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76D0240AD83500AA57DB /* RocketShaders.metal */; };
 		0DBC76D3240AD83500AA57DB /* RocketShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC76D0240AD83500AA57DB /* RocketShaders.metal */; };
 		0DBC7DA5240B019200AA57DB /* libFreetype2-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC7AC5240AFB5400AA57DB /* libFreetype2-mac.a */; };
+		0DBC7EBF2413AD0400AA57DB /* UIOverlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EBB2413AD0400AA57DB /* UIOverlay.cpp */; };
+		0DBC7EC02413AD0400AA57DB /* UIOverlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EBB2413AD0400AA57DB /* UIOverlay.cpp */; };
+		0DBC7EC12413AD0400AA57DB /* UIOverlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EBB2413AD0400AA57DB /* UIOverlay.cpp */; };
+		0DBC7EC22413AD0400AA57DB /* UIOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EBC2413AD0400AA57DB /* UIOverlay.h */; };
+		0DBC7EC32413AD0400AA57DB /* UIOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EBC2413AD0400AA57DB /* UIOverlay.h */; };
+		0DBC7EC42413AD0400AA57DB /* UIOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EBC2413AD0400AA57DB /* UIOverlay.h */; };
+		0DBC7EC62413AEC700AA57DB /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EC52413AEC600AA57DB /* types.h */; };
+		0DBC7EC72413AEC700AA57DB /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EC52413AEC600AA57DB /* types.h */; };
+		0DBC7EC82413AEC700AA57DB /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EC52413AEC600AA57DB /* types.h */; };
 		0DC5D05D23FE7A9A0084EB79 /* GameControllerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */; };
 		0DC5D05E23FE7A9A0084EB79 /* GameControllerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */; };
 		0DC5D05F23FE7A9A0084EB79 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05823FE7A9A0084EB79 /* GameController.cpp */; };
@@ -1251,13 +1260,17 @@
 		0DBC76BF240A801E00AA57DB /* RocketMetalRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RocketMetalRenderer.h; sourceTree = "<group>"; };
 		0DBC76D0240AD83500AA57DB /* RocketShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = RocketShaders.metal; sourceTree = "<group>"; };
 		0DBC7ABC240AFB5400AA57DB /* freetype2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = freetype2.xcodeproj; path = "mak3do/externals/freetype2-project-xcode/freetype2.xcodeproj"; sourceTree = "<group>"; };
+		0DBC7EBB2413AD0400AA57DB /* UIOverlay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIOverlay.cpp; sourceTree = "<group>"; };
+		0DBC7EBC2413AD0400AA57DB /* UIOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIOverlay.h; sourceTree = "<group>"; };
+		0DBC7EC52413AEC600AA57DB /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		0DBC7ED12413B27F00AA57DB /* all */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = all; sourceTree = "<group>"; };
 		0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameControllerImpl.mm; sourceTree = "<group>"; };
 		0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameControllerImpl.h; sourceTree = "<group>"; };
 		0DC5D05823FE7A9A0084EB79 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameController.cpp; sourceTree = "<group>"; };
 		0DC5D05923FE7A9A0084EB79 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		0DC5D06123FE7ACA0084EB79 /* types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = types.h; sourceTree = "<group>"; };
 		0DC5D06B23FEB8CC0084EB79 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
-		0DC5D06D23FEC17F0084EB79 /* all */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = all; sourceTree = "<group>"; };
+		0DC5D06D23FEC17F0084EB79 /* all */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = all; sourceTree = "<group>"; };
 		0DD1B0CF23D79FDE00E65C07 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		0DD1B0D123D7A0A900E65C07 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		0DD1B0D323D7AF9A00E65C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -1794,6 +1807,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0DBC7EBA2413AD0400AA57DB /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				0DBC7ED12413B27F00AA57DB /* all */,
+				0DBC7EC52413AEC600AA57DB /* types.h */,
+				0DBC7EBB2413AD0400AA57DB /* UIOverlay.cpp */,
+				0DBC7EBC2413AD0400AA57DB /* UIOverlay.h */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
 		0DC5D05423FE7A9A0084EB79 /* io */ = {
 			isa = PBXGroup;
 			children = (
@@ -1838,6 +1862,7 @@
 		0DE847FC23FC24BB00A876B2 /* mak3do */ = {
 			isa = PBXGroup;
 			children = (
+				0DBC7EBA2413AD0400AA57DB /* ui */,
 				0D794EFC2402DB100046D19B /* Game.cpp */,
 				0D794EFD2402DB100046D19B /* Game.h */,
 				0DC5D05423FE7A9A0084EB79 /* io */,
@@ -2100,6 +2125,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DBC7EC62413AEC700AA57DB /* types.h in Headers */,
 				0DE848EC23FC27C400A876B2 /* all in Headers */,
 				0D8D19E723FC0CDC00DBDECD /* box2d.h in Headers */,
 				0D8D19FD23FC0CDC00DBDECD /* b2_collision.h in Headers */,
@@ -2179,6 +2205,7 @@
 				0DE8488223FC24BC00A876B2 /* PhysicsWorld3DImpl.h in Headers */,
 				0D8D19FC23FC0CDC00DBDECD /* b2_draw.h in Headers */,
 				0D8D1A0023FC0CDC00DBDECD /* b2_gear_joint.h in Headers */,
+				0DBC7EC22413AD0400AA57DB /* UIOverlay.h in Headers */,
 				0D8D198423FC0CC500DBDECD /* b2_circle_contact.h in Headers */,
 				0DE848C123FC24BC00A876B2 /* SphereImpl.h in Headers */,
 			);
@@ -2188,6 +2215,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DBC7EC72413AEC700AA57DB /* types.h in Headers */,
 				0D5A8F3D23FF338800BEC130 /* all in Headers */,
 				0D5A8F3E23FF338800BEC130 /* box2d.h in Headers */,
 				0D5A8F3F23FF338800BEC130 /* b2_collision.h in Headers */,
@@ -2267,6 +2295,7 @@
 				0D5A8F8023FF338800BEC130 /* PhysicsWorld3DImpl.h in Headers */,
 				0D5A8F8123FF338800BEC130 /* b2_draw.h in Headers */,
 				0D5A8F8223FF338800BEC130 /* b2_gear_joint.h in Headers */,
+				0DBC7EC32413AD0400AA57DB /* UIOverlay.h in Headers */,
 				0D5A8F8323FF338800BEC130 /* b2_circle_contact.h in Headers */,
 				0D5A8F8423FF338800BEC130 /* SphereImpl.h in Headers */,
 			);
@@ -2280,6 +2309,7 @@
 				0D794F0E2402DDC40046D19B /* box2d.h in Headers */,
 				0D794F0F2402DDC40046D19B /* b2_collision.h in Headers */,
 				0D794F102402DDC40046D19B /* b2_stack_allocator.h in Headers */,
+				0DBC7EC42413AD0400AA57DB /* UIOverlay.h in Headers */,
 				0D794F112402DDC40046D19B /* b2_contact_manager.h in Headers */,
 				0D794F122402DDC40046D19B /* b2_dynamic_tree.h in Headers */,
 				0D794F132402DDC40046D19B /* b2_timer.h in Headers */,
@@ -2317,6 +2347,7 @@
 				0D794F332402DDC40046D19B /* b2_settings.h in Headers */,
 				0D794F342402DDC40046D19B /* b2_joint.h in Headers */,
 				0D794F352402DDC40046D19B /* GeometryImpl.h in Headers */,
+				0DBC7EC82413AEC700AA57DB /* types.h in Headers */,
 				0D794F362402DDC40046D19B /* BoxImpl.h in Headers */,
 				0D794F372402DDC40046D19B /* b2_friction_joint.h in Headers */,
 				0D794F382402DDC40046D19B /* b2_edge_circle_contact.h in Headers */,
@@ -2968,6 +2999,7 @@
 				0D8D19B423FC0CC500DBDECD /* b2_edge_shape.cpp in Sources */,
 				0DE848C223FC24BC00A876B2 /* GeometryImpl.mm in Sources */,
 				0D8D199D23FC0CC500DBDECD /* b2_island.cpp in Sources */,
+				0DBC7EBF2413AD0400AA57DB /* UIOverlay.cpp in Sources */,
 				0D8D199C23FC0CC500DBDECD /* b2_world.cpp in Sources */,
 				0D8D199323FC0CC500DBDECD /* b2_polygon_contact.cpp in Sources */,
 				0D181C5D23FD3C31001BA6F4 /* Surface.cpp in Sources */,
@@ -3086,6 +3118,7 @@
 				0D5A8FB923FF338800BEC130 /* b2_edge_shape.cpp in Sources */,
 				0D5A8FBA23FF338800BEC130 /* GeometryImpl.mm in Sources */,
 				0D5A8FBB23FF338800BEC130 /* b2_island.cpp in Sources */,
+				0DBC7EC02413AD0400AA57DB /* UIOverlay.cpp in Sources */,
 				0D5A8FBC23FF338800BEC130 /* b2_world.cpp in Sources */,
 				0D5A8FBD23FF338800BEC130 /* b2_polygon_contact.cpp in Sources */,
 				0D5A8FBE23FF338800BEC130 /* Surface.cpp in Sources */,
@@ -3224,6 +3257,7 @@
 				0D794FB22402DDC40046D19B /* b2_timer.cpp in Sources */,
 				0D794FB32402DDC40046D19B /* b2_polygon_circle_contact.cpp in Sources */,
 				0D794FB42402DDC40046D19B /* b2_stack_allocator.cpp in Sources */,
+				0DBC7EC12413AD0400AA57DB /* UIOverlay.cpp in Sources */,
 				0D794FB52402DDC40046D19B /* b2_chain_shape.cpp in Sources */,
 				0D794FB72402DDC40046D19B /* b2_pulley_joint.cpp in Sources */,
 				0D794FB82402DDC40046D19B /* b2_body.cpp in Sources */,

@@ -76,11 +76,6 @@ static SceneRenderer* _renderer = nil;
     
     _at = 0;
     
-    Rocket::Core::FontDatabase::LoadFontFace("league.ttf");
-    
-    auto doc = _rocket->context()->LoadDocument("demo.rml");
-    doc->Show();
-    
     return self;
 }
 

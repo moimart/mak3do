@@ -21,7 +21,8 @@ void Game::tests()
     //tests::test_scheduler();
     //tests::imported_scene();
     //tests::test_controller_api();
-    tests::test_materials();
+    //tests::test_materials();
+    tests::test_ui();
 }
 
 }

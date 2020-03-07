@@ -2,6 +2,7 @@
 #include <mak3do/scenegraph/all>
 #include <mak3do/game/all>
 #include <mak3do/io/all>
+#include <mak3do/ui/all>
 
 namespace mak3do {
 namespace tests {
@@ -404,6 +405,15 @@ void test_materials()
     geometry->modify_shader_geometry(modifier);
     geometry->value("amplitude", .5f);
     
+}
+
+void test_ui() {
+    test_materials();
+    
+    auto overlay = UIOverlay::get();
+    
+    overlay->fonts({"league.ttf"});
+    overlay->load("demo.rml");
 }
 
 }
