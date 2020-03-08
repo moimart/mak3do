@@ -429,10 +429,10 @@ void test_touch()
 {
     test_ui();
     
-    auto touch = io::TouchManager::get();
-    auto callback = std::make_shared<io::TouchCallback>();
+    auto touch = io::PointerManager::get();
+    auto callback = std::make_shared<io::PointerEventCallback>();
     
-    callback->lambda = [=](const std::vector<io::TouchPtr>& touches) -> bool {
+    callback->lambda = [=](const std::vector<io::PointerEventPtr>& touches) -> bool {
         for (auto& touch : touches) {
             std::cout << "Touch at x: " << touch->location.x << " y: " << touch->location.y << std::endl;
         }

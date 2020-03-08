@@ -103,9 +103,10 @@ private:
     Mat4 m_projection;
     Vec2 m_size;
     
-    io::TouchCallbackPtr m_press_callback;
-    io::TouchCallbackPtr m_move_callback;
-    io::TouchCallbackPtr m_release_callback;
+    io::PointerEventCallbackPtr m_press_callback;
+    io::PointerEventCallbackPtr m_move_callback;
+    io::PointerEventCallbackPtr m_release_callback;
+    io::ScrollEventCallbackPtr m_scrolled_callback;
 };
 }
 }

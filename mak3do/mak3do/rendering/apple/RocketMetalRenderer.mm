@@ -157,20 +157,22 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
 
 RocketMetalRenderer::~RocketMetalRenderer()
 {
-    auto tm = io::TouchManager::get();
+    auto pm = io::PointerManager::get();
     
-    tm->stop(m_press_callback);
-    tm->stop(m_move_callback);
-    tm->stop(m_release_callback);
+    pm->stop(m_press_callback);
+    pm->stop(m_move_callback);
+    pm->stop(m_release_callback);
+    pm->stop(m_scrolled_callback);
 }
 
 void RocketMetalRenderer::setup_events()
 {
-    m_press_callback = std::make_shared<io::TouchCallback>();
-    m_move_callback = std::make_shared<io::TouchCallback>();
-    m_release_callback = std::make_shared<io::TouchCallback>();
+    m_press_callback = std::make_shared<io::PointerEventCallback>();
+    m_move_callback = std::make_shared<io::PointerEventCallback>();
+    m_release_callback = std::make_shared<io::PointerEventCallback>();
+    m_scrolled_callback = std::make_shared<io::ScrollEventCallback>();
     
-    m_press_callback->lambda = [this](const std::vector<io::TouchPtr>& touches) -> bool {
+    m_press_callback->lambda = [this](const std::vector<io::PointerEventPtr>& touches) -> bool {
         
         if (touches.size() == 0) {
             return false;
@@ -185,7 +187,7 @@ void RocketMetalRenderer::setup_events()
         return true;
     };
     
-    m_move_callback->lambda = [this](const std::vector<io::TouchPtr>& touches) -> bool {
+    m_move_callback->lambda = [this](const std::vector<io::PointerEventPtr>& touches) -> bool {
       
         if (touches.size() == 0) {
                    return false;
@@ -198,7 +200,7 @@ void RocketMetalRenderer::setup_events()
         return true;
     };
     
-    m_release_callback->lambda = [this](const std::vector<io::TouchPtr>& touches) -> bool {
+    m_release_callback->lambda = [this](const std::vector<io::PointerEventPtr>& touches) -> bool {
         
         if (touches.size() == 0) {
             return false;
@@ -213,11 +215,17 @@ void RocketMetalRenderer::setup_events()
         return true;
     };
     
-    auto tm = io::TouchManager::get();
+    m_scrolled_callback->lambda = [this](float dx, float dy) {
+        std::cout << "dx " << dx << " dy " << dy << std::endl;
+        this->m_main_context->ProcessMouseWheel(-dy, 0);
+    };
     
-    tm->touched(m_press_callback);
-    tm->moved(m_move_callback);
-    tm->released(m_release_callback);
+    auto pm = io::PointerManager::get();
+    
+    pm->touched(m_press_callback);
+    pm->moved(m_move_callback);
+    pm->released(m_release_callback);
+    pm->scrolled(m_scrolled_callback);
 }
 
 Rocket::Core::Context* RocketMetalRenderer::context() const

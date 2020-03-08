@@ -1,14 +1,14 @@
-#include "TouchManagerImpl.h"
+#include "PointerManagerImpl.h"
 
 namespace mak3do {
 namespace io {
 
-TouchManagerImpl::TouchManagerImpl()
+PointerManagerImpl::PointerManagerImpl()
 {
     
 }
 
-void TouchManagerImpl::inject_touches_begin(const std::vector<TouchPtr>& touches)
+void PointerManagerImpl::inject_pointers_begin(const std::vector<PointerEventPtr>& touches)
 {
     for (auto& event : m_touched) {
         if (event->lambda != nullptr) {
@@ -17,7 +17,7 @@ void TouchManagerImpl::inject_touches_begin(const std::vector<TouchPtr>& touches
     }
 }
 
-void TouchManagerImpl::inject_touches_ended(const std::vector<TouchPtr>& touches)
+void PointerManagerImpl::inject_pointers_ended(const std::vector<PointerEventPtr>& touches)
 {
     for (auto& event : m_ended) {
         if (event->lambda != nullptr) {
@@ -26,7 +26,7 @@ void TouchManagerImpl::inject_touches_ended(const std::vector<TouchPtr>& touches
     }
 }
 
-void TouchManagerImpl::inject_touches_moved(const std::vector<TouchPtr>& touches)
+void PointerManagerImpl::inject_pointers_moved(const std::vector<PointerEventPtr>& touches)
 {
     for (auto& event : m_moved) {
         if (event->lambda != nullptr) {
@@ -35,7 +35,7 @@ void TouchManagerImpl::inject_touches_moved(const std::vector<TouchPtr>& touches
     }
 }
 
-void TouchManagerImpl::inject_touches_cancelled(const std::vector<TouchPtr>& touches)
+void PointerManagerImpl::inject_pointers_cancelled(const std::vector<PointerEventPtr>& touches)
 {
     for (auto& event : m_cancelled) {
         if (event->lambda != nullptr) {
@@ -44,27 +44,41 @@ void TouchManagerImpl::inject_touches_cancelled(const std::vector<TouchPtr>& tou
     }
 }
 
-void TouchManagerImpl::touched(TouchCallbackPtr callback)
+void PointerManagerImpl::inject_scrolled(float dx, float dy)
+{
+    for (auto& event : m_scrolled) {
+        if (event->lambda != nullptr) {
+            event->lambda(dx,dy);
+        }
+    }
+}
+
+void PointerManagerImpl::touched(PointerEventCallbackPtr callback)
 {
     m_touched.push_back(callback);
 }
 
-void TouchManagerImpl::released(TouchCallbackPtr callback)
+void PointerManagerImpl::released(PointerEventCallbackPtr callback)
 {
     m_ended.push_back(callback);
 }
 
-void TouchManagerImpl::moved(TouchCallbackPtr callback)
+void PointerManagerImpl::moved(PointerEventCallbackPtr callback)
 {
     m_moved.push_back(callback);
 }
 
-void TouchManagerImpl::cancelled(TouchCallbackPtr callback)
+void PointerManagerImpl::cancelled(PointerEventCallbackPtr callback)
 {
     m_cancelled.push_back(callback);
 }
 
-void TouchManagerImpl::stop(TouchCallbackPtr callback)
+void PointerManagerImpl::scrolled(ScrollEventCallbackPtr callback)
+{
+    m_scrolled.push_back(callback);
+}
+
+void PointerManagerImpl::stop(PointerEventCallbackPtr callback)
 {
     m_touched.erase(std::remove(m_touched.begin(),m_touched.end(),callback),m_touched.end());
     m_moved.erase(std::remove(m_moved.begin(),m_moved.end(),callback),m_moved.end());
@@ -75,7 +89,15 @@ void TouchManagerImpl::stop(TouchCallbackPtr callback)
                       m_cancelled.end());
 }
 
-void TouchManagerImpl::simulate_touches(const std::vector<TouchPtr>& touches, bool release)
+void PointerManagerImpl::stop(ScrollEventCallbackPtr callback)
+{
+    m_scrolled.erase(std::remove(m_scrolled.begin(),
+                                 m_scrolled.end(),
+                                 callback),
+                     m_scrolled.end());
+}
+
+void PointerManagerImpl::simulate_touches(const std::vector<PointerEventPtr>& touches, bool release)
 {
     for (auto& touched : m_touched) {
         if (touched->lambda != nullptr) {
@@ -92,12 +114,13 @@ void TouchManagerImpl::simulate_touches(const std::vector<TouchPtr>& touches, bo
     }
 }
 
-void TouchManagerImpl::stop_all()
+void PointerManagerImpl::stop_all()
 {
     m_touched.clear();
     m_moved.clear();
     m_cancelled.clear();
     m_ended.clear();
+    m_scrolled.clear();
 }
 
 }

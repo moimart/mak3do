@@ -646,18 +646,18 @@
 		0DBC7EC62413AEC700AA57DB /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EC52413AEC600AA57DB /* types.h */; };
 		0DBC7EC72413AEC700AA57DB /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EC52413AEC600AA57DB /* types.h */; };
 		0DBC7EC82413AEC700AA57DB /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EC52413AEC600AA57DB /* types.h */; };
-		0DBC7EDE2413B6D300AA57DB /* Touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EDD2413B6D300AA57DB /* Touch.cpp */; };
-		0DBC7EDF2413B6D300AA57DB /* Touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EDD2413B6D300AA57DB /* Touch.cpp */; };
-		0DBC7EE02413B6D300AA57DB /* Touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EDD2413B6D300AA57DB /* Touch.cpp */; };
-		0DBC7EE22413B72100AA57DB /* Touch.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EE12413B72100AA57DB /* Touch.h */; };
-		0DBC7EE32413B72100AA57DB /* Touch.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EE12413B72100AA57DB /* Touch.h */; };
-		0DBC7EE42413B72100AA57DB /* Touch.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EE12413B72100AA57DB /* Touch.h */; };
-		0DBC7EE72413BA2C00AA57DB /* TouchManagerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EE52413BA2C00AA57DB /* TouchManagerImpl.h */; };
-		0DBC7EE82413BA2C00AA57DB /* TouchManagerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EE52413BA2C00AA57DB /* TouchManagerImpl.h */; };
-		0DBC7EE92413BA2C00AA57DB /* TouchManagerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EE52413BA2C00AA57DB /* TouchManagerImpl.h */; };
-		0DBC7EEA2413BA2C00AA57DB /* TouchManagerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EE62413BA2C00AA57DB /* TouchManagerImpl.mm */; };
-		0DBC7EEB2413BA2C00AA57DB /* TouchManagerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EE62413BA2C00AA57DB /* TouchManagerImpl.mm */; };
-		0DBC7EEC2413BA2C00AA57DB /* TouchManagerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EE62413BA2C00AA57DB /* TouchManagerImpl.mm */; };
+		0DBC7EDE2413B6D300AA57DB /* Pointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EDD2413B6D300AA57DB /* Pointer.cpp */; };
+		0DBC7EDF2413B6D300AA57DB /* Pointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EDD2413B6D300AA57DB /* Pointer.cpp */; };
+		0DBC7EE02413B6D300AA57DB /* Pointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EDD2413B6D300AA57DB /* Pointer.cpp */; };
+		0DBC7EE22413B72100AA57DB /* Pointer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EE12413B72100AA57DB /* Pointer.h */; };
+		0DBC7EE32413B72100AA57DB /* Pointer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EE12413B72100AA57DB /* Pointer.h */; };
+		0DBC7EE42413B72100AA57DB /* Pointer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EE12413B72100AA57DB /* Pointer.h */; };
+		0DBC7EE72413BA2C00AA57DB /* PointerManagerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EE52413BA2C00AA57DB /* PointerManagerImpl.h */; };
+		0DBC7EE82413BA2C00AA57DB /* PointerManagerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EE52413BA2C00AA57DB /* PointerManagerImpl.h */; };
+		0DBC7EE92413BA2C00AA57DB /* PointerManagerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC7EE52413BA2C00AA57DB /* PointerManagerImpl.h */; };
+		0DBC7EEA2413BA2C00AA57DB /* PointerManagerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EE62413BA2C00AA57DB /* PointerManagerImpl.mm */; };
+		0DBC7EEB2413BA2C00AA57DB /* PointerManagerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EE62413BA2C00AA57DB /* PointerManagerImpl.mm */; };
+		0DBC7EEC2413BA2C00AA57DB /* PointerManagerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7EE62413BA2C00AA57DB /* PointerManagerImpl.mm */; };
 		0DC5D05D23FE7A9A0084EB79 /* GameControllerImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */; };
 		0DC5D05E23FE7A9A0084EB79 /* GameControllerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */; };
 		0DC5D05F23FE7A9A0084EB79 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5D05823FE7A9A0084EB79 /* GameController.cpp */; };
@@ -1284,10 +1284,10 @@
 		0DBC7EBC2413AD0400AA57DB /* UIOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIOverlay.h; sourceTree = "<group>"; };
 		0DBC7EC52413AEC600AA57DB /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		0DBC7ED12413B27F00AA57DB /* all */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = all; sourceTree = "<group>"; };
-		0DBC7EDD2413B6D300AA57DB /* Touch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Touch.cpp; sourceTree = "<group>"; };
-		0DBC7EE12413B72100AA57DB /* Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Touch.h; sourceTree = "<group>"; };
-		0DBC7EE52413BA2C00AA57DB /* TouchManagerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchManagerImpl.h; sourceTree = "<group>"; };
-		0DBC7EE62413BA2C00AA57DB /* TouchManagerImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchManagerImpl.mm; sourceTree = "<group>"; };
+		0DBC7EDD2413B6D300AA57DB /* Pointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pointer.cpp; sourceTree = "<group>"; };
+		0DBC7EE12413B72100AA57DB /* Pointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pointer.h; sourceTree = "<group>"; };
+		0DBC7EE52413BA2C00AA57DB /* PointerManagerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointerManagerImpl.h; sourceTree = "<group>"; };
+		0DBC7EE62413BA2C00AA57DB /* PointerManagerImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PointerManagerImpl.mm; sourceTree = "<group>"; };
 		0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameControllerImpl.mm; sourceTree = "<group>"; };
 		0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameControllerImpl.h; sourceTree = "<group>"; };
 		0DC5D05823FE7A9A0084EB79 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameController.cpp; sourceTree = "<group>"; };
@@ -1847,8 +1847,8 @@
 			children = (
 				0DC5D05523FE7A9A0084EB79 /* apple */,
 				0DC5D06123FE7ACA0084EB79 /* types.h */,
-				0DBC7EDD2413B6D300AA57DB /* Touch.cpp */,
-				0DBC7EE12413B72100AA57DB /* Touch.h */,
+				0DBC7EDD2413B6D300AA57DB /* Pointer.cpp */,
+				0DBC7EE12413B72100AA57DB /* Pointer.h */,
 				0DC5D05823FE7A9A0084EB79 /* GameController.cpp */,
 				0DC5D05923FE7A9A0084EB79 /* GameController.h */,
 				0DC5D06D23FEC17F0084EB79 /* all */,
@@ -1861,8 +1861,8 @@
 			children = (
 				0DC5D05623FE7A9A0084EB79 /* GameControllerImpl.mm */,
 				0DC5D05723FE7A9A0084EB79 /* GameControllerImpl.h */,
-				0DBC7EE52413BA2C00AA57DB /* TouchManagerImpl.h */,
-				0DBC7EE62413BA2C00AA57DB /* TouchManagerImpl.mm */,
+				0DBC7EE52413BA2C00AA57DB /* PointerManagerImpl.h */,
+				0DBC7EE62413BA2C00AA57DB /* PointerManagerImpl.mm */,
 			);
 			path = apple;
 			sourceTree = "<group>";
@@ -2155,7 +2155,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DBC7EE22413B72100AA57DB /* Touch.h in Headers */,
+				0DBC7EE22413B72100AA57DB /* Pointer.h in Headers */,
 				0DBC7EC62413AEC700AA57DB /* types.h in Headers */,
 				0DE848EC23FC27C400A876B2 /* all in Headers */,
 				0D8D19E723FC0CDC00DBDECD /* box2d.h in Headers */,
@@ -2213,7 +2213,7 @@
 				0D8D19FA23FC0CDC00DBDECD /* b2_wheel_joint.h in Headers */,
 				0DE848BF23FC24BC00A876B2 /* SceneImpl.h in Headers */,
 				0D8D1A0223FC0CDC00DBDECD /* b2_world_callbacks.h in Headers */,
-				0DBC7EE72413BA2C00AA57DB /* TouchManagerImpl.h in Headers */,
+				0DBC7EE72413BA2C00AA57DB /* PointerManagerImpl.h in Headers */,
 				0D8D19F023FC0CDC00DBDECD /* b2_pulley_joint.h in Headers */,
 				0DE8488323FC24BC00A876B2 /* PhysicsElement3DImpl.h in Headers */,
 				0D8D19A223FC0CC500DBDECD /* b2_island.h in Headers */,
@@ -2248,7 +2248,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DBC7EE32413B72100AA57DB /* Touch.h in Headers */,
+				0DBC7EE32413B72100AA57DB /* Pointer.h in Headers */,
 				0DBC7EC72413AEC700AA57DB /* types.h in Headers */,
 				0D5A8F3D23FF338800BEC130 /* all in Headers */,
 				0D5A8F3E23FF338800BEC130 /* box2d.h in Headers */,
@@ -2306,7 +2306,7 @@
 				0D5A8F6D23FF338800BEC130 /* b2_wheel_joint.h in Headers */,
 				0D5A8F6E23FF338800BEC130 /* SceneImpl.h in Headers */,
 				0D5A8F6F23FF338800BEC130 /* b2_world_callbacks.h in Headers */,
-				0DBC7EE82413BA2C00AA57DB /* TouchManagerImpl.h in Headers */,
+				0DBC7EE82413BA2C00AA57DB /* PointerManagerImpl.h in Headers */,
 				0D5A8F7023FF338800BEC130 /* b2_pulley_joint.h in Headers */,
 				0D5A8F7123FF338800BEC130 /* PhysicsElement3DImpl.h in Headers */,
 				0D5A8F7223FF338800BEC130 /* b2_island.h in Headers */,
@@ -2410,10 +2410,10 @@
 				0D794F4A2402DDC40046D19B /* b2_block_allocator.h in Headers */,
 				0D794F4B2402DDC40046D19B /* MaterialImpl.h in Headers */,
 				0D794F4C2402DDC40046D19B /* Material.h in Headers */,
-				0DBC7EE92413BA2C00AA57DB /* TouchManagerImpl.h in Headers */,
+				0DBC7EE92413BA2C00AA57DB /* PointerManagerImpl.h in Headers */,
 				0D794F4D2402DDC40046D19B /* PhysicsWorld2DImpl.h in Headers */,
 				0D794F4E2402DDC40046D19B /* Surface.h in Headers */,
-				0DBC7EE42413B72100AA57DB /* Touch.h in Headers */,
+				0DBC7EE42413B72100AA57DB /* Pointer.h in Headers */,
 				0D794F4F2402DDC40046D19B /* b2_time_of_impact.h in Headers */,
 				0D794F502402DDC40046D19B /* GameControllerImpl.h in Headers */,
 				0D794F512402DDC40046D19B /* b2_growable_stack.h in Headers */,
@@ -2995,7 +2995,7 @@
 				0DE848BC23FC24BC00A876B2 /* SceneImpl.mm in Sources */,
 				0D8D198923FC0CC500DBDECD /* b2_contact.cpp in Sources */,
 				0D8D199523FC0CC500DBDECD /* b2_edge_circle_contact.cpp in Sources */,
-				0DBC7EEA2413BA2C00AA57DB /* TouchManagerImpl.mm in Sources */,
+				0DBC7EEA2413BA2C00AA57DB /* PointerManagerImpl.mm in Sources */,
 				0D8D198523FC0CC500DBDECD /* b2_weld_joint.cpp in Sources */,
 				0D794EFE2402DB100046D19B /* Game.cpp in Sources */,
 				0DE848AD23FC24BC00A876B2 /* DirectorDisplayLink.mm in Sources */,
@@ -3036,7 +3036,7 @@
 				0D8D19A723FC0CC500DBDECD /* b2_block_allocator.cpp in Sources */,
 				0D8D19A423FC0CC500DBDECD /* b2_rope.cpp in Sources */,
 				0D8D19A523FC0CC500DBDECD /* b2_draw.cpp in Sources */,
-				0DBC7EDE2413B6D300AA57DB /* Touch.cpp in Sources */,
+				0DBC7EDE2413B6D300AA57DB /* Pointer.cpp in Sources */,
 				0D8D19AA23FC0CC500DBDECD /* b2_math.cpp in Sources */,
 				0D8D19B423FC0CC500DBDECD /* b2_edge_shape.cpp in Sources */,
 				0DE848C223FC24BC00A876B2 /* GeometryImpl.mm in Sources */,
@@ -3117,7 +3117,7 @@
 				0D5A8F9223FF338800BEC130 /* SceneImpl.mm in Sources */,
 				0D5A8F9323FF338800BEC130 /* b2_contact.cpp in Sources */,
 				0D5A8F9423FF338800BEC130 /* b2_edge_circle_contact.cpp in Sources */,
-				0DBC7EEB2413BA2C00AA57DB /* TouchManagerImpl.mm in Sources */,
+				0DBC7EEB2413BA2C00AA57DB /* PointerManagerImpl.mm in Sources */,
 				0D5A8F9523FF338800BEC130 /* b2_weld_joint.cpp in Sources */,
 				0D794EFF2402DB100046D19B /* Game.cpp in Sources */,
 				0D5A8F9623FF338800BEC130 /* DirectorDisplayLink.mm in Sources */,
@@ -3158,7 +3158,7 @@
 				0D5A8FB523FF338800BEC130 /* b2_block_allocator.cpp in Sources */,
 				0D5A8FB623FF338800BEC130 /* b2_rope.cpp in Sources */,
 				0D5A8FB723FF338800BEC130 /* b2_draw.cpp in Sources */,
-				0DBC7EDF2413B6D300AA57DB /* Touch.cpp in Sources */,
+				0DBC7EDF2413B6D300AA57DB /* Pointer.cpp in Sources */,
 				0D5A8FB823FF338800BEC130 /* b2_math.cpp in Sources */,
 				0D5A8FB923FF338800BEC130 /* b2_edge_shape.cpp in Sources */,
 				0D5A8FBA23FF338800BEC130 /* GeometryImpl.mm in Sources */,
@@ -3275,7 +3275,7 @@
 				0D794F982402DDC40046D19B /* b2_world.cpp in Sources */,
 				0D794F992402DDC40046D19B /* b2_polygon_contact.cpp in Sources */,
 				0D794F9A2402DDC40046D19B /* Surface.cpp in Sources */,
-				0DBC7EE02413B6D300AA57DB /* Touch.cpp in Sources */,
+				0DBC7EE02413B6D300AA57DB /* Pointer.cpp in Sources */,
 				0D794F9B2402DDC40046D19B /* Quaternion.cpp in Sources */,
 				0D794F9C2402DDC40046D19B /* b2_prismatic_joint.cpp in Sources */,
 				0DAC81912413FD1400172202 /* RenderView.mm in Sources */,
@@ -3302,7 +3302,7 @@
 				0D794FB02402DDC40046D19B /* Action.cpp in Sources */,
 				0D794FB12402DDC40046D19B /* b2_joint.cpp in Sources */,
 				0D794FB22402DDC40046D19B /* b2_timer.cpp in Sources */,
-				0DBC7EEC2413BA2C00AA57DB /* TouchManagerImpl.mm in Sources */,
+				0DBC7EEC2413BA2C00AA57DB /* PointerManagerImpl.mm in Sources */,
 				0D794FB32402DDC40046D19B /* b2_polygon_circle_contact.cpp in Sources */,
 				0D794FB42402DDC40046D19B /* b2_stack_allocator.cpp in Sources */,
 				0DBC7EC12413AD0400AA57DB /* UIOverlay.cpp in Sources */,

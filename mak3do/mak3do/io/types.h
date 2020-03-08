@@ -64,28 +64,36 @@ typedef std::shared_ptr<AnalogCallback> AnalogCallbackPtr;
 typedef _ControllerCallback<void(const Vec3&, const Vec3&)> MotionCallback;
 typedef std::shared_ptr<MotionCallback> MotionCallbackPtr;
 
-class TouchManager;
-class TouchManagerImpl;
+class PointerManager;
+class PointerManagerImpl;
 
-typedef std::shared_ptr<TouchManager> TouchManagerPtr;
-typedef std::shared_ptr<TouchManagerImpl> TouchManagerImplPtr;
+typedef std::shared_ptr<PointerManager> PointerManagerPtr;
+typedef std::shared_ptr<PointerManagerImpl> PointerManagerImplPtr;
 
 template <class R>
-struct _TouchCallback {
+struct _PointerEventCallback {
     std::function<R> lambda;
     std::string cb_id;
 };
 
-struct Touch {
+struct PointerEvent {
     Vec2 location { Vec2(-1,-1) };
     unsigned int tid { 0 };
 };
 
-typedef std::shared_ptr<Touch> TouchPtr;
+struct ScrollEvent {
+    float dx { 0 };
+    float dy { 0 };
+};
 
-typedef _TouchCallback<bool(const std::vector<TouchPtr>&)> TouchCallback;
+typedef std::shared_ptr<PointerEvent> PointerEventPtr;
+typedef std::shared_ptr<ScrollEvent> ScrollEventPtr;
 
-typedef std::shared_ptr<TouchCallback> TouchCallbackPtr;
+typedef _PointerEventCallback<bool(const std::vector<PointerEventPtr>&)> PointerEventCallback;
+typedef _PointerEventCallback<void(float,float)> ScrollEventCallback;
+
+typedef std::shared_ptr<PointerEventCallback> PointerEventCallbackPtr;
+typedef std::shared_ptr<ScrollEventCallback> ScrollEventCallbackPtr;
 
 }
 }
