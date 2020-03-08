@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
 #include <mak3do/math/all>
+#include <mak3do/io/all>
 #include <Rocket/Core/EventListenerInstancer.h>
 #include <Rocket/Core/FileInterface.h>
 #include <Rocket/Core/RenderInterface.h>
@@ -35,6 +36,7 @@ public:
     static RocketMetalRenderer* get(const Vec2& size = Vec2::ZERO, void* __device = nullptr);
     
     RocketMetalRenderer(const Vec2& size, void* device);
+    virtual ~RocketMetalRenderer();
     
     void render(const Vec2& viewport, void* commandbuffer, void* pass_descriptor, void* extra = nullptr);
 
@@ -88,6 +90,7 @@ public:
     
     Rocket::Core::Context* context() const;
 protected:
+    void setup_events();
 
 private:
 
@@ -99,6 +102,10 @@ private:
     
     Mat4 m_projection;
     Vec2 m_size;
+    
+    io::TouchCallbackPtr m_press_callback;
+    io::TouchCallbackPtr m_move_callback;
+    io::TouchCallbackPtr m_release_callback;
 };
 }
 }

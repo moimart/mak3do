@@ -419,7 +419,7 @@ void test_ui() {
     auto task = Scheduler::task();
     
     task->lambda = [=](float dt) {
-        overlay->load(); //No UI overlay
+        //overlay->load(); //No UI overlay
     };
     
     sched->schedule(5,task);

@@ -151,6 +151,73 @@ RocketMetalRenderer::RocketMetalRenderer(const Vec2& size, void* __device)
     m_impl->pipeline_texture = [m_impl->device newRenderPipelineStateWithDescriptor:desc error:&error];
     
     Mat4::createOrthographic(m_size.width, m_size.height, -1024, 1024, &m_projection);
+    
+    setup_events();
+}
+
+RocketMetalRenderer::~RocketMetalRenderer()
+{
+    auto tm = io::TouchManager::get();
+    
+    tm->stop(m_press_callback);
+    tm->stop(m_move_callback);
+    tm->stop(m_release_callback);
+}
+
+void RocketMetalRenderer::setup_events()
+{
+    m_press_callback = std::make_shared<io::TouchCallback>();
+    m_move_callback = std::make_shared<io::TouchCallback>();
+    m_release_callback = std::make_shared<io::TouchCallback>();
+    
+    m_press_callback->lambda = [this](const std::vector<io::TouchPtr>& touches) -> bool {
+        
+        if (touches.size() == 0) {
+            return false;
+        }
+        
+        this->m_main_context->ProcessMouseMove(touches[0]->location.x,
+                                               m_size.y - touches[0]->location.y,
+                                               0);
+        
+        this->m_main_context->ProcessMouseButtonDown(0, 0);
+
+        return true;
+    };
+    
+    m_move_callback->lambda = [this](const std::vector<io::TouchPtr>& touches) -> bool {
+      
+        if (touches.size() == 0) {
+                   return false;
+        }
+        
+        this->m_main_context->ProcessMouseMove(touches[0]->location.x,
+                                               m_size.y - touches[0]->location.y,
+                                               0);
+        
+        return true;
+    };
+    
+    m_release_callback->lambda = [this](const std::vector<io::TouchPtr>& touches) -> bool {
+        
+        if (touches.size() == 0) {
+            return false;
+        }
+        
+        this->m_main_context->ProcessMouseMove(touches[0]->location.x,
+                                               m_size.y - touches[0]->location.y,
+                                               0);
+        
+        this->m_main_context->ProcessMouseButtonUp(0, 0);
+      
+        return true;
+    };
+    
+    auto tm = io::TouchManager::get();
+    
+    tm->touched(m_press_callback);
+    tm->moved(m_move_callback);
+    tm->released(m_release_callback);
 }
 
 Rocket::Core::Context* RocketMetalRenderer::context() const
@@ -444,7 +511,7 @@ RocketMetalRenderer::InstanceEventListener(const Rocket::Core::String& value,
 void RocketMetalRenderer::processEvent(Rocket::Core::Event& event,
                                        Rocket::Core::String& value)
 {
-    
+    std::cout << "processEvent" << std::endl;
 }
 
 void RocketMetalRenderer::Release()
@@ -460,7 +527,7 @@ float PrivateSystemInterface::GetElapsedTime()
 
 bool PrivateSystemInterface::LogMessage(Rocket::Core::Log::Type type, const Rocket::Core::String& message)
 {
-    std::cout << "ROCKET" + std::to_string(type) + " " + message.CString() << std::endl;
+    std::cout << "ROCKET " + std::to_string(type) + " " + message.CString() << std::endl;
 
     return true;
 }

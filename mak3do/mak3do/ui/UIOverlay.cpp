@@ -60,6 +60,7 @@ bool UIOverlayImpl::load(const std::string& resource, const std::string& package
     auto doc = m_renderer->context()->LoadDocument(resource.c_str());
     
     if (doc != nullptr) {
+        doc->Focus();
         doc->Show();
         return true;
     }

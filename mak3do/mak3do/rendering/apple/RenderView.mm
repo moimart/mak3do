@@ -20,24 +20,24 @@
 #if TARGET_OS_MAC
 - (void) mouseDown:(NSEvent *)event {
     auto __touch = std::make_shared<mak3do::io::Touch>();
-    __touch->location.x = [event locationInWindow].x;
-    __touch->location.y = [event locationInWindow].y;
+    __touch->location.x = [event locationInWindow].x * [[NSScreen mainScreen] backingScaleFactor];
+    __touch->location.y = [event locationInWindow].y * [[NSScreen mainScreen] backingScaleFactor];
     
     _pimpl->inject_touches_begin({__touch});
 }
 
 - (void) mouseDragged:(NSEvent *)event {
     auto __touch = std::make_shared<mak3do::io::Touch>();
-    __touch->location.x = [event locationInWindow].x;
-    __touch->location.y = [event locationInWindow].y;
+    __touch->location.x = [event locationInWindow].x * [[NSScreen mainScreen] backingScaleFactor];
+    __touch->location.y = [event locationInWindow].y * [[NSScreen mainScreen] backingScaleFactor];
     
     _pimpl->inject_touches_moved({__touch});
 }
 
 - (void) mouseUp:(NSEvent *)event {
     auto __touch = std::make_shared<mak3do::io::Touch>();
-    __touch->location.x = [event locationInWindow].x;
-    __touch->location.y = [event locationInWindow].y;
+    __touch->location.x = [event locationInWindow].x * [[NSScreen mainScreen] backingScaleFactor];
+    __touch->location.y = [event locationInWindow].y * [[NSScreen mainScreen] backingScaleFactor];
     
     _pimpl->inject_touches_ended({__touch});
 }
