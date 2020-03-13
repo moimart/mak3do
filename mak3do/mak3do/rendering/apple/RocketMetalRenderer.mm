@@ -216,7 +216,6 @@ void RocketMetalRenderer::setup_events()
     };
     
     m_scrolled_callback->lambda = [this](float dx, float dy) {
-        std::cout << "dx " << dx << " dy " << dy << std::endl;
         this->m_main_context->ProcessMouseWheel(-dy, 0);
     };
     
